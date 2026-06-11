@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Quran Lens — Melihat Keajaiban di Balik Setiap Ayat</title>
+  <meta name="description" content="Satu ayat, sejuta makna. Lihat Al-Qur'an lewat lensa asbabun nuzul, tafsir, hikmah, keajaiban linguistik, dan amalan keseharian. Langganan bulanan." />
+  <meta name="theme-color" content="#0f6b4f" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">۞</span>
+      <span>The Quran Lens<small>Keajaiban Setiap Ayat</small></span>
+    </div>
+    <button class="badge-pro" id="proBadge" onclick="App.openUpgrade()">✦ Premium</button>
+  </header>
+
+  <!-- Hero / Sales -->
+  <section class="hero">
+    <span class="kicker">Satu Ayat, Sejuta Makna</span>
+    <h1>Rasakan <span class="hl">keajaiban</span> Al-Qur'an di setiap kata</h1>
+    <p>Setiap ayat dibedah dalam 6 lapisan: asbabun nuzul, tafsir, hikmah, keajaiban
+       linguistik (kenapa Allah memilih kata itu), hingga amalan nyata sehari-hari.</p>
+    <div class="hero-cta">
+      <button class="btn" onclick="App.switchTab('hari-ini')">Baca Ayat Hari Ini</button>
+      <button class="btn gold" onclick="App.openUpgrade()">✦ Buka Semua (Premium)</button>
+    </div>
+    <div class="streak-pill" id="streakPill">🔥 Memuat kebiasaan…</div>
+  </section>
+
+  <!-- Tabs -->
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="hari-ini">☀️ Hari Ini</button>
+    <button class="tab" data-tab="jelajah">📖 Jelajah</button>
+    <button class="tab" data-tab="tersimpan">🔖 Tersimpan</button>
+    <button class="tab" data-tab="paket">✦ Premium</button>
+  </nav>
+
+  <main class="wrap">
+    <!-- Ayat Hari Ini -->
+    <section class="panel active" id="panel-hari-ini">
+      <div id="hariIniBox"></div>
+    </section>
+
+    <!-- Jelajah -->
+    <section class="panel" id="panel-jelajah">
+      <h2 class="section-title">Perpustakaan Ayat</h2>
+      <p class="section-sub">Pilih ayat untuk menyelami maknanya secara mendalam.</p>
+      <div id="daftarAyat"></div>
+    </section>
+
+    <!-- Tersimpan -->
+    <section class="panel" id="panel-tersimpan">
+      <h2 class="section-title">Ayat Tersimpan</h2>
+      <p class="section-sub">Koleksi ayat yang kamu tandai untuk dibaca ulang.</p>
+      <div id="daftarTersimpan"></div>
+    </section>
+
+    <!-- Paket / Pricing -->
+    <section class="panel" id="panel-paket">
+      <h2 class="section-title">Berlangganan The Quran Lens</h2>
+      <p class="section-sub">Buka seluruh lapisan makna & perpustakaan ayat yang terus bertambah.</p>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="pc-name">Bulanan</div>
+          <div class="pc-amt">Rp 39.000<small>/bln</small></div>
+          <ul>
+            <li>Semua lapisan tadabbur</li>
+            <li>Perpustakaan ayat penuh</li>
+            <li>Batal kapan saja</li>
+          </ul>
+          <button class="btn ghost" style="width:100%" onclick="App.beli('Bulanan')">Pilih Bulanan</button>
+        </div>
+        <div class="price-card hl">
+          <div class="pc-name">Tahunan · Terpopuler</div>
+          <div class="pc-amt">Rp 299.000<small>/thn</small></div>
+          <ul>
+            <li>Hemat ~36% (≈Rp 24.900/bln)</li>
+            <li>Semua fitur Premium</li>
+            <li>Ayat baru tiap pekan</li>
+          </ul>
+          <button class="btn gold" style="width:100%" onclick="App.beli('Tahunan')">Pilih Tahunan</button>
+        </div>
+        <div class="price-card">
+          <div class="pc-name">Seumur Hidup</div>
+          <div class="pc-amt">Rp 749.000<small>/sekali</small></div>
+          <ul>
+            <li>Bayar sekali, akses selamanya</li>
+            <li>Semua pembaruan konten</li>
+            <li>Pendukung awal 💚</li>
+          </ul>
+          <button class="btn ghost" style="width:100%" onclick="App.beli('Seumur Hidup')">Pilih Seumur Hidup</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Upgrade -->
+  <div class="modal" id="modalUpgrade">
+    <div class="modal-box">
+      <h3>✦ Buka Akses Premium</h3>
+      <p class="sub">Selami seluruh keajaiban di balik setiap ayat.</p>
+
+      <div class="plan" onclick="App.beli('Bulanan')">
+        <div><div class="p-name">Bulanan</div><div class="p-note">Batal kapan saja</div></div>
+        <div class="p-price">Rp 39rb</div>
+      </div>
+      <div class="plan best" onclick="App.beli('Tahunan')">
+        <div><div class="p-name">Tahunan <span class="p-badge">HEMAT 36%</span></div><div class="p-note">≈ Rp 24.900/bln</div></div>
+        <div class="p-price">Rp 299rb</div>
+      </div>
+      <div class="plan" onclick="App.beli('Seumur Hidup')">
+        <div><div class="p-name">Seumur Hidup</div><div class="p-note">Bayar sekali, akses selamanya</div></div>
+        <div class="p-price">Rp 749rb</div>
+      </div>
+
+      <details class="manual">
+        <summary>Sudah bayar? Aktivasi dengan Order ID</summary>
+        <div class="field">
+          <select id="m-paket">
+            <option value="Bulanan">Bulanan</option>
+            <option value="Tahunan">Tahunan</option>
+            <option value="Seumur Hidup">Seumur Hidup</option>
+          </select>
+          <input id="m-order" placeholder="Order ID dari Scalev" />
+        </div>
+        <button class="btn" style="width:100%;margin-top:10px" onclick="App.aktivasiManual()">Aktifkan</button>
+      </details>
+
+      <button class="btn ghost" style="width:100%;margin-top:14px" onclick="App.closeUpgrade()">Nanti dulu</button>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 The Quran Lens · Dibuat untuk mendekatkan hati pada Al-Qur'an 💚</div>
+    <div class="note">Rujukan: Tafsir Ibnu Katsir, As-Sa'di, Al-Qurthubi, riwayat hadis sahih.
+      Konten edukatif; untuk pendalaman, rujuk ulama & guru terpercaya.</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/payment.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>App.init();</script>
+</body>
+</html>
