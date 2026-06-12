@@ -18,6 +18,44 @@ const AYAT = [
   /* ============ SURAH AL-FĀTIḤAH (1) ============ */
   {
     id: 'al-fatihah-1',
+    kajianKata: [
+      {
+        kata: 'بِسْمِ', latin: 'Bismi', arti: 'Dengan (menyebut) nama',
+        poin: [
+          'بِ — satu huruf bermakna "dengan". Ia menyandarkan seluruh perbuatan kepada Allah.',
+          'Ada kata kerja yang sengaja disembunyikan: "dengan nama Allah, aku memulai".',
+          'Disembunyikan justru agar mencakup apa pun yang sedang kamu mulai.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+      },
+      {
+        kata: 'اللَّهِ', latin: 'Allāh', arti: 'Allah',
+        poin: [
+          'Nama bagi Dzat — bukan sekadar sifat.',
+          'Tak pernah disandang selain-Nya. Tak ber-jamak, tak ber-bentuk perempuan.',
+          'Nama lain menyifati; nama ini menamai.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'اللَّه', latin: 'Allāh', sifat: ['Nama Dzat', 'Khusus, tak tertandingi'] },
+          { arab: 'إِلٰه', latin: 'ilāh', alt: true, sifat: ['"Sembahan" — umum', 'Bisa untuk apa saja yang disembah'] },
+        ], catatan: 'Dipakai nama Dzat «Allāh», bukan kata umum «ilāh».' },
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
+      },
+      {
+        kata: 'الرَّحْمَٰنِ الرَّحِيمِ', latin: 'Ar-Raḥmān Ar-Raḥīm', arti: 'Yang Maha Pengasih lagi Maha Penyayang',
+        poin: [
+          'Dua nama dari satu akar: rahmat.',
+          'Ar-Raḥmān — luas, untuk semua. Ar-Raḥīm — kekal, khusus bagi yang beriman.',
+          'Rahmat-Nya disebut sebelum apa pun yang lain.',
+        ],
+        akar: { tipe: 'akar', huruf: ['ر', 'ح', 'م'], teks: 'Satu akar: raḥmah (rahmat)' },
+        banding: { tipe: 'banding', item: [
+          { arab: 'الرَّحْمَٰن', latin: 'Ar-Raḥmān', sifat: ['Pola «fa‘lān» → keluasan', 'Untuk SELURUH makhluk', 'Di dunia'] },
+          { arab: 'الرَّحِيم', latin: 'Ar-Raḥīm', sifat: ['Pola «fa‘īl» → kesinambungan', 'Khusus orang beriman', 'Kekal · di akhirat'] },
+        ], catatan: 'Luas (kuantitas) sekaligus kekal (kontinuitas).' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+    ],
     hikmahPoin: [
       'Mulai dengan nama-Nya — bukan dengan kekuatanmu.',
       'Yang biasa pun berubah jadi ibadah.',
@@ -53,6 +91,45 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-2',
+    kajianKata: [
+      {
+        kata: 'الْحَمْدُ', latin: 'Al-Ḥamd', arti: 'Segala puji',
+        poin: [
+          'Pakai alif-lam: SEGALA puji — mutlak, menyeluruh.',
+          'Ḥamd bukan sekadar memuji; ia pujian yang disertai cinta dan pengagungan.',
+          'Bukan «madḥ» — sanjungan yang bisa tanpa rasa.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'حَمْد', latin: 'Ḥamd', sifat: ['Pujian + cinta', 'Disertai pengagungan'] },
+          { arab: 'مَدْح', latin: 'Madḥ', alt: true, sifat: ['Sekadar sanjungan', 'Bisa tanpa rasa'] },
+        ], catatan: 'Dipilih «al-ḥamd»: segala pujian, hanya milik Allah.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'لِلَّهِ', latin: 'Lillāh', arti: 'Bagi / milik Allah',
+        poin: [
+          'Huruf «لِ» — "milik" sekaligus "untuk". Pujian itu hak-Nya, bukan pinjaman.',
+          'Memuji-Nya bukan memberi; hanya mengembalikan yang memang milik-Nya.',
+        ],
+        sumber: ['Tafsir Al-Qurthubi'],
+      },
+      {
+        kata: 'رَبِّ', latin: 'Rabb', arti: 'Tuhan — Pencipta, Pemilik, Pemelihara',
+        poin: [
+          'Satu kata padat: Pencipta, Pemilik, Pemelihara, Pengatur sekaligus.',
+          'Jauh lebih luas dari sekadar "Tuhan".',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'الْعَالَمِينَ', latin: 'Al-‘ālamīn', arti: 'Seluruh alam',
+        poin: [
+          'Bukan hanya manusia — seluruh alam: manusia, jin, langit, bumi.',
+          'Rububiyah-Nya tak terbatas pada satu jenis makhluk.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir'],
+      },
+    ],
     hikmahPoin: [
       'Segala puji kembali kepada-Nya, bukan kepada dirimu.',
       'Syukur mengusir ujub.',

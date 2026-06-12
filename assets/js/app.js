@@ -157,15 +157,51 @@ const App = {
     </div>`;
 
     h += this.renderAyahDisplay(ayat);
+    if (Array.isArray(ayat.kajianKata) && ayat.kajianKata.length) h += this.renderKajianKata(ayat, open);
     h += this.renderKajianCards(ayat, open);
     if (open) h += this.renderScholar(ayat.sumber);
     h += this.renderEpNav(ayat);
     return h;
   },
 
+  // Kajian kata demi kata: tiap kata satu kartu (kartu pertama gratis sebagai cicipan)
+  renderKajianKata(ayat, open) {
+    const items = ayat.kajianKata;
+    let out = `<div class="kajian-label section"><span class="kj-ico">✨</span>Kajian Kata demi Kata</div>`;
+    items.forEach((k, i) => {
+      const free = open || i === 0;
+      out += free ? this.renderKataCard(k) : this.renderKataLocked(k);
+    });
+    return out;
+  },
+
+  renderKataCard(k) {
+    return `<div class="kata-card">
+      <div class="kata-arab" lang="ar" dir="rtl">${k.kata}</div>
+      <div class="kata-gloss"><span class="kg-latin">${k.latin || ''}</span><span class="kg-arti">${k.arti || ''}</span></div>
+      ${Array.isArray(k.poin) ? `<ul class="poin">${k.poin.map(p => `<li>${p}</li>`).join('')}</ul>` : ''}
+      ${k.akar ? this.renderViz(k.akar) : ''}
+      ${k.banding ? this.renderViz(k.banding) : ''}
+      ${this.renderScholar(k.sumber)}
+    </div>`;
+  },
+
+  renderKataLocked(k) {
+    return `<div class="kata-card locked">
+      <div class="kata-arab" lang="ar" dir="rtl">${k.kata}</div>
+      <div class="kata-gloss"><span class="kg-latin">${k.latin || ''}</span><span class="premium-tag">PREMIUM</span></div>
+      <p class="kajian-teaser">${this.teaser((k.poin || []).join(' '))}</p>
+    </div>`;
+  },
+
   // Ayah Display: kata yang dikaji menyala, sisanya di-fade
   renderAyahDisplay(ayat) {
-    const fokus = (ayat.fokus || []).map(stripHarakat).filter(Boolean);
+    // Bila episode punya kajian kata demi kata, semua kata itu disorot.
+    let fokusSrc = ayat.fokus || [];
+    if (Array.isArray(ayat.kajianKata) && ayat.kajianKata.length) {
+      fokusSrc = ayat.kajianKata.flatMap(k => k.kata.split(/\s+/));
+    }
+    const fokus = fokusSrc.map(stripHarakat).filter(Boolean);
     const tokens = ayat.arab.split(/\s+/).filter(Boolean);
     const words = tokens.map(tok => {
       const s = stripHarakat(tok);
@@ -192,7 +228,9 @@ const App = {
   // Kartu kajian + gating (locked = teaser blur)
   renderKajianCards(ayat, open) {
     let cards = '', adaKunci = false;
+    const adaKata = Array.isArray(ayat.kajianKata) && ayat.kajianKata.length;
     this.LAPISAN.forEach(l => {
+      if (l.key === 'linguistik' && adaKata) return; // sudah jadi kajian kata demi kata
       const punyaPoin = (l.key === 'hikmah' && Array.isArray(ayat.hikmahPoin));
       const isi = ayat[l.key];
       if (!isi && !punyaPoin) return;

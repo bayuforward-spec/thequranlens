@@ -222,6 +222,20 @@ body {
 .scholar-list span { font-family: var(--display); font-style: italic; color: var(--body); font-size: .96rem; }
 .scholar-list span:not(:last-child)::after { content: '·'; color: var(--gold-label); margin-left: 7px; }
 
+/* ===== Kajian kata demi kata ===== */
+.kajian-label.section { font-size: .7rem; justify-content: center; margin: 26px 0 12px; }
+.kata-card { background: linear-gradient(180deg, var(--bg-warm), var(--bg-alt)); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; margin-bottom: 14px; text-align: center; position: relative; }
+.kata-arab { font-family: var(--arab); font-size: 2.5rem; color: var(--gold); direction: rtl; text-shadow: 0 0 24px rgba(242, 208, 96, .42); }
+.kata-gloss { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 8px 0 16px; }
+.kg-latin { font-family: var(--label); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-label); }
+.kg-arti { font-family: var(--display); font-style: italic; color: var(--sub); font-size: 1.1rem; }
+.kata-gloss .premium-tag { margin: 0; }
+.kata-card .poin { list-style: none; display: flex; flex-direction: column; gap: 9px; text-align: left; max-width: 540px; margin: 0 auto; }
+.kata-card .poin li { font-family: var(--display); font-style: italic; font-size: 1.2rem; line-height: 1.45; color: var(--body); padding-left: 24px; position: relative; }
+.kata-card .poin li::before { content: '✦'; position: absolute; left: 0; top: .12em; color: var(--gold); font-size: .8em; font-style: normal; }
+.kata-card .viz, .kata-card .scholar { text-align: left; margin-top: 16px; }
+.kata-card.locked .kajian-teaser { filter: blur(4px); color: var(--sub); user-select: none; opacity: .7; max-width: 540px; margin: 0 auto; }
+
 /* ===== Episode prev/next ===== */
 .epnav { display: flex; gap: 12px; margin-top: 24px; }
 .epnav-btn { flex: 1; background: var(--card-bg); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; cursor: pointer; transition: .18s; }
