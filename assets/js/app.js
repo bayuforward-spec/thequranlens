@@ -1,20 +1,45 @@
 /*
- * app.js — Navigasi, render ayat & 6 lapisan tadabbur, gating Premium,
- * bookmark, dan streak harian.
+ * app.js — The Quran Lens
+ * Navigasi Musim/Episode, reader (Ayah Display + kartu kajian), kajian linguistik
+ * (perbandingan kata chosen-vs-alternatif), paywall, bookmark, streak, tema.
  */
+
+/* Buang harakat & normalisasi alef agar pencocokan kata fokus tahan-banting */
+function stripHarakat(s) {
+  return String(s || '')
+    .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED\u0640]/g, '')
+    .replace(/[\u0622\u0623\u0625\u0671]/g, '\u0627')
+    .replace(/[^\u0621-\u064A]/g, '');
+}
+
 const App = {
-  // Definisi 6 lapisan + ikon + status premium-nya
+  current: null,
+
+  // Urutan kartu kajian + label (Cinzel) + gating premium
   LAPISAN: [
-    { key: 'asbabunNuzul', ico: '📜', judul: 'Asbabun Nuzul', premium: true },
-    { key: 'tafsir',       ico: '📖', judul: 'Tafsir Ringkas', premium: true },
-    { key: 'hikmah',       ico: '🌿', judul: 'Hikmah Ayat',    premium: false },
-    { key: 'linguistik',   ico: '✨', judul: 'Keajaiban Linguistik', premium: true },
-    { key: 'amalan',       ico: '🤲', judul: 'Amalan & Kehidupan',   premium: true },
+    { key: 'asbabunNuzul', ico: '📜', label: 'Asbabun Nuzul',      premium: true },
+    { key: 'tafsir',       ico: '📖', label: 'Tafsir',             premium: true },
+    { key: 'linguistik',   ico: '✨', label: 'Kajian Linguistik',  premium: true, comparison: true },
+    { key: 'hikmah',       ico: '🌿', label: 'Hikmah',             premium: false },
+    { key: 'amalan',       ico: '🤲', label: 'Amalan & Kehidupan', premium: true },
+  ],
+
+  PAKET: [
+    { nama: 'Bulanan', harga: 'Rp 49.000', per: '/bulan',
+      fitur: ['Akses semua episode', 'Episode baru tiap minggu', 'Batal kapan saja'] },
+    { nama: 'Tahunan', harga: 'Rp 399.000', per: '/tahun', best: true, hemat: 'HEMAT ~32%',
+      fitur: ['Semua benefit bulanan', 'Akses awal episode baru', 'PDF cetak tiap episode'] },
+  ],
+
+  FAQ: [
+    ['Apa bedanya dengan aplikasi Qur’an gratis?', 'Kami tidak berhenti di terjemahan. Setiap episode membedah <em>kenapa</em> Allah memilih satu kata, bukan alternatifnya — akar kata, gramatika, dan rujukan ulama klasik.'],
+    ['Apakah kontennya bisa dipercaya?', 'Setiap kajian mencantumkan rujukan tafsir mu’tabar (Ibnu Katsir, As-Sa‘di, Al-Qurthubi, Ibnul Qayyim). Kami jujur bila sebuah ayat tak punya riwayat khusus.'],
+    ['Bisa batal kapan saja?', 'Bisa. Paket bulanan tanpa ikatan — berhenti kapan pun kamu mau.'],
+    ['Apakah ada konten gratis?', 'Ada. Beberapa episode terbuka penuh sebagai cicipan. Selebihnya untuk pelanggan.'],
   ],
 
   /* ---------- Init ---------- */
   init() {
-    // Sinkronkan tombol tema dengan pilihan tersimpan (default: terang)
     this.setTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'terang');
 
     document.getElementById('tabs').addEventListener('click', (e) => {
@@ -27,20 +52,23 @@ const App = {
     if (redir) {
       Payment.bersihkanURL();
       if (Payment.backendAktif()) {
-        // Verifikasi ke server (anti-bypass) sebelum membuka Premium
         this.aktifkan(redir.order, redir.paket, true);
       } else {
-        // Mode demo sisi-klien
         Store.setPro(redir.paket, redir.order);
         setTimeout(() => this.toast(`🎉 Pembayaran berhasil! Premium ${redir.paket} aktif.`), 400);
       }
     }
 
-    const s = Store.catatKunjungan();
-    this.renderStreak(s);
+    this.renderStreak(Store.catatKunjungan());
     this.refreshProUI();
-    this.renderHariIni();
-    this.renderDaftar();
+
+    this.current = ayatHariIni().id;
+    this.renderNavigator();
+    this.renderEpisodeInto();      // muat episode awal ke reader (tanpa scroll)
+    this.renderBeranda();
+    this.renderPricing('pricingBeranda');
+    this.renderPricing('pricingFull');
+    this.renderFaq();
     this.renderTersimpan();
   },
 
@@ -51,23 +79,22 @@ const App = {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
-  /* ---------- Streak ---------- */
+  /* ---------- Streak & Premium UI ---------- */
   renderStreak(s) {
     const el = document.getElementById('streakPill');
     if (!el) return;
     el.textContent = s.count > 1
-      ? `🔥 ${s.count} hari beruntun menyelami Al-Qur'an`
-      : `🔥 Hari pertamamu — mulai kebiasaan tadabbur!`;
+      ? `🔥 ${s.count} hari beruntun menyelami kata`
+      : `🔥 Hari pertamamu — mulai kebiasaan tadabbur`;
   },
 
-  /* ---------- Premium UI ---------- */
   refreshProUI() {
     const pro = Store.isPro();
     const badge = document.getElementById('proBadge');
     if (pro) {
-      badge.textContent = '✓ Premium ' + pro.paket;
+      badge.textContent = '✓ ' + pro.paket;
       badge.classList.add('is-pro');
-      badge.onclick = () => this.toast('Akses Premium kamu aktif 💚');
+      badge.onclick = () => this.toast('Langganan kamu aktif 💛');
     } else {
       badge.textContent = '✦ Premium';
       badge.classList.remove('is-pro');
@@ -75,59 +102,159 @@ const App = {
     }
   },
 
-  /* ---------- Render satu ayat lengkap ---------- */
-  renderAyat(ayat) {
+  /* ---------- Navigator (Musim → Episode) ---------- */
+  renderNavigator() {
     const pro = !!Store.isPro();
-    const terbukaPenuh = pro || ayat.gratis;
-    const marked = Store.isMarked(ayat.id);
-
-    let html = `<article class="card">
-      <button class="btn-mark ${marked ? 'on' : ''}" title="Simpan ayat"
-        onclick="App.toggleMark('${ayat.id}', this)">${marked ? '🔖' : '🏷️'}</button>
-      <div class="card-head">
-        <div>
-          <div class="card-meta">QS. ${ayat.surah} : ${ayat.ayatNo} · Juz ${ayat.juz}</div>
-          <div class="card-title">Surah ${ayat.surah}</div>
+    document.getElementById('navigator').innerHTML = MUSIM.map(m => `
+      <div class="nav-musim">
+        <div class="nav-musim-head"><span class="nm-label">${m.label}</span><span class="nm-surah">${m.surah}</span></div>
+        <div class="nav-eps">
+          ${m.episodes.map((id, i) => {
+            const a = cariAyat(id); if (!a) return '';
+            const open = pro || a.gratis;
+            const ikon = !open ? '🔒' : (a.gratis && !pro ? '○' : '✦');
+            return `<button class="nav-ep ${this.current === id ? 'active' : ''}" onclick="App.bukaEpisode('${id}')">
+              <span class="ne-no">${i + 1}</span>
+              <span class="ne-title">${a.surah} : ${a.ayatNo}</span>
+              <span class="ne-status">${ikon}</span>
+            </button>`;
+          }).join('')}
         </div>
-      </div>
-      <div class="ayat-arab" lang="ar" dir="rtl">${ayat.arab}</div>
-      <div class="ayat-latin">${ayat.latin}</div>
-      <div class="ayat-arti">“${ayat.arti}”</div>
-      <div class="tema">${ayat.tema.map(t => `<span>${t}</span>`).join('')}</div>`;
-
-    // 6 lapisan
-    let adaTerkunci = false;
-    this.LAPISAN.forEach(l => {
-      const isi = ayat[l.key];
-      if (!isi) return;
-      const terkunci = l.premium && !terbukaPenuh;
-      if (terkunci) { adaTerkunci = true; return; }
-      const grafik = (l.key === 'linguistik' && ayat.visual) ? this.renderVisual(ayat.visual) : '';
-      const isiHtml = (l.key === 'hikmah' && Array.isArray(ayat.hikmahPoin))
-        ? `<ul class="poin">${ayat.hikmahPoin.map(p => `<li>${p}</li>`).join('')}</ul>`
-        : `<p>${isi}</p>`;
-      html += `<div class="layer ${l.key}">
-        <div class="layer-head"><span class="layer-ico">${l.ico}</span>
-          <span class="layer-title">${l.judul}</span></div>
-        ${isiHtml}
-        ${grafik}
-      </div>`;
-    });
-
-    if (adaTerkunci) {
-      html += `<div class="lock">
-        <div class="lk">🔒</div>
-        <h4>Selami lebih dalam dengan Premium</h4>
-        <p>Buka asbabun nuzul, tafsir, keajaiban linguistik & amalan untuk ayat ini.</p>
-        <button class="btn gold" onclick="App.openUpgrade()">✦ Buka Akses</button>
-      </div>`;
-    }
-
-    html += `<div class="sumber">📚 Rujukan: ${ayat.sumber.join(' · ')}</div></article>`;
-    return html;
+      </div>`).join('');
   },
 
-  /* ---------- Grafik linguistik (efek "wow": perbandingan kata/huruf) ---------- */
+  // Muat episode 'current' ke reader tanpa efek samping (dipakai saat init)
+  renderEpisodeInto() {
+    const a = cariAyat(this.current); if (!a) return;
+    document.getElementById('episodeBox').innerHTML = this.renderEpisode(a);
+  },
+
+  bukaEpisode(id) {
+    const a = cariAyat(id); if (!a) return;
+    this.current = id;
+    document.getElementById('episodeBox').innerHTML = this.renderEpisode(a);
+    this.renderNavigator();
+    this.toggleDrawer(false);
+    if (document.getElementById('panel-kajian').classList.contains('active')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  },
+
+  gotoEpisode(id) { this.switchTab('kajian'); this.bukaEpisode(id); },
+
+  /* ---------- Render satu Episode ---------- */
+  renderEpisode(ayat) {
+    const meta = episodeMeta(ayat.id);
+    const pro = !!Store.isPro();
+    const open = pro || ayat.gratis;
+    const marked = Store.isMarked(ayat.id);
+
+    let h = `<div class="ep-head">
+      <button class="btn-mark ${marked ? 'on' : ''}" title="Simpan episode" onclick="App.toggleMark('${ayat.id}', this)">${marked ? '🔖' : '🏷️'}</button>
+      <div class="ep-kicker">${meta ? `${meta.musim.label} · Episode ${meta.no}` : 'Episode'}${ayat.gratis ? ' · GRATIS' : ''}</div>
+      <h2 class="ep-title">QS. ${ayat.surah} : ${ayat.ayatNo}</h2>
+      <div class="ep-tema">${ayat.tema.map(t => `<span>${t}</span>`).join('')}</div>
+    </div>`;
+
+    h += this.renderAyahDisplay(ayat);
+    h += this.renderKajianCards(ayat, open);
+    if (open) h += this.renderScholar(ayat.sumber);
+    h += this.renderEpNav(ayat);
+    return h;
+  },
+
+  // Ayah Display: kata yang dikaji menyala, sisanya di-fade
+  renderAyahDisplay(ayat) {
+    const fokus = (ayat.fokus || []).map(stripHarakat).filter(Boolean);
+    const tokens = ayat.arab.split(/\s+/).filter(Boolean);
+    const words = tokens.map(tok => {
+      const s = stripHarakat(tok);
+      if (!/[ء-ي]/.test(s)) return `<span class="aw-mark">${tok}</span>`;
+      const on = !fokus.length || fokus.some(f => s.includes(f));
+      return `<span class="aw ${on ? 'on' : 'off'}">${tok}</span>`;
+    }).join(' ');
+
+    return `<div class="ayah-display framed">
+      <div class="ayah-arab" lang="ar" dir="rtl">${words}</div>
+      <details class="ayah-more">
+        <summary>Transliterasi &amp; terjemahan</summary>
+        <div class="ayah-latin">${ayat.latin}</div>
+        <div class="ayah-arti">“${ayat.arti}”</div>
+      </details>
+    </div>`;
+  },
+
+  teaser(txt, n = 130) {
+    const t = String(txt || '').replace(/\s+/g, ' ').trim();
+    return t.length > n ? t.slice(0, n) + '…' : t;
+  },
+
+  // Kartu kajian + gating (locked = teaser blur)
+  renderKajianCards(ayat, open) {
+    let cards = '', adaKunci = false;
+    this.LAPISAN.forEach(l => {
+      const punyaPoin = (l.key === 'hikmah' && Array.isArray(ayat.hikmahPoin));
+      const isi = ayat[l.key];
+      if (!isi && !punyaPoin) return;
+
+      const locked = l.premium && !open;
+      if (locked) {
+        adaKunci = true;
+        const txt = Array.isArray(isi) ? isi.join(' ') : isi;
+        cards += `<div class="kajian locked">
+          <div class="kajian-label"><span class="kj-ico">${l.ico}</span>${l.label}<span class="premium-tag">PREMIUM</span></div>
+          <p class="kajian-teaser">${this.teaser(txt)}</p>
+        </div>`;
+        return;
+      }
+
+      let body;
+      if (punyaPoin) body = `<ul class="poin">${ayat.hikmahPoin.map(p => `<li>${p}</li>`).join('')}</ul>`;
+      else body = `<p>${isi}</p>`;
+
+      const grafik = (l.comparison && ayat.visual) ? this.renderVisual(ayat.visual) : '';
+
+      cards += `<div class="kajian ${l.key}">
+        <div class="kajian-label"><span class="kj-ico">${l.ico}</span>${l.label}</div>
+        ${body}${grafik}
+      </div>`;
+    });
+    if (adaKunci) cards += this.premiumCTA();
+    return cards;
+  },
+
+  premiumCTA() {
+    return `<div class="premium-cta framed">
+      <div class="lk">🔒</div>
+      <h4>Lanjutkan membaca</h4>
+      <p>Buka asbabun nuzul, tafsir, kajian linguistik &amp; amalan untuk episode ini.</p>
+      <button class="btn gold" onclick="App.openUpgrade()">Mulai dari Rp 49rb / bulan</button>
+    </div>`;
+  },
+
+  renderScholar(sumber) {
+    if (!Array.isArray(sumber) || !sumber.length) return '';
+    return `<div class="scholar">
+      <div class="scholar-label">Rujukan Ulama</div>
+      <div class="scholar-list">${sumber.map(s => `<span>${s}</span>`).join('')}</div>
+    </div>`;
+  },
+
+  renderEpNav(ayat) {
+    const seq = MUSIM.flatMap(m => m.episodes);
+    const i = seq.indexOf(ayat.id);
+    const prev = seq[i - 1], next = seq[i + 1];
+    const b = (id, label, arah) => {
+      const a = id && cariAyat(id);
+      if (!a) return '<span></span>';
+      return `<button class="epnav-btn ${arah}" onclick="App.bukaEpisode('${id}')">
+        <span class="en-arah">${arah === 'prev' ? '← Sebelumnya' : 'Berikutnya →'}</span>
+        <span class="en-title">${a.surah} : ${a.ayatNo}</span></button>`;
+    };
+    return `<div class="epnav">${b(prev, '', 'prev')}${b(next, '', 'next')}</div>`;
+  },
+
+  /* ---------- Grafik linguistik (perbandingan kata/huruf) ---------- */
   renderVisual(blocks) {
     if (!Array.isArray(blocks) || !blocks.length) return '';
     return `<div class="viz">${blocks.map(b => this.renderViz(b)).join('')}</div>`;
@@ -136,24 +263,25 @@ const App = {
   renderViz(b) {
     const note = b.catatan ? `<div class="viz-note">${b.catatan}</div>` : '';
     switch (b.tipe) {
-      // Akar kata bersama: huruf-huruf Arab berjarak (mis. ر · ح · م)
       case 'akar':
         return `<div class="viz-akar">
           <div class="vk-huruf" lang="ar" dir="rtl">${b.huruf.map(h => `<span>${h}</span>`).join('<i>·</i>')}</div>
           ${b.teks ? `<div class="vk-teks">${b.teks}</div>` : ''}
         </div>`;
 
-      // Perbandingan 2–3 kata: kartu sejajar (Ar-Rahman vs Ar-Rahim, dst)
-      case 'banding':
-        return `<div class="viz-banding" style="--n:${b.item.length}">
-          ${b.item.map((it, i) => `<div class="vb-card" style="--d:${i}">
+      // Perbandingan kata: item ber-flag alt:true = alternatif (pudar), sisanya = pilihan Al-Qur'an (emas)
+      case 'banding': {
+        const adaAlt = b.item.some(it => it.alt);
+        return `<div class="viz-banding ${adaAlt ? 'vs' : ''}" style="--n:${b.item.length}">
+          ${b.item.map((it, i) => `<div class="vb-card ${it.alt ? 'alt' : (adaAlt ? 'chosen' : '')}" style="--d:${i}">
+            ${it.alt ? '<div class="vb-tag">Alternatif</div>' : (adaAlt ? '<div class="vb-tag chosen">Dipilih Al-Qur’an</div>' : '')}
             <div class="vb-arab" lang="ar" dir="rtl">${it.arab}</div>
             ${it.latin ? `<div class="vb-latin">${it.latin}</div>` : ''}
             <div class="vb-sifat">${(it.sifat || []).map(s => `<span>${s}</span>`).join('')}</div>
           </div>`).join('')}
         </div>${note}`;
+      }
 
-      // Hitungan: titik-titik (mis. 1 kesulitan vs 2 kemudahan)
       case 'hitung':
         return `<div class="viz-hitung">
           ${b.item.map((it, i) => `<div class="vh-row" style="--d:${i}">
@@ -163,7 +291,6 @@ const App = {
           </div>`).join('')}
         </div>${note}`;
 
-      // Taqdim: susunan kata lazim → susunan Al-Qur'an (urutan dibalik)
       case 'taqdim':
         return `<div class="viz-taqdim">
           <div class="vt-row"><span class="vt-lbl">${b.labelNormal || 'Lazimnya'}</span>
@@ -178,79 +305,67 @@ const App = {
     }
   },
 
-  /* ---------- Tema terang/gelap ---------- */
-  setTheme(mode) {
-    const m = (mode === 'dark') ? 'dark' : 'terang';
-    document.documentElement.dataset.theme = (m === 'dark') ? 'dark' : 'light';
-    try { localStorage.setItem('ql-theme', document.documentElement.dataset.theme); } catch (e) {}
-    const btn = document.getElementById('themeToggle');
-    if (btn) {
-      const gelap = document.documentElement.dataset.theme === 'dark';
-      btn.textContent = gelap ? '☀️' : '🌙';
-      btn.title = gelap ? 'Beralih ke mode terang' : 'Beralih ke mode malam';
-      btn.setAttribute('aria-label', btn.title);
-    }
-  },
-  toggleTheme() {
-    const gelap = document.documentElement.dataset.theme === 'dark';
-    this.setTheme(gelap ? 'terang' : 'dark');
+  /* ---------- Beranda ---------- */
+  renderBeranda() {
+    const gratis = AYAT.filter(a => a.gratis);
+    document.getElementById('berandaPreview').innerHTML = gratis.map(a => {
+      const meta = episodeMeta(a.id);
+      return `<div class="preview-card" onclick="App.gotoEpisode('${a.id}')">
+        <div class="pc-arab" lang="ar" dir="rtl">${a.arab}</div>
+        <div class="pc-kicker">${meta ? meta.musim.label + ' · Episode ' + meta.no : 'Episode'} · GRATIS</div>
+        <div class="pc-title">QS. ${a.surah} : ${a.ayatNo}</div>
+        <div class="pc-cta">Baca episode →</div>
+      </div>`;
+    }).join('');
   },
 
-  /* ---------- Ayat Hari Ini ---------- */
-  renderHariIni() {
-    const ayat = ayatHariIni();
-    const tgl = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-    document.getElementById('hariIniBox').innerHTML =
-      `<p class="section-sub" style="margin-bottom:14px">☀️ ${tgl}</p>` + this.renderAyat(ayat);
+  renderPricing(targetId) {
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    el.className = 'price-grid';
+    el.innerHTML = this.PAKET.map(p => `
+      <div class="price-card ${p.best ? 'hl' : ''}">
+        ${p.best ? `<div class="pc-ribbon">${p.hemat}</div>` : ''}
+        <div class="pc-name">${p.nama}</div>
+        <div class="pc-amt">${p.harga}<small>${p.per}</small></div>
+        <ul>${p.fitur.map(f => `<li>${f}</li>`).join('')}</ul>
+        <button class="btn ${p.best ? 'gold' : 'ghost'}" style="width:100%" onclick="App.beli('${p.nama}')">Pilih ${p.nama}</button>
+      </div>`).join('') +
+      `<div class="price-tagline">“Lebih murah dari satu buku tafsir. Lebih dalam dari satu seri ceramah.”</div>`;
   },
 
-  /* ---------- Perpustakaan ---------- */
-  renderDaftar() {
-    const pro = !!Store.isPro();
-    document.getElementById('daftarAyat').innerHTML = AYAT.map(a => `
-      <div class="ayat-item" onclick="App.bukaAyat('${a.id}')">
-        <div class="ayat-no">${a.surahNo}</div>
-        <div>
-          <div class="ii-title">${a.surah} <span style="color:var(--muted);font-weight:600">: ${a.ayatNo}</span></div>
-          <div class="ii-sub">${a.tema.join(' · ')}</div>
-        </div>
-        ${(pro || a.gratis) ? '<span class="ii-free">Terbuka</span>' : '<span class="ii-lock">🔒</span>'}
-      </div>`).join('');
+  renderFaq() {
+    const el = document.getElementById('faq');
+    if (!el) return;
+    el.className = 'faq wrap-narrow';
+    el.innerHTML = this.FAQ.map(([q, a]) => `
+      <details class="faq-item"><summary>${q}</summary><div class="faq-a">${a}</div></details>`).join('');
   },
 
   /* ---------- Tersimpan ---------- */
   renderTersimpan() {
     const ids = Store.bookmarks();
     const box = document.getElementById('daftarTersimpan');
+    if (!box) return;
     if (!ids.length) {
-      box.innerHTML = `<div class="card" style="text-align:center;color:var(--muted)">
-        Belum ada ayat tersimpan. Tekan 🏷️ pada sebuah ayat untuk menyimpannya.</div>`;
+      box.innerHTML = `<div class="kosong">Belum ada episode tersimpan. Tekan 🏷️ pada sebuah episode untuk menyimpannya.</div>`;
       return;
     }
     box.innerHTML = ids.map(id => {
       const a = cariAyat(id); if (!a) return '';
-      return `<div class="ayat-item" onclick="App.bukaAyat('${a.id}')">
-        <div class="ayat-no">${a.surahNo}</div>
-        <div><div class="ii-title">${a.surah} : ${a.ayatNo}</div>
-          <div class="ii-sub">${a.tema.join(' · ')}</div></div>
-        <span class="ii-lock">🔖</span>
-      </div>`;
+      const meta = episodeMeta(a.id);
+      return `<button class="nav-ep saved" onclick="App.gotoEpisode('${a.id}')">
+        <span class="ne-no">${meta ? meta.no : '•'}</span>
+        <span class="ne-title">${a.surah} : ${a.ayatNo}<small>${a.tema.join(' · ')}</small></span>
+        <span class="ne-status">🔖</span>
+      </button>`;
     }).join('');
-  },
-
-  // Buka satu ayat di tab "Hari Ini" (dipakai sebagai panel detail)
-  bukaAyat(id) {
-    const a = cariAyat(id); if (!a) return;
-    document.getElementById('hariIniBox').innerHTML =
-      `<button class="btn ghost" style="margin-bottom:14px" onclick="App.renderHariIni()">← Ayat Hari Ini</button>` +
-      this.renderAyat(a);
-    this.switchTab('hari-ini');
   },
 
   toggleMark(id, btn) {
     const ditandai = Store.toggleMark(id);
     if (btn) { btn.classList.toggle('on', ditandai); btn.textContent = ditandai ? '🔖' : '🏷️'; }
-    this.toast(ditandai ? '🔖 Ayat disimpan' : 'Dihapus dari tersimpan');
+    this.toast(ditandai ? '🔖 Episode disimpan' : 'Dihapus dari tersimpan');
     this.renderTersimpan();
   },
 
@@ -262,7 +377,6 @@ const App = {
     if (Payment.checkout(paket)) {
       this.toast('Mengarahkan ke pembayaran Scalev…');
     } else {
-      // Mode demo: belum ada URL Scalev terpasang
       Store.setPro(paket, 'DEMO');
       this.closeUpgrade();
       this.afterUnlock();
@@ -270,23 +384,22 @@ const App = {
     }
   },
 
-  aktivasiManual() {
-    const paket = document.getElementById('m-paket').value;
-    const order = (document.getElementById('m-order').value || '').trim();
+  aktivasiManual(fromModal) {
+    const sel = document.getElementById(fromModal ? 'm-paket-2' : 'm-paket');
+    const inp = document.getElementById(fromModal ? 'm-order-2' : 'm-order');
+    const paket = sel.value;
+    const order = (inp.value || '').trim();
     if (!order) return this.toast('Masukkan Order ID dari Scalev terlebih dahulu.');
     if (Payment.backendAktif()) {
       this.aktifkan(order, paket, false);
     } else {
-      // Mode demo sisi-klien (tanpa backend)
       Store.setPro(paket, order);
       this.closeUpgrade();
       this.afterUnlock();
-      this.toast(`✓ Premium ${paket} aktif. Terima kasih 💚`);
+      this.toast(`✓ Premium ${paket} aktif. Terima kasih 💛`);
     }
   },
 
-  // Aktivasi dengan verifikasi server. `paketHint` dipakai bila server tak
-  // mengembalikan nama paket. `dariRedirect` menentukan gaya notifikasi.
   async aktifkan(order, paketHint, dariRedirect) {
     this.toast('Memverifikasi pembayaran…');
     const hasil = await Payment.verifikasiOrder(order);
@@ -302,9 +415,33 @@ const App = {
 
   afterUnlock() {
     this.refreshProUI();
-    this.renderHariIni();
-    this.renderDaftar();
+    this.renderNavigator();
+    this.renderEpisodeInto();
+    this.renderBeranda();
     this.renderTersimpan();
+  },
+
+  /* ---------- Drawer (navigator mobile) ---------- */
+  toggleDrawer(force) {
+    const panel = document.getElementById('panel-kajian');
+    const open = (typeof force === 'boolean') ? force : !panel.classList.contains('drawer-open');
+    panel.classList.toggle('drawer-open', open);
+  },
+
+  /* ---------- Tema terang/gelap ---------- */
+  setTheme(mode) {
+    document.documentElement.dataset.theme = (mode === 'dark') ? 'dark' : 'light';
+    try { localStorage.setItem('ql-theme', document.documentElement.dataset.theme); } catch (e) {}
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+      const gelap = document.documentElement.dataset.theme === 'dark';
+      btn.textContent = gelap ? '☀️' : '🌙';
+      btn.title = gelap ? 'Beralih ke mode terang' : 'Beralih ke mode malam';
+      btn.setAttribute('aria-label', btn.title);
+    }
+  },
+  toggleTheme() {
+    this.setTheme(document.documentElement.dataset.theme === 'dark' ? 'terang' : 'dark');
   },
 
   /* ---------- Toast ---------- */

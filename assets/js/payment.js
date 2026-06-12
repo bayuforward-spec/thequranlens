@@ -15,14 +15,12 @@ const Payment = {
   CONFIG: {
     // Ganti dengan URL checkout Scalev Anda yang sebenarnya:
     checkout: {
-      'Bulanan':       'https://scalev.id/CHECKOUT-BULANAN',
-      'Tahunan':       'https://scalev.id/CHECKOUT-TAHUNAN',
-      'Seumur Hidup':  'https://scalev.id/CHECKOUT-SEUMUR-HIDUP',
+      'Bulanan': 'https://scalev.id/CHECKOUT-BULANAN',
+      'Tahunan': 'https://scalev.id/CHECKOUT-TAHUNAN',
     },
     slug: {
       'bulanan': 'Bulanan',
       'tahunan': 'Tahunan',
-      'seumur-hidup': 'Seumur Hidup',
     },
     // URL backend verifikasi (server/). KOSONGKAN untuk mode demo sisi-klien.
     // Contoh: 'https://api.domain-anda.com'  ->  memanggil /api/verify

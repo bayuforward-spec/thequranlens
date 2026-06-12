@@ -604,6 +604,66 @@ function ayatHariIni() {
 
 function cariAyat(id) { return AYAT.find(a => a.id === id) || null; }
 
+/* ─────────────────────────── Struktur Musim & Episode ───────────────────────────
+ * Konten diorganisir dalam "Musim" → daftar "Episode" (satu episode = satu ayat). */
+const MUSIM = [
+  { id: 'prolog', label: 'Prolog', surah: 'Al-Fātiḥah', ket: 'Induk Al-Qur’an · 7 ayat',
+    episodes: ['al-fatihah-1', 'al-fatihah-2', 'al-fatihah-3', 'al-fatihah-4', 'al-fatihah-5', 'al-fatihah-6', 'al-fatihah-7'] },
+  { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
+    episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
+  { id: 'pilihan', label: 'Pilihan', surah: 'Juz 30 & Ayat Masyhur', ket: 'Ayat pilihan',
+    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-kautsar-1-3', 'al-ikhlas-1-4'] },
+];
+
+// Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
+const FOKUS = {
+  'al-fatihah-1': ['الرَّحْمَٰنِ', 'الرَّحِيمِ'],
+  'al-fatihah-2': ['الْحَمْدُ'],
+  'al-fatihah-3': ['الرَّحْمَٰنِ', 'الرَّحِيمِ'],
+  'al-fatihah-4': ['مَالِكِ'],
+  'al-fatihah-5': ['إِيَّاكَ', 'نَعْبُدُ'],
+  'al-fatihah-6': ['الصِّرَاطَ'],
+  'al-fatihah-7': ['أَنْعَمْتَ', 'الْمَغْضُوبِ'],
+  'al-baqarah-1': ['الم'],
+  'al-baqarah-2': ['ذَٰلِكَ'],
+  'al-baqarah-3-4': ['يُؤْمِنُونَ', 'يُقِيمُونَ'],
+  'al-baqarah-5': ['هُدًى', 'الْمُفْلِحُونَ'],
+  'al-baqarah-255': ['سِنَةٌ', 'نَوْمٌ'],
+  'al-baqarah-286': ['وُسْعَهَا', 'كَسَبَتْ', 'اكْتَسَبَتْ'],
+  'al-insyirah-5-6': ['الْعُسْرِ', 'يُسْرًا'],
+  'al-asr-1-3': ['خُسْرٍ'],
+  'al-kautsar-1-3': ['الْكَوْثَرَ', 'الْأَبْتَرُ'],
+  'al-ikhlas-1-4': ['أَحَدٌ'],
+};
+
+// Kata "alternatif" (yang TIDAK dipilih Al-Qur’an) pada kartu banding → ditampilkan pudar.
+const ALT = {
+  'al-fatihah-2': 'مَدْح',
+  'al-fatihah-6': 'سُبُل',
+  'al-baqarah-2': 'هٰذَا',
+  'al-ikhlas-1-4': 'وَاحِد',
+};
+
+AYAT.forEach(a => {
+  if (FOKUS[a.id]) a.fokus = FOKUS[a.id];
+  const alt = ALT[a.id];
+  if (alt && Array.isArray(a.visual)) {
+    a.visual.forEach(b => {
+      if (b.tipe === 'banding') b.item.forEach(it => { if (it.arab === alt) it.alt = true; });
+    });
+  }
+});
+
+function episodeMeta(id) {
+  for (const m of MUSIM) {
+    const i = m.episodes.indexOf(id);
+    if (i >= 0) return { musim: m, no: i + 1, total: m.episodes.length };
+  }
+  return null;
+}
+
 window.AYAT = AYAT;
+window.MUSIM = MUSIM;
 window.ayatHariIni = ayatHariIni;
 window.cariAyat = cariAyat;
+window.episodeMeta = episodeMeta;
