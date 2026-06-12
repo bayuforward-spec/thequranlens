@@ -585,6 +585,10 @@ const AYAT = [
           'Hakikat iman: membenarkan yang tak terindra karena percaya pada sumbernya (wahyu).',
           'Bukan karena melihat — tapi karena yakin pada Yang mengabarkan.',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'يُؤْمِنُونَ', latin: 'Yu’minūn (kini)', sifat: ['Bentuk present · berkelanjutan', 'Iman yang sedang dijalani'] },
+          { arab: 'آمَنُوا', latin: 'Āmanū (lampau)', alt: true, sifat: ['Bentuk lampau · selesai', 'Seolah peristiwa yang telah usai'] },
+        ], catatan: 'Dipakai bentuk «kini» — iman bukan peristiwa yang telah terjadi, tapi keadaan yang terus hidup.' },
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
@@ -969,6 +973,10 @@ const AYAT = [
       { kata: 'إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ', latin: 'innā a‘ṭainākal-kauṡar', arti: 'sungguh Kami telah memberimu (nikmat) yang banyak',
         poin: ['«a‘ṭainā» bentuk lampau + kata ganti keagungan — pemberian yang sudah pasti.', '«al-Kauṡar» pola «fau‘al» → kebaikan melimpah-ruah tak terhingga.'],
         akar: { tipe: 'akar', huruf: ['ك', 'ث', 'ر'], teks: 'Dari «kaṡrah» — banyak. «al-Kauṡar»: melimpah tak terhingga.' },
+        banding: { tipe: 'banding', item: [
+          { arab: 'أَعْطَيْنَا', latin: 'A‘ṭainā (lampau)', sifat: ['Bentuk lampau — sudah pasti', 'Pemberian yang terjamin'] },
+          { arab: 'سَنُعْطِي', latin: 'Sanu‘ṭī (akan datang)', alt: true, sifat: ['Bentuk akan datang', 'Masih berupa janji yang ditunggu'] },
+        ], catatan: 'Dipakai bentuk «lampau» — pemberian yang sudah terjamin, bukan janji yang masih menunggu.' },
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
       { kata: 'فَصَلِّ لِرَبِّكَ وَانْحَرْ', latin: 'faṣalli lirabbika wanḥar', arti: 'maka salatlah karena Tuhanmu dan berkurbanlah',
         poin: ['Syukur atas nikmat diwujudkan: salat & kurban.', 'Respon atas pemberian = ibadah, bukan kesombongan.'],
