@@ -119,6 +119,10 @@ const AYAT = [
           'Satu kata padat: Pencipta, Pemilik, Pemelihara, Pengatur sekaligus.',
           'Jauh lebih luas dari sekadar "Tuhan".',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'رَبّ', latin: 'Rabb', sifat: ['Pencipta + Pemilik', 'Pemelihara + Pengatur'] },
+          { arab: 'خَالِق', latin: 'Khāliq', alt: true, sifat: ['"Pencipta" saja', 'Tak mencakup memelihara & mengatur'] },
+        ], catatan: '«Rabb» jauh lebih luas — mencipta sekaligus terus memelihara.' },
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
@@ -278,6 +282,10 @@ const AYAT = [
           'Terjadi «iltifāt»: dari membicarakan Allah (Dia) beralih menyapa-Nya langsung (Engkau).',
         ],
         taqdim: { tipe: 'taqdim', normal: ['na‘budu', 'iyyāka'], quran: ['iyyāka', 'na‘budu'], catatan: 'Mendahulukan objek = pembatasan mutlak.' },
+        banding: { tipe: 'banding', item: [
+          { arab: 'نَعْبُدُ', latin: 'Na‘budu', sifat: ['Ibadah: cinta + tunduk + taat penuh', 'Penghambaan total'] },
+          { arab: 'نُطِيعُ', latin: 'Nuṭī‘', alt: true, sifat: ['Sekadar "menaati"', 'Tanpa kedalaman cinta & penghambaan'] },
+        ], catatan: '«na‘budu» (ibadah) jauh lebih dalam dari sekadar taat.' },
         sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395'],
       },
       {
@@ -519,6 +527,12 @@ const AYAT = [
           { arab: 'رَيْب', latin: 'Rayb', sifat: ['Keraguan + gelisah / curiga', 'Bentuk paling berat'] },
           { arab: 'شَكّ', latin: 'Syakk', alt: true, sifat: ['Ragu biasa', 'Lebih ringan'] },
         ], catatan: 'Allah menafikan «rayb» — bahkan keraguan terberat pun tak punya tempat.' },
+        viz: [
+          { tipe: 'banding', item: [
+            { arab: 'فِيهِ', latin: 'Fīhi (di dalamnya)', sifat: ['Keraguan tak bisa hidup DI DALAMnya', 'Masuk ke dalam → temukan keyakinan'] },
+            { arab: 'عَنْهُ', latin: '‘Anhu (tentangnya)', alt: true, sifat: ['"Tentangnya" — dari luar', 'Kamu bisa ragu dari kejauhan'] },
+          ], catatan: '«fīhi» (di dalam), bukan «‘anhu» (tentang): keyakinan menanti yang masuk ke dalamnya.' },
+        ],
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
       },
       {
@@ -906,6 +920,10 @@ const AYAT = [
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ', latin: 'innal-insāna lafī khusr', arti: 'sungguh manusia berada dalam kerugian',
         poin: ['«al-insān» (alif-lam jenis): SELURUH manusia tanpa kecuali.', '«lafī khusr»: tenggelam DI DALAM kerugian, bukan sekadar menyentuhnya.'],
+        banding: { tipe: 'banding', item: [
+          { arab: 'الْإِنْسَان', latin: 'Al-Insān', sifat: ['Manusia yang mencinta, lupa, diberi amanah', 'Sisi ruhani & tanggung jawab'] },
+          { arab: 'الْبَشَر', latin: 'Al-Basyar', alt: true, sifat: ['Manusia dari sisi fisik / biologis', 'Tak menyentuh sisi pertanggungjawaban'] },
+        ], catatan: 'Dipilih «al-insān» — yang merugi bukan sekadar tubuh, tapi manusia seutuhnya.' },
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ', latin: 'illal-lażīna āmanū wa ‘amiluṣ-ṣāliḥāt', arti: 'kecuali yang beriman dan beramal saleh',
         poin: ['«illā» — satu-satunya pintu keluar dari kerugian.', 'Iman + amal: dua syarat yang bersifat pribadi.'],
