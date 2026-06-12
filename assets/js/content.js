@@ -18,6 +18,11 @@ const AYAT = [
   /* ============ SURAH AL-FĀTIḤAH (1) ============ */
   {
     id: 'al-fatihah-1',
+    hikmahPoin: [
+      'Mulai dengan nama-Nya — bukan dengan kekuatanmu.',
+      'Yang biasa pun berubah jadi ibadah.',
+      'Berat melangkah? Bismillah dulu.',
+    ],
     visual: [
       { tipe: 'akar', huruf: ['ر', 'ح', 'م'], teks: 'Satu akar: raḥmah (rahmat)' },
       { tipe: 'banding', item: [
@@ -48,6 +53,17 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-2',
+    hikmahPoin: [
+      'Segala puji kembali kepada-Nya, bukan kepada dirimu.',
+      'Syukur mengusir ujub.',
+      'Setiap kebaikanmu: pemberian-Nya.',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'حَمْد', latin: 'Ḥamd', sifat: ['Pujian + cinta', 'Disertai pengagungan'] },
+        { arab: 'مَدْح', latin: 'Madḥ', sifat: ['Sekadar sanjungan', 'Bisa tanpa rasa'] },
+      ], catatan: 'Dipilih «al-ḥamd» (berdefinit): SEGALA pujian, hanya milik Allah.' },
+    ],
     surah: 'Al-Fātiḥah',
     surahNo: 1,
     ayatNo: '2',
@@ -71,6 +87,17 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-3',
+    hikmahPoin: [
+      'Agungkan Dia — tapi jangan putus harap.',
+      'Antara takut dan harap, di situ iman berdiri.',
+      'Sebanyak apa pun dosamu, rahmat-Nya lebih luas.',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'رَبِّ الْعَالَمِين', latin: 'Rabbil ‘ālamīn', sifat: ['Keagungan & kuasa', 'Bisa membangkitkan gentar'] },
+        { arab: 'الرَّحْمٰنِ الرَّحِيم', latin: 'Ar-Raḥmān Ar-Raḥīm', sifat: ['Rahmat & kasih', 'Menenangkan jiwa'] },
+      ], catatan: 'Susunannya menata hati: diagungkan, lalu segera ditenangkan.' },
+    ],
     surah: 'Al-Fātiḥah',
     surahNo: 1,
     ayatNo: '3',
@@ -94,6 +121,17 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-4',
+    hikmahPoin: [
+      'Ada hari saat segalanya dihisab.',
+      'Itu rem terkuat saat tak ada yang melihat.',
+      'Jujur — bukan karena manusia, tapi karena-Nya.',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'مَالِك', latin: 'Mālik', sifat: ['Pemilik', 'Kepemilikan penuh hari itu'] },
+        { arab: 'مَلِك', latin: 'Malik', sifat: ['Raja', 'Kedaulatan & otoritas'] },
+      ], catatan: 'Dua bacaan sahih (mutawatir) — saling melengkapi makna.' },
+    ],
     surah: 'Al-Fātiḥah',
     surahNo: 1,
     ayatNo: '4',
@@ -117,6 +155,11 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-5',
+    hikmahPoin: [
+      'Hanya kepada-Nya. Bukan gengsi, atasan, atau harta.',
+      'Tunaikan hak Allah dulu, baru kebutuhanmu.',
+      'Datangi Dia sebelum bergantung pada makhluk.',
+    ],
     visual: [
       { tipe: 'taqdim',
         normal: ['na‘budu', 'iyyāka'], quran: ['iyyāka', 'na‘budu'],
@@ -145,6 +188,17 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-6',
+    hikmahPoin: [
+      'Sudah muslim pun, tetap minta hidayah tiap hari.',
+      'Hidayah bukan status — tapi bimbingan tiap langkah.',
+      'Bingung memilih? "Tunjukkan jalan yang lurus."',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'الصِّرَاط', latin: 'aṣ-Ṣirāṭ', sifat: ['Tunggal & definitif', 'Satu jalan lurus', 'Tanpa belok'] },
+        { arab: 'سُبُل', latin: 'Subul', sifat: ['Bentuk jamak', 'Jalan bercabang', 'Jalan-jalan sesat'] },
+      ], catatan: 'Satu jalan lurus — melawan banyak jalan yang menyesatkan.' },
+    ],
     surah: 'Al-Fātiḥah',
     surahNo: 1,
     ayatNo: '6',
@@ -168,6 +222,17 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-7',
+    hikmahPoin: [
+      'Selamat = ilmu yang benar + amal yang lurus.',
+      'Ilmu tanpa amal: tergelincir.',
+      'Amal tanpa ilmu: tersesat.',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'أَنْعَمْتَ عَلَيْهِم', latin: 'an‘amta ‘alaihim', sifat: ['Bentuk AKTIF', 'Disandarkan ke Allah', '"Engkau yang beri nikmat"'] },
+        { arab: 'الْمَغْضُوبِ عَلَيْهِم', latin: 'al-magḍūbi ‘alaihim', sifat: ['Bentuk PASIF', 'Tak disandarkan langsung', 'Murka lahir dari hamba'] },
+      ], catatan: 'Puncak adab: kebaikan kepada-Nya, keburukan tak dilekatkan pada-Nya.' },
+    ],
     surah: 'Al-Fātiḥah',
     surahNo: 1,
     ayatNo: '7',
@@ -193,6 +258,14 @@ const AYAT = [
   /* ============ SURAH AL-BAQARAH (2) ============ */
   {
     id: 'al-baqarah-1',
+    hikmahPoin: [
+      'Tak semua harus dipahami tuntas untuk diimani.',
+      'Ada ilmu yang menuntut tunduk.',
+      'Akui batas dirimu — lalu terus belajar.',
+    ],
+    visual: [
+      { tipe: 'akar', huruf: ['ا', 'ل', 'م'], teks: 'Huruf yang kamu kuasai — namun tak tertandingi.' },
+    ],
     surah: 'Al-Baqarah',
     surahNo: 2,
     ayatNo: '1',
@@ -216,6 +289,17 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-2',
+    hikmahPoin: [
+      'Petunjuknya sempurna; yang memetiknya: hati yang bertakwa.',
+      'Butuh kitab yang benar + hati yang terbuka.',
+      'Ragu dalam hidup? Kembali ke yang "tanpa keraguan".',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'ذٰلِكَ', latin: 'Żālika (itu)', sifat: ['Isyarat "jauh"', 'Mengagungkan', 'Kedudukan tinggi'] },
+        { arab: 'هٰذَا', latin: 'Hāżā (ini)', sifat: ['Isyarat "dekat"', 'Biasa'] },
+      ], catatan: 'Dipilih «żālika» — justru untuk meninggikan derajat kitab ini.' },
+    ],
     surah: 'Al-Baqarah',
     surahNo: 2,
     ayatNo: '2',
@@ -239,6 +323,16 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-3-4',
+    hikmahPoin: [
+      'Takwa bukan klaim di hati.',
+      'Ia terbukti: salat, sedekah, yakin pada wahyu & akhirat.',
+      'Iman batin → ibadah nyata + peduli sesama.',
+    ],
+    visual: [
+      { tipe: 'hitung', item: [
+        { label: 'Ciri orang bertakwa', jumlah: 5, nuansa: 'iman gaib · salat · infak · iman wahyu · yakin akhirat' },
+      ], catatan: '«Yuqīmūna» = MENEGAKKAN salat (sempurna khusyuk), bukan sekadar mengerjakan.' },
+    ],
     surah: 'Al-Baqarah',
     surahNo: 2,
     ayatNo: '3–4',
@@ -262,6 +356,17 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-5',
+    hikmahPoin: [
+      'Sukses sejati bukan harta atau jabatan.',
+      'Tapi hidayah & selamat di akhirat.',
+      'Ukur dirimu dengan itu — bukan dengan layar orang lain.',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'عَلَىٰ هُدًى', latin: '‘alā hudan', sifat: ['DI ATAS petunjuk', 'Kokoh & menguasai', 'Seperti penunggang mahir'] },
+        { arab: 'هُمُ الْمُفْلِحُون', latin: 'humul-mufliḥūn', sifat: ['«hum» → ḥaṣr', 'HANYA mereka', 'yang beruntung'] },
+      ], catatan: 'Bukan sekadar tersentuh hidayah — tapi kokoh di atasnya.' },
+    ],
     surah: 'Al-Baqarah',
     surahNo: 2,
     ayatNo: '5',
@@ -285,6 +390,17 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-255',
+    hikmahPoin: [
+      'Penjaga semestamu tak pernah tidur.',
+      'Lalu untuk apa cemas berlebihan?',
+      'Kenal keagungan-Nya = hati yang tenang.',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'سِنَة', latin: 'Sinah', sifat: ['Kantuk ringan', 'Awal / pendahulu tidur'] },
+        { arab: 'نَوْم', latin: 'Naum', sifat: ['Tidur lelap', 'Puncaknya'] },
+      ], catatan: 'Keduanya dinafikan — bahkan kantuk samar pun tak menyentuh «Al-Qayyūm».' },
+    ],
     surah: 'Al-Baqarah',
     surahNo: 2,
     ayatNo: '255 (Ayat Kursi)',
@@ -308,6 +424,11 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-286',
+    hikmahPoin: [
+      'Allah tak membebani di luar kesanggupanmu.',
+      'Cemas berlebihan melawan kelapangan yang Dia tetapkan.',
+      'Agama ini tidak memberatkan.',
+    ],
     visual: [
       { tipe: 'banding', item: [
         { arab: 'كَسَبَتْ', latin: 'kasabat', sifat: ['Bentuk sederhana', 'Untuk KEBAIKAN', 'Dicatat meski niat ringan'] },
@@ -339,6 +460,11 @@ const AYAT = [
   /* ============ JUZ 30 — Ayat masyhur ============ */
   {
     id: 'al-insyirah-5-6',
+    hikmahPoin: [
+      'Di titik terberat, benih kemudahan sedang tumbuh.',
+      'Tugasmu bukan menunggu badai reda — tapi terus bergerak.',
+      'Pertolongan-Nya sedang dalam perjalanan.',
+    ],
     visual: [
       { tipe: 'hitung', item: [
         { label: 'Kesulitan — «al-‘usr»', jumlah: 1, nuansa: 'Pakai alif-lam (ma‘rifah). Diulang → benda yang SAMA.' },
@@ -368,6 +494,16 @@ const AYAT = [
   },
   {
     id: 'al-asr-1-3',
+    hikmahPoin: [
+      'Waktu: modal yang terus berkurang, tak terbeli kembali.',
+      'Selamat butuh lebih dari kebaikan pribadi.',
+      'Iman, amal, lalu saling menasihati.',
+    ],
+    visual: [
+      { tipe: 'hitung', item: [
+        { label: 'Pengecualian «illā» — 4 syarat selamat', jumlah: 4, nuansa: 'iman · amal saleh · nasihat kebenaran · nasihat sabar' },
+      ], catatan: '«lafī khusr»: manusia tenggelam DI DALAM kerugian — kecuali empat ini.' },
+    ],
     surah: 'Al-‘Aṣr',
     surahNo: 103,
     ayatNo: '1–3',
@@ -391,6 +527,17 @@ const AYAT = [
   },
   {
     id: 'al-kautsar-1-3',
+    hikmahPoin: [
+      'Hinaan manusia tak menentukan nilaimu di sisi-Nya.',
+      'Balas cemooh dengan ketaatan — bukan dendam.',
+      'Mengadu pada salat, bukan pada media sosial.',
+    ],
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'الْكَوْثَر', latin: 'al-Kauṡar', sifat: ['Pola «fau‘al» → melimpah', 'Kebaikan tak terhingga', 'Sudah diberi (pasti)'] },
+        { arab: 'الْأَبْتَر', latin: 'al-Abtar', sifat: ['"Terputus"', 'Tuduhan si pencemooh', 'Berbalik ke pelakunya'] },
+      ], catatan: 'Surah terpendek — menumbangkan ejekan terbesar.' },
+    ],
     surah: 'Al-Kauṡar',
     surahNo: 108,
     ayatNo: '1–3',
@@ -414,6 +561,11 @@ const AYAT = [
   },
   {
     id: 'al-ikhlas-1-4',
+    hikmahPoin: [
+      'Akidah bersih = fondasi semua amal.',
+      'Hanya Allah tempat bergantung.',
+      'Lepaskan harap berlebih pada makhluk yang lemah.',
+    ],
     visual: [
       { tipe: 'banding', item: [
         { arab: 'أَحَد', latin: 'Aḥad', sifat: ['Keesaan MUTLAK', 'Tak dapat dibagi/ditambah', 'Khusus bagi Allah'] },

@@ -103,10 +103,13 @@ const App = {
       const terkunci = l.premium && !terbukaPenuh;
       if (terkunci) { adaTerkunci = true; return; }
       const grafik = (l.key === 'linguistik' && ayat.visual) ? this.renderVisual(ayat.visual) : '';
+      const isiHtml = (l.key === 'hikmah' && Array.isArray(ayat.hikmahPoin))
+        ? `<ul class="poin">${ayat.hikmahPoin.map(p => `<li>${p}</li>`).join('')}</ul>`
+        : `<p>${isi}</p>`;
       html += `<div class="layer ${l.key}">
         <div class="layer-head"><span class="layer-ico">${l.ico}</span>
           <span class="layer-title">${l.judul}</span></div>
-        <p>${isi}</p>
+        ${isiHtml}
         ${grafik}
       </div>`;
     });

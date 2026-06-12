@@ -266,6 +266,12 @@ footer .note { font-size: .74rem; opacity: .85; margin-top: 6px; }
   box-shadow: inset 2px 0 0 var(--gold), inset 0 0 0 1px var(--line);
 }
 .layer.hikmah p { font-family: var(--display); font-style: italic; font-size: 1.2rem; line-height: 1.55; color: var(--cream); }
+.layer.hikmah .poin { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.layer.hikmah .poin li {
+  font-family: var(--display); font-style: italic; font-size: 1.2rem; line-height: 1.45;
+  color: var(--cream); padding-left: 24px; position: relative;
+}
+.layer.hikmah .poin li::before { content: '✦'; position: absolute; left: 0; top: .12em; color: var(--gold); font-size: .82em; font-style: normal; }
 
 /* ===== Grafik linguistik (efek "wow") ===== */
 .viz { display: flex; flex-direction: column; gap: 14px; margin-top: 18px; }
