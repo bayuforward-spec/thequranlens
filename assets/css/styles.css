@@ -16,8 +16,9 @@
   --info-bg: #e2f1f3;
   --radius: 18px;
   --shadow: 0 10px 34px rgba(10, 77, 57, .10);
-  --font: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-  --arab: 'Scheherazade New', 'Amiri', 'Traditional Arabic', 'Segoe UI', serif;
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --display: 'Lora', 'Georgia', 'Times New Roman', serif;
+  --arab: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -41,7 +42,7 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
-.brand { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 1.3rem; color: var(--emerald-deep); }
+.brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--emerald-deep); }
 .brand .logo {
   width: 36px; height: 36px; border-radius: 11px;
   background: linear-gradient(135deg, var(--emerald), var(--emerald-deep));
@@ -65,7 +66,7 @@ body {
   text-transform: uppercase; color: var(--emerald); background: var(--emerald-soft);
   padding: 5px 14px; border-radius: 999px; margin-bottom: 16px;
 }
-.hero h1 { font-size: 2.05rem; line-height: 1.25; color: var(--emerald-deep); margin-bottom: 12px; }
+.hero h1 { font-family: var(--display); font-weight: 700; font-size: 2.2rem; line-height: 1.22; letter-spacing: -.01em; color: var(--emerald-deep); margin-bottom: 12px; }
 .hero h1 .hl { color: var(--gold); }
 .hero p { color: var(--muted); font-size: 1.02rem; max-width: 600px; margin: 0 auto 18px; }
 .hero-cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
@@ -102,15 +103,16 @@ body {
 }
 .card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
 .card-meta { font-size: .78rem; color: var(--muted); font-weight: 600; letter-spacing: .03em; }
-.card-title { color: var(--emerald-deep); font-size: 1.18rem; font-weight: 800; }
+.card-title { font-family: var(--display); color: var(--emerald-deep); font-size: 1.22rem; font-weight: 700; }
 
 /* ===== Ayat ===== */
 .ayat-arab {
-  font-family: var(--arab); font-size: 2.05rem; line-height: 2.1; text-align: right;
-  color: var(--emerald-deep); padding: 14px 4px 16px; direction: rtl;
+  font-family: var(--arab); font-size: 2.4rem; line-height: 2.05; text-align: right;
+  color: var(--emerald-deep); padding: 16px 4px 18px; direction: rtl;
+  font-feature-settings: 'calt' 1, 'liga' 1; word-spacing: .04em;
   border-bottom: 1px dashed var(--line); margin-bottom: 14px;
 }
-.ayat-latin { font-style: italic; color: var(--emerald); font-size: .98rem; margin-bottom: 8px; }
+.ayat-latin { font-style: italic; color: var(--emerald); font-size: 1rem; margin-bottom: 8px; }
 .ayat-arti { color: var(--ink); font-size: 1.04rem; }
 
 /* ===== Lapisan tadabbur ===== */
@@ -186,7 +188,7 @@ body {
   background: var(--card); border-radius: 20px; max-width: 440px; width: 100%;
   padding: 26px; box-shadow: 0 30px 80px rgba(10,77,57,.3); max-height: 90vh; overflow: auto;
 }
-.modal-box h3 { color: var(--emerald-deep); text-align: center; margin-bottom: 4px; }
+.modal-box h3 { font-family: var(--display); font-weight: 700; color: var(--emerald-deep); text-align: center; margin-bottom: 4px; }
 .modal-box .sub { text-align: center; color: var(--muted); font-size: .9rem; margin-bottom: 18px; }
 .plan {
   border: 1.5px solid var(--line); border-radius: 14px; padding: 15px 16px; margin-bottom: 11px;
@@ -226,7 +228,7 @@ body {
 .price-card li { padding: 4px 0 4px 22px; position: relative; }
 .price-card li::before { content: '✓'; position: absolute; left: 0; color: var(--emerald); font-weight: 800; }
 
-.section-title { text-align: center; font-size: 1.4rem; color: var(--emerald-deep); margin: 30px 0 6px; }
+.section-title { font-family: var(--display); font-weight: 700; text-align: center; font-size: 1.5rem; color: var(--emerald-deep); margin: 30px 0 6px; }
 .section-sub { text-align: center; color: var(--muted); margin-bottom: 18px; font-size: .95rem; }
 
 footer { text-align: center; padding: 30px 20px; color: var(--muted); font-size: .82rem; }

@@ -87,7 +87,7 @@ const App = {
           <div class="card-title">Surah ${ayat.surah}</div>
         </div>
       </div>
-      <div class="ayat-arab">${ayat.arab}</div>
+      <div class="ayat-arab" lang="ar" dir="rtl">${ayat.arab}</div>
       <div class="ayat-latin">${ayat.latin}</div>
       <div class="ayat-arti">“${ayat.arti}”</div>
       <div class="tema">${ayat.tema.map(t => `<span>${t}</span>`).join('')}</div>`;
