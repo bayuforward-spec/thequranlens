@@ -1134,6 +1134,104 @@ AYAT.forEach(a => {
   }
 });
 
+// Hikmah singkat untuk SETIAP kata yang dikaji (urut sesuai kajianKata tiap episode).
+const HIKMAH_KATA = {
+  'al-fatihah-1': [
+    'Kamu tak pernah memulai sendirian. Sebut nama-Nya, langkah kecil pun jadi besar.',
+    'Saat menyebut nama-Nya, kamu sedang menyandarkan diri pada satu-satunya yang tak pernah lemah.',
+    'Sebelum perintah, sebelum ancaman — Dia perkenalkan diri lewat rahmat. Begitu Dia ingin dikenal.',
+  ],
+  'al-fatihah-2': [
+    'Memuji-Nya menjernihkan hati dari ujub. Yang hebat darimu, asalnya dari-Nya.',
+    'Pujianmu bukan hadiah untuk-Nya — itu pengakuan atas yang memang milik-Nya.',
+    'Dia tak sekadar mencipta lalu pergi. Dia memelihara, tiap detik, termasuk detik ini.',
+    'Kamu satu di antara tak terhitung makhluk yang Dia urus — dan Dia tak pernah keteteran.',
+  ],
+  'al-fatihah-3': [
+    'Diagungkan, lalu ditenangkan. Sebesar apa pun takutmu pada-Nya, rahmat-Nya selalu lebih besar.',
+  ],
+  'al-fatihah-4': [
+    'Pemilik sekaligus Raja hari itu. Tak ada yang bisa menyuap, tak ada yang bisa bersembunyi.',
+    'Ada hari semua dihitung. Jujurlah saat sendirian — di situ imanmu diuji.',
+  ],
+  'al-fatihah-5': [
+    'Hanya kepada-Nya. Bukan gengsi, bukan atasan, bukan pandangan orang.',
+    'Minta tolong pada-Nya dulu, sebelum pada siapa pun. Pintu-Nya tak pernah tutup.',
+  ],
+  'al-fatihah-6': [
+    'Sudah beriman pun kamu tetap minta ditunjukkan. Hidayah bukan milik yang sombong.',
+    'Satu jalan lurus, seribu jalan belok. Minta yang lurus — tiap hari.',
+  ],
+  'al-fatihah-7': [
+    'Ikuti jejak mereka yang Dia ridai: para nabi & orang saleh. Kamu tak sendirian di jalan ini.',
+    'Tahu kebenaran lalu meninggalkannya itu bahaya. Ilmu menuntut amal.',
+    'Beramal tanpa ilmu sama tersesatnya. Belajar dulu, baru melangkah.',
+  ],
+  'al-baqarah-1': [
+    'Tak semua harus kamu pahami untuk kamu imani. Kadang iman tumbuh justru dalam tunduk.',
+  ],
+  'al-baqarah-2': [
+    'Disebut "itu" yang jauh — karena kedudukannya terlalu tinggi untuk ditunjuk biasa.',
+    'Bukan sekadar buku. Ia "Al-Kitab" — rujukan saat semua rujukan lain gagal.',
+    'Keraguan tak bisa hidup di dalamnya. Masuklah, dan keyakinan sudah menunggu.',
+    'Petunjuknya sempurna. Yang kurang biasanya bukan kitabnya — tapi kesiapan hati.',
+  ],
+  'al-baqarah-3-4': [
+    'Iman sejati: percaya pada yang tak terlihat, karena yakin pada Yang mengabarkan.',
+    'Salat bukan sekadar gugur kewajiban. Ia ditegakkan — jadi tiang, bukan tempelan.',
+    'Hartamu titipan. Berinfak hanyalah mengembalikan sebagian yang memang bukan milikmu.',
+    'Iman tak memilih-milih wahyu — membenarkan seluruh rangkaian utusan-Nya.',
+    'Bukan sekadar tahu akhirat, tapi yakin. Dan yakin itulah yang menggerakkan langkah.',
+  ],
+  'al-baqarah-5': [
+    'Bukan sekadar tersentuh hidayah — tapi berdiri kokoh di atasnya.',
+    'Sukses sejati bukan yang paling banyak punya, tapi yang paling selamat sampai tujuan.',
+  ],
+  'al-baqarah-255': [
+    'Saat hatimu bergantung pada banyak hal, ayat ini menariknya kembali ke Satu.',
+    'Dia mengurus tanpa lelah. Berhentilah merasa harus mengurus segalanya sendiri.',
+    'Penjaga semestamu tak pernah tidur. Tidurlah dengan tenang.',
+    'Segala yang kamu kejar sudah ada dalam genggaman-Nya.',
+    'Tak ada yang bisa menolongmu tanpa izin-Nya. Maka dekati Dia langsung.',
+    'Masa lalu & masa depanmu terlihat oleh-Nya. Tak ada yang luput, tak ada yang sia-sia.',
+    'Ilmu yang kamu banggakan hanya setetes yang Dia izinkan. Tetap rendah hati.',
+    'Masalahmu, sebesar apa pun, ada dalam jangkauan-Nya.',
+    'Menjaga seluruh alam tak membebani-Nya — apalagi menjaga satu hamba yang berserah.',
+    'Saat dunia terasa menekan, ingat siapa yang Maha Tinggi di atas segalanya.',
+  ],
+  'al-baqarah-286': [
+    'Dia tak pernah membebanimu melebihi kuatmu. Kalau kamu masih bernapas, kamu masih sanggup.',
+    'Kebaikan dicatat meski niat ringan; keburukan baru membebani bila disengaja. Begitu luas rahmat-Nya.',
+    'Doa para sahabat yang Dia jawab "sudah Aku kabulkan". Lupa & keliru — dimaafkan.',
+  ],
+  'al-insyirah-5-6': [
+    'Kemudahan tak menunggu di ujung jalan — ia berjalan bersama kesulitanmu, sekarang.',
+    'Satu kesulitan, dua kemudahan. Kesulitanmu sudah kalah jumlah sejak awal.',
+  ],
+  'al-asr-1-3': [
+    'Allah bersumpah demi waktu — karena di sanalah untung-rugimu ditentukan.',
+    'Tanpa sadar, manusia tenggelam dalam kerugian. Waktu terus jalan, entah kamu isi apa.',
+    'Pintu keluarnya satu: iman yang dibuktikan dengan amal.',
+    'Tak cukup baik sendiri. Saling ingatkan kebenaran, saling kuatkan kesabaran.',
+  ],
+  'al-kautsar-1-3': [
+    'Saat merasa "tak punya apa-apa", hitung ulang: nikmat-Nya padamu melimpah-ruah.',
+    'Balas nikmat dengan ibadah, bukan kesombongan. Sujud, jangan jumawa.',
+    'Hinaan orang tak menentukan nilaimu. Yang mencemooh, dialah yang sebenarnya terputus.',
+  ],
+  'al-ikhlas-1-4': [
+    'Esa yang tak terbagi. Akidah yang bersih = hati yang tak terpecah.',
+    'Semua bergantung pada-Nya, Dia tak butuh apa pun. Lepaskan harap berlebih pada makhluk.',
+    'Tak beranak, tak diperanakkan. Dia tak seperti apa pun yang kamu kenal.',
+    'Tak ada yang setara dengan-Nya. Jangan sandarkan hidupmu pada yang selemah dirimu.',
+  ],
+};
+
+AYAT.forEach(a => {
+  const hk = HIKMAH_KATA[a.id];
+  if (hk && Array.isArray(a.kajianKata)) a.kajianKata.forEach((k, i) => { if (hk[i]) k.hikmah = hk[i]; });
+});
+
 function episodeMeta(id) {
   for (const m of MUSIM) {
     const i = m.episodes.indexOf(id);

@@ -157,7 +157,10 @@ const App = {
     </div>`;
 
     h += this.renderAyahDisplay(ayat);
-    if (Array.isArray(ayat.kajianKata) && ayat.kajianKata.length) h += this.renderKajianKata(ayat, open);
+    if (Array.isArray(ayat.kajianKata) && ayat.kajianKata.length) {
+      h += this.renderKajianKata(ayat, open);
+      h += `<div class="hr-grad"></div><div class="kajian-label section"><span class="kj-ico">📖</span>Kajian Ayat Menyeluruh</div>`;
+    }
     h += this.renderKajianCards(ayat, open);
     if (open) h += this.renderScholar(ayat.sumber);
     h += this.renderEpNav(ayat);
@@ -169,6 +172,7 @@ const App = {
     const items = ayat.kajianKata;
     let out = `<div class="kajian-label section"><span class="kj-ico">✨</span>Kajian Kata demi Kata</div>`;
     items.forEach((k, i) => {
+      if (i > 0) out += `<div class="divider-short"></div>`;
       const free = open || i === 0;
       out += free ? this.renderKataCard(k) : this.renderKataLocked(k);
     });
@@ -187,6 +191,7 @@ const App = {
       <div class="kata-gloss"><span class="kg-latin">${k.latin || ''}</span><span class="kg-arti">${k.arti || ''}</span></div>
       ${Array.isArray(k.poin) ? `<ul class="poin">${k.poin.map(p => `<li>${p}</li>`).join('')}</ul>` : ''}
       ${blocks.length ? this.renderVisual(blocks) : ''}
+      ${k.hikmah ? `<div class="kata-hikmah"><span class="kh-label">Hikmah</span><p>${k.hikmah}</p></div>` : ''}
       ${this.renderScholar(k.sumber)}
     </div>`;
   },
