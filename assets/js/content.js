@@ -131,6 +131,10 @@ const AYAT = [
           'Bukan hanya manusia — seluruh alam: manusia, jin, langit, bumi.',
           'Rububiyah-Nya tak terbatas pada satu jenis makhluk.',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'الْعَالَمِين', latin: 'Al-‘ālamīn', sifat: ['SELURUH alam', 'Manusia, jin, langit, bumi'] },
+          { arab: 'النَّاس', latin: 'An-nās', alt: true, sifat: ['"Manusia" saja', 'Membatasi rububiyah-Nya'] },
+        ], catatan: 'Dipakai «al-‘ālamīn» — Tuhan SEMUA alam, bukan hanya manusia.' },
         sumber: ['Tafsir Ibnu Katsir'],
       },
     ],
@@ -237,6 +241,10 @@ const AYAT = [
           'Hari keadilan sempurna — bukan sekadar akhir kehidupan.',
           'Setiap amal dihisab, tak ada yang luput.',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'يَوْمِ الدِّين', latin: 'Yaumid-dīn', sifat: ['Hari PEMBALASAN / perhitungan', 'Menonjolkan keadilan & hisab'] },
+          { arab: 'يَوْمِ الْقِيَامَة', latin: 'Yaumil-qiyāmah', alt: true, sifat: ['"Hari kebangkitan"', 'Menonjolkan peristiwa, bukan hisab'] },
+        ], catatan: 'Dipilih «dīn» — fokus pada keadilan & pertanggungjawaban.' },
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
     ],
@@ -337,6 +345,10 @@ const AYAT = [
           'Kata perintah «ihdinā» — diucapkan oleh orang yang sudah beriman.',
           'Hidayah berlapis: menuju kebenaran DAN keteguhan di atasnya.',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'اهْدِنَا', latin: 'Ihdinā', sifat: ['Menuntun lembut + tunjukkan jalan', 'Sekaligus teguhkan di atasnya'] },
+          { arab: 'أَرْشِدْنَا', latin: 'Arshidnā', alt: true, sifat: ['Sekadar "beri petunjuk arah"', 'Tanpa kelembutan menuntun'] },
+        ], catatan: '«hidāyah» menuntun dengan lembut sampai tujuan — lebih dari sekadar menunjukkan arah.' },
         sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
       {
@@ -514,6 +526,10 @@ const AYAT = [
           'Dengan alif-lam: Kitab yang sudah dikenal keagungannya.',
           'Bukan sekadar tulisan — tapi "Al-Kitab" yang menjadi rujukan.',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'الْكِتَاب', latin: 'Al-Kitāb', sifat: ['Akar k-t-b: tertulis & ditetapkan', 'Sesuatu yang pasti & mengikat'] },
+          { arab: 'الْقُرْآن', latin: 'Al-Qur’ān', alt: true, sifat: ['Menekankan sisi "dibaca"', 'Tak menonjolkan ketetapan'] },
+        ], catatan: '«al-Kitāb» menonjolkan: ini ketetapan yang pasti, bukan sekadar bacaan.' },
         sumber: ['Tafsir Ibnu Katsir'],
       },
       {
@@ -541,6 +557,10 @@ const AYAT = [
           '«hudan» nakirah → mengisyaratkan keagungan & keluasan petunjuk.',
           'Petunjuk objektif & sempurna; yang memetiknya: hati yang bertakwa.',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'لِّلْمُتَّقِينَ', latin: 'lil-muttaqīn', sifat: ['Membimbing khusus yang bertakwa', 'Hati yang siap menerima'] },
+          { arab: 'لِلنَّاسِ', latin: 'lin-nās', alt: true, sifat: ['Petunjuk untuk semua (2:185)', 'Tersedia, tapi tak semua memetik'] },
+        ], catatan: 'Tersedia bagi semua (lin-nās), tapi yang benar-benar TERBIMBING: muttaqīn.' },
         sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
     ],
@@ -625,6 +645,10 @@ const AYAT = [
           '«hum» didahulukan → kekhususan: MEREKAlah yang benar-benar yakin.',
           'Yakin, bukan sekadar tahu — keyakinan yang menggerakkan amal.',
         ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'يُوقِنُونَ', latin: 'Yūqinūn', sifat: ['Yaqīn: keyakinan pasti', 'Menggerakkan amal'] },
+          { arab: 'يَعْلَمُونَ', latin: 'Ya‘lamūn', alt: true, sifat: ['Sekadar "tahu"', 'Bisa tahu tapi tak tergerak'] },
+        ], catatan: 'Dipilih «yūqinūn» — yakin yang membekas, bukan sekadar pengetahuan.' },
         sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
     ],
@@ -934,6 +958,10 @@ const AYAT = [
         sumber: ['Tafsir As-Sa‘di'] },
       { kata: 'وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ', latin: 'wa tawāṣau bil-ḥaqqi wa tawāṣau biṣ-ṣabr', arti: 'saling menasihati dalam kebenaran & kesabaran',
         poin: ['Dari individual ke komunal: tak cukup baik sendiri.', 'Saling menguatkan dalam kebenaran & kesabaran.'],
+        banding: { tipe: 'banding', item: [
+          { arab: 'تَوَاصَوْا', latin: 'Tawāṣau', sifat: ['Bentuk timbal-balik', 'SALING menasihati'] },
+          { arab: 'وَصَّى', latin: 'Waṣṣā', alt: true, sifat: ['Satu arah', 'Menasihati tapi tak mau dinasihati'] },
+        ], catatan: 'Dipakai «tawāṣau» — saling, bukan satu arah. Kebaikan itu dua arah.' },
         sumber: ['Tafsir Ibnu Katsir', 'Ucapan Imam Asy-Syāfi‘i (riwayat masyhur)'] },
     ],
     hikmahPoin: [
