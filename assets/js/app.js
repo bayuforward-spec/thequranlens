@@ -176,12 +176,17 @@ const App = {
   },
 
   renderKataCard(k) {
+    const blocks = [];
+    if (k.akar) blocks.push(k.akar);
+    if (k.banding) blocks.push(k.banding);
+    if (k.hitung) blocks.push(k.hitung);
+    if (k.taqdim) blocks.push(k.taqdim);
+    if (Array.isArray(k.viz)) blocks.push(...k.viz);
     return `<div class="kata-card">
       <div class="kata-arab" lang="ar" dir="rtl">${k.kata}</div>
       <div class="kata-gloss"><span class="kg-latin">${k.latin || ''}</span><span class="kg-arti">${k.arti || ''}</span></div>
       ${Array.isArray(k.poin) ? `<ul class="poin">${k.poin.map(p => `<li>${p}</li>`).join('')}</ul>` : ''}
-      ${k.akar ? this.renderViz(k.akar) : ''}
-      ${k.banding ? this.renderViz(k.banding) : ''}
+      ${blocks.length ? this.renderVisual(blocks) : ''}
       ${this.renderScholar(k.sumber)}
     </div>`;
   },

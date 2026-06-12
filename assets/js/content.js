@@ -164,6 +164,21 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-3',
+    kajianKata: [
+      {
+        kata: 'الرَّحْمَٰنِ الرَّحِيمِ', latin: 'Ar-Raḥmān Ar-Raḥīm', arti: 'Yang Maha Pengasih lagi Maha Penyayang',
+        poin: [
+          'Dua nama rahmat — diulang lagi tepat setelah «Rabbil ‘ālamīn».',
+          'Setelah keagungan yang bisa membuat gentar, hati segera ditenangkan.',
+          'Pengulangan di sini menata emosi pembaca, bukan sekadar penegasan.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'رَبِّ الْعَالَمِين', latin: 'Rabbil ‘ālamīn', sifat: ['Keagungan & kuasa', 'Bisa membangkitkan gentar'] },
+          { arab: 'الرَّحْمٰنِ الرَّحِيم', latin: 'Ar-Raḥmān Ar-Raḥīm', sifat: ['Rahmat & kasih', 'Menenangkan jiwa'] },
+        ], catatan: 'Susunannya menyeimbangkan takut & harap.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+    ],
     hikmahPoin: [
       'Agungkan Dia — tapi jangan putus harap.',
       'Antara takut dan harap, di situ iman berdiri.',
@@ -198,6 +213,29 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-4',
+    kajianKata: [
+      {
+        kata: 'مَالِكِ', latin: 'Mālik', arti: 'Pemilik / Raja',
+        poin: [
+          'Dua bacaan sahih: «Mālik» (Pemilik) & «Malik» (Raja).',
+          'Keduanya melengkapi: kepemilikan penuh + kedaulatan memerintah.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'مَالِك', latin: 'Mālik', sifat: ['Pemilik', 'Kepemilikan penuh hari itu'] },
+          { arab: 'مَلِك', latin: 'Malik', sifat: ['Raja', 'Kedaulatan & otoritas'] },
+        ], catatan: 'Dua qira’at mutawatir — saling melengkapi makna.' },
+        sumber: ['Tafsir Al-Qurthubi', 'Kitab qira’at mutawatir'],
+      },
+      {
+        kata: 'يَوْمِ الدِّينِ', latin: 'Yaumid-dīn', arti: 'Hari pembalasan',
+        poin: [
+          '«dīn» di sini bermakna balasan / perhitungan.',
+          'Hari keadilan sempurna — bukan sekadar akhir kehidupan.',
+          'Setiap amal dihisab, tak ada yang luput.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+    ],
     hikmahPoin: [
       'Ada hari saat segalanya dihisab.',
       'Itu rem terkuat saat tak ada yang melihat.',
@@ -232,6 +270,25 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-5',
+    kajianKata: [
+      {
+        kata: 'إِيَّاكَ نَعْبُدُ', latin: 'Iyyāka na‘budu', arti: 'Hanya kepada-Mu kami menyembah',
+        poin: [
+          'Objek «iyyāka» didahulukan → ḥaṣr: "hanya kepada-Mu, bukan yang lain".',
+          'Terjadi «iltifāt»: dari membicarakan Allah (Dia) beralih menyapa-Nya langsung (Engkau).',
+        ],
+        taqdim: { tipe: 'taqdim', normal: ['na‘budu', 'iyyāka'], quran: ['iyyāka', 'na‘budu'], catatan: 'Mendahulukan objek = pembatasan mutlak.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395'],
+      },
+      {
+        kata: 'وَإِيَّاكَ نَسْتَعِينُ', latin: 'wa iyyāka nasta‘īn', arti: 'dan hanya kepada-Mu kami memohon pertolongan',
+        poin: [
+          'Ibadah didahulukan dari permohonan: hak Allah dulu, baru kebutuhanmu.',
+          '«iyyāka» diulang — pembatasan ditegaskan dua kali.',
+        ],
+        sumber: ['Tafsir As-Sa‘di'],
+      },
+    ],
     hikmahPoin: [
       'Hanya kepada-Nya. Bukan gengsi, atasan, atau harta.',
       'Tunaikan hak Allah dulu, baru kebutuhanmu.',
@@ -265,6 +322,28 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-6',
+    kajianKata: [
+      {
+        kata: 'اهْدِنَا', latin: 'Ihdinā', arti: 'Tunjukilah kami',
+        poin: [
+          'Kata perintah «ihdinā» — diucapkan oleh orang yang sudah beriman.',
+          'Hidayah berlapis: menuju kebenaran DAN keteguhan di atasnya.',
+        ],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
+      },
+      {
+        kata: 'الصِّرَاطَ الْمُسْتَقِيمَ', latin: 'aṣ-Ṣirāṭal-mustaqīm', arti: 'jalan yang lurus',
+        poin: [
+          '«aṣ-ṣirāṭ» tunggal-definitif: SATU jalan lurus yang jelas.',
+          '«al-mustaqīm»: lurus tanpa belok — jalan terdekat menuju tujuan.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'الصِّرَاط', latin: 'aṣ-Ṣirāṭ', sifat: ['Tunggal & definitif', 'Satu jalan lurus'] },
+          { arab: 'سُبُل', latin: 'Subul', alt: true, sifat: ['Bentuk jamak', 'Jalan-jalan yang bercabang / sesat'] },
+        ], catatan: 'Satu jalan lurus — melawan banyak jalan yang menyesatkan.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+      },
+    ],
     hikmahPoin: [
       'Sudah muslim pun, tetap minta hidayah tiap hari.',
       'Hidayah bukan status — tapi bimbingan tiap langkah.',
@@ -299,6 +378,36 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-7',
+    kajianKata: [
+      {
+        kata: 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ', latin: 'ṣirāṭal-lażīna an‘amta ‘alaihim', arti: 'jalan orang yang Engkau beri nikmat',
+        poin: [
+          'Nikmat disandarkan LANGSUNG ke Allah: «an‘amta» — Engkau yang memberi.',
+          'Mereka: para nabi, shiddiqin, syuhada, & orang saleh.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'أَنْعَمْتَ عَلَيْهِم', latin: 'an‘amta ‘alaihim', sifat: ['Bentuk AKTIF', 'Disandarkan ke Allah'] },
+          { arab: 'الْمَغْضُوبِ عَلَيْهِم', latin: 'al-magḍūbi ‘alaihim', alt: true, sifat: ['Bentuk PASIF', 'Tak disandarkan langsung'] },
+        ], catatan: 'Adab: kebaikan dinisbatkan kepada-Nya; murka tidak.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ', latin: 'gairil-magḍūbi ‘alaihim', arti: 'bukan (jalan) mereka yang dimurkai',
+        poin: [
+          'Bentuk pasif «al-magḍūb» — tak dikatakan "yang Engkau murkai".',
+          'Yakni mereka yang tahu kebenaran lalu meninggalkannya.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi'],
+      },
+      {
+        kata: 'وَلَا الضَّالِّينَ', latin: 'wa laḍ-ḍāllīn', arti: 'dan bukan (pula) mereka yang sesat',
+        poin: [
+          'Mereka yang beramal tanpa ilmu → tersesat.',
+          'Selamat menuntut dua: ilmu yang benar + amal yang lurus.',
+        ],
+        sumber: ['Tafsir As-Sa‘di'],
+      },
+    ],
     hikmahPoin: [
       'Selamat = ilmu yang benar + amal yang lurus.',
       'Ilmu tanpa amal: tergelincir.',
@@ -335,6 +444,18 @@ const AYAT = [
   /* ============ SURAH AL-BAQARAH (2) ============ */
   {
     id: 'al-baqarah-1',
+    kajianKata: [
+      {
+        kata: 'الم', latin: 'Alif Lām Mīm', arti: '(huruf-huruf terpisah)',
+        poin: [
+          'Huruf «muqaṭṭa‘ah» — sikap paling selamat: "Allah lebih tahu maksudnya".',
+          'Al-Qur’an tersusun dari huruf yang SAMA yang kalian kuasai — namun tak tertandingi.',
+          'Tantangan i‘jāz lewat bahan baku yang paling dikenal lawan.',
+        ],
+        akar: { tipe: 'akar', huruf: ['ا', 'ل', 'م'], teks: 'Huruf yang kamu kuasai — namun tak tertandingi.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+      },
+    ],
     hikmahPoin: [
       'Tak semua harus dipahami tuntas untuk diimani.',
       'Ada ilmu yang menuntut tunduk.',
@@ -366,6 +487,49 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-2',
+    kajianKata: [
+      {
+        kata: 'ذَٰلِكَ', latin: 'Żālika', arti: 'Itu (kitab itu)',
+        poin: [
+          'Dipakai isyarat "jauh" «żālika», bukan "dekat" «hāżā» — padahal kitab ada di hadapan.',
+          'Justru untuk MENGAGUNGKAN: menunjuk ketinggian derajat kitab ini.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'ذٰلِكَ', latin: 'Żālika (itu)', sifat: ['Isyarat "jauh"', 'Mengagungkan', 'Kedudukan tinggi'] },
+          { arab: 'هٰذَا', latin: 'Hāżā (ini)', alt: true, sifat: ['Isyarat "dekat"', 'Biasa'] },
+        ], catatan: 'Dipilih «żālika» — meninggikan derajat kitab ini.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'الْكِتَابُ', latin: 'Al-Kitāb', arti: 'Kitab (Al-Qur’an)',
+        poin: [
+          'Dengan alif-lam: Kitab yang sudah dikenal keagungannya.',
+          'Bukan sekadar tulisan — tapi "Al-Kitab" yang menjadi rujukan.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir'],
+      },
+      {
+        kata: 'لَا رَيْبَ فِيهِ', latin: 'lā raiba fīh', arti: 'tidak ada keraguan di dalamnya',
+        poin: [
+          '«lā» menafikan JENIS: tak ada keraguan apa pun, sekecil apa pun.',
+          'Dipilih «rayb» (keraguan + gelisah), bukan «syakk» yang ringan — lalu dihapuskan.',
+          '«fīhi» (di DALAM): keraguan tak bisa hidup di dalamnya. Kamu bisa ragu dari luar.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'رَيْب', latin: 'Rayb', sifat: ['Keraguan + gelisah / curiga', 'Bentuk paling berat'] },
+          { arab: 'شَكّ', latin: 'Syakk', alt: true, sifat: ['Ragu biasa', 'Lebih ringan'] },
+        ], catatan: 'Allah menafikan «rayb» — bahkan keraguan terberat pun tak punya tempat.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+      },
+      {
+        kata: 'هُدًى لِّلْمُتَّقِينَ', latin: 'hudal lil-muttaqīn', arti: 'petunjuk bagi orang yang bertakwa',
+        poin: [
+          '«hudan» nakirah → mengisyaratkan keagungan & keluasan petunjuk.',
+          'Petunjuk objektif & sempurna; yang memetiknya: hati yang bertakwa.',
+        ],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
+      },
+    ],
     hikmahPoin: [
       'Petunjuknya sempurna; yang memetiknya: hati yang bertakwa.',
       'Butuh kitab yang benar + hati yang terbuka.',
@@ -400,6 +564,52 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-3-4',
+    kajianKata: [
+      {
+        kata: 'الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ', latin: 'allażīna yu’minūna bil-gaib', arti: 'mereka yang beriman kepada yang gaib',
+        poin: [
+          'Hakikat iman: membenarkan yang tak terindra karena percaya pada sumbernya (wahyu).',
+          'Bukan karena melihat — tapi karena yakin pada Yang mengabarkan.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'وَيُقِيمُونَ الصَّلَاةَ', latin: 'wa yuqīmūnaṣ-ṣalāh', arti: 'dan menegakkan salat',
+        poin: [
+          'Dipakai «yuqīmūn» (menegakkan), bukan sekadar «yuṣallūn» (mengerjakan).',
+          'Iqāmah = menunaikan dengan sempurna syarat, rukun, & kekhusyukan.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'يُقِيمُونَ', latin: 'Yuqīmūn', sifat: ['Menegakkan', 'Sempurna & khusyuk'] },
+          { arab: 'يُصَلُّونَ', latin: 'Yuṣallūn', alt: true, sifat: ['Sekadar mengerjakan', 'Gugur kewajiban'] },
+        ], catatan: 'Salat bukan dalam jadwal mereka — ia dalam arsitektur mereka.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'وَمِمَّا رَزَقْنَاهُمْ يُنفِقُونَ', latin: 'wa mimmā razaqnāhum yunfiqūn', arti: 'dan menginfakkan sebagian rezeki Kami',
+        poin: [
+          '«min» (sebagian) — meringankan; tak diminta semuanya.',
+          '"Rezeki dari Kami" — harta itu titipan; berinfak = mengembalikan pemberian-Nya.',
+        ],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
+      },
+      {
+        kata: 'وَالَّذِينَ يُؤْمِنُونَ بِمَا أُنزِلَ إِلَيْكَ وَمَا أُنزِلَ مِن قَبْلِكَ', latin: 'wallażīna yu’minūna bimā unzila ilaika wa mā unzila min qablik', arti: 'dan beriman pada wahyu kepadamu & sebelummu',
+        poin: [
+          'Iman menyeluruh: pada Al-Qur’an DAN kitab-kitab sebelumnya.',
+          'Tak memilah-milah wahyu — membenarkan seluruh rangkaian risalah.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir'],
+      },
+      {
+        kata: 'وَبِالْآخِرَةِ هُمْ يُوقِنُونَ', latin: 'wa bil-ākhirati hum yūqinūn', arti: 'dan mereka yakin akan adanya akhirat',
+        poin: [
+          '«hum» didahulukan → kekhususan: MEREKAlah yang benar-benar yakin.',
+          'Yakin, bukan sekadar tahu — keyakinan yang menggerakkan amal.',
+        ],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
+      },
+    ],
     hikmahPoin: [
       'Takwa bukan klaim di hati.',
       'Ia terbukti: salat, sedekah, yakin pada wahyu & akhirat.',
@@ -433,6 +643,28 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-5',
+    kajianKata: [
+      {
+        kata: 'أُولَٰئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ', latin: 'ulā’ika ‘alā hudam mir rabbihim', arti: 'merekalah yang mendapat petunjuk dari Tuhannya',
+        poin: [
+          '«‘alā» (di ATAS): mereka kokoh menopang di atas hidayah, bukan sekadar tersentuh.',
+          'Seperti penunggang yang menguasai kendaraannya.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'عَلَىٰ هُدًى', latin: '‘alā hudan', sifat: ['DI ATAS petunjuk', 'Kokoh & menguasai'] },
+          { arab: 'أَصَابَهُ هُدًى', latin: 'sekadar "tersentuh"', alt: true, sifat: ['Tersentuh sesekali', 'Tak mantap'] },
+        ], catatan: 'Bukan sekadar tersentuh hidayah — tapi kokoh di atasnya.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'وَأُولَٰئِكَ هُمُ الْمُفْلِحُونَ', latin: 'wa ulā’ika humul-mufliḥūn', arti: 'dan merekalah orang-orang yang beruntung',
+        poin: [
+          '«hum» (kata ganti pemisah) → ḥaṣr: HANYA merekalah yang beruntung.',
+          '«falāḥ» dari makna "membelah/menembus": meraih harapan & selamat dari yang ditakuti.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+    ],
     hikmahPoin: [
       'Sukses sejati bukan harta atau jabatan.',
       'Tapi hidayah & selamat di akhirat.',
@@ -467,6 +699,42 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-255',
+    kajianKata: [
+      { kata: 'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ', latin: 'Allāhu lā ilāha illā huw', arti: 'Allah, tak ada tuhan selain Dia',
+        poin: ['Pembuka: keesaan mutlak — tak ada sesembahan yang benar selain-Nya.'],
+        sumber: ['Tafsir Ibnu Katsir'] },
+      { kata: 'الْحَيُّ الْقَيُّومُ', latin: 'Al-Ḥayyul-Qayyūm', arti: 'Yang Maha Hidup, terus mengurus',
+        poin: ['Dua nama agung dirangkai: sumber kehidupan + penegak segala sesuatu.', 'Di sini para ulama menyebut tersimpan «ismullāhil a‘ẓam».'],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'] },
+      { kata: 'لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ', latin: 'lā ta’khużuhū sinatuw wa lā naum', arti: 'tak mengantuk dan tak tidur',
+        poin: ['Urutan menaik: kantuk samar pun tak menyentuh-Nya, apalagi tidur.'],
+        banding: { tipe: 'banding', item: [
+          { arab: 'سِنَة', latin: 'Sinah', sifat: ['Kantuk ringan', 'Pendahulu tidur'] },
+          { arab: 'نَوْم', latin: 'Naum', sifat: ['Tidur lelap', 'Puncaknya'] },
+        ], catatan: 'Penegasan kesempurnaan «Al-Qayyūm» — tanpa jeda.' },
+        sumber: ['Tafsir Ibnu Katsir'] },
+      { kata: 'لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ', latin: 'lahū mā fis-samāwāti wa mā fil-arḍ', arti: 'milik-Nya seluruh langit dan bumi',
+        poin: ['Kepemilikan mutlak atas segala yang ada.'],
+        sumber: ['Tafsir Ibnu Katsir'] },
+      { kata: 'مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ', latin: 'man żal-lażī yasyfa‘u ‘indahū illā bi’iżnih', arti: 'siapa yang memberi syafaat tanpa izin-Nya',
+        poin: ['Tak ada syafaat kecuali dengan izin-Nya — menutup celah kesyirikan.'],
+        sumber: ['Tafsir As-Sa‘di'] },
+      { kata: 'يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ', latin: 'ya‘lamu mā baina aidīhim wa mā khalfahum', arti: 'Dia tahu yang di depan & di belakang mereka',
+        poin: ['Ilmu-Nya meliputi masa lalu & masa depan makhluk.'],
+        sumber: ['Tafsir Ibnu Katsir'] },
+      { kata: 'وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ', latin: 'wa lā yuḥīṭūna bisyai’im min ‘ilmihī illā bimā syā’', arti: 'mereka tak meliputi ilmu-Nya kecuali yang Dia kehendaki',
+        poin: ['Pengetahuan makhluk hanyalah pemberian-Nya, sebatas yang Dia izinkan.'],
+        sumber: ['Tafsir Ibnu Katsir'] },
+      { kata: 'وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ', latin: 'wasi‘a kursiyyuhus-samāwāti wal-arḍ', arti: 'Kursi-Nya meliputi langit dan bumi',
+        poin: ['Keluasan kekuasaan-Nya melampaui semesta.'],
+        sumber: ['Tafsir Ibnu Katsir'] },
+      { kata: 'وَلَا يَئُودُهُ حِفْظُهُمَا', latin: 'wa lā ya’ūduhū ḥifẓuhumā', arti: 'Dia tak merasa berat memelihara keduanya',
+        poin: ['«ya’ūduhū»: menjaga semesta sama sekali tak membebani-Nya.'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'وَهُوَ الْعَلِيُّ الْعَظِيمُ', latin: 'wa huwal-‘aliyyul-‘aẓīm', arti: 'Dia Maha Tinggi, Maha Besar',
+        poin: ['Penutup: ketinggian & keagungan yang sempurna.'],
+        sumber: ['Tafsir Ibnu Katsir'] },
+    ],
     hikmahPoin: [
       'Penjaga semestamu tak pernah tidur.',
       'Lalu untuk apa cemas berlebihan?',
@@ -501,6 +769,40 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-286',
+    kajianKata: [
+      {
+        kata: 'لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا', latin: 'lā yukallifullāhu nafsan illā wus‘ahā', arti: 'Allah tak membebani melainkan sesuai kesanggupannya',
+        poin: [
+          'Dipilih «wus‘» (kelapangan), bukan «ṭāqah» (batas maksimal).',
+          'Wus‘ = kadar yang masih lapang, DI BAWAH batas akhir kekuatanmu.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'وُسْع', latin: 'Wus‘', sifat: ['Kadar yang lapang', 'Di bawah batas maksimal'] },
+          { arab: 'طَاقَة', latin: 'Ṭāqah', alt: true, sifat: ['Batas maksimal kemampuan', 'Mepet, memberatkan'] },
+        ], catatan: 'Allah membebani jauh lebih ringan dari batas akhir kekuatan kita.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ', latin: 'lahā mā kasabat wa ‘alaihā maktasabat', arti: 'baginya kebaikan yang ia usahakan, atasnya keburukan yang ia perbuat',
+        poin: [
+          'Kebaikan «kasabat» (sederhana); keburukan «iktasabat» (usaha & kesengajaan lebih).',
+          'Kebaikan dicatat meski niat ringan; keburukan "membebani" bila diupayakan.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'كَسَبَتْ', latin: 'kasabat', sifat: ['Bentuk sederhana', 'Untuk KEBAIKAN'] },
+          { arab: 'اكْتَسَبَتْ', latin: 'iktasabat', alt: true, sifat: ['Bentuk «ifti‘āl»', 'Untuk KEBURUKAN — perlu kesengajaan'] },
+        ], catatan: 'Luasnya rahmat tersembunyi dalam satu pilihan kata kerja.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا', latin: 'rabbanā lā tu’ākhiżnā in nasīnā au akhṭa’nā', arti: 'Ya Tuhan kami, jangan hukum kami bila lupa atau salah',
+        poin: [
+          'Lupa & keliru yang tak disengaja — dimaafkan.',
+          'Doa yang Allah jawab: "qad fa‘altu" (sudah Aku kabulkan).',
+        ],
+        sumber: ['Sahih Muslim no. 125', 'Tafsir Ibnu Katsir'],
+      },
+    ],
     hikmahPoin: [
       'Allah tak membebani di luar kesanggupanmu.',
       'Cemas berlebihan melawan kelapangan yang Dia tetapkan.',
@@ -537,6 +839,33 @@ const AYAT = [
   /* ============ JUZ 30 — Ayat masyhur ============ */
   {
     id: 'al-insyirah-5-6',
+    kajianKata: [
+      {
+        kata: 'فَإِنَّ مَعَ الْعُسْرِ يُسْرًا', latin: 'fa inna ma‘al-‘usri yusrā', arti: 'maka sesungguhnya bersama kesulitan ada kemudahan',
+        poin: [
+          'Dipakai «ma‘a» (bersama), bukan «ba‘da» (sesudah) — kemudahan menempel pada kesulitan.',
+          '«al-‘usr» (alif-lam, definitif): satu kesulitan tertentu.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'مَعَ', latin: 'Ma‘a (bersama)', sifat: ['Menempel pada kesulitan', 'Bukan menunggu jauh'] },
+          { arab: 'بَعْدَ', latin: 'Ba‘da (sesudah)', alt: true, sifat: ['Menunggu di kejauhan', 'Tertunda'] },
+        ], catatan: 'Kemudahan itu menyertai kesulitan, bukan datang belakangan.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
+      },
+      {
+        kata: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا', latin: 'inna ma‘al-‘usri yusrā', arti: '(diulang) sesungguhnya bersama kesulitan ada kemudahan',
+        poin: [
+          '«al-‘usr» (definitif) diulang → kesulitan yang SAMA.',
+          '«yusrā» (nakirah) diulang → dua kemudahan yang BERBEDA.',
+          'Ibnu ‘Abbas: "Satu kesulitan takkan mengalahkan dua kemudahan."',
+        ],
+        hitung: { tipe: 'hitung', item: [
+          { label: 'Kesulitan — «al-‘usr»', jumlah: 1, nuansa: 'Definitif, diulang → SAMA' },
+          { label: 'Kemudahan — «yusrā»', jumlah: 2, nuansa: 'Indefinitif, diulang → BERBEDA' },
+        ], catatan: 'Satu kesulitan, dua kemudahan.' },
+        sumber: ['Riwayat Ibnu ‘Abbas (atsar masyhur)', 'Tafsir Ibnu Katsir'],
+      },
+    ],
     hikmahPoin: [
       'Di titik terberat, benih kemudahan sedang tumbuh.',
       'Tugasmu bukan menunggu badai reda — tapi terus bergerak.',
@@ -571,6 +900,20 @@ const AYAT = [
   },
   {
     id: 'al-asr-1-3',
+    kajianKata: [
+      { kata: 'وَالْعَصْرِ', latin: 'Wal-‘aṣr', arti: 'Demi masa',
+        poin: ['Allah bersumpah demi waktu — padanya tersingkap untung-rugi manusia.'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ', latin: 'innal-insāna lafī khusr', arti: 'sungguh manusia berada dalam kerugian',
+        poin: ['«al-insān» (alif-lam jenis): SELURUH manusia tanpa kecuali.', '«lafī khusr»: tenggelam DI DALAM kerugian, bukan sekadar menyentuhnya.'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ', latin: 'illal-lażīna āmanū wa ‘amiluṣ-ṣāliḥāt', arti: 'kecuali yang beriman dan beramal saleh',
+        poin: ['«illā» — satu-satunya pintu keluar dari kerugian.', 'Iman + amal: dua syarat yang bersifat pribadi.'],
+        sumber: ['Tafsir As-Sa‘di'] },
+      { kata: 'وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ', latin: 'wa tawāṣau bil-ḥaqqi wa tawāṣau biṣ-ṣabr', arti: 'saling menasihati dalam kebenaran & kesabaran',
+        poin: ['Dari individual ke komunal: tak cukup baik sendiri.', 'Saling menguatkan dalam kebenaran & kesabaran.'],
+        sumber: ['Tafsir Ibnu Katsir', 'Ucapan Imam Asy-Syāfi‘i (riwayat masyhur)'] },
+    ],
     hikmahPoin: [
       'Waktu: modal yang terus berkurang, tak terbeli kembali.',
       'Selamat butuh lebih dari kebaikan pribadi.',
@@ -604,6 +947,22 @@ const AYAT = [
   },
   {
     id: 'al-kautsar-1-3',
+    kajianKata: [
+      { kata: 'إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ', latin: 'innā a‘ṭainākal-kauṡar', arti: 'sungguh Kami telah memberimu (nikmat) yang banyak',
+        poin: ['«a‘ṭainā» bentuk lampau + kata ganti keagungan — pemberian yang sudah pasti.', '«al-Kauṡar» pola «fau‘al» → kebaikan melimpah-ruah tak terhingga.'],
+        akar: { tipe: 'akar', huruf: ['ك', 'ث', 'ر'], teks: 'Dari «kaṡrah» — banyak. «al-Kauṡar»: melimpah tak terhingga.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+      { kata: 'فَصَلِّ لِرَبِّكَ وَانْحَرْ', latin: 'faṣalli lirabbika wanḥar', arti: 'maka salatlah karena Tuhanmu dan berkurbanlah',
+        poin: ['Syukur atas nikmat diwujudkan: salat & kurban.', 'Respon atas pemberian = ibadah, bukan kesombongan.'],
+        sumber: ['Tafsir Ibnu Katsir'] },
+      { kata: 'إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ', latin: 'inna syāni’aka huwal-abtar', arti: 'sungguh pembencimu, dialah yang terputus',
+        poin: ['Musuh menuduh Nabi «abtar» (terputus); Allah balikkan kata itu tepat ke pelakunya.'],
+        banding: { tipe: 'banding', item: [
+          { arab: 'الْكَوْثَر', latin: 'al-Kauṡar', sifat: ['Untukmu — melimpah', 'Sudah diberi (pasti)'] },
+          { arab: 'الْأَبْتَر', latin: 'al-Abtar', alt: true, sifat: ['"Terputus"', 'Tuduhan musuh — berbalik padanya'] },
+        ], catatan: 'Surah terpendek — menumbangkan ejekan terbesar.' },
+        sumber: ['Asbabun Nuzul Al-Wahidi', 'Tafsir Al-Qurthubi'] },
+    ],
     hikmahPoin: [
       'Hinaan manusia tak menentukan nilaimu di sisi-Nya.',
       'Balas cemooh dengan ketaatan — bukan dendam.',
@@ -638,6 +997,24 @@ const AYAT = [
   },
   {
     id: 'al-ikhlas-1-4',
+    kajianKata: [
+      { kata: 'قُلْ هُوَ اللَّهُ أَحَدٌ', latin: 'Qul huwallāhu aḥad', arti: 'Katakanlah: Dialah Allah, Yang Maha Esa',
+        poin: ['Dipilih «Aḥad», bukan «Wāḥid» — keesaan MUTLAK yang tak dapat dibagi.', 'Surah dibuka «Aḥad» dan ditutup «Aḥad» — bingkai sempurna.'],
+        banding: { tipe: 'banding', item: [
+          { arab: 'أَحَد', latin: 'Aḥad', sifat: ['Keesaan mutlak', 'Tak dapat dibagi / ditambah'] },
+          { arab: 'وَاحِد', latin: 'Wāḥid', alt: true, sifat: ['"Satu" biasa', 'Bisa diikuti dua, tiga…'] },
+        ], catatan: 'Dipilih «Aḥad» — menutup celah penyekutuan.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi no. 3364'] },
+      { kata: 'اللَّهُ الصَّمَدُ', latin: 'Allāhuṣ-ṣamad', arti: 'Allah tempat bergantung segala sesuatu',
+        poin: ['«Aṣ-Ṣamad»: tumpuan seluruh kebutuhan makhluk, sementara Dia tak butuh apa pun.'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'لَمْ يَلِدْ وَلَمْ يُولَدْ', latin: 'lam yalid wa lam yūlad', arti: 'tidak beranak dan tidak diperanakkan',
+        poin: ['Menafikan keturunan dari dua arah sekaligus — tidak menurunkan & tidak diturunkan.', 'Menutup setiap celah penyimpangan akidah.'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+      { kata: 'وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ', latin: 'wa lam yakul lahū kufuwan aḥad', arti: 'dan tidak ada sesuatu pun yang setara dengan Dia',
+        poin: ['Tak ada tandingan bagi-Nya dalam bentuk apa pun.', 'Ditutup dengan «Aḥad» — menegaskan keunikan mutlak.'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
     hikmahPoin: [
       'Akidah bersih = fondasi semua amal.',
       'Hanya Allah tempat bergantung.',
