@@ -259,6 +259,73 @@ body {
 footer { text-align: center; padding: 36px 20px; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--line); margin-top: 20px; }
 footer .note { font-size: .74rem; opacity: .85; margin-top: 6px; }
 
+/* ===== Lapisan Hikmah — disorot sebagai renungan (lebih "dalam") ===== */
+.layer.hikmah {
+  background: radial-gradient(140% 160% at 0 0, var(--gold-soft), transparent 62%);
+  border-top: none; border-radius: 14px; padding: 18px 20px;
+  box-shadow: inset 2px 0 0 var(--gold), inset 0 0 0 1px var(--line);
+}
+.layer.hikmah p { font-family: var(--display); font-style: italic; font-size: 1.2rem; line-height: 1.55; color: var(--cream); }
+
+/* ===== Grafik linguistik (efek "wow") ===== */
+.viz { display: flex; flex-direction: column; gap: 14px; margin-top: 18px; }
+@keyframes vizUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* Akar huruf */
+.viz-akar { text-align: center; padding: 8px 0 4px; }
+.vk-huruf {
+  font-family: var(--arab); font-size: 2.6rem; color: var(--gold);
+  display: flex; justify-content: center; align-items: center; gap: 16px; direction: rtl;
+  text-shadow: 0 0 22px rgba(227, 192, 105, .4);
+}
+.vk-huruf i { color: var(--gold-deep); font-style: normal; font-size: 1.1rem; opacity: .7; }
+.vk-teks { font-family: var(--display); font-style: italic; color: var(--cream-dim); font-size: 1.12rem; margin-top: 6px; }
+
+/* Banding kartu */
+.viz-banding { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 12px; }
+@media (max-width: 480px) { .viz-banding { grid-template-columns: 1fr; } }
+.vb-card {
+  background: radial-gradient(130% 150% at 50% 0, var(--gold-soft), transparent 70%), var(--bg-0);
+  border: 1px solid var(--gold-line); border-radius: 14px; padding: 18px 14px; text-align: center;
+  animation: vizUp .55s ease backwards; animation-delay: calc(var(--d, 0) * .12s);
+}
+.vb-arab { font-family: var(--arab); font-size: 2rem; color: var(--gold); direction: rtl; text-shadow: 0 0 20px rgba(227, 192, 105, .38); }
+.vb-latin { font-family: var(--display); font-style: italic; color: var(--gold-deep); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; margin-top: 2px; }
+.vb-sifat { display: flex; flex-direction: column; gap: 5px; margin-top: 12px; }
+.vb-sifat span { font-family: var(--display); font-style: italic; color: var(--cream-dim); font-size: 1.02rem; line-height: 1.3; }
+
+/* Hitungan (titik) */
+.viz-hitung { display: flex; flex-direction: column; gap: 10px; }
+.vh-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  background: var(--bg-0); border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px;
+  animation: vizUp .55s ease backwards; animation-delay: calc(var(--d, 0) * .14s);
+}
+.vh-label { font-weight: 700; color: var(--cream); font-size: .95rem; }
+.vh-nuansa { font-size: .78rem; color: var(--muted); margin-top: 2px; }
+.vh-dots { display: flex; gap: 7px; flex: none; }
+.vh-dots i { width: 15px; height: 15px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-bright), var(--gold)); box-shadow: var(--glow); }
+
+/* Taqdim (urutan kata) */
+.viz-taqdim { display: flex; flex-direction: column; gap: 6px; }
+.vt-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.vt-lbl { font-size: .64rem; text-transform: uppercase; letter-spacing: .16em; color: var(--gold-deep); min-width: 70px; font-weight: 700; }
+.vt-words { display: flex; gap: 8px; flex-wrap: wrap; }
+.vt-words span { font-family: var(--arab); font-size: 1.35rem; padding: 5px 14px; border: 1px solid var(--line); border-radius: 9px; color: var(--cream); }
+.vt-row.hl .vt-words span { border-color: var(--gold); color: var(--gold); background: var(--gold-soft); text-shadow: 0 0 14px rgba(227, 192, 105, .35); }
+.vt-arrow { color: var(--gold); font-size: 1.1rem; padding: 2px 0 2px 78px; }
+
+.viz-note { font-family: var(--display); font-style: italic; color: var(--cream-dim); font-size: .98rem; text-align: center; padding-top: 4px; }
+
+/* ===== Tombol tema ===== */
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+.theme-toggle {
+  width: 36px; height: 36px; border-radius: 50%; flex: none;
+  border: 1px solid var(--gold-line); background: var(--bg-1); color: var(--gold);
+  cursor: pointer; font-size: 1rem; display: grid; place-items: center; transition: .18s;
+}
+.theme-toggle:hover { box-shadow: var(--glow); }
+
 /* ===== Responsif ===== */
 @media (max-width: 560px) {
   .hero { padding: 40px 20px 20px; }
@@ -267,3 +334,39 @@ footer .note { font-size: .74rem; opacity: .85; margin-top: 6px; }
   .ayat-arab { font-size: 2.15rem; line-height: 1.95; }
   .card { padding: 22px 18px; }
 }
+
+/* ============================================================
+   MODE TERANG — tema sama (emas + serif), latar terang & nyaman dibaca
+   ============================================================ */
+:root[data-theme="light"] {
+  --bg-0: #f4eede;
+  --bg-1: #fffdf7;
+  --bg-2: #fbf6ea;
+  --gold: #b8912f;
+  --gold-bright: #d8b452;
+  --gold-deep: #8a6d12;
+  --gold-soft: rgba(184, 145, 47, .12);
+  --gold-line: rgba(184, 145, 47, .34);
+  --cream: #2b2418;
+  --cream-dim: #4c4434;
+  --muted: #8a7f68;
+  --line: rgba(120, 95, 30, .16);
+  --shadow: 0 14px 40px rgba(120, 95, 30, .12);
+  --glow: 0 0 16px rgba(184, 145, 47, .28);
+}
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(1000px 620px at 50% -60px, #fdf8ec 0%, rgba(253, 248, 236, 0) 60%),
+    radial-gradient(900px 700px at 50% 30%, #f8f2e5 0%, #efe7d6 75%),
+    var(--bg-0);
+}
+:root[data-theme="light"] .topbar { background: rgba(244, 238, 222, .82); }
+:root[data-theme="light"] .tab { background: rgba(255, 253, 247, .8); }
+:root[data-theme="light"] .modal { background: rgba(60, 45, 15, .42); }
+:root[data-theme="light"] .brand .logo { background: radial-gradient(120% 120% at 30% 20%, #2a2110, #15110a); }
+/* Glow keemasan dilembutkan agar tetap nyaman di latar terang */
+:root[data-theme="light"] .ayat-arab { text-shadow: 0 1px 0 rgba(255, 255, 255, .6); }
+:root[data-theme="light"] .vk-huruf,
+:root[data-theme="light"] .vb-arab,
+:root[data-theme="light"] .vt-row.hl .vt-words span { text-shadow: none; }
+:root[data-theme="light"] .vh-dots i { box-shadow: 0 1px 3px rgba(120, 95, 30, .25); }

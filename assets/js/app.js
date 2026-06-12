@@ -14,6 +14,9 @@ const App = {
 
   /* ---------- Init ---------- */
   init() {
+    // Sinkronkan tombol tema dengan pilihan tersimpan (default: terang)
+    this.setTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'terang');
+
     document.getElementById('tabs').addEventListener('click', (e) => {
       const t = e.target.closest('.tab');
       if (t) this.switchTab(t.dataset.tab);
@@ -99,11 +102,12 @@ const App = {
       if (!isi) return;
       const terkunci = l.premium && !terbukaPenuh;
       if (terkunci) { adaTerkunci = true; return; }
-      const cls = l.key === 'linguistik' ? 'layer linguistik' : 'layer';
-      html += `<div class="${cls}">
+      const grafik = (l.key === 'linguistik' && ayat.visual) ? this.renderVisual(ayat.visual) : '';
+      html += `<div class="layer ${l.key}">
         <div class="layer-head"><span class="layer-ico">${l.ico}</span>
           <span class="layer-title">${l.judul}</span></div>
         <p>${isi}</p>
+        ${grafik}
       </div>`;
     });
 
@@ -118,6 +122,75 @@ const App = {
 
     html += `<div class="sumber">📚 Rujukan: ${ayat.sumber.join(' · ')}</div></article>`;
     return html;
+  },
+
+  /* ---------- Grafik linguistik (efek "wow": perbandingan kata/huruf) ---------- */
+  renderVisual(blocks) {
+    if (!Array.isArray(blocks) || !blocks.length) return '';
+    return `<div class="viz">${blocks.map(b => this.renderViz(b)).join('')}</div>`;
+  },
+
+  renderViz(b) {
+    const note = b.catatan ? `<div class="viz-note">${b.catatan}</div>` : '';
+    switch (b.tipe) {
+      // Akar kata bersama: huruf-huruf Arab berjarak (mis. ر · ح · م)
+      case 'akar':
+        return `<div class="viz-akar">
+          <div class="vk-huruf" lang="ar" dir="rtl">${b.huruf.map(h => `<span>${h}</span>`).join('<i>·</i>')}</div>
+          ${b.teks ? `<div class="vk-teks">${b.teks}</div>` : ''}
+        </div>`;
+
+      // Perbandingan 2–3 kata: kartu sejajar (Ar-Rahman vs Ar-Rahim, dst)
+      case 'banding':
+        return `<div class="viz-banding" style="--n:${b.item.length}">
+          ${b.item.map((it, i) => `<div class="vb-card" style="--d:${i}">
+            <div class="vb-arab" lang="ar" dir="rtl">${it.arab}</div>
+            ${it.latin ? `<div class="vb-latin">${it.latin}</div>` : ''}
+            <div class="vb-sifat">${(it.sifat || []).map(s => `<span>${s}</span>`).join('')}</div>
+          </div>`).join('')}
+        </div>${note}`;
+
+      // Hitungan: titik-titik (mis. 1 kesulitan vs 2 kemudahan)
+      case 'hitung':
+        return `<div class="viz-hitung">
+          ${b.item.map((it, i) => `<div class="vh-row" style="--d:${i}">
+            <div class="vh-info"><div class="vh-label">${it.label}</div>
+              ${it.nuansa ? `<div class="vh-nuansa">${it.nuansa}</div>` : ''}</div>
+            <div class="vh-dots">${Array.from({ length: it.jumlah || 0 }).map(() => '<i></i>').join('')}</div>
+          </div>`).join('')}
+        </div>${note}`;
+
+      // Taqdim: susunan kata lazim → susunan Al-Qur'an (urutan dibalik)
+      case 'taqdim':
+        return `<div class="viz-taqdim">
+          <div class="vt-row"><span class="vt-lbl">${b.labelNormal || 'Lazimnya'}</span>
+            <div class="vt-words" lang="ar" dir="rtl">${b.normal.map(w => `<span>${w}</span>`).join('')}</div></div>
+          <div class="vt-arrow">↓</div>
+          <div class="vt-row hl"><span class="vt-lbl">${b.labelQuran || 'Al-Qur’an'}</span>
+            <div class="vt-words" lang="ar" dir="rtl">${b.quran.map(w => `<span>${w}</span>`).join('')}</div></div>
+        </div>${note}`;
+
+      default:
+        return '';
+    }
+  },
+
+  /* ---------- Tema terang/gelap ---------- */
+  setTheme(mode) {
+    const m = (mode === 'dark') ? 'dark' : 'terang';
+    document.documentElement.dataset.theme = (m === 'dark') ? 'dark' : 'light';
+    try { localStorage.setItem('ql-theme', document.documentElement.dataset.theme); } catch (e) {}
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+      const gelap = document.documentElement.dataset.theme === 'dark';
+      btn.textContent = gelap ? '☀️' : '🌙';
+      btn.title = gelap ? 'Beralih ke mode terang' : 'Beralih ke mode malam';
+      btn.setAttribute('aria-label', btn.title);
+    }
+  },
+  toggleTheme() {
+    const gelap = document.documentElement.dataset.theme === 'dark';
+    this.setTheme(gelap ? 'terang' : 'dark');
   },
 
   /* ---------- Ayat Hari Ini ---------- */

@@ -12,6 +12,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&display=swap" />
+  <!-- Tetapkan tema sebelum render agar tak berkedip (default: terang) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ql-theme');
+        document.documentElement.dataset.theme = (t === 'dark') ? 'dark' : 'light';
+      } catch (e) { document.documentElement.dataset.theme = 'light'; }
+    })();
+  </script>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -21,7 +30,10 @@
       <span class="logo">۞</span>
       <span>The Quran Lens<small>Keajaiban Setiap Ayat</small></span>
     </div>
-    <button class="badge-pro" id="proBadge" onclick="App.openUpgrade()">✦ Premium</button>
+    <div class="topbar-actions">
+      <button class="theme-toggle" id="themeToggle" onclick="App.toggleTheme()" title="Beralih tema" aria-label="Beralih tema">🌙</button>
+      <button class="badge-pro" id="proBadge" onclick="App.openUpgrade()">✦ Premium</button>
+    </div>
   </header>
 
   <!-- Hero / Sales -->

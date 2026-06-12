@@ -18,6 +18,13 @@ const AYAT = [
   /* ============ SURAH AL-FĀTIḤAH (1) ============ */
   {
     id: 'al-fatihah-1',
+    visual: [
+      { tipe: 'akar', huruf: ['ر', 'ح', 'م'], teks: 'Satu akar: raḥmah (rahmat)' },
+      { tipe: 'banding', item: [
+        { arab: 'الرَّحْمَٰن', latin: 'Ar-Raḥmān', sifat: ['Pola «fa‘lān» → keluasan', 'Meliputi SELURUH makhluk', 'Di dunia · semua'] },
+        { arab: 'الرَّحِيم', latin: 'Ar-Raḥīm', sifat: ['Pola «fa‘īl» → kesinambungan', 'Khusus orang beriman', 'Kekal · di akhirat'] },
+      ], catatan: 'Berpasangan: rahmat yang luas (kuantitas) sekaligus kekal (kontinuitas).' },
+    ],
     surah: 'Al-Fātiḥah',
     surahNo: 1,
     ayatNo: '1',
@@ -110,6 +117,11 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-5',
+    visual: [
+      { tipe: 'taqdim',
+        normal: ['na‘budu', 'iyyāka'], quran: ['iyyāka', 'na‘budu'],
+        catatan: 'Objek «iyyāka» didahulukan → ḥaṣr (pembatasan): "hanya kepada-Mu, bukan yang lain."' },
+    ],
     surah: 'Al-Fātiḥah',
     surahNo: 1,
     ayatNo: '5',
@@ -296,6 +308,12 @@ const AYAT = [
   },
   {
     id: 'al-baqarah-286',
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'كَسَبَتْ', latin: 'kasabat', sifat: ['Bentuk sederhana', 'Untuk KEBAIKAN', 'Dicatat meski niat ringan'] },
+        { arab: 'اكْتَسَبَتْ', latin: 'iktasabat', sifat: ['Bentuk «ifti‘āl»', 'Untuk KEBURUKAN', 'Perlu usaha & kesengajaan'] },
+      ], catatan: 'Luasnya rahmat tersembunyi dalam satu pilihan kata kerja.' },
+    ],
     surah: 'Al-Baqarah',
     surahNo: 2,
     ayatNo: '286',
@@ -321,6 +339,12 @@ const AYAT = [
   /* ============ JUZ 30 — Ayat masyhur ============ */
   {
     id: 'al-insyirah-5-6',
+    visual: [
+      { tipe: 'hitung', item: [
+        { label: 'Kesulitan — «al-‘usr»', jumlah: 1, nuansa: 'Pakai alif-lam (ma‘rifah). Diulang → benda yang SAMA.' },
+        { label: 'Kemudahan — «yusrā»', jumlah: 2, nuansa: 'Tanpa alif-lam (nakirah). Diulang → dua hal BERBEDA.' },
+      ], catatan: 'Maka: satu kesulitan, DUA kemudahan. Dipakai «ma‘a» (bersama), bukan «ba‘da» (sesudah).' },
+    ],
     surah: 'Asy-Syarh',
     surahNo: 94,
     ayatNo: '5–6',
@@ -390,6 +414,12 @@ const AYAT = [
   },
   {
     id: 'al-ikhlas-1-4',
+    visual: [
+      { tipe: 'banding', item: [
+        { arab: 'أَحَد', latin: 'Aḥad', sifat: ['Keesaan MUTLAK', 'Tak dapat dibagi/ditambah', 'Khusus bagi Allah'] },
+        { arab: 'وَاحِد', latin: 'Wāḥid', sifat: ['"Satu" biasa', 'Bisa diikuti dua, tiga…', 'Dipakai untuk makhluk'] },
+      ], catatan: 'Dipilih «Aḥad», bukan «Wāḥid» — menutup celah penyekutuan.' },
+    ],
     surah: 'Al-Ikhlāṣ',
     surahNo: 112,
     ayatNo: '1–4',
