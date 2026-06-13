@@ -8,6 +8,7 @@ const Store = {
   KEY_PRO: 'quranlens_pro',
   KEY_MARK: 'quranlens_bookmark',
   KEY_STREAK: 'quranlens_streak',
+  KEY_DONE: 'quranlens_done',
 
   /* ---------- Premium ---------- */
   isPro() {
@@ -33,6 +34,21 @@ const Store = {
     localStorage.setItem(this.KEY_MARK, JSON.stringify(list));
     return i < 0; // true bila baru ditandai
   },
+
+  /* ---------- Tandai selesai dipelajari (progress) ---------- */
+  doneList() {
+    try { return JSON.parse(localStorage.getItem(this.KEY_DONE)) || []; }
+    catch { return []; }
+  },
+  isDone(id) { return this.doneList().includes(id); },
+  toggleDone(id) {
+    const list = this.doneList();
+    const i = list.indexOf(id);
+    if (i >= 0) list.splice(i, 1); else list.push(id);
+    localStorage.setItem(this.KEY_DONE, JSON.stringify(list));
+    return i < 0; // true bila baru ditandai selesai
+  },
+  doneCount(ids) { return (ids || []).filter(id => this.isDone(id)).length; },
 
   /* ---------- Streak harian (retensi) ---------- */
   streak() {

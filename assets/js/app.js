@@ -61,6 +61,7 @@ const App = {
 
     this.renderStreak(Store.catatKunjungan());
     this.refreshProUI();
+    this.refreshFontUI();
 
     this.current = ayatHariIni().id;
     this.renderNavigator();
@@ -105,22 +106,31 @@ const App = {
   /* ---------- Navigator (Musim → Episode) ---------- */
   renderNavigator() {
     const pro = !!Store.isPro();
-    document.getElementById('navigator').innerHTML = MUSIM.map(m => `
+    document.getElementById('navigator').innerHTML = MUSIM.map(m => {
+      const total = m.episodes.length;
+      const sel = Store.doneCount(m.episodes);
+      const pct = total ? Math.round((sel / total) * 100) : 0;
+      return `
       <div class="nav-musim">
         <div class="nav-musim-head"><span class="nm-label">${m.label}</span><span class="nm-surah">${m.surah}</span></div>
+        <div class="nav-progress" title="${sel} dari ${total} episode selesai">
+          <div class="np-bar"><i style="width:${pct}%"></i></div><span class="np-num">${sel}/${total}</span>
+        </div>
         <div class="nav-eps">
           ${m.episodes.map((id, i) => {
             const a = cariAyat(id); if (!a) return '';
             const open = pro || a.gratis;
             const ikon = !open ? '🔒' : (a.gratis && !pro ? '○' : '✦');
-            return `<button class="nav-ep ${this.current === id ? 'active' : ''}" onclick="App.bukaEpisode('${id}')">
-              <span class="ne-no">${i + 1}</span>
+            const done = Store.isDone(id);
+            return `<button class="nav-ep ${this.current === id ? 'active' : ''} ${done ? 'done' : ''}" onclick="App.bukaEpisode('${id}')">
+              <span class="ne-no">${done ? '✓' : (i + 1)}</span>
               <span class="ne-title">${a.surah} : ${a.ayatNo}</span>
               <span class="ne-status">${ikon}</span>
             </button>`;
           }).join('')}
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   },
 
   // Muat episode 'current' ke reader tanpa efek samping (dipakai saat init)
@@ -149,7 +159,13 @@ const App = {
     const open = pro || ayat.gratis;
     const marked = Store.isMarked(ayat.id);
 
-    let h = `<div class="ep-head">
+    let h = `<nav class="crumbs" aria-label="Posisi">
+      <button onclick="App.switchTab('beranda')">Beranda</button><i>›</i>
+      <button onclick="App.toggleDrawer(true)">${meta ? meta.musim.label : 'Episode'}</button><i>›</i>
+      <span aria-current="page">${ayat.surah} : ${ayat.ayatNo}</span>
+    </nav>`;
+
+    h += `<div class="ep-head">
       <button class="btn-mark ${marked ? 'on' : ''}" title="Simpan episode" onclick="App.toggleMark('${ayat.id}', this)">${marked ? '🔖' : '🏷️'}</button>
       <div class="ep-kicker">${meta ? `${meta.musim.label} · Episode ${meta.no}` : 'Episode'}${ayat.gratis ? ' · GRATIS' : ''}</div>
       <h2 class="ep-title">QS. ${ayat.surah} : ${ayat.ayatNo}</h2>
@@ -163,8 +179,23 @@ const App = {
     }
     h += this.renderKajianCards(ayat, open);
     if (open) h += this.renderScholar(ayat.sumber);
+
+    const done = Store.isDone(ayat.id);
+    h += `<button class="btn-selesai ${done ? 'done' : ''}" onclick="App.toggleDone('${ayat.id}', this)">
+      ${done ? '✓ Sudah dipelajari' : 'Tandai selesai dipelajari'}</button>`;
+
     h += this.renderEpNav(ayat);
     return h;
+  },
+
+  toggleDone(id, btn) {
+    const now = Store.toggleDone(id);
+    if (btn) {
+      btn.classList.toggle('done', now);
+      btn.textContent = now ? '✓ Sudah dipelajari' : 'Tandai selesai dipelajari';
+    }
+    this.toast(now ? '✓ Ditandai selesai — lanjutkan perjalananmu!' : 'Tanda selesai dilepas');
+    this.renderNavigator();
   },
 
   // Kajian kata demi kata: tiap kata satu kartu (kartu pertama gratis sebagai cicipan)
@@ -490,6 +521,35 @@ const App = {
   },
   toggleTheme() {
     this.setTheme(document.documentElement.dataset.theme === 'dark' ? 'terang' : 'dark');
+  },
+
+  /* ---------- Ukuran teks (aksesibilitas) ---------- */
+  FONT_STEPS: [100, 112.5, 125, 137.5], // % pada <html>; default 112.5 (indeks 1)
+  FONT_NAMA: ['Kecil', 'Normal', 'Besar', 'Sangat besar'],
+  fontScale() {
+    const v = parseFloat(localStorage.getItem('ql-fontscale'));
+    return this.FONT_STEPS.includes(v) ? v : 112.5;
+  },
+  setFont(pct) {
+    document.documentElement.style.fontSize = pct + '%';
+    try { localStorage.setItem('ql-fontscale', pct); } catch (e) {}
+    this.refreshFontUI();
+  },
+  bumpFont(dir) {
+    const steps = this.FONT_STEPS;
+    let i = steps.indexOf(this.fontScale());
+    if (i < 0) i = 1;
+    const ni = Math.max(0, Math.min(steps.length - 1, i + dir));
+    if (ni === i) return; // sudah di batas
+    this.setFont(steps[ni]);
+    this.toast(`Ukuran teks: ${this.FONT_NAMA[ni]}`);
+  },
+  refreshFontUI() {
+    const i = this.FONT_STEPS.indexOf(this.fontScale());
+    const down = document.getElementById('fontDown');
+    const up = document.getElementById('fontUp');
+    if (down) down.disabled = (i <= 0);
+    if (up) up.disabled = (i >= this.FONT_STEPS.length - 1);
   },
 
   /* ---------- Toast ---------- */

@@ -13,6 +13,8 @@
   --card-line: rgba(201, 168, 76, .40);
   --line: rgba(201, 168, 76, .16);
   --gold-soft: rgba(242, 208, 96, .10);
+  --ok: #5fb98a;            /* status "selesai dipelajari" */
+  --ok-soft: rgba(95, 185, 138, .14);
   --glow: 0 0 26px rgba(242, 208, 96, .28);
   --shadow: 0 18px 50px rgba(0, 0, 0, .55);
   --radius: 14px;
@@ -351,3 +353,33 @@ footer .note { font-size: .74rem; opacity: .8; margin-top: 8px; max-width: 640px
 :root[data-theme="light"] .hero-arab, :root[data-theme="light"] .ayah-arab .aw.on, :root[data-theme="light"] .vk-huruf, :root[data-theme="light"] .vb-arab, :root[data-theme="light"] .pc-arab { text-shadow: none; }
 :root[data-theme="light"] .navigator { background: var(--bg-warm); }
 @media (min-width: 861px) { :root[data-theme="light"] .navigator { background: var(--card-bg); } }
+
+/* ===== Quick wins: breadcrumb, ukuran teks, tandai-selesai, progress ===== */
+
+/* Breadcrumb */
+.crumbs { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; font-family: var(--label); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-label); margin: 2px 2px 14px; }
+.crumbs button { background: none; border: none; color: var(--gold-label); font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; padding: 2px 0; }
+.crumbs button:hover { color: var(--gold); }
+.crumbs i { color: var(--faded); font-style: normal; }
+.crumbs span[aria-current] { color: var(--gold); }
+
+/* Kontrol ukuran teks (A− / A+) */
+.font-ctl { display: inline-flex; align-items: center; gap: 4px; }
+.font-ctl button { width: 34px; height: 34px; border-radius: 9px; border: 1px solid var(--line); background: var(--bg-warm); color: var(--gold); cursor: pointer; font-family: var(--label); font-size: .82rem; transition: .18s; }
+.font-ctl button:hover:not(:disabled) { box-shadow: var(--glow); }
+.font-ctl button:disabled { opacity: .35; cursor: default; }
+
+/* Tombol "Tandai selesai" */
+.btn-selesai { display: block; width: 100%; margin: 22px 0 4px; padding: 13px 18px; border-radius: 12px; border: 1px solid var(--card-line); background: var(--card-bg); color: var(--gold); font-family: var(--label); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: .18s; }
+.btn-selesai:hover { box-shadow: var(--glow); }
+.btn-selesai.done { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }
+
+/* Progress per musim di navigator */
+.nav-progress { display: flex; align-items: center; gap: 8px; padding: 0 6px; margin-bottom: 10px; }
+.np-bar { flex: 1; height: 5px; border-radius: 999px; background: var(--gold-soft); overflow: hidden; }
+.np-bar i { display: block; height: 100%; border-radius: 999px; background: var(--ok); transition: width .35s ease; }
+.np-num { flex: none; font-family: var(--label); font-size: .58rem; letter-spacing: .08em; color: var(--gold-label); }
+
+/* Episode yang sudah selesai */
+.nav-ep.done .ne-no { background: var(--ok-soft); box-shadow: inset 0 0 0 1px var(--ok); color: var(--ok); }
+.nav-ep.done .ne-title { color: var(--sub); }

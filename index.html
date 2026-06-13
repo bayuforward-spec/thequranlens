@@ -19,6 +19,8 @@
       try {
         var t = localStorage.getItem('ql-theme');
         document.documentElement.dataset.theme = (t === 'light') ? 'light' : 'dark';
+        var f = parseFloat(localStorage.getItem('ql-fontscale'));
+        if ([100, 112.5, 125, 137.5].indexOf(f) >= 0) document.documentElement.style.fontSize = f + '%';
       } catch (e) { document.documentElement.dataset.theme = 'dark'; }
     })();
   </script>
@@ -37,6 +39,10 @@
       <button class="tab" data-tab="langganan">Langganan</button>
     </nav>
     <div class="topbar-actions">
+      <div class="font-ctl" role="group" aria-label="Ukuran teks">
+        <button id="fontDown" onclick="App.bumpFont(-1)" title="Perkecil teks" aria-label="Perkecil teks">A−</button>
+        <button id="fontUp" onclick="App.bumpFont(1)" title="Perbesar teks" aria-label="Perbesar teks">A+</button>
+      </div>
       <button class="theme-toggle" id="themeToggle" onclick="App.toggleTheme()" title="Beralih tema" aria-label="Beralih tema">🌙</button>
       <button class="badge-pro" id="proBadge" onclick="App.openUpgrade()">✦ Premium</button>
     </div>
