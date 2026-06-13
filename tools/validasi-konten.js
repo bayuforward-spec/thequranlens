@@ -83,6 +83,7 @@ AYAT.forEach((a) => {
     a.kajianKata.forEach((k, i) => {
       if (!k.kata) E(`"${a.id}" kajianKata[${i}]: field "kata" (teks arab) hilang.`);
       if (!Array.isArray(k.sumber) || !k.sumber.length) W(`"${a.id}" kajianKata[${i}] (${k.latin || '?'}): tanpa "sumber".`);
+      if (k.asalKata && !k.asalKata.gambar) E(`"${a.id}" kajianKata[${i}] (${k.latin || '?'}): "asalKata" tanpa "gambar".`);
     });
   }
 });

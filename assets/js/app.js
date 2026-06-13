@@ -220,10 +220,23 @@ const App = {
     return `<div class="kata-card">
       <div class="kata-arab" lang="ar" dir="rtl">${k.kata}</div>
       <div class="kata-gloss"><span class="kg-latin">${k.latin || ''}</span><span class="kg-arti">${k.arti || ''}</span></div>
+      ${k.asalKata ? this.renderAsal(k.asalKata) : ''}
       ${Array.isArray(k.poin) ? `<ul class="poin">${k.poin.map(p => `<li>${p}</li>`).join('')}</ul>` : ''}
       ${blocks.length ? this.renderVisual(blocks) : ''}
       ${k.hikmah ? `<div class="kata-hikmah"><span class="kh-label">Hikmah</span><p>${k.hikmah}</p></div>` : ''}
       ${this.renderScholar(k.sumber)}
+    </div>`;
+  },
+
+  // Lapisan "Asal-Usul Kata": akar klasik + makna inti + gambaran konkret (etimologi hidup)
+  renderAsal(a) {
+    if (!a) return '';
+    const akar = Array.isArray(a.huruf)
+      ? `<span class="as-akar" lang="ar" dir="rtl">${a.huruf.map(h => `<span>${h}</span>`).join('<i>·</i>')}</span>` : '';
+    const makna = a.makna ? `<span class="as-makna">${a.makna}</span>` : '';
+    return `<div class="asal">
+      <div class="asal-head"><span class="asal-label">⌬ Asal-Usul Kata</span>${akar}${makna}</div>
+      <p class="asal-gambar">${a.gambar}</p>
     </div>`;
   },
 

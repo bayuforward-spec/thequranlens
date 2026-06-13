@@ -51,6 +51,13 @@ episode tak muncul atau salah tampil. Validator akan menangkap sebagian besarnya
         'Poin balaghah/akar kata 1.',
         'Poin 2.',
       ],
+      // OPSIONAL — "Asal-Usul Kata": etimologi klasik + gambaran konkret.
+      // Contoh: falāḥ dari petani yang membelah tanah → tumbuh kehidupan.
+      asalKata: {
+        huruf: ['ف', 'ل', 'ح'],          // akar kata
+        makna: 'membelah & menembus',     // makna inti akar
+        gambar: 'Gambaran hidup dari akar kata + kaitannya dengan makna ayat. Boleh pakai <b>penekanan</b>.',
+      },
       // OPSIONAL — perbandingan "Dipilih vs Alternatif" (pembeda utama app):
       banding: { tipe: 'banding', item: [
         { arab: 'الكَلِمَة', latin: 'Al-kalimah', sifat: ['nuansa 1', 'nuansa 2'] },
