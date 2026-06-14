@@ -1113,6 +1113,130 @@ const AYAT = [
       'Jadikan Al-Ikhlas wirid harian; membacanya 3x menyamai khataman sepertiga Al-Qur’an. Saat hatimu mulai bergantung berlebihan pada atasan, pasangan, atau harta, ulangi «Allāhuṣ-ṣamad» — hanya Allah tempat bergantung sejati.',
     sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi no. 3364', 'Sahih Bukhari (keutamaan Al-Ikhlas)'],
   },
+  {
+    id: 'al-falaq-1-5',
+    kajianKata: [
+      { kata: 'بِرَبِّ الْفَلَقِ', latin: 'bi rabbil-falaq', arti: 'kepada Tuhan yang menyingsingkan subuh',
+        poin: [
+          'Berlindung kepada «Rabb» — yang memelihara & menguasai, bukan sekadar mencipta.',
+          'Dipilih «al-falaq», bukan «aṣ-ṣubḥ»: yang dimohon adalah Tuhan yang MEMBELAH gelap untuk memunculkan terang.',
+        ],
+        asalKata: { huruf: ['ف', 'ل', 'ق'], makna: 'membelah hingga terbuka',
+          gambar: 'Akar «f-l-q» berarti <b>membelah</b> sampai sesuatu terbuka dan keluar isinya — biji membelah lalu tunas muncul, fajar membelah pekat malam lalu cahaya merekah (bandingkan «fāliqul-iṣbāḥ», QS 6:96). Maka «al-falaq» bukan sekadar "subuh", tapi <b>segala yang Allah belah lalu Dia keluarkan terang & kehidupan darinya</b>. Memohon perlindungan kepada «Rabbil-falaq» berarti bersandar pada Dzat yang sanggup <b>membelah</b> kegelapan ketakutanmu dan memunculkan jalan keluar.' },
+        banding: { tipe: 'banding', item: [
+          { arab: 'الْفَلَق', latin: 'al-Falaq', sifat: ['Akar: membelah & mengeluarkan', 'Segala yang Allah singkapkan dari gelap'] },
+          { arab: 'الصُّبْح', latin: 'aṣ-Ṣubḥ', alt: true, sifat: ['Hanya "waktu subuh"', 'Tak menonjolkan kuasa membelah gelap'] },
+        ], catatan: 'Dipilih «al-falaq» — menegaskan Tuhan yang membelah gelap & memunculkan terang.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'غَاسِقٍ إِذَا وَقَبَ', latin: 'gāsiqin iżā waqab', arti: 'kejahatan malam apabila telah gelap gulita',
+        poin: [
+          '«gāsiq»: kegelapan malam yang pekat — saat kejahatan & rasa takut paling leluasa.',
+          '«iżā waqab»: "apabila ia masuk menyusup" — bahaya yang datang diam-diam tanpa terasa.',
+        ],
+        asalKata: { huruf: ['و', 'ق', 'ب'], makna: 'masuk menyusup ke dalam',
+          gambar: 'Akar «w-q-b» melukiskan sesuatu yang <b>masuk perlahan ke dalam celah/lubang</b> — seperti gelap yang merembes memenuhi lembah saat matahari tenggelam. Pilihan kata ini menangkap watak banyak keburukan: <b>tak menyerbu terang-terangan, tapi menyusup pelan</b> saat kita lengah. Maka kita diajari memohon perlindungan justru sebelum ia "waqab".' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+      { kata: 'النَّفَّاثَاتِ فِي الْعُقَدِ', latin: 'an-naffāṡāti fil-‘uqad', arti: 'tukang sihir yang meniup pada buhul-buhul',
+        poin: [
+          '«an-naffāṡāt»: yang BERULANG-ULANG meniup pada simpul tali (praktik sihir).',
+          'Pola «fa‘‘āl» menyiratkan keseringan & kesungguhan — bukan sekali tiup.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'النَّفَّاثَات', latin: 'an-Naffāṡāt', sifat: ['Pola «fa‘‘āl» → berulang & intens', 'Menekuni perbuatannya'] },
+          { arab: 'النَّافِثَات', latin: 'an-Nāfiṡāt', alt: true, sifat: ['Sekadar "yang meniup"', 'Tak menyiratkan keseringan'] },
+        ], catatan: 'Dipakai «naffāṡāt» — sihir digambarkan sebagai perbuatan yang ditekuni berulang.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+      { kata: 'حَاسِدٍ إِذَا حَسَدَ', latin: 'ḥāsidin iżā ḥasad', arti: 'pendengki apabila ia mendengki',
+        poin: [
+          'Bukan "dari pendengki" saja, tapi «iżā ḥasad» — "APABILA ia melampiaskan dengkinya".',
+          'Dengki yang terpendam belum membahayakan; ia berbahaya saat digerakkan jadi tindakan.',
+        ],
+        asalKata: { huruf: ['ح', 'س', 'د'], makna: 'mengharap lenyapnya nikmat orang',
+          gambar: 'Sebagian ahli bahasa mengaitkan «ḥasad» dengan «al-ḥasdal» — <b>kutu yang menggerogoti</b> kulit hingga rontok. Begitulah dengki: ia <b>menggerogoti pelakunya dari dalam</b> sebelum mengenai yang didengki, dan baru menjelma bahaya nyata «iżā ḥasad» — ketika ia bertindak. Surah ditutup dengan keburukan hati ini karena ia akar banyak kejahatan lahir.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Tiap takut, kembalikan pada Yang membelah gelap jadi terang.',
+      'Banyak bahaya menyusup pelan saat lengah — berlindunglah sejak dini.',
+      'Jaga nikmatmu dari mata yang dengki, dan jangan jadi orang yang memendam dengki.',
+    ],
+    surah: 'Al-Falaq',
+    surahNo: 113,
+    ayatNo: '1–5',
+    juz: 30,
+    tema: ['Perlindungan', 'Tauhid', 'Penjagaan diri'],
+    gratis: false,
+    arab: 'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِن شَرِّ مَا خَلَقَ ۝ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',
+    latin: 'Qul a‘ūżu bi rabbil-falaq. Min syarri mā khalaq. Wa min syarri gāsiqin iżā waqab. Wa min syarri an-naffāṡāti fil-‘uqad. Wa min syarri ḥāsidin iżā ḥasad.',
+    arti: 'Katakanlah: Aku berlindung kepada Tuhan yang menyingsingkan subuh, dari kejahatan makhluk-Nya, dari kejahatan malam apabila telah gelap gulita, dari kejahatan (perempuan) penyihir yang meniup pada buhul-buhul, dan dari kejahatan orang yang dengki apabila ia dengki.',
+    asbabunNuzul:
+      'Al-Falaq dan An-Nas (al-Mu‘awwiżatān) dikenal sebagai surah perlindungan. Diriwayatkan dalam Sahih bahwa Nabi ﷺ pernah terkena sihir dari Labid bin al-A‘ṣam, lalu kedua surah ini menjadi sarana ruqyah & penjagaan (HR. Bukhari–Muslim). Nabi ﷺ juga rutin membacanya menjelang tidur dan seusai salat.',
+    tafsir:
+      'Surah ini mengajarkan berlindung kepada Allah, «Rabbil-falaq», dari empat sumber keburukan: kejahatan seluruh makhluk secara umum, kegelapan malam saat bahaya menyusup, sihir para peniup buhul, dan kedengkian saat dilampiaskan. Dimulai dari yang umum lalu menyebut yang khusus & tersembunyi — mengajarkan kewaspadaan menyeluruh dengan bersandar penuh kepada Allah.',
+    hikmah:
+      'Sumber rasa takut manusia banyak dan sebagiannya tak terlihat — gelap, sihir, dengki. Surah ini menautkan semua ketakutan itu pada satu sandaran: Allah yang sanggup membelah kegelapan dan memunculkan jalan keluar.',
+    linguistik:
+      'Dipilih «al-falaq» (yang dibelah) alih-alih «aṣ-ṣubḥ» (subuh) untuk menonjolkan kuasa Allah membelah gelap demi memunculkan terang & kehidupan. Lalu «gāsiqin iżā waqab» memotret bahaya yang menyusup diam-diam; «an-naffāṡāt» berpola «fa‘‘āl» yang menyiratkan perbuatan berulang & ditekuni; dan penutup «ḥāsidin iżā ḥasad» menegaskan bahwa dengki membahayakan justru saat dilampiaskan — sebuah urutan dari yang umum (mā khalaq) menuju yang paling tersembunyi (hati yang dengki).',
+    amalan:
+      'Baca Al-Falaq & An-Nas tiap pagi-petang dan menjelang tidur (digabung Al-Ikhlas, ditiupkan ke telapak lalu diusapkan ke tubuh, sesuai sunnah). Saat cemas tanpa sebab atau merasa diganggu, kembalikan hati pada «Rabbil-falaq». Dan jaga hatimu sendiri dari dengki — ia menggerogoti pemiliknya lebih dulu.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim (riwayat ruqyah)'],
+  },
+  {
+    id: 'an-nas-1-6',
+    kajianKata: [
+      { kata: 'بِرَبِّ النَّاسِ · مَلِكِ النَّاسِ · إِلَٰهِ النَّاسِ', latin: 'bi rabbin-nās · malikin-nās · ilāhin-nās', arti: 'Tuhan manusia · Raja manusia · Sembahan manusia',
+        poin: [
+          'Tiga nama Allah bertingkat: «Rabb» (pemelihara) → «Malik» (raja) → «Ilāh» (sembahan).',
+          'Naik dari yang umum ke yang paling khusus: dipelihara, lalu dikuasai, lalu hanya Dia yang disembah.',
+          '«an-nās» diulang pada ketiganya — menanamkan kedekatan: Dia mengenalmu dalam setiap peran itu.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'رَبّ', latin: 'Rabb', sifat: ['Pemelihara & pengasuh', 'Mengurus dari luar diri'] },
+          { arab: 'مَلِك', latin: 'Malik', sifat: ['Raja & penguasa', 'Memerintah & menata'] },
+          { arab: 'إِلٰه', latin: 'Ilāh', sifat: ['Sembahan satu-satunya', 'Pemilik hati dari dalam'] },
+        ], catatan: 'Tiga tingkat sandaran: dipelihara → dikuasai → disembah. Hanya Dia yang sanggup mengusir bisikan dari dalam dada.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'الْوَسْوَاسِ الْخَنَّاسِ', latin: 'al-waswāsil-khannās', arti: 'bisikan (setan) yang bersembunyi',
+        poin: [
+          '«al-waswās»: bisikan halus berulang-ulang yang nyaris tak terdengar.',
+          '«al-khannās»: yang MUNDUR & bersembunyi saat nama Allah disebut, lalu kembali saat lengah.',
+        ],
+        asalKata: { huruf: ['خ', 'ن', 'س'], makna: 'mundur & bersembunyi',
+          gambar: 'Akar «kh-n-s» berarti <b>menyusut, mundur, lalu bersembunyi</b> — dipakai untuk bintang yang lenyap di siang hari («al-khunnas», QS 81:15) dan hewan yang menarik diri ke sarang. Begitulah setan: ia <b>maju membisik saat hati lalai, dan langsung menciut mundur begitu Allah disebut</b>. Maka senjata melawannya bukan adu kuat, melainkan zikir — sebut nama-Nya, dan si pembisik pun "khanasa", surut.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+      { kata: 'مِنَ الْجِنَّةِ وَالنَّاسِ', latin: 'minal-jinnati wan-nās', arti: 'dari (golongan) jin dan manusia',
+        poin: [
+          'Bisikan jahat tak hanya dari jin — juga dari MANUSIA (teman, lingkungan, media).',
+          'Penutup yang membuka mata: waspadai pembisik tak kasat mata DAN yang berwujud manusia.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Dia memeliharamu, menguasaimu, dan satu-satunya yang layak disembah — tiga alasan berhenti gelisah.',
+      'Lawan bisikan bukan dengan tegang, tapi dengan zikir: sebut nama-Nya, ia surut.',
+      'Tak semua racun datang dari yang gaib — pilih teman & layar yang tak membisikkan keburukan.',
+    ],
+    surah: 'An-Nās',
+    surahNo: 114,
+    ayatNo: '1–6',
+    juz: 30,
+    tema: ['Perlindungan', 'Tauhid', 'Melawan waswas'],
+    gratis: false,
+    arab: 'قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ',
+    latin: 'Qul a‘ūżu bi rabbin-nās. Malikin-nās. Ilāhin-nās. Min syarril-waswāsil-khannās. Allażī yuwaswisu fī ṣudūrin-nās. Minal-jinnati wan-nās.',
+    arti: 'Katakanlah: Aku berlindung kepada Tuhan manusia, Raja manusia, Sembahan manusia, dari kejahatan (bisikan) setan yang bersembunyi, yang membisikkan (kejahatan) ke dalam dada manusia, dari (golongan) jin dan manusia.',
+    asbabunNuzul:
+      'An-Nas bersama Al-Falaq (al-Mu‘awwiżatān) berfungsi sebagai surah perlindungan, terkait riwayat sihir yang menimpa Nabi ﷺ (HR. Bukhari–Muslim). Nabi ﷺ rutin membacanya menjelang tidur dan seusai salat sebagai penjagaan.',
+    tafsir:
+      'Surah ini memohon perlindungan kepada Allah dengan tiga nama bertingkat — Rabb, Malik, Ilāh manusia — dari satu musuh utama: bisikan setan yang bersembunyi, yang menyusup ke dalam dada, baik dari golongan jin maupun manusia. Tiga nama Allah dihadapkan pada satu sumber keburukan batin, menandakan betapa kita butuh sandaran penuh untuk menjaga hati.',
+    hikmah:
+      'Pertarungan terbesar sering terjadi di dalam dada — melawan bisikan. Surah ini mengajarkan bahwa kuncinya bukan kekuatan diri, tapi berlindung pada Allah yang memelihara, menguasai, dan berhak disembah; dan bahwa zikir membuat si pembisik surut.',
+    linguistik:
+      'Tiga nama «Rabb–Malik–Ilāh» disusun menaik dari pemeliharaan yang umum menuju penyembahan yang paling khusus, dengan «an-nās» diulang untuk menegaskan kedekatan & cakupan. Kata «al-khannās» (pola mubalaghah dari kh-n-s: mundur & bersembunyi) menggambarkan watak setan yang menciut saat Allah disebut. Penutup «minal-jinnati wan-nās» memperluas ancaman: pembisik bisa berwujud gaib maupun manusia.',
+    amalan:
+      'Jadikan al-Mu‘awwiżatān (Al-Falaq & An-Nas) bersama Al-Ikhlas sebagai wirid pagi-petang dan menjelang tidur. Saat dilanda waswas — dalam ibadah, keputusan, atau prasangka — segera berta‘awuż dan sebut nama Allah; amati bagaimana bisikan itu surut. Pilih pula teman & asupan media yang tak menjadi "pembisik" dari golongan manusia.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim (riwayat ruqyah)'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1131,8 +1255,8 @@ const MUSIM = [
     episodes: ['al-fatihah-1', 'al-fatihah-2', 'al-fatihah-3', 'al-fatihah-4', 'al-fatihah-5', 'al-fatihah-6', 'al-fatihah-7'] },
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
-  { id: 'pilihan', label: 'Pilihan', surah: 'Juz 30 & Ayat Masyhur', ket: 'Ayat pilihan',
-    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-kautsar-1-3', 'al-ikhlas-1-4'] },
+  { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
+    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-kautsar-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1264,6 +1388,17 @@ const HIKMAH_KATA = {
     'Semua bergantung pada-Nya, Dia tak butuh apa pun. Lepaskan harap berlebih pada makhluk.',
     'Tak beranak, tak diperanakkan. Dia tak seperti apa pun yang kamu kenal.',
     'Tak ada yang setara dengan-Nya. Jangan sandarkan hidupmu pada yang selemah dirimu.',
+  ],
+  'al-falaq-1-5': [
+    'Apa pun yang kamu takuti, ingat: Tuhanmu sanggup membelah pekat malam jadi fajar.',
+    'Banyak luka masuk diam-diam saat kita lengah. Pasang penjagaan sebelum ia menyusup.',
+    'Kejahatan yang ditekuni itu nyata — tapi sandaranmu jauh lebih kuat darinya.',
+    'Sebelum mendengki orang, ingat: dengki menggerogoti pemiliknya lebih dulu.',
+  ],
+  'an-nas-1-6': [
+    'Dia memeliharamu, menguasaimu, dan layak kau sembah. Tiga alasan untuk berhenti gelisah.',
+    'Lawan bisikan bukan dengan tegang, tapi dengan zikir. Sebut nama-Nya — ia surut.',
+    'Tak semua racun datang dari yang gaib. Pilih teman & layar yang tak membisikkan keburukan.',
   ],
 };
 
