@@ -39,7 +39,7 @@ const CFG = {
   port: parseInt(process.env.PORT || '8787', 10),
   // Mayar (https://mayar.id) — secret webhook & kandidat header tanda tangan.
   mayarSecret: process.env.MAYAR_WEBHOOK_SECRET || '',
-  mayarSigHeaders: (process.env.MAYAR_SIGNATURE_HEADER || 'x-callback-token,x-mayar-signature,x-signature,signature')
+  mayarSigHeaders: (process.env.MAYAR_SIGNATURE_HEADER || 'x-callback-token,x-mayar-signature,x-mayar-hmac,x-signature,x-hub-signature-256,signature')
     .toLowerCase().split(',').map((s) => s.trim()).filter(Boolean),
   // Mode debug: log header+body webhook & lewati verifikasi — HANYA untuk 1x transaksi tes.
   webhookDebug: process.env.MAYAR_WEBHOOK_DEBUG === 'true',
@@ -254,9 +254,14 @@ const server = http.createServer(async (req, res) => {
     try { evt = JSON.parse(raw); }
     catch { return kirimJSON(res, 400, { error: 'Body bukan JSON valid' }); }
 
-    // Event tes dari Mayar (tanpa order) cukup dibalas 200 agar setup tervalidasi.
+    // Event "testing" dari tombol uji Mayar: cukup balas 200, jangan disimpan.
+    if (evt && evt.event === 'testing') {
+      console.log('[webhook] event testing diterima — koneksi OK.');
+      return kirimJSON(res, 200, { ok: true, note: 'Event testing diterima — koneksi webhook OK.' });
+    }
+
     const rec = normalizeEvent(evt);
-    if (!rec) return kirimJSON(res, 200, { ok: true, note: 'Tidak ada order pada payload (mungkin event tes).' });
+    if (!rec) return kirimJSON(res, 200, { ok: true, note: 'Tidak ada order pada payload.' });
 
     Store.upsert(rec);
     console.log(`[webhook] order ${rec.order} -> ${rec.status} (${rec.paket})`);
