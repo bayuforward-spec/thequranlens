@@ -924,14 +924,15 @@ const AYAT = [
       {
         kata: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا', latin: 'inna ma‘al-‘usri yusrā', arti: '(diulang) sesungguhnya bersama kesulitan ada kemudahan',
         poin: [
-          '«al-‘usr» (definitif) diulang → kesulitan yang SAMA.',
-          '«yusrā» (nakirah) diulang → dua kemudahan yang BERBEDA.',
+          '«al-‘usr» (ma‘rifah / definitif) diulang → kesulitan yang SAMA & tertentu.',
+          '«yusrā» (nakirah / indefinitif) diulang → kemudahan yang BERBEDA — jadi lebih dari satu.',
+          'Tanwin nakirah «yusrā» juga bermakna ta‘zhīm: kemudahan yang BESAR & tak terbatas jenisnya — bukan yang remeh.',
           'Ibnu ‘Abbas: "Satu kesulitan takkan mengalahkan dua kemudahan."',
         ],
         hitung: { tipe: 'hitung', item: [
-          { label: 'Kesulitan — «al-‘usr»', jumlah: 1, nuansa: 'Definitif, diulang → SAMA' },
-          { label: 'Kemudahan — «yusrā»', jumlah: 2, nuansa: 'Indefinitif, diulang → BERBEDA' },
-        ], catatan: 'Satu kesulitan, dua kemudahan.' },
+          { label: 'Kesulitan — «al-‘usr»', jumlah: 1, nuansa: 'Definitif, diulang → SAMA & tertentu' },
+          { label: 'Kemudahan — «yusrā»', jumlah: 2, nuansa: 'Indefinitif, diulang → BERBEDA & luas' },
+        ], catatan: 'Satu kesulitan tertentu — dikepung kemudahan yang lebih banyak & agung.' },
         sumber: ['Riwayat Ibnu ‘Abbas (atsar masyhur)', 'Tafsir Ibnu Katsir'],
       },
     ],
