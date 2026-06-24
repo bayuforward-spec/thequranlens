@@ -27,7 +27,7 @@ const Payment = {
     },
     // URL backend verifikasi (server/). KOSONGKAN untuk mode demo sisi-klien.
     // Setelah server di-deploy: 'https://quranlens.onrender.com' -> memanggil /api/verify
-    apiBase: '',
+    apiBase: 'https://quran-lens-api.onrender.com',
   },
 
   // True bila backend verifikasi sudah dipasang
