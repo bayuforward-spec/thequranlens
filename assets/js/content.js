@@ -1115,13 +1115,13 @@ const AYAT = [
     asbabunNuzul:
       'Diriwayatkan kaum musyrikin (dan dalam riwayat lain orang Yahudi) berkata kepada Nabi ﷺ: "Gambarkan kepada kami Tuhanmu, dari apa Dia tercipta?" Maka turunlah surah ini sebagai jawaban menyeluruh tentang hakikat Allah (HR. Tirmidzi dan Ahmad). Surah ini setara sepertiga Al-Qur’an karena memuat inti akidah.',
     tafsir:
-      'Empat ayat ringkas yang menjawab pertanyaan terbesar manusia: siapa Tuhan? Dia Esa tanpa sekutu, tempat bergantung seluruh makhluk, tidak berasal-usul dan tidak melahirkan, serta tidak ada yang menyamai-Nya dalam bentuk apa pun.',
+      'Surah ini menjawab pertanyaan paling mendasar manusia: siapa Allah? Jawabannya disusun bertahap & menutup tiap celah keliru. «Aḥad» menolak sekutu sekaligus pembagian. «Aṣ-Ṣamad» menegaskan seluruh makhluk bergantung kepada-Nya, sedang Dia tak bergantung pada apa pun. «Lam yalid wa lam yūlad» memutus gagasan Allah beranak atau diperanakkan — membantah keyakinan kaum musyrik & sebagian ahli kitab. Penutupnya «lam yakun lahū kufuwan aḥad» menafikan adanya yang setara dalam bentuk apa pun. Empat ayat ini adalah inti tauhid — sebab itu dinilai setara sepertiga Al-Qur’an.',
     hikmah:
       'Akidah yang bersih adalah fondasi seluruh amal. Memahami bahwa hanya Allah tempat bergantung membebaskan hati dari menggantungkan harap pada makhluk yang lemah.',
     linguistik:
       'Dipilih kata «Aḥad» bukan «Wāḥid». «Wāḥid» (satu) bisa diikuti dua, tiga, dan seterusnya; sedangkan «Aḥad» menunjuk keesaan mutlak yang tak dapat dibagi, ditambah, atau disusun — keunikan yang khusus bagi Allah. Lalu «Aṣ-Ṣamad»: tuan yang menjadi tumpuan seluruh kebutuhan makhluk, sementara Dia tidak butuh apa pun — sebuah kata padat yang sulit diterjemahkan satu kata. Frasa «lam yalid wa lam yūlad» menafikan keturunan dari dua arah sekaligus (tidak menurunkan & tidak diturunkan), menutup celah penyimpangan akidah. Surah dibuka «Aḥad» dan ditutup «Aḥad» — bingkai sempurna.',
     amalan:
-      'Jadikan Al-Ikhlas wirid harian; membacanya 3x menyamai khataman sepertiga Al-Qur’an. Saat hatimu mulai bergantung berlebihan pada atasan, pasangan, atau harta, ulangi «Allāhuṣ-ṣamad» — hanya Allah tempat bergantung sejati.',
+      'Jadikan Al-Ikhlas wirid harian — Nabi ﷺ membacanya bersama Al-Falaq & An-Nas tiap pagi-petang dan menjelang tidur; membacanya 3x menyamai pahala sepertiga Al-Qur’an (HR. Bukhari). Secara batin: tiap kali hatimu mulai menggantung berlebihan pada atasan, pasangan, atau harta, ucapkan «Allāhuṣ-Ṣamad» dan kembalikan kebergantungan kepada satu-satunya yang tak pernah mengecewakan. Cinta boleh pada makhluk; tapi bergantung, hanya kepada-Nya.',
     sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi no. 3364', 'Sahih Bukhari (keutamaan Al-Ikhlas)'],
   },
   {
