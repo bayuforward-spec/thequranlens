@@ -415,6 +415,7 @@ const AYAT = [
         poin: [
           'Nikmat disandarkan LANGSUNG ke Allah: «an‘amta» — Engkau yang memberi.',
           'Mereka: para nabi, shiddiqin, syuhada, & orang saleh.',
+          'Adab Qur’an: nikmat dinisbatkan langsung kepada-Nya, tapi murka dibiarkan pasif (tak "Engkau murkai") — rahmat-Nya didahulukan bahkan dalam keadilan.',
         ],
         banding: { tipe: 'banding', item: [
           { arab: 'أَنْعَمْتَ عَلَيْهِم', latin: 'an‘amta ‘alaihim', sifat: ['Bentuk AKTIF', 'Disandarkan ke Allah'] },
@@ -912,6 +913,8 @@ const AYAT = [
           'Dipakai «ma‘a» (bersama), bukan «ba‘da» (sesudah) — kemudahan menempel pada kesulitan.',
           '«al-‘usr» (alif-lam, definitif): satu kesulitan tertentu.',
         ],
+        asalKata: { huruf: ['ي', 'س', 'ر'], makna: 'lapang & mudah — mengalir tanpa hambatan',
+          gambar: 'Akar «‘-s-r» («‘usr») berarti <b>sempit, seret, sukar</b> — bagai jalan yang menyempit. Lawannya «y-s-r» («yusr»): <b>lapang, mudah, mengalir</b> — orang Arab memakainya untuk tanah datar yang gampang dilalui dan untuk harta yang berkecukupan. Susunan ayat sengaja <b>mengapit</b>: kesempitan dikepung kelapangan di kedua sisinya. Maka pesannya bukan "sabar, nanti juga berlalu", melainkan <b>"kelapangan itu sudah menyertai kesempitanmu — sekarang."</b>' },
         banding: { tipe: 'banding', item: [
           { arab: 'مَعَ', latin: 'Ma‘a (bersama)', sifat: ['Menempel pada kesulitan', 'Bukan menunggu jauh'] },
           { arab: 'بَعْدَ', latin: 'Ba‘da (sesudah)', alt: true, sifat: ['Menunggu di kejauhan', 'Tertunda'] },
