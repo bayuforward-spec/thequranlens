@@ -1503,6 +1503,99 @@ const AYAT = [
       'Jadikan salatmu "berbekas": seusai salat, lakukan satu kebaikan sosial — pinjamkan barang, bantu tetangga, sisihkan untuk yatim/miskin. Periksa niat: apakah ibadahmu untuk Allah atau untuk dilihat? Dan jangan remehkan pertolongan kecil — di situ iman diuji.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'at-takatsur-1-8',
+    kajianKata: [
+      { kata: 'أَلْهَاكُمُ التَّكَاثُرُ', latin: 'alhākumut-takāṡur', arti: 'bermegah-megahan telah melalaikan kamu',
+        poin: [
+          '«at-takāṡur» pola «tafā‘ul» = saling berlomba MEMPERBANYAK — harta, pengikut, status; lomba tanpa garis akhir.',
+          '«alhākum»: ia MELALAIKAN — bukan sekadar menyibukkan, tapi memalingkan dari yang hakiki.',
+          '«ḥattā zurtumul-maqābir»: sampai kamu "berziarah" ke kubur — disebut "berkunjung", isyarat dunia hanya persinggahan.',
+        ],
+        asalKata: { huruf: ['ك', 'ث', 'ر'], makna: 'saling berlomba memperbanyak',
+          gambar: 'Dari akar «k-ṡ-r» (banyak) — akar yang sama dengan «al-Kauṡar». Tapi di pola «tafā‘ul» («takāṡur») maknanya menjadi <b>saling berlomba menumpuk</b>: siapa punya lebih banyak. Pola ini menyiratkan <b>kompetisi tanpa ujung</b>, sebab "lebih banyak" tak pernah terasa cukup. Sindirannya abadi: angka pengikut, pamer harta, scroll tanpa henti — perlombaan yang baru berhenti «ḥattā zurtumul-maqābir», saat kau diantar ke kubur.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'عِلْمَ الْيَقِينِ ۝ عَيْنَ الْيَقِينِ', latin: '‘ilmal-yaqīn … ‘ainal-yaqīn', arti: 'pengetahuan yang yakin … penglihatan yang yakin',
+        poin: [
+          'Tingkat keyakinan: «‘ilmul-yaqīn» (yakin lewat ilmu/kabar) lalu «‘ainul-yaqīn» (yakin lewat melihat langsung).',
+          'Andai yakin dengan ilmu saja, kemegahan tak akan melalaikan — tapi banyak yang baru sadar saat sudah melihat (terlambat).',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Lomba menumpuk tak punya garis finish — kecuali kubur.',
+      'Tiap nikmat akan ditanya: "untuk apa kau pakai?"',
+      '"Cukup" itu keputusan, bukan jumlah.',
+    ],
+    surah: 'At-Takāṡur',
+    surahNo: 102,
+    ayatNo: '1–8',
+    juz: 30,
+    tema: ['Dunia & akhirat', 'Kesadaran', 'Syukur'],
+    gratis: false,
+    arab: 'أَلْهَاكُمُ التَّكَاثُرُ ۝ حَتَّىٰ زُرْتُمُ الْمَقَابِرَ ۝ كَلَّا سَوْفَ تَعْلَمُونَ ۝ ثُمَّ كَلَّا سَوْفَ تَعْلَمُونَ ۝ كَلَّا لَوْ تَعْلَمُونَ عِلْمَ الْيَقِينِ ۝ لَتَرَوُنَّ الْجَحِيمَ ۝ ثُمَّ لَتَرَوُنَّهَا عَيْنَ الْيَقِينِ ۝ ثُمَّ لَتُسْأَلُنَّ يَوْمَئِذٍ عَنِ النَّعِيمِ',
+    latin: 'Alhākumut-takāṡur. Ḥattā zurtumul-maqābir. Kallā saufa ta‘lamūn. Ṡumma kallā saufa ta‘lamūn. Kallā lau ta‘lamūna ‘ilmal-yaqīn. Latarawunnal-jaḥīm. Ṡumma latarawunnahā ‘ainal-yaqīn. Ṡumma latus’alunna yauma’iżin ‘anin-na‘īm.',
+    arti: 'Bermegah-megahan telah melalaikan kamu, sampai kamu masuk ke dalam kubur. Sekali-kali tidak! Kelak kamu akan mengetahui. Kemudian sekali-kali tidak! Kelak kamu akan mengetahui. Sekali-kali tidak! Sekiranya kamu mengetahui dengan pengetahuan yang yakin, niscaya kamu benar-benar akan melihat (neraka) Jahim. Kemudian kamu benar-benar akan melihatnya dengan mata kepala sendiri. Kemudian kamu benar-benar akan ditanya pada hari itu tentang kenikmatan (yang kamu megahkan).',
+    asbabunNuzul:
+      'Sebagian riwayat menyebut surah ini menegur kabilah-kabilah yang saling membanggakan jumlah & kemuliaan, hingga menghitung-hitung yang telah mati di kubur. Pesannya berlaku umum bagi siapa pun yang dilalaikan oleh perlombaan duniawi. (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Surah ini menelanjangi penyakit abadi manusia: berlomba memperbanyak dunia hingga lupa tujuan, sampai ajal menjemput. Allah memperingatkan dengan keras (kallā, diulang) bahwa kelak semua akan tahu hakikatnya, melihat Jahim dengan mata kepala, dan ditanya tentang setiap nikmat yang dimegahkan.',
+    hikmah:
+      'Bukan harta yang dicela, tapi "perlombaan menumpuk" yang melalaikan. Ukuran kecukupan bukan pada angka, tapi pada hati yang sadar bahwa semua akan dimintai pertanggungjawaban — termasuk nikmat yang kau anggap remeh.',
+    linguistik:
+      'Pola «tafā‘ul» pada «takāṡur» menyiratkan kompetisi timbal-balik yang tak berujung. Kata «zurtum» (berziarah/berkunjung) untuk kubur menyindir bahwa dunia hanya persinggahan. Lalu gradasi «‘ilmul-yaqīn» → «‘ainul-yaqīn» menggambarkan keyakinan yang naik dari kabar menjadi penglihatan langsung.',
+    amalan:
+      'Lawan "takāṡur" dengan jeda syukur: sebelum membeli/memamerkan, tanya "apakah ini kebutuhan atau sekadar lomba?". Kurangi membandingkan diri di media sosial. Dan biasakan bertanya pada tiap nikmat: "akan kujawab apa nanti saat ditanya tentang ini?"',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-humazah-1-9',
+    kajianKata: [
+      { kata: 'هُمَزَةٍ لُّمَزَةٍ', latin: 'humazatil lumazah', arti: 'pengumpat lagi pencela',
+        poin: [
+          'Dua wajah pencelaan: «humazah» (mencela dengan isyarat/perbuatan, di belakang) & «lumazah» (mencela dengan lisan, terang-terangan).',
+          'Pola «fu‘alah» menandakan KEBIASAAN yang melekat — bukan sesekali tergelincir, tapi tabiat mencela.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'هُمَزَة', latin: 'Humazah', sifat: ['Mencela dgn isyarat/perbuatan', 'Diam-diam, di belakang'] },
+          { arab: 'لُمَزَة', latin: 'Lumazah', sifat: ['Mencela dgn lisan', 'Terang-terangan, di depan'] },
+        ], catatan: 'Pola «fu‘alah» → keduanya menjadi TABIAT, bukan keseleo sesekali.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+      { kata: 'لَيُنبَذَنَّ فِي الْحُطَمَةِ', latin: 'layunbażanna fil-ḥuṭamah', arti: 'pasti ia dilemparkan ke dalam Huthamah',
+        poin: [
+          '«al-ḥuṭamah»: api yang «meremukkan» segalanya berkeping-keping.',
+          'Ia «taṭṭali‘u ‘alal-af’idah» — membakar naik sampai ke HATI: tempat kesombongan mencela & cinta harta bersarang.',
+        ],
+        asalKata: { huruf: ['ح', 'ط', 'م'], makna: 'meremukkan hingga berkeping',
+          gambar: 'Akar «ḥ-ṭ-m» berarti <b>meremukkan, menghancurkan jadi serpihan</b> — dipakai untuk kayu kering yang patah berderak. Neraka ini dinamai «al-Ḥuṭamah» karena <b>meremukkan</b> apa pun yang dilempar ke dalamnya. Dan azabnya menukik tepat ke sasaran: «taṭṭali‘u ‘alal-af’idah» — <b>naik sampai ke hati</b>, sebab di hati itulah bersarang kesombongan mencela dan ilusi bahwa harta bisa mengekalkan.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Mencela dengan lisan atau isyarat — dosa yang diremehkan, azabnya meremukkan.',
+      'Harta tak mengekalkan — ia ditinggal, kau yang pergi.',
+      'Jaga hati dari merasa lebih tinggi dari orang lain.',
+    ],
+    surah: 'Al-Humazah',
+    surahNo: 104,
+    ayatNo: '1–9',
+    juz: 30,
+    tema: ['Akhlak lisan', 'Bahaya harta', 'Kesombongan'],
+    gratis: false,
+    arab: 'وَيْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةٍ ۝ الَّذِي جَمَعَ مَالًا وَعَدَّدَهُ ۝ يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ ۝ كَلَّا ۖ لَيُنبَذَنَّ فِي الْحُطَمَةِ ۝ وَمَا أَدْرَاكَ مَا الْحُطَمَةُ ۝ نَارُ اللَّهِ الْمُوقَدَةُ ۝ الَّتِي تَطَّلِعُ عَلَى الْأَفْئِدَةِ ۝ إِنَّهَا عَلَيْهِم مُّؤْصَدَةٌ ۝ فِي عَمَدٍ مُّمَدَّدَةٍ',
+    latin: 'Wailul likulli humazatil lumazah. Allażī jama‘a mālaw wa ‘addadah. Yaḥsabu anna mālahū akhladah. Kallā layunbażanna fil-ḥuṭamah. Wa mā adrāka mal-ḥuṭamah. Nārullāhil-mūqadah. Allatī taṭṭali‘u ‘alal-af’idah. Innahā ‘alaihim mu’ṣadah. Fī ‘amadim mumaddadah.',
+    arti: 'Celakalah bagi setiap pengumpat lagi pencela, yang mengumpulkan harta dan menghitung-hitungnya, dia mengira hartanya itu dapat mengekalkannya. Sekali-kali tidak! Pasti dia akan dilemparkan ke dalam Huthamah. Tahukah kamu apa Huthamah itu? (Yaitu) api Allah yang dinyalakan, yang membakar sampai ke hati. Sungguh, api itu ditutup rapat atas mereka, (sedang mereka diikat) pada tiang-tiang yang panjang.',
+    asbabunNuzul:
+      'Sebagian ahli tafsir menyebut surah ini turun berkenaan dengan orang-orang yang gemar mencela & merendahkan Nabi ﷺ serta kaum muslim; para ulama berbeda menentukan sosoknya. Maknanya berlaku umum bagi setiap pencela yang dimabuk harta. (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Ancaman keras bagi orang yang menjadikan mencela sebagai tabiat & menumpuk harta sambil mengira ia kekal. Balasannya «al-Ḥuṭamah» — api yang meremukkan dan menembus sampai ke hati, lalu ditutup rapat. Surah ini menautkan dua penyakit: lisan yang melukai & hati yang diperbudak harta.',
+    hikmah:
+      'Lidah yang suka mencela dan hati yang mengukur diri dari harta adalah dua penyakit yang sering dianggap sepele, padahal merusak. Surah ini menamparnya dengan gambaran azab yang "meremukkan hati" — persis tempat penyakit itu bersemayam.',
+    linguistik:
+      'Pola «fu‘alah» pada «humazah/lumazah» menunjukkan kebiasaan yang mendarah daging. Nama neraka «al-Ḥuṭamah» (dari ḥ-ṭ-m: meremukkan) dipilih agar selaras dengan watak pelakunya yang "meremukkan" kehormatan orang. Dan «taṭṭali‘u ‘alal-af’idah» (naik ke hati) menukik ke akar penyakitnya.',
+    amalan:
+      'Jaga lisan & jari dari ghibah, mencela fisik (body-shaming), dan komentar merendahkan di media sosial — itu "humaz/lumaz" zaman ini. Dan periksa hubunganmu dengan harta: kau yang memilikinya, atau ia yang menguasaimu? Perbanyak sedekah agar harta jadi bekal, bukan beban.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1522,7 +1615,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['al-insyirah-5-6', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1685,6 +1778,14 @@ const HIKMAH_KATA = {
   'al-maun-1-7': [
     'Ukur salatmu dari bekasnya: makin peka pada yang lemah, atau makin kosong?',
     'Jangan remehkan pertolongan kecil — di situ imanmu diuji.',
+  ],
+  'at-takatsur-1-8': [
+    'Berhenti sejenak dari lomba menumpuk — tanya: "untuk apa, dan sampai kapan?"',
+    'Tiap nikmat akan ditanya. Pakai untuk yang akan kau banggakan di hadapan-Nya.',
+  ],
+  'al-humazah-1-9': [
+    'Sebelum mencela, ingat: api yang meremukkan itu menukik ke hati.',
+    'Harta yang kau hitung-hitung takkan menemanimu ke kubur.',
   ],
 };
 
