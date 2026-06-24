@@ -97,14 +97,17 @@ const AYAT = [
       {
         kata: 'الْحَمْدُ', latin: 'Al-Ḥamd', arti: 'Segala puji',
         poin: [
-          'Pakai alif-lam: SEGALA puji — mutlak, menyeluruh.',
-          'Ḥamd bukan sekadar memuji; ia pujian yang disertai cinta dan pengagungan.',
-          'Bukan «madḥ» — sanjungan yang bisa tanpa rasa.',
+          '«Al-» (istighrāq) = SEGALA macam pujian, dari siapa pun, kapan pun — seluruhnya milik Allah.',
+          'Dia dipuji atas keindahan Dzat-Nya, bukan hanya atas pemberian — dipuji walau kau belum menerima apa-apa.',
+          'Disusun tanpa kata kerja → pujian itu TETAP & abadi milik-Nya, bukan kejadian sesaat.',
         ],
+        asalKata: { huruf: ['ح', 'م', 'د'], makna: 'pujian tulus yang disertai cinta',
+          gambar: 'Bahasa Arab punya tiga kata untuk "memuji". «Madḥ» (sanjungan) bisa keluar <b>tanpa hati</b> — bahkan untuk benda mati atau demi pamrih. «Syukr» (terima kasih) hanya muncul <b>sebagai balasan atas nikmat</b> yang sudah diterima. «Ḥamd» berdiri di puncak keduanya: memuji karena <b>kebaikan & keindahan Dzat itu sendiri</b>, lahir dari cinta dan pengagungan — baik kau sedang menerima nikmat maupun tidak. Maka «al-ḥamdu lillāh» bukan sekadar "terima kasih, ya Allah", tapi <b>"segala pujian terindah, dari segenap makhluk, hanya layak untuk-Mu."</b>' },
         banding: { tipe: 'banding', item: [
-          { arab: 'حَمْد', latin: 'Ḥamd', sifat: ['Pujian + cinta', 'Disertai pengagungan'] },
-          { arab: 'مَدْح', latin: 'Madḥ', alt: true, sifat: ['Sekadar sanjungan', 'Bisa tanpa rasa'] },
-        ], catatan: 'Dipilih «al-ḥamd»: segala pujian, hanya milik Allah.' },
+          { arab: 'حَمْد', latin: 'Ḥamd', sifat: ['Pujian + cinta + pengagungan', 'Atas Dzat & nikmat sekaligus'] },
+          { arab: 'مَدْح', latin: 'Madḥ', alt: true, sifat: ['Bisa tanpa rasa / demi pamrih', 'Untuk siapa & apa saja'] },
+          { arab: 'شُكْر', latin: 'Syukr', alt: true, sifat: ['Hanya atas nikmat yang diterima', 'Tak mencakup pujian atas Dzat'] },
+        ], catatan: 'Dipilih «al-ḥamd» — puncak pujian: tulus, atas Dzat-Nya, bukan sekadar balas budi.' },
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
@@ -227,13 +230,16 @@ const AYAT = [
       {
         kata: 'مَالِكِ', latin: 'Mālik', arti: 'Pemilik / Raja',
         poin: [
-          'Dua bacaan sahih: «Mālik» (Pemilik) & «Malik» (Raja).',
-          'Keduanya melengkapi: kepemilikan penuh + kedaulatan memerintah.',
+          'Dua qira’at mutawatir: «Mālik» (Pemilik) & «Malik» (Raja) — dua-duanya sahih & dibaca Nabi ﷺ.',
+          '«Mālik»: memiliki SEGALANYA hari itu — dirimu, amalmu, nasibmu. «Malik»: berdaulat mutlak memutus & menghukum.',
+          'Disandarkan ke «yaumid-dīn»: di dunia ada raja & pemilik semu; hari itu kepemilikan & kuasa hanya milik-Nya — tak terbagi.',
         ],
+        asalKata: { huruf: ['م', 'ل', 'ك'], makna: 'memiliki sekaligus menguasai',
+          gambar: 'Akar «m-l-k» melahirkan dua kata mulia: «mulk» (kekuasaan) dan «milk» (kepemilikan). Di dunia keduanya bisa <b>terpisah</b> — seorang raja memerintah negeri yang bukan miliknya, seorang pemilik tak punya kuasa menghukum. Pada Hari Pembalasan, Allah menyandang <b>keduanya sekaligus</b>: Yang memiliki segala sesuatu, sekaligus Yang berdaulat memutuskan — tanpa ada raja atau pemilik lain yang tersisa untuk dimintai tolong.' },
         banding: { tipe: 'banding', item: [
-          { arab: 'مَالِك', latin: 'Mālik', sifat: ['Pemilik', 'Kepemilikan penuh hari itu'] },
-          { arab: 'مَلِك', latin: 'Malik', sifat: ['Raja', 'Kedaulatan & otoritas'] },
-        ], catatan: 'Dua qira’at mutawatir — saling melengkapi makna.' },
+          { arab: 'مَالِك', latin: 'Mālik', sifat: ['Pemilik — kepemilikan penuh', 'Dirimu & amalmu milik-Nya'] },
+          { arab: 'مَلِك', latin: 'Malik', sifat: ['Raja — kedaulatan & otoritas', 'Berkuasa memutus & menghukum'] },
+        ], catatan: 'Dua qira’at mutawatir yang menyatu: Pemilik segalanya, sekaligus Raja yang berdaulat.' },
         sumber: ['Tafsir Al-Qurthubi', 'Kitab qira’at mutawatir'],
       },
       {
@@ -288,8 +294,9 @@ const AYAT = [
       {
         kata: 'إِيَّاكَ نَعْبُدُ', latin: 'Iyyāka na‘budu', arti: 'Hanya kepada-Mu kami menyembah',
         poin: [
-          'Objek «iyyāka» didahulukan → ḥaṣr: "hanya kepada-Mu, bukan yang lain".',
-          'Terjadi «iltifāt»: dari membicarakan Allah (Dia) beralih menyapa-Nya langsung (Engkau).',
+          'Objek «iyyāka» didahulukan dari kata kerja → ḥaṣr: "hanya kepada-Mu, sama sekali bukan yang lain".',
+          'Terjadi «iltifāt»: setelah 4 ayat membicarakan Allah sebagai "Dia", tiba-tiba beralih menyapa-Nya langsung — "Engkau".',
+          'Itulah gerak hati seorang hamba: makin dikenal-Nya (Pengasih, Raja, Hakim), makin dekat — hingga tak tahan lagi bicara TENTANG Dia, lalu bicara KEPADA Dia.',
         ],
         taqdim: { tipe: 'taqdim', normal: ['na‘budu', 'iyyāka'], quran: ['iyyāka', 'na‘budu'], catatan: 'Mendahulukan objek = pembatasan mutlak.' },
         banding: { tipe: 'banding', item: [
