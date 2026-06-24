@@ -1065,13 +1065,18 @@ const AYAT = [
     id: 'al-ikhlas-1-4',
     kajianKata: [
       { kata: 'قُلْ هُوَ اللَّهُ أَحَدٌ', latin: 'Qul huwallāhu aḥad', arti: 'Katakanlah: Dialah Allah, Yang Maha Esa',
-        poin: ['Dipilih «Aḥad», bukan «Wāḥid» — keesaan MUTLAK yang tak menerima pembagian.', 'Surah dibuka «Aḥad» dan ditutup «Aḥad» — bingkai sempurna.'],
+        poin: [
+          '«Wāḥid» = "satu dalam hitungan": ada sebelum & sesudahnya, bisa dijamak & dibandingkan — ia masuk kategori bilangan.',
+          '«Aḥad» = satu yang tak masuk barisan apa pun: tak bisa dijamak, tak bisa dibandingkan, tak ada yang kedua.',
+          'Andai Allah berkata «Wāḥid», kita masih bisa bertanya: "satu dibanding apa?" — «Aḥad» menutup pertanyaan itu selamanya.',
+          'Maka keesaan Allah bukan soal JUMLAH (satu, bukan dua), tapi SIFAT: Dia melampaui kategori bilangan itu sendiri.',
+        ],
         asalKata: { huruf: ['ء', 'ح', 'د'], makna: 'keesaan yang menolak bilangan',
           gambar: '«Aḥad» kata yang istimewa: dalam bahasa Arab ia hampir selalu muncul dalam <b>penolakan</b> — «mā fid-dāri aḥad» (tak ada SEORANG pun di rumah). Ia menolak dijamakkan, ditambah, bahkan diduakan. Maka ketika Allah menyebut diri-Nya «Aḥad» dalam kalimat <b>positif</b>, dipilih satu-satunya kata yang strukturnya sendiri menolak adanya "yang kedua" — bukan sekadar "satu", tapi <b>Yang mustahil ada bandingannya</b>.' },
         banding: { tipe: 'banding', item: [
-          { arab: 'أَحَد', latin: 'Aḥad', sifat: ['Keesaan mutlak', 'Tak dapat dibagi / ditambah'] },
-          { arab: 'وَاحِد', latin: 'Wāḥid', alt: true, sifat: ['"Satu" biasa', 'Bisa diikuti dua, tiga…'] },
-        ], catatan: 'Dipilih «Aḥad» — menutup celah penyekutuan.' },
+          { arab: 'أَحَد', latin: 'Aḥad', sifat: ['Satu yang tak terbanding', 'Di luar hitungan — tak bisa dijamak', 'Tak ada sebelum / sesudah'] },
+          { arab: 'وَاحِد', latin: 'Wāḥid', alt: true, sifat: ['Satu di antara banyak', 'Masuk kategori bilangan', 'Bisa dibandingkan'] },
+        ], catatan: 'Dipilih «Aḥad» — keesaan yang melampaui bilangan, bukan sekadar "bukan dua".' },
         sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi no. 3364'] },
       { kata: 'اللَّهُ الصَّمَدُ', latin: 'Allāhuṣ-ṣamad', arti: 'Allah tempat bergantung segala sesuatu',
         poin: [
@@ -1395,7 +1400,7 @@ const HIKMAH_KATA = {
     'Hinaan orang tak menentukan nilaimu. Yang mencemooh, dialah yang sebenarnya terputus.',
   ],
   'al-ikhlas-1-4': [
-    'Esa yang tak terbagi. Akidah yang bersih = hati yang tak terpecah.',
+    'Keesaan-Nya bukan soal jumlah, tapi sifat — tak ada yang sebanding. Maka jangan beri tempat bagi tandingan di hatimu.',
     'Semua bergantung pada-Nya, Dia tak butuh apa pun. Lepaskan harap berlebih pada makhluk.',
     'Tak beranak, tak diperanakkan. Dia tak seperti apa pun yang kamu kenal.',
     'Tak ada yang setara dengan-Nya. Jangan sandarkan hidupmu pada yang selemah dirimu.',
