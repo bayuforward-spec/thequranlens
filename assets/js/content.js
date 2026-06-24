@@ -1596,6 +1596,94 @@ const AYAT = [
       'Jaga lisan & jari dari ghibah, mencela fisik (body-shaming), dan komentar merendahkan di media sosial — itu "humaz/lumaz" zaman ini. Dan periksa hubunganmu dengan harta: kau yang memilikinya, atau ia yang menguasaimu? Perbanyak sedekah agar harta jadi bekal, bukan beban.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'al-adiyat-1-11',
+    kajianKata: [
+      { kata: 'وَالْعَادِيَاتِ ضَبْحًا', latin: 'wal-‘ādiyāti ḍabḥā', arti: 'demi kuda perang yang berlari terengah',
+        poin: [
+          'Sumpah demi kuda perang: «ḍabḥā» (napas terengah saat berpacu), «qadḥā» (percik api dari kuku), «ṣubḥā» (menyerbu saat subuh).',
+          'Gambaran kesungguhan & pengorbanan total seekor kuda demi tuannya — disusun cepat & berderap seperti larinya.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+      { kata: 'إِنَّ الْإِنسَانَ لِرَبِّهِ لَكَنُودٌ', latin: 'innal-insāna li-rabbihī lakanūd', arti: 'sungguh manusia sangat ingkar kepada Tuhannya',
+        poin: [
+          '«kanūd» bukan sekadar "tak bersyukur": ia mengingat satu musibah & melupakan seribu nikmat.',
+          'Penegasan ganda «inna … la-kanūd»: tabiat ingkar nikmat itu melekat kuat pada manusia.',
+        ],
+        asalKata: { huruf: ['ك', 'ن', 'د'], makna: 'sangat ingkar nikmat; tanah tandus',
+          gambar: 'Orang Arab menyebut «arḍun kanūd» — <b>tanah tandus</b> yang sudah disiram & ditanami namun <b>tak menumbuhkan apa-apa</b>. «Kanūd» juga dipakai untuk orang yang <b>mengingat satu musibah dan melupakan seribu nikmat</b>. Maka ayat ini melukis hati yang seperti tanah gersang: dicurahi karunia tiada henti, tapi tak "menumbuhkan" syukur. Indahnya, sumpah dibuka dengan <b>kuda perang yang setia mengerahkan segenap tenaganya</b> untuk tuannya — kontras tajam dengan manusia yang ingkar pada Penciptanya.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Kuda pun setia berkorban untuk tuannya — bagaimana kita kepada Pencipta?',
+      'Jangan jadi hati yang gersang: dicurahi nikmat, tapi tak menumbuhkan syukur.',
+      'Yang tersembunyi di dada akan dikeluarkan — jaga niatmu.',
+    ],
+    surah: 'Al-‘Ādiyāt',
+    surahNo: 100,
+    ayatNo: '1–11',
+    juz: 30,
+    tema: ['Syukur', 'Mengenal diri', 'Hari akhir'],
+    gratis: false,
+    arab: 'وَالْعَادِيَاتِ ضَبْحًا ۝ فَالْمُورِيَاتِ قَدْحًا ۝ فَالْمُغِيرَاتِ صُبْحًا ۝ فَأَثَرْنَ بِهِ نَقْعًا ۝ فَوَسَطْنَ بِهِ جَمْعًا ۝ إِنَّ الْإِنسَانَ لِرَبِّهِ لَكَنُودٌ ۝ وَإِنَّهُ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ ۝ وَإِنَّهُ لِحُبِّ الْخَيْرِ لَشَدِيدٌ ۝ أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِي الْقُبُورِ ۝ وَحُصِّلَ مَا فِي الصُّدُورِ ۝ إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٍ لَّخَبِيرٌ',
+    latin: 'Wal-‘ādiyāti ḍabḥā. Fal-mūriyāti qadḥā. Fal-mugīrāti ṣubḥā. Fa aṡarna bihī naq‘ā. Fa wasaṭna bihī jam‘ā. Innal-insāna li-rabbihī lakanūd. Wa innahū ‘alā żālika lasyahīd. Wa innahū liḥubbil-khairi lasyadīd. Afalā ya‘lamu iżā bu‘ṡira mā fil-qubūr. Wa ḥuṣṣila mā fiṣ-ṣudūr. Inna rabbahum bihim yauma’iżil lakhabīr.',
+    arti: 'Demi kuda perang yang berlari kencang terengah-engah, yang memercikkan bunga api (dengan pukulan kukunya), yang menyerang dengan tiba-tiba di waktu subuh, sehingga menerbangkan debu, lalu menyerbu ke tengah-tengah kumpulan musuh. Sungguh, manusia itu sangat ingkar kepada Tuhannya, dan sesungguhnya dia menyaksikan (mengakui) keingkarannya, dan sesungguhnya cintanya kepada harta sungguh berlebihan. Maka tidakkah dia mengetahui apabila apa yang di dalam kubur dikeluarkan, dan apa yang tersimpan dalam dada dilahirkan? Sungguh, Tuhan mereka pada hari itu Mahateliti terhadap keadaan mereka.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Surah Makkiyah ini membuka dengan sumpah demi kuda perang lalu menegur tabiat manusia yang ingkar nikmat & berlebihan cinta harta, diakhiri pengingat hari pembalasan.',
+    tafsir:
+      'Allah bersumpah demi kuda perang yang berjuang sepenuh tenaga untuk menyingkap tabiat manusia: «kanūd» — ingkar pada nikmat Tuhannya, padahal ia sendiri menyaksikannya, dan amat mencintai harta. Lalu peringatan: ingatlah hari ketika isi kubur dibangkitkan dan isi hati dibongkar, dan Allah Mahateliti atas semuanya.',
+    hikmah:
+      'Kontras yang menohok: hewan tunggangan rela mengerahkan seluruh tenaga untuk tuannya, sementara manusia kerap lupa berterima kasih kepada Penciptanya. Surah ini mengajak memeriksa hati: apakah ia subur dengan syukur, atau tandus seperti «arḍun kanūd»?',
+    linguistik:
+      'Rangkaian «ḍabḥā – qadḥā – ṣubḥā» berirama cepat & berderap, meniru gerak kuda yang berpacu. Kata «kanūd» dipilih karena maknanya kaya: ingkar nikmat sekaligus "tanah yang tak menumbuhkan". Dan «ḥuṣṣila mā fiṣ-ṣudūr» (dilahirkan/dibongkar isi dada) menegaskan bahwa yang dinilai bukan sekadar lahir, tapi isi hati.',
+    amalan:
+      'Lawan sifat «kanūd» dengan jurnal syukur: tiap malam catat 3 nikmat hari itu, agar hatimu tak gersang. Saat tertimpa satu masalah, sengaja hitung nikmat yang masih ada agar tak "mengingat musibah & melupakan karunia". Dan jaga niat dalam dada — sebab kelak ia yang dibongkar.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-qariah-1-11',
+    kajianKata: [
+      { kata: 'الْقَارِعَةُ', latin: 'Al-Qāri‘ah', arti: 'Hari Kiamat (yang menggedor)',
+        poin: [
+          '«al-qāri‘ah» dari «qar‘» = mengetuk/menggedor keras — Hari yang "menggedor" hati dengan kengerian.',
+          'Diulang tiga kali (al-qāri‘ah… mal-qāri‘ah… wa mā adrāka) → membangun keagungan & kegentaran yang tak terlukiskan.',
+        ],
+        asalKata: { huruf: ['ق', 'ر', 'ع'], makna: 'mengetuk & memukul keras hingga berbunyi',
+          gambar: 'Akar «q-r-‘» berarti <b>mengetuk/memukul dengan keras</b> sampai berbunyi — «qar‘ul-bāb» = menggedor pintu. Kiamat disebut «al-Qāri‘ah»: Hari yang <b>menggedor</b> — memukul telinga dengan dahsyat suaranya, menggedor hati dengan kengeriannya, hingga tak seorang pun bisa pura-pura tak mendengar. Bukan ketukan halus; ini gedoran yang <b>memaksa seluruh makhluk terjaga & sadar</b>.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'كَالْفَرَاشِ الْمَبْثُوثِ ۝ كَالْعِهْنِ الْمَنفُوشِ', latin: 'kal-farāsyil-mabṡūṡ … kal-‘ihnil-manfūsy', arti: 'seperti laron beterbangan … seperti bulu dihambur',
+        poin: [
+          'Manusia «kal-farāsyil-mabṡūṡ»: laron beterbangan — panik, tak tentu arah, menghambur tanpa sadar bahaya.',
+          'Gunung «kal-‘ihnil-manfūsy»: bulu (wol) yang dihambur — yang paling kokoh pun jadi seringan kapas.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Yang hari ini tampak kokoh — kuasa, gunung, harta — hari itu seringan kapas.',
+      'Yang menentukan: berat timbangan amal, bukan berat hartamu.',
+      'Isi harimu agar timbanganmu berat saat ditimbang.',
+    ],
+    surah: 'Al-Qāri‘ah',
+    surahNo: 101,
+    ayatNo: '1–11',
+    juz: 30,
+    tema: ['Hari akhir', 'Timbangan amal', 'Kesadaran'],
+    gratis: false,
+    arab: 'الْقَارِعَةُ ۝ مَا الْقَارِعَةُ ۝ وَمَا أَدْرَاكَ مَا الْقَارِعَةُ ۝ يَوْمَ يَكُونُ النَّاسُ كَالْفَرَاشِ الْمَبْثُوثِ ۝ وَتَكُونُ الْجِبَالُ كَالْعِهْنِ الْمَنفُوشِ ۝ فَأَمَّا مَن ثَقُلَتْ مَوَازِينُهُ ۝ فَهُوَ فِي عِيشَةٍ رَّاضِيَةٍ ۝ وَأَمَّا مَنْ خَفَّتْ مَوَازِينُهُ ۝ فَأُمُّهُ هَاوِيَةٌ ۝ وَمَا أَدْرَاكَ مَا هِيَهْ ۝ نَارٌ حَامِيَةٌ',
+    latin: 'Al-qāri‘ah. Mal-qāri‘ah. Wa mā adrāka mal-qāri‘ah. Yauma yakūnun-nāsu kal-farāsyil-mabṡūṡ. Wa takūnul-jibālu kal-‘ihnil-manfūsy. Fa ammā man ṡaqulat mawāzīnuh. Fa huwa fī ‘īsyatir rāḍiyah. Wa ammā man khaffat mawāzīnuh. Fa ummuhū hāwiyah. Wa mā adrāka mā hiyah. Nārun ḥāmiyah.',
+    arti: 'Hari Kiamat. Apakah hari Kiamat itu? Tahukah kamu apakah hari Kiamat itu? Pada hari itu manusia seperti laron yang beterbangan, dan gunung-gunung seperti bulu yang dihambur-hamburkan. Maka adapun orang yang berat timbangan (kebaikan)nya, dia berada dalam kehidupan yang memuaskan. Dan adapun orang yang ringan timbangan (kebaikan)nya, maka tempat kembalinya adalah Hawiyah. Dan tahukah kamu apakah Hawiyah itu? (Yaitu) api yang sangat panas.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Surah Makkiyah ini menggambarkan dahsyatnya Hari Kiamat dan penimbangan amal sebagai penentu nasib.',
+    tafsir:
+      'Surah ini menghadirkan kengerian Hari Kiamat: manusia berhamburan bagai laron, gunung-gunung melumer seringan bulu. Lalu nasib terbagi pada timbangan amal: yang berat kebaikannya hidup dalam keridaan, yang ringan terjerumus ke Hawiyah, api yang sangat panas. Pesannya jelas: yang menyelamatkan adalah berat amal, bukan berat dunia.',
+    hikmah:
+      'Segala yang kita anggap kokoh & abadi — kekuasaan, gunung, kekayaan — pada hari itu tak berbobot. Yang berbobot hanya amal. Surah ini menggeser ukuran "berat" dari harta yang ditimbun ke kebaikan yang ditimbang.',
+    linguistik:
+      'Nama «al-Qāri‘ah» (yang menggedor) langsung menanamkan kegentaran, diperkuat pengulangan retoris «mal-qāri‘ah… wa mā adrāka». Dua tasybih (perumpamaan) berturut — laron yang berhamburan & bulu yang dihambur — melukiskan kelemahan makhluk & runtuhnya yang kokoh dengan imaji yang mudah terbayang.',
+    amalan:
+      'Jadikan "timbangan" sebagai lensa harian: sebelum bertindak, tanya "ini menambah berat timbangan kebaikan atau tidak?". Perbanyak amal ringan bernilai berat (zikir, senyum, menyingkirkan gangguan di jalan, sedekah kecil rutin) — sebab di hari itu, yang menyelamatkan adalah beratnya, bukan besarnya di mata manusia.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1615,7 +1703,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-insyirah-5-6', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['al-insyirah-5-6', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1786,6 +1874,14 @@ const HIKMAH_KATA = {
   'al-humazah-1-9': [
     'Sebelum mencela, ingat: api yang meremukkan itu menukik ke hati.',
     'Harta yang kau hitung-hitung takkan menemanimu ke kubur.',
+  ],
+  'al-adiyat-1-11': [
+    'Kuda pun setia berkorban untuk tuannya — jangan kalah setia pada Penciptamu.',
+    'Hatimu tanah: subur dengan syukur, atau tandus karena lupa nikmat?',
+  ],
+  'al-qariah-1-11': [
+    'Yang kau kira berat (harta, jabatan) hari itu tak berbobot. Yang ditimbang: amal.',
+    'Kumpulkan amal ringan yang berat timbangannya — mulai hari ini.',
   ],
 };
 
