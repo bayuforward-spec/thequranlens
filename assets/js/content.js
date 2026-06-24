@@ -1684,6 +1684,51 @@ const AYAT = [
       'Jadikan "timbangan" sebagai lensa harian: sebelum bertindak, tanya "ini menambah berat timbangan kebaikan atau tidak?". Perbanyak amal ringan bernilai berat (zikir, senyum, menyingkirkan gangguan di jalan, sedekah kecil rutin) — sebab di hari itu, yang menyelamatkan adalah beratnya, bukan besarnya di mata manusia.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'al-masad-1-5',
+    kajianKata: [
+      { kata: 'تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ', latin: 'tabbat yadā abī lahabiw wa tabb', arti: 'binasalah kedua tangan Abu Lahab, dan benar-benar binasa ia',
+        poin: [
+          'Permainan kata takdir: julukan «Abū Lahab» (bapak nyala api) → balasannya «nāran żāta lahab» (api yang bernyala).',
+          '«tabbat yadā… wa tabb»: tangannya binasa DAN dirinya binasa — usaha & jiwanya sama-sama merugi total.',
+          'Mukjizat: surah turun semasa hidupnya; cukup ia berpura-pura masuk Islam untuk mendustakannya — tapi ia tak pernah, persis seperti yang Allah kabarkan.',
+        ],
+        asalKata: { huruf: ['ل', 'ه', 'ب'], makna: 'nyala & jilatan api',
+          gambar: '«Lahab» berarti <b>lidah/jilatan api</b> yang menyala-nyala. Julukan «Abū Lahab» semula karena wajahnya yang kemerahan berseri — tapi Al-Qur’an membalik maknanya: orang "berwajah api" itu justru akan <b>masuk api yang ber-«lahab»</b>. Sebuah ketepatan bahasa yang menggetarkan — nama yang dahulu ia banggakan berubah menjadi <b>cap azabnya</b>.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari'] },
+      { kata: 'مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ', latin: 'mā agnā ‘anhu māluhū wa mā kasab', arti: 'hartanya & apa yang ia usahakan tak berguna baginya',
+        poin: [
+          'Harta & pengaruh yang ia banggakan tak sedikit pun menolongnya di hadapan azab.',
+          'Istrinya «ḥammālatal-ḥaṭab» (pembawa kayu bakar): kiasan penyebar fitnah & penabur duri di jalan dakwah.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Harta & nasab tak menyelamatkan bila dipakai menentang kebenaran.',
+      'Permusuhan pada kebenaran akhirnya membakar diri sendiri.',
+      'Jangan jadi "pembawa kayu bakar" — penyebar fitnah yang menyulut perpecahan.',
+    ],
+    surah: 'Al-Masad',
+    surahNo: 111,
+    ayatNo: '1–5',
+    juz: 30,
+    tema: ['Akibat permusuhan', 'Bahaya harta', 'Lisan & fitnah'],
+    gratis: false,
+    arab: 'تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ ۝ مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ ۝ سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ ۝ وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ ۝ فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ',
+    latin: 'Tabbat yadā abī lahabiw wa tabb. Mā agnā ‘anhu māluhū wa mā kasab. Sayaṣlā nāran żāta lahab. Wamra’atuhū ḥammālatal-ḥaṭab. Fī jīdihā ḥablum mim masad.',
+    arti: 'Binasalah kedua tangan Abu Lahab dan benar-benar binasa dia! Tidaklah berguna baginya hartanya dan apa yang dia usahakan. Kelak dia akan masuk ke dalam api yang bergejolak. Dan (begitu pula) istrinya, pembawa kayu bakar (penyebar fitnah). Di lehernya ada tali dari sabut yang dipintal.',
+    asbabunNuzul:
+      'Ketika Nabi ﷺ menyeru kerabatnya di bukit Shafa untuk beriman, Abu Lahab — pamannya sendiri — menghardik: "Celakalah engkau! Apa untuk ini engkau kumpulkan kami?" Maka turunlah surah ini sebagai jawaban (HR. Bukhari).',
+    tafsir:
+      'Surah ini mengabadikan kebinasaan Abu Lahab yang memusuhi Nabi ﷺ dengan sengit, padahal ia kerabat dekat & berharta. Hartanya tak menolongnya, dan ia beserta istrinya yang gemar menyakiti Nabi ﷺ diancam api yang bergejolak. Sebuah penegasan bahwa kedekatan nasab & limpahan harta tak berarti tanpa iman.',
+    hikmah:
+      'Tak ada nasab atau kekayaan yang menyelamatkan seseorang yang memusuhi kebenaran. Sebaliknya, kebencian yang dipelihara hanya membakar pemiliknya. Surah ini juga memperingatkan bahaya menjadi "pembawa kayu bakar": menyebar fitnah yang menyulut permusuhan.',
+    linguistik:
+      'Keindahannya pada permainan kata: nama «Abū Lahab» (lahab = nyala api) berpadu dengan ancaman «nāran żāta lahab». Pengulangan «tabbat… wa tabb» menegaskan kebinasaan ganda (usaha & diri). Dan «ḥammālatal-ḥaṭab» memakai kiasan pembawa kayu bakar untuk melukiskan penyebar fitnah yang "menyalakan" api permusuhan.',
+    amalan:
+      'Jadikan cermin: jangan andalkan status, koneksi, atau harta sebagai "jaminan" — yang menjamin hanyalah iman & amal. Dan jauhi peran "ḥammālatal-ḥaṭab" zaman kini: meneruskan gosip, tangkapan layar, atau berita yang menyulut permusuhan. Berhentikan fitnah di tanganmu, jangan menyebarkannya.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1703,7 +1748,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-insyirah-5-6', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['al-insyirah-5-6', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1882,6 +1927,10 @@ const HIKMAH_KATA = {
   'al-qariah-1-11': [
     'Yang kau kira berat (harta, jabatan) hari itu tak berbobot. Yang ditimbang: amal.',
     'Kumpulkan amal ringan yang berat timbangannya — mulai hari ini.',
+  ],
+  'al-masad-1-5': [
+    'Status, koneksi, harta — tak menjamin apa pun tanpa iman.',
+    'Jangan jadi penyebar fitnah; hentikan api permusuhan di tanganmu.',
   ],
 };
 
