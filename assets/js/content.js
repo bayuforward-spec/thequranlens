@@ -1369,6 +1369,93 @@ const AYAT = [
       'Biasakan menutup ibadah & pencapaian dengan istighfar (Nabi ﷺ beristighfar 3x seusai salat). Saat meraih sukses — lulus, naik jabatan, proyek selesai — tahan euforia, ucapkan "alhamdulillah" lalu "astaghfirullah": akui itu pemberian-Nya dan tutupi kekuranganmu.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari'],
   },
+  {
+    id: 'al-fil-1-5',
+    kajianKata: [
+      { kata: 'فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ', latin: 'fa ja‘alahum ka‘aṣfim ma’kūl', arti: 'lalu Dia menjadikan mereka seperti daun yang dimakan (ulat)',
+        poin: [
+          'Pasukan gajah yang perkasa diakhiri jadi «ka‘aṣfin ma’kūl» — daun kering yang sudah dimakan: remuk, berlubang, tak berarti.',
+          'Imaji yang menampar: kesombongan terbesar pun, di tangan Allah, bisa jadi seremeh ampas makanan ternak.',
+        ],
+        asalKata: { huruf: ['ع', 'ص', 'ف'], makna: 'daun & jerami kering sisa tanaman',
+          gambar: '«‘Aṣf» adalah <b>kulit & daun kering</b> yang tersisa setelah biji dipanen — lalu «ma’kūl»: <b>sudah dikunyah</b> ternak hingga berlubang dan hancur. Bayangkan: pasukan bergajah, kekuatan militer paling menakutkan di zamannya, diakhiri menjadi <b>ampas yang terinjak & tercerna</b>. Allah tak perlu tentara tandingan — cukup burung kecil membawa batu. Begitulah akhir kesombongan yang menantang-Nya.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ', latin: 'wa arsala ‘alaihim ṭairan abābīl', arti: 'dan Dia mengirim kepada mereka burung yang berbondong-bondong',
+        poin: [
+          '«ṭairan abābīl»: burung berbondong-bondong — makhluk kecil dijadikan tentara Allah.',
+          'Dia menundukkan yang besar dengan yang kecil — agar jelas: kekuatan hanya milik-Nya.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Yang menyombongkan kekuatan, diruntuhkan dengan yang terkecil.',
+      'Saat penindas merasa tak terkalahkan, ingat pasukan gajah.',
+      'Pertolongan Allah kerap datang dari arah yang tak terduga.',
+    ],
+    surah: 'Al-Fīl',
+    surahNo: 105,
+    ayatNo: '1–5',
+    juz: 30,
+    tema: ['Kuasa Allah', 'Kesombongan', 'Perlindungan'],
+    gratis: false,
+    arab: 'أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ ۝ أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ ۝ وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ ۝ تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ ۝ فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ',
+    latin: 'Alam tara kaifa fa‘ala rabbuka bi’aṣḥābil-fīl. Alam yaj‘al kaidahum fī taḍlīl. Wa arsala ‘alaihim ṭairan abābīl. Tarmīhim biḥijāratim min sijjīl. Fa ja‘alahum ka‘aṣfim ma’kūl.',
+    arti: 'Tidakkah engkau memperhatikan bagaimana Tuhanmu bertindak terhadap pasukan bergajah? Bukankah Dia menjadikan tipu daya mereka sia-sia? Dan Dia mengirim kepada mereka burung yang berbondong-bondong, yang melempari mereka dengan batu dari tanah liat yang dibakar, sehingga Dia menjadikan mereka seperti daun-daun yang dimakan (ulat).',
+    asbabunNuzul:
+      'Mengabadikan peristiwa pasukan bergajah pimpinan Abrahah yang hendak menghancurkan Ka‘bah, lalu Allah membinasakan mereka dengan burung pembawa batu — terjadi pada tahun kelahiran Nabi ﷺ (Tahun Gajah). (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Allah mengingatkan keajaiban perlindungan-Nya atas tanah haram: pasukan terkuat di masanya dihancurkan tanpa peperangan, hanya dengan burung kecil pembawa batu dari tanah terbakar, hingga jadi seperti sisa daun yang dikunyah. Sebuah bukti bahwa tak ada kekuatan yang menandingi-Nya.',
+    hikmah:
+      'Ketika kezaliman tampak perkasa & tak tergoyahkan, kisah ini menenangkan: Allah sanggup meruntuhkannya dengan sebab yang paling remeh. Tugas kita berpihak pada yang benar, bukan gentar pada besarnya kebatilan.',
+    linguistik:
+      'Puncak penghinaan dilukiskan dengan «ka‘aṣfin ma’kūl» — bukan sekadar "hancur", tapi seperti daun kering sisa panen yang telah dikunyah ternak: hampa, berlubang, terinjak. Kontras tajam dengan kebesaran "aṣḥābul-fīl" di awal surah menegaskan betapa kecil kesombongan di hadapan Allah.',
+    amalan:
+      'Saat menghadapi pihak zalim yang tampak mustahil dilawan (atasan sewenang-wenang, sistem timpang), tegakkan yang benar semampumu lalu serahkan hasilnya pada Allah — Pemilik "burung ababil". Dan periksa dirimu: jangan jadi pihak yang sombong dengan kekuatan, sebab akhirnya bisa seremeh «‘aṣf».',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sirah Ibnu Hisyam'],
+  },
+  {
+    id: 'quraisy-1-4',
+    kajianKata: [
+      { kata: 'أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ', latin: 'aṭ‘amahum min jū‘iw wa āmanahum min khauf', arti: 'memberi mereka makan dari kelaparan & mengamankan dari ketakutan',
+        poin: [
+          'Dua nikmat fondasi hidup: «aṭ‘amahum min jū‘» (kenyang dari lapar) & «āmanahum min khauf» (aman dari takut).',
+          'Rezeki & rasa aman — dua tiang yang membuat hidup tegak; keduanya murni pemberian-Nya.',
+          'Sambungan dari Al-Fīl: keamanan Quraisy (termasuk dari pasukan gajah) itu anugerah — maka «fal-ya‘budū» (maka sembahlah Dia).',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'لِإِيلَافِ قُرَيْشٍ', latin: 'li’īlāfi quraisy', arti: 'karena kebiasaan (kemudahan) orang Quraisy',
+        poin: [
+          '«īlāf»: kebiasaan & jaminan aman perjalanan dagang Quraisy — musim dingin ke Yaman, musim panas ke Syam.',
+          'Kemakmuran rutin yang Allah mudahkan, sampai terasa "biasa" — padahal itu nikmat besar.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Dua nikmat yang paling sering dilupa: perut kenyang & hati aman.',
+      'Kemakmuran yang rutin pun anugerah — bukan semata hasil cerdikmu.',
+      'Balas nikmat dengan menyembah Pemberinya, bukan dengan lupa.',
+    ],
+    surah: 'Quraisy',
+    surahNo: 106,
+    ayatNo: '1–4',
+    juz: 30,
+    tema: ['Syukur', 'Rezeki', 'Keamanan'],
+    gratis: false,
+    arab: 'لِإِيلَافِ قُرَيْشٍ ۝ إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ ۝ فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ ۝ الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ',
+    latin: 'Li’īlāfi quraisy. Īlāfihim riḥlatasy-syitā’i waṣ-ṣaif. Fal-ya‘budū rabba hāżal-bait. Allażī aṭ‘amahum min jū‘iw wa āmanahum min khauf.',
+    arti: 'Karena kebiasaan orang Quraisy, (yaitu) kebiasaan mereka bepergian pada musim dingin dan musim panas, maka hendaklah mereka menyembah Tuhan (pemilik) rumah ini (Ka‘bah), yang telah memberi makan kepada mereka untuk menghilangkan lapar dan mengamankan mereka dari rasa takut.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Surah ini erat berkait dengan Al-Fīl: setelah Allah menjaga tanah haram & memuliakan Quraisy dengan keamanan dagang, mereka diajak mensyukurinya dengan menyembah Pemilik Ka‘bah. (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Allah mengingatkan Quraisy akan dua nikmat besar: kemudahan & keamanan perjalanan dagang dua musim yang menjadi sumber kemakmuran, serta jaminan kenyang & aman di negeri mereka. Konsekuensinya satu: hendaklah mereka menyembah Tuhan pemilik Ka‘bah yang menganugerahkan semua itu.',
+    hikmah:
+      'Nikmat yang paling mudah dilupakan justru yang paling rutin: makanan tiap hari & rasa aman. Surah ini menautkan kemakmuran dengan ibadah — sebab cara terbaik menjaga nikmat adalah mensyukurinya kepada Pemberinya.',
+    linguistik:
+      'Dua kebutuhan paling mendasar manusia diringkas indah: «aṭ‘amahum min jū‘» (pangan) lalu «āmanahum min khauf» (keamanan) — urutan yang menutup seluruh fondasi hidup tenteram. Huruf «fa» pada «fal-ya‘budū» menjadikan ibadah sebagai konsekuensi logis & wajar dari limpahan nikmat itu.',
+    amalan:
+      'Mulai harimu dengan menghitung dua nikmat ini: ada makanan, ada rasa aman. Banyak orang kehilangan salah satunya. Lalu sambungkan rasa syukur itu ke ibadah — sujud sebagai "balasan" atas kenyang & aman yang sering kau anggap biasa.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1388,7 +1475,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-fil-1-5', 'quraisy-1-4', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1539,6 +1626,14 @@ const HIKMAH_KATA = {
   'an-nasr-1-3': [
     'Kemenangan terbaik: terbukanya hati, bukan tumbangnya lawan.',
     'Makin tinggi pencapaianmu, makin rendah hatimu — tutup dengan istighfar.',
+  ],
+  'al-fil-1-5': [
+    'Jangan gentar pada kebatilan yang tampak raksasa — ia bisa runtuh oleh sebab terkecil.',
+    'Periksa hatimu: kekuatan yang membuat sombong, akhirnya bisa jadi ampas.',
+  ],
+  'quraisy-1-4': [
+    'Hitung dua nikmat hari ini: makanan & rasa aman — lalu bersyukur.',
+    'Yang rutin bukan berarti bukan anugerah.',
   ],
 };
 
