@@ -28,7 +28,7 @@ const App = {
     { nama: 'Bulanan', harga: 'Rp 49.000', per: '/bulan',
       fitur: ['Akses semua episode', 'Episode baru tiap minggu', 'Batal kapan saja'] },
     { nama: 'Tahunan', harga: 'Rp 399.000', per: '/tahun', best: true, hemat: 'HEMAT ~32%',
-      fitur: ['Semua benefit bulanan', 'Akses awal episode baru', 'PDF cetak tiap episode'] },
+      fitur: ['Semua benefit bulanan', 'Akses awal episode baru', 'Dukung pengembangan konten'] },
   ],
 
   FAQ: [
@@ -47,7 +47,7 @@ const App = {
       if (t) this.switchTab(t.dataset.tab);
     });
 
-    // Aktivasi otomatis bila pembeli kembali dari checkout Scalev
+    // Aktivasi otomatis bila pembeli kembali dari checkout Mayar
     const redir = Payment.cekRedirect();
     if (redir) {
       Payment.bersihkanURL();
@@ -467,12 +467,12 @@ const App = {
 
   beli(paket) {
     if (Payment.checkout(paket)) {
-      this.toast('Mengarahkan ke pembayaran Scalev…');
+      this.toast('Mengarahkan ke pembayaran Mayar…');
     } else {
       Store.setPro(paket, 'DEMO');
       this.closeUpgrade();
       this.afterUnlock();
-      this.toast(`🎉 (Mode demo) Premium ${paket} aktif. Pasang URL Scalev untuk transaksi nyata.`);
+      this.toast(`🎉 (Mode demo) Premium ${paket} aktif. Pasang link Mayar untuk transaksi nyata.`);
     }
   },
 
@@ -481,7 +481,7 @@ const App = {
     const inp = document.getElementById(fromModal ? 'm-order-2' : 'm-order');
     const paket = sel.value;
     const order = (inp.value || '').trim();
-    if (!order) return this.toast('Masukkan Order ID dari Scalev terlebih dahulu.');
+    if (!order) return this.toast('Masukkan Order ID dari Mayar terlebih dahulu.');
     if (Payment.backendAktif()) {
       this.aktifkan(order, paket, false);
     } else {

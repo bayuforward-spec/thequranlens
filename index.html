@@ -108,8 +108,9 @@
               <option value="Bulanan">Bulanan</option>
               <option value="Tahunan">Tahunan</option>
             </select>
-            <input id="m-order" placeholder="Order ID dari Scalev" />
+            <input id="m-order" placeholder="Order ID dari Mayar" />
           </div>
+          <p class="manual-hint">💡 Order ID ada di <b>email konfirmasi</b> atau halaman <b>“Pembayaran Berhasil”</b> setelah bayar di Mayar (cari label <b>Invoice/Transaction ID</b>).</p>
           <button class="btn" style="width:100%;margin-top:10px" onclick="App.aktivasiManual()">Aktifkan</button>
         </details>
       </div>
@@ -127,7 +128,7 @@
         <div class="p-price">Rp 49rb</div>
       </div>
       <div class="plan best" onclick="App.beli('Tahunan')">
-        <div><div class="p-name">Tahunan <span class="p-badge">HEMAT 32%</span></div><div class="p-note">≈ Rp 33.250/bln · PDF cetak</div></div>
+        <div><div class="p-name">Tahunan <span class="p-badge">HEMAT 32%</span></div><div class="p-note">≈ Rp 33.250 / bulan</div></div>
         <div class="p-price">Rp 399rb</div>
       </div>
 
@@ -138,8 +139,9 @@
             <option value="Bulanan">Bulanan</option>
             <option value="Tahunan">Tahunan</option>
           </select>
-          <input id="m-order-2" placeholder="Order ID dari Scalev" />
+          <input id="m-order-2" placeholder="Order ID dari Mayar" />
         </div>
+        <p class="manual-hint">💡 Order ID ada di <b>email konfirmasi</b> atau halaman <b>“Pembayaran Berhasil”</b> setelah bayar di Mayar (cari label <b>Invoice/Transaction ID</b>).</p>
         <button class="btn" style="width:100%;margin-top:10px" onclick="App.aktivasiManual(true)">Aktifkan</button>
       </details>
 

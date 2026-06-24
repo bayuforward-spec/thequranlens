@@ -407,6 +407,10 @@ footer .note { font-size: .74rem; opacity: .8; margin-top: 8px; max-width: 640px
 .as-makna { font-family: var(--display); font-style: italic; font-size: 1rem; color: var(--sub); }
 .asal-gambar { font-family: var(--font); font-size: 1.08rem; line-height: 1.8; color: var(--reading); }
 
+/* Petunjuk kecil di form aktivasi Order ID */
+.manual-hint { font-size: .82rem; color: var(--sub); line-height: 1.55; margin-top: 10px; }
+.manual-hint b { color: var(--gold-label); font-weight: 600; }
+
 /* ===== Panduan visual: penekanan kata yang konsisten & lembut di mata =====
    <b> di dalam teks bacaan → emas lembut + tebal, BUKAN putih menyolok.
    Dipakai seragam di poin, asal-usul, dan prosa kajian. */
