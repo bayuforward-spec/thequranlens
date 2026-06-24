@@ -1456,6 +1456,53 @@ const AYAT = [
       'Mulai harimu dengan menghitung dua nikmat ini: ada makanan, ada rasa aman. Banyak orang kehilangan salah satunya. Lalu sambungkan rasa syukur itu ke ibadah — sujud sebagai "balasan" atas kenyang & aman yang sering kau anggap biasa.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'al-maun-1-7',
+    kajianKata: [
+      { kata: 'فَوَيْلٌ لِّلْمُصَلِّينَ ۝ الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ', latin: 'fa wailul lil-muṣallīn, allażīna hum ‘an ṣalātihim sāhūn', arti: 'maka celakalah orang yang salat, yang lalai dari salatnya',
+        poin: [
+          'Celaan yang mengejutkan: «fa wailul lil-muṣallīn» — celaka bagi yang SALAT (bukan yang meninggalkannya).',
+          'Kuncinya «‘an ṣalātihim» (lalai DARI salat), bukan «fī ṣalātihim» (lalai DI DALAM salat).',
+          'Yang dicela bukan pikiran yang sesekali melayang saat salat — tapi yang melalaikan hakikat, waktu, & ruhnya.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'عَن صَلَاتِهِم', latin: '‘an (dari/tentang)', sifat: ['Melalaikan hakikat & waktunya', 'Salat kosong — inilah yang dicela'] },
+          { arab: 'فِي صَلَاتِهِم', latin: 'fī (di dalam)', alt: true, sifat: ['Pikiran sesekali melayang', 'Manusiawi — tidak dicela'] },
+        ], catatan: 'Satu huruf — «‘an» vs «fī» — memisahkan celaan dari kelalaian manusiawi biasa.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'وَيَمْنَعُونَ الْمَاعُونَ', latin: 'wa yamna‘ūnal-mā‘ūn', arti: 'dan enggan (memberi) bantuan kecil',
+        poin: [
+          '«al-mā‘ūn»: bantuan kecil sehari-hari — barang pinjaman, pertolongan ringan — yang pun mereka enggan beri.',
+          'Bukti agama itu sosial: mendustakan agama tampak pada hati yang keras pada yatim & miskin, bahkan pada hal terkecil.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Salat sejati menjelma kasih pada yang lemah; bila tidak, ia kosong.',
+      'Yang dicela bukan "tak salat" — tapi salat tanpa ruh & tanpa peduli.',
+      'Iman diuji juga pada hal terkecil: maukah kau menolong?',
+    ],
+    surah: 'Al-Mā‘ūn',
+    surahNo: 107,
+    ayatNo: '1–7',
+    juz: 30,
+    tema: ['Keikhlasan', 'Kepedulian sosial', 'Riya'],
+    gratis: false,
+    arab: 'أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ ۝ فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ ۝ وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ ۝ فَوَيْلٌ لِّلْمُصَلِّينَ ۝ الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ ۝ الَّذِينَ هُمْ يُرَاءُونَ ۝ وَيَمْنَعُونَ الْمَاعُونَ',
+    latin: 'Ara’aital-lażī yukażżibu bid-dīn. Fa żālikal-lażī yadu‘‘ul-yatīm. Wa lā yaḥuḍḍu ‘alā ṭa‘āmil-miskīn. Fa wailul lil-muṣallīn. Allażīna hum ‘an ṣalātihim sāhūn. Allażīna hum yurā’ūn. Wa yamna‘ūnal-mā‘ūn.',
+    arti: 'Tahukah kamu (orang) yang mendustakan agama? Itulah orang yang menghardik anak yatim, dan tidak mendorong memberi makan orang miskin. Maka celakalah orang yang salat, (yaitu) yang lalai dari salatnya, yang berbuat riya, dan enggan (memberi) bantuan.',
+    asbabunNuzul:
+      'Sebagian riwayat menyebut surah ini turun berkenaan dengan tokoh munafik atau penghardik anak yatim di masa itu; para ulama berbeda dalam menentukan sosoknya. Inti pesannya berlaku umum: pendustaan agama tampak pada kekerasan terhadap yang lemah & kelalaian dalam ibadah. (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Surah ini menyingkap wajah "pendusta agama": bukan sekadar yang tak percaya, tapi yang menghardik yatim, tak peduli pada miskin, salat tanpa ruh & demi pamrih, serta enggan menolong dalam hal terkecil sekalipun. Agama yang benar membuahkan kasih & kepedulian; bila ibadah tak menumbuhkan keduanya, ada yang keliru pada hatinya.',
+    hikmah:
+      'Ibadah ritual dan kepedulian sosial tak terpisah. Surah ini menampar lembut: periksa apakah salatmu menjadikanmu lebih peka pada yatim, miskin, dan orang di sekitarmu — atau hanya gerakan kosong yang dilihat orang.',
+    linguistik:
+      'Pilihan «‘an ṣalātihim» (bukan «fī ṣalātihim») sangat tajam: «fī» berarti lalai sesaat di dalam salat — wajar & manusiawi; «‘an» berarti lalai akan salat itu sendiri — meremehkan waktu, makna, & kelangsungannya. Lalu ditutup «al-mā‘ūn» (bantuan terkecil) untuk menunjukkan betapa kerasnya hati yang dimaksud.',
+    amalan:
+      'Jadikan salatmu "berbekas": seusai salat, lakukan satu kebaikan sosial — pinjamkan barang, bantu tetangga, sisihkan untuk yatim/miskin. Periksa niat: apakah ibadahmu untuk Allah atau untuk dilihat? Dan jangan remehkan pertolongan kecil — di situ iman diuji.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1475,7 +1522,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-fil-1-5', 'quraisy-1-4', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1634,6 +1681,10 @@ const HIKMAH_KATA = {
   'quraisy-1-4': [
     'Hitung dua nikmat hari ini: makanan & rasa aman — lalu bersyukur.',
     'Yang rutin bukan berarti bukan anugerah.',
+  ],
+  'al-maun-1-7': [
+    'Ukur salatmu dari bekasnya: makin peka pada yang lemah, atau makin kosong?',
+    'Jangan remehkan pertolongan kecil — di situ imanmu diuji.',
   ],
 };
 
