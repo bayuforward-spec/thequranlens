@@ -1274,6 +1274,101 @@ const AYAT = [
       'Jadikan al-Mu‘awwiżatān (Al-Falaq & An-Nas) bersama Al-Ikhlas sebagai wirid pagi-petang dan menjelang tidur. Saat dilanda waswas — dalam ibadah, keputusan, atau prasangka — segera berta‘awuż dan sebut nama Allah; amati bagaimana bisikan itu surut. Pilih pula teman & asupan media yang tak menjadi "pembisik" dari golongan manusia.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim (riwayat ruqyah)'],
   },
+  {
+    id: 'al-kafirun-1-6',
+    kajianKata: [
+      { kata: 'لَا أَعْبُدُ مَا تَعْبُدُونَ', latin: 'lā a‘budu mā ta‘budūn', arti: 'aku tidak menyembah apa yang kamu sembah',
+        poin: [
+          'Pengulangan ayat di surah ini bukan sia-sia: ia menafikan penyembahan berhala di SEMUA waktu — kini, lampau, & nanti.',
+          '«lā a‘budu» (kata kerja → kini/nanti) ≠ «mā ‘abadtum» (lampau) ≠ «‘ābid» (kata sifat → identitas tetap).',
+          'Maka pemisahan akidah ini total & permanen — bukan penolakan sesaat.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'أَعْبُدُ', latin: 'a‘budu (kata kerja)', sifat: ['Terikat waktu', 'Menafikan tiap masa: kini & nanti'] },
+          { arab: 'عَابِد', latin: '‘ābid (kata sifat)', sifat: ['Identitas yang melekat', 'Menafikan sebagai jati diri'] },
+        ], catatan: 'Ditolak di setiap waktu (kata kerja) sekaligus sebagai jati diri (kata sifat) — total.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'لَكُمْ دِينُكُمْ وَلِيَ دِينِ', latin: 'lakum dīnukum wa liya dīn', arti: 'untukmu agamamu, dan untukku agamaku',
+        poin: [
+          'Ketegasan akidah, bukan kebencian: tiap pihak bertanggung jawab penuh atas pilihannya.',
+          'Toleransi sejati = hidup berdampingan TANPA mencampur-adukkan keyakinan.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Tegas dalam akidah, santun dalam pergaulan — keduanya bisa menyatu.',
+      'Tak perlu mencampur keyakinan demi diterima.',
+      'Katakan "tidak" yang jelas pada yang batil, tanpa membenci orangnya.',
+    ],
+    surah: 'Al-Kāfirūn',
+    surahNo: 109,
+    ayatNo: '1–6',
+    juz: 30,
+    tema: ['Tauhid', 'Akidah', 'Toleransi'],
+    gratis: false,
+    arab: 'قُلْ يَا أَيُّهَا الْكَافِرُونَ ۝ لَا أَعْبُدُ مَا تَعْبُدُونَ ۝ وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ ۝ وَلَا أَنَا عَابِدٌ مَّا عَبَدتُّمْ ۝ وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ ۝ لَكُمْ دِينُكُمْ وَلِيَ دِينِ',
+    latin: 'Qul yā ayyuhal-kāfirūn. Lā a‘budu mā ta‘budūn. Wa lā antum ‘ābidūna mā a‘bud. Wa lā anā ‘ābidum mā ‘abadtum. Wa lā antum ‘ābidūna mā a‘bud. Lakum dīnukum wa liya dīn.',
+    arti: 'Katakanlah: Wahai orang-orang kafir! Aku tidak menyembah apa yang kamu sembah, dan kamu bukan penyembah Tuhan yang aku sembah. Aku tidak pernah menjadi penyembah apa yang kamu sembah, dan kamu tidak pernah (pula) menjadi penyembah Tuhan yang aku sembah. Untukmu agamamu, dan untukku agamaku.',
+    asbabunNuzul:
+      'Diriwayatkan bahwa tokoh-tokoh Quraisy menawari Nabi ﷺ kompromi: menyembah Tuhan beliau & sesembahan mereka secara bergantian. Maka turun surah ini sebagai penolakan tegas atas segala bentuk kompromi akidah (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Surah pemutus (al-barā’ah): penegasan pemisahan total antara tauhid & syirik. Pengulangannya menafikan penyembahan berhala dalam segala waktu dan sebagai identitas — sehingga tertutup setiap celah pencampuran keyakinan. Penutupnya «lakum dīnukum wa liya dīn» menetapkan tanggung jawab masing-masing pihak, bukan paksaan dan bukan pula kompromi.',
+    hikmah:
+      'Tegas pada prinsip tak berarti kasar pada manusia. Seorang mukmin bisa hidup damai dengan siapa pun sambil menjaga akidahnya tetap murni — tak larut, tak menukar.',
+    linguistik:
+      'Permainan bentuk kata: «a‘budu» (fi‘l muḍāri‘) menafikan ibadah pada masa kini & mendatang, «‘abadtum» (fi‘l māḍī) pada masa lampau, dan «‘ābid» (ism fā‘il) menafikannya sebagai sifat yang melekat. Tiga bentuk berbeda untuk satu pesan: pemisahan yang menyeluruh di setiap dimensi waktu & jati diri.',
+    amalan:
+      'Terapkan «lakum dīnukum» dalam keseharian: hormati tetangga & rekan beda keyakinan, bantu urusan sosial mereka, tapi jangan ikut ritual atau kompromi yang mencederai tauhid. Toleransi sosial: ya; sinkretisme akidah: tidak. Saat ditekan agar "ikut sedikit demi rukun", surah ini jawabannya.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'an-nasr-1-3',
+    kajianKata: [
+      { kata: 'نَصْرُ اللَّهِ وَالْفَتْحُ', latin: 'naṣrullāhi wal-fatḥ', arti: 'pertolongan Allah dan kemenangan',
+        poin: [
+          '«naṣr» (pertolongan Allah) disebut lebih dulu dari «fatḥ» (kemenangan) — kemenangan hanyalah BUAH dari pertolongan-Nya.',
+          'Disandarkan ke Allah: «naṣrullāh» — bukan hasil kehebatan pasukan.',
+        ],
+        asalKata: { huruf: ['ف', 'ت', 'ح'], makna: 'membuka yang tertutup',
+          gambar: 'Akar «f-t-ḥ» berarti <b>membuka</b> — pintu atau gerbang yang tadinya terkunci. Al-Qur’an tak menyebut kemenangan dengan kata "menaklukkan" atau "menghancurkan", melainkan «fatḥ»: <b>terbukanya</b> Mekah, dan lebih dalam lagi — <b>terbukanya hati manusia</b> hingga berbondong masuk Islam. Kemenangan sejati bukan meremukkan lawan, tapi <b>membuka pintu hidayah</b>.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ', latin: 'fa sabbiḥ biḥamdi rabbika wastagfirh', arti: 'maka bertasbihlah memuji Tuhanmu dan mohonlah ampun',
+        poin: [
+          'Puncak kemenangan justru diperintah «istigfar» (mohon ampun) — bukan pesta. Adab yang membalik logika dunia.',
+          '«tawwāb» (pola mubalaghah): Allah BERULANG & sangat menerima taubat, tiap kali hamba kembali.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'تَوَّاب', latin: 'Tawwāb', sifat: ['Pola mubalaghah → berulang', 'Sangat & terus menerima taubat'] },
+          { arab: 'تَائِب', latin: 'Tā’ib', alt: true, sifat: ['Sekadar "yang menerima"', 'Tak menyiratkan keseringan'] },
+        ], catatan: 'Dipakai «tawwāb» — pintu taubat tak pernah lelah terbuka.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari (pemahaman Ibnu ‘Abbas)'] },
+    ],
+    hikmahPoin: [
+      'Saat di puncak, ingat Pemberi kemenangan — bukan dirimu.',
+      'Tutup setiap pencapaian dengan istighfar, bukan kesombongan.',
+      'Pintu taubat tak pernah tutup — Dia "Tawwāb".',
+    ],
+    surah: 'An-Naṣr',
+    surahNo: 110,
+    ayatNo: '1–3',
+    juz: 30,
+    tema: ['Kemenangan', 'Syukur', 'Taubat'],
+    gratis: false,
+    arab: 'إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ ۝ وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا ۝ فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ ۚ إِنَّهُ كَانَ تَوَّابًا',
+    latin: 'Iżā jā’a naṣrullāhi wal-fatḥ. Wa ra’aitan-nāsa yadkhulūna fī dīnillāhi afwājā. Fa sabbiḥ biḥamdi rabbika wastagfirh, innahū kāna tawwābā.',
+    arti: 'Apabila telah datang pertolongan Allah dan kemenangan, dan engkau melihat manusia berbondong-bondong masuk agama Allah, maka bertasbihlah dengan memuji Tuhanmu dan mohonlah ampun kepada-Nya. Sungguh, Dia Maha Penerima taubat.',
+    asbabunNuzul:
+      'Surah ini termasuk wahyu lengkap yang terakhir turun. Ibnu ‘Abbas memahaminya sebagai isyarat dekatnya ajal Nabi ﷺ — sebab tugas telah tuntas (kemenangan & manusia masuk Islam berbondong), lalu diperintah memperbanyak tasbih & istighfar (HR. Bukhari).',
+    tafsir:
+      'Ketika pertolongan Allah & terbukanya Mekah tiba, dan manusia memeluk Islam berbondong-bondong, Nabi ﷺ tidak diperintah berpesta, melainkan bertasbih, memuji, dan beristighfar. Inilah puncak adab: kemenangan dikembalikan kepada Allah, dan amal sebesar apa pun ditutup dengan pengakuan akan kekurangan diri.',
+    hikmah:
+      'Dunia merayakan kemenangan dengan kebanggaan; wahyu mengajarkan menutupnya dengan kerendahan & istighfar. Sebab yang menolongmu bukan kekuatanmu, dan tak ada amal yang sempurna tanpa cela.',
+    linguistik:
+      '«Naṣr» didahulukan atas «fatḥ» — kemenangan adalah akibat, pertolongan Allah adalah sebab. Kata «fatḥ» (membuka) dipilih, bukan penaklukan, menyiratkan terbukanya hati. Dan penutup «tawwāb» (pola mubalaghah) menegaskan keluasan ampunan-Nya yang tak pernah jemu.',
+    amalan:
+      'Biasakan menutup ibadah & pencapaian dengan istighfar (Nabi ﷺ beristighfar 3x seusai salat). Saat meraih sukses — lulus, naik jabatan, proyek selesai — tahan euforia, ucapkan "alhamdulillah" lalu "astaghfirullah": akui itu pemberian-Nya dan tutupi kekuranganmu.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1293,7 +1388,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-kautsar-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['al-insyirah-5-6', 'al-asr-1-3', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1436,6 +1531,14 @@ const HIKMAH_KATA = {
     'Dia memeliharamu, menguasaimu, dan layak kau sembah. Tiga alasan untuk berhenti gelisah.',
     'Lawan bisikan bukan dengan tegang, tapi dengan zikir. Sebut nama-Nya — ia surut.',
     'Tak semua racun datang dari yang gaib. Pilih teman & layar yang tak membisikkan keburukan.',
+  ],
+  'al-kafirun-1-6': [
+    'Berani berkata "tidak" pada yang batil adalah bagian dari iman.',
+    'Toleransi bukan mencampur akidah — tapi menghormati sambil menjaga prinsip.',
+  ],
+  'an-nasr-1-3': [
+    'Kemenangan terbaik: terbukanya hati, bukan tumbangnya lawan.',
+    'Makin tinggi pencapaianmu, makin rendah hatimu — tutup dengan istighfar.',
   ],
 };
 
