@@ -1065,14 +1065,25 @@ const AYAT = [
     id: 'al-ikhlas-1-4',
     kajianKata: [
       { kata: 'قُلْ هُوَ اللَّهُ أَحَدٌ', latin: 'Qul huwallāhu aḥad', arti: 'Katakanlah: Dialah Allah, Yang Maha Esa',
-        poin: ['Dipilih «Aḥad», bukan «Wāḥid» — keesaan MUTLAK yang tak dapat dibagi.', 'Surah dibuka «Aḥad» dan ditutup «Aḥad» — bingkai sempurna.'],
+        poin: ['Dipilih «Aḥad», bukan «Wāḥid» — keesaan MUTLAK yang tak menerima pembagian.', 'Surah dibuka «Aḥad» dan ditutup «Aḥad» — bingkai sempurna.'],
+        asalKata: { huruf: ['ء', 'ح', 'د'], makna: 'keesaan yang menolak bilangan',
+          gambar: '«Aḥad» kata yang istimewa: dalam bahasa Arab ia hampir selalu muncul dalam <b>penolakan</b> — «mā fid-dāri aḥad» (tak ada SEORANG pun di rumah). Ia menolak dijamakkan, ditambah, bahkan diduakan. Maka ketika Allah menyebut diri-Nya «Aḥad» dalam kalimat <b>positif</b>, dipilih satu-satunya kata yang strukturnya sendiri menolak adanya "yang kedua" — bukan sekadar "satu", tapi <b>Yang mustahil ada bandingannya</b>.' },
         banding: { tipe: 'banding', item: [
           { arab: 'أَحَد', latin: 'Aḥad', sifat: ['Keesaan mutlak', 'Tak dapat dibagi / ditambah'] },
           { arab: 'وَاحِد', latin: 'Wāḥid', alt: true, sifat: ['"Satu" biasa', 'Bisa diikuti dua, tiga…'] },
         ], catatan: 'Dipilih «Aḥad» — menutup celah penyekutuan.' },
         sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi no. 3364'] },
       { kata: 'اللَّهُ الصَّمَدُ', latin: 'Allāhuṣ-ṣamad', arti: 'Allah tempat bergantung segala sesuatu',
-        poin: ['«Aṣ-Ṣamad»: tumpuan seluruh kebutuhan makhluk, sementara Dia tak butuh apa pun.'],
+        poin: [
+          'Dua makna menyatu: (1) tempat SEMUA makhluk bergantung memenuhi hajat, (2) Dia sendiri tak butuh apa pun & tak berkekurangan.',
+          'Pakai alif-lam «Aṣ-Ṣamad» — kebergantungan total itu HANYA tertuju kepada-Nya.',
+        ],
+        asalKata: { huruf: ['ص', 'م', 'د'], makna: 'yang dituju semua hajat; padat tanpa rongga',
+          gambar: 'Akar «ṣ-m-d» memadukan dua warna makna yang indah. Pertama, «ṣamada ilaihi» = <b>menuju & bersandar kepadanya untuk segala keperluan</b> — bagai seluruh rakyat menghadap satu-satunya raja. Kedua, benda disebut «ṣamad» bila <b>padat, tanpa rongga</b> — tak berlubang, tak berisi, tak perlu asupan. Gabungannya memukau: Allah adalah Dzat yang <b>dituju setiap makhluk</b>, sementara Dia sendiri <b>utuh sempurna — tak makan, tak butuh, tak pernah berkurang</b>.' },
+        banding: { tipe: 'banding', item: [
+          { arab: 'يُصْمَدُ إِلَيْهِ', latin: 'dituju', sifat: ['Tempat SEMUA bergantung', 'Setiap hajat menghadap-Nya'] },
+          { arab: 'صَمَدٌ', latin: 'utuh / tanpa rongga', sifat: ['Tak butuh apa pun', 'Tak makan, tak berkurang'] },
+        ], catatan: 'Satu kata merangkum dua sisi: Yang dibutuhkan semua, tapi tak membutuhkan apa pun.' },
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'لَمْ يَلِدْ وَلَمْ يُولَدْ', latin: 'lam yalid wa lam yūlad', arti: 'tidak beranak dan tidak diperanakkan',
         poin: ['Menafikan keturunan dari dua arah sekaligus — tidak menurunkan & tidak diturunkan.', 'Menutup setiap celah penyimpangan akidah.'],
