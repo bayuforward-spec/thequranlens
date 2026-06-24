@@ -535,8 +535,10 @@ const AYAT = [
         kata: 'الْكِتَابُ', latin: 'Al-Kitāb', arti: 'Kitab (Al-Qur’an)',
         poin: [
           'Dengan alif-lam: Kitab yang sudah dikenal keagungannya.',
-          'Bukan sekadar tulisan — tapi "Al-Kitab" yang menjadi rujukan.',
+          'Bukan sekadar tulisan — tapi "Al-Kitab" yang menjadi rujukan & ketetapan.',
         ],
+        asalKata: { huruf: ['ك', 'ت', 'ب'], makna: 'menulis sekaligus menetapkan/mewajibkan',
+          gambar: 'Akar «k-t-b» menyimpan dua makna yang menyatu: <b>menulis</b> dan <b>menetapkan/mewajibkan</b> — dari akar yang sama lahir «kutiba ‘alaikum» (telah <b>diwajibkan</b> atas kamu, QS 2:183). Maka «Al-Kitāb» bukan sekadar lembar bertinta, melainkan <b>ketetapan yang mengikat</b> — hukum yang pasti & berlaku, bukan bacaan yang boleh diabaikan. Menyebutnya «al-Kitāb» menegaskan: isinya <b>untuk dijalani</b>, bukan sekadar dinikmati.' },
         banding: { tipe: 'banding', item: [
           { arab: 'الْكِتَاب', latin: 'Al-Kitāb', sifat: ['Akar k-t-b: tertulis & ditetapkan', 'Sesuatu yang pasti & mengikat'] },
           { arab: 'الْقُرْآن', latin: 'Al-Qur’ān', alt: true, sifat: ['Menekankan sisi "dibaca"', 'Tak menonjolkan ketetapan'] },
@@ -628,6 +630,8 @@ const AYAT = [
           'Dipakai «yuqīmūn» (menegakkan), bukan sekadar «yuṣallūn» (mengerjakan).',
           'Iqāmah = menunaikan dengan sempurna syarat, rukun, & kekhusyukan.',
         ],
+        asalKata: { huruf: ['ق', 'و', 'م'], makna: 'menegakkan tegak & kokoh',
+          gambar: 'Akar «q-w-m» berarti <b>berdiri tegak</b>; «iqāmah» = membuat sesuatu <b>berdiri lurus & kokoh</b> — seperti menegakkan tiang penyangga. Maka salat bukan sekadar "dikerjakan" lalu gugur, melainkan <b>ditegakkan</b>: lurus rukun & syaratnya, hidup khusyuknya — hingga ia menjadi <b>tiang yang menyangga seluruh bangunan</b> iman & keseharian, bukan tempelan di sela jadwal.' },
         banding: { tipe: 'banding', item: [
           { arab: 'يُقِيمُونَ', latin: 'Yuqīmūn', sifat: ['Menegakkan', 'Sempurna & khusyuk'] },
           { arab: 'يُصَلُّونَ', latin: 'Yuṣallūn', alt: true, sifat: ['Sekadar mengerjakan', 'Gugur kewajiban'] },
@@ -759,7 +763,12 @@ const AYAT = [
         poin: ['Pembuka: keesaan mutlak — tak ada sesembahan yang benar selain-Nya.'],
         sumber: ['Tafsir Ibnu Katsir'] },
       { kata: 'الْحَيُّ الْقَيُّومُ', latin: 'Al-Ḥayyul-Qayyūm', arti: 'Yang Maha Hidup, terus mengurus',
-        poin: ['Dua nama agung dirangkai: sumber kehidupan + penegak segala sesuatu.', 'Di sini para ulama menyebut tersimpan «ismullāhil a‘ẓam».'],
+        poin: [
+          'Dua nama poros: «Al-Ḥayy» (Maha Hidup, sempurna & kekal) + «Al-Qayyūm» (berdiri sendiri, menegakkan segala yang lain).',
+          'Di sinilah para ulama menyebut tersimpan «ismullāhil a‘ẓam» — nama Allah teragung.',
+        ],
+        asalKata: { huruf: ['ق', 'و', 'م'], makna: 'berdiri sendiri & menegakkan yang lain',
+          gambar: '«Al-Qayyūm» berpola «fay‘ūl» — bentuk <b>mubalaghah</b> (sangat & terus-menerus) dari akar «q-w-m». Maknanya berlapis: Dia <b>berdiri sendiri</b> tanpa butuh apa pun, sekaligus <b>yang menegakkan & mengurus seluruh makhluk</b> tiada henti. Langit, bumi, dan dirimu tegak <b>bukan dengan sendirinya</b> — ditopang-Nya tiap detik; andai Dia berhenti "menegakkan" sekejap, semua runtuh. Maka tepat sesudahnya: «tak mengantuk & tak tidur».' },
         sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'] },
       { kata: 'لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ', latin: 'lā ta’khużuhū sinatuw wa lā naum', arti: 'tak mengantuk dan tak tidur',
         poin: ['Urutan menaik: kantuk samar pun tak menyentuh-Nya, apalagi tidur.'],
@@ -843,6 +852,8 @@ const AYAT = [
           'Kebaikan «kasabat» (sederhana); keburukan «iktasabat» (usaha & kesengajaan lebih).',
           'Kebaikan dicatat meski niat ringan; keburukan "membebani" bila diupayakan.',
         ],
+        asalKata: { huruf: ['ك', 'س', 'ب'], makna: 'usaha biasa vs usaha yang ditekuni',
+          gambar: 'Dua kata dari satu akar «k-s-b» (mengusahakan). Untuk <b>kebaikan</b> dipakai «kasabat» — bentuk ringan, seakan kebaikan itu <b>mudah & selaras dengan fitrah</b>. Untuk <b>keburukan</b> dipakai «iktasabat» — pola «ifti‘āl» yang <b>menambah huruf</b>; dan dalam balaghah, tambahan huruf menyiratkan <b>tambahan usaha</b>: keburukan perlu <b>diupayakan, dikejar, disengaja</b>. Satu pergeseran bentuk kata kerja diam-diam berkata: <b>berbuat baik itu dimudahkan; berbuat jahat justru "melawan arus."</b>' },
         banding: { tipe: 'banding', item: [
           { arab: 'كَسَبَتْ', latin: 'kasabat', sifat: ['Bentuk sederhana', 'Untuk KEBAIKAN'] },
           { arab: 'اكْتَسَبَتْ', latin: 'iktasabat', alt: true, sifat: ['Bentuk «ifti‘āl»', 'Untuk KEBURUKAN — perlu kesengajaan'] },
