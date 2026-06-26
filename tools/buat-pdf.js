@@ -17,7 +17,7 @@ const episodeMeta = global.window.episodeMeta;
 
 const id = process.argv[2] || 'al-ikhlas-1-4';
 const out = process.argv[3] || path.join(__dirname, '..', `pdf-${id}.html`);
-const SITE = 'thequranlens.web.id'; // ganti ke domain final saat siap
+const SITE = 'thequranlensindonesia.com'; // domain brand
 
 const a = AYAT.find((x) => x.id === id);
 if (!a) { console.error('Episode tidak ditemukan:', id); process.exit(1); }
