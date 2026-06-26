@@ -1872,6 +1872,140 @@ const AYAT = [
       'Hidupkan sepuluh malam terakhir Ramadhan dengan salat, tilawah, & doa — terutama "Allāhumma innaka ‘afuwwun tuḥibbul-‘afwa fa‘fu ‘annī" (doa yang diajarkan Nabi ﷺ untuk malam Qadr). Perlakukan waktu luangmu sebagai modal: isi dengan yang berkah, bukan yang sia-sia.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Jami‘ at-Tirmidzi (doa malam Qadr)'],
   },
+  {
+    id: 'al-alaq-1-5',
+    kajianKata: [
+      { kata: 'اقْرَأْ بِاسْمِ رَبِّكَ', latin: 'iqra’ bismi rabbik', arti: 'bacalah dengan (menyebut) nama Tuhanmu',
+        poin: [
+          'Kata WAHYU PERTAMA kepada manusia adalah «Iqra’» — "Bacalah!". Bukan perintah ritual, tapi ILMU.',
+          '«iqra’ bismi rabbika» — membaca yang DIIKAT dengan nama Tuhan: ilmu yang berpijak pada-Nya, bukan ilmu yang sombong.',
+          'Diturunkan kepada Nabi yang ummi (tak bisa baca-tulis) — menegaskan sumbernya wahyu, bukan karangan.',
+        ],
+        asalKata: { huruf: ['ق', 'ر', 'ء'], makna: 'membaca & menghimpun-merangkai',
+          gambar: 'Akar «q-r-’» bukan sekadar "membaca tulisan" — maknanya <b>menghimpun & merangkai</b> (dari sini «Qur’ān» = "yang dihimpun lalu dibaca"). «Iqra’» memerintah <b>menyerap, merangkai, lalu menyampaikan</b> ilmu. Menakjubkan: agama ini dibuka bukan dengan perintah perang atau ritual, melainkan <b>"Bacalah!"</b> — meletakkan ilmu sebagai fondasi, dan mengikatnya «bismi rabbika» agar tak pernah lepas dari Penciptanya.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari–Muslim'] },
+      { kata: 'الَّذِي عَلَّمَ بِالْقَلَمِ', latin: 'allażī ‘allama bil-qalam', arti: 'yang mengajar (manusia) dengan pena',
+        poin: [
+          '«‘allama bil-qalam» — Allah mengajar dengan PENA: ilmu diabadikan & diwariskan lewat tulisan.',
+          '«‘allamal-insāna mā lam ya‘lam» — sumber semua ilmu manusia adalah pengajaran-Nya; maka tetaplah rendah hati.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Agama ini lahir dengan "Bacalah" — menuntut ilmu adalah ibadah.',
+      'Ikat ilmumu dengan nama Tuhan, agar tak melahirkan kesombongan.',
+      'Apa pun yang kau tahu, asalnya Dia yang ajarkan.',
+    ],
+    surah: 'Al-‘Alaq',
+    surahNo: 96,
+    ayatNo: '1–5',
+    juz: 30,
+    tema: ['Ilmu', 'Wahyu pertama', 'Rendah hati'],
+    gratis: false,
+    arab: 'اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ ۝ اقْرَأْ وَرَبُّكَ الْأَكْرَمُ ۝ الَّذِي عَلَّمَ بِالْقَلَمِ ۝ عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ',
+    latin: 'Iqra’ bismi rabbikal-lażī khalaq. Khalaqal-insāna min ‘alaq. Iqra’ wa rabbukal-akram. Allażī ‘allama bil-qalam. ‘Allamal-insāna mā lam ya‘lam.',
+    arti: 'Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan. Dia telah menciptakan manusia dari segumpal darah. Bacalah, dan Tuhanmulah Yang Mahamulia, Yang mengajar (manusia) dengan pena. Dia mengajarkan manusia apa yang tidak diketahuinya.',
+    asbabunNuzul:
+      'Inilah wahyu pertama. Di Gua Hira, malaikat Jibril datang memeluk Nabi ﷺ dan berkata "Iqra’ (Bacalah)" tiga kali; beliau menjawab "Aku tidak bisa membaca", lalu turunlah ayat-ayat ini (HR. Bukhari–Muslim).',
+    tafsir:
+      'Pembuka wahyu kepada umat manusia: perintah membaca dengan nama Tuhan yang menciptakan, mengingatkan asal manusia dari segumpal darah, dan mengagungkan Allah yang Maha Pemurah — yang mengajarkan ilmu lewat pena dan mengajarkan apa yang sebelumnya tak diketahui. Sejak kata pertamanya, Islam meletakkan ilmu sebagai pondasi.',
+    hikmah:
+      'Wahyu tidak dibuka dengan perintah berperang atau ritual, melainkan dengan "Bacalah". Ilmu adalah jalan mengenal Allah; namun ia harus diikat dengan nama-Nya agar menumbuhkan kerendahan hati, bukan kesombongan.',
+    linguistik:
+      'Kata «iqra’» (dari q-r-’: menghimpun & membaca) dipilih sebagai pembuka — fondasi ilmu — dan langsung diikat «bismi rabbika». Penyebutan «al-qalam» (pena) menegaskan keabadian ilmu lewat tulisan, dan «mā lam ya‘lam» mengingatkan bahwa seluruh pengetahuan manusia bersumber dari pengajaran-Nya.',
+    amalan:
+      'Jadikan menuntut ilmu (terutama ilmu agama) sebagai ibadah rutin — sisihkan waktu membaca tiap hari. Awali belajar dengan menyebut nama Allah & niat mengenal-Nya. Dan tiap kali ilmumu bertambah, tambah pula kerendahan hatimu, sebab semua itu pemberian-Nya.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim'],
+  },
+  {
+    id: 'al-bayyinah-1-8',
+    kajianKata: [
+      { kata: 'لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ', latin: 'liya‘budullāha mukhliṣīna lahud-dīn', arti: 'agar menyembah Allah dengan memurnikan ketaatan kepada-Nya',
+        poin: [
+          'Inti SEMUA syariat diringkas: menyembah Allah dengan IKHLAS, lurus (ḥunafā’), tegakkan salat, tunaikan zakat.',
+          '«wa żālika dīnul-qayyimah» — ITULAH agama yang lurus & kokoh; bukan ritual yang kosong dari ikhlas.',
+        ],
+        asalKata: { huruf: ['خ', 'ل', 'ص'], makna: 'murni, jernih, tanpa campuran',
+          gambar: 'Akar «kh-l-ṣ» berarti <b>murni & jernih, bebas dari campuran</b> — emas «khāliṣ» = emas tanpa karat. «Mukhliṣīna lahud-dīn» = memurnikan ibadah <b>hanya untuk Allah</b>, tak dicampuri riya atau pamrih. Inilah benang merah seluruh nabi: bukan banyaknya ritual, tapi <b>kemurnian niat</b> di baliknya. Ibadah yang tercampur tujuan lain, seperti emas bercampur logam, turun nilainya.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'أُولَٰئِكَ هُمْ خَيْرُ الْبَرِيَّةِ', latin: 'ulā’ika hum khairul-bariyyah', arti: 'mereka itulah sebaik-baik makhluk',
+        poin: [
+          'Orang beriman & beramal saleh disebut «khairul bariyyah» — sebaik-baik makhluk, mengungguli seluruh ciptaan.',
+          'Lawannya «syarrul bariyyah» (seburuk-buruk makhluk). Yang menentukan derajat: iman + amal, bukan rupa atau nasab.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Inti agama: murnikan ibadah hanya untuk Allah.',
+      'Yang meninggikan derajat di sisi Allah: iman & amal, bukan rupa atau nasab.',
+      '"Sebaik-baik makhluk" itu gelar yang diperjuangkan dengan ketaatan.',
+    ],
+    surah: 'Al-Bayyinah',
+    surahNo: 98,
+    ayatNo: '1–8',
+    juz: 30,
+    tema: ['Keikhlasan', 'Iman & amal', 'Agama yang lurus'],
+    gratis: false,
+    arab: 'لَمْ يَكُنِ الَّذِينَ كَفَرُوا مِنْ أَهْلِ الْكِتَابِ وَالْمُشْرِكِينَ مُنفَكِّينَ حَتَّىٰ تَأْتِيَهُمُ الْبَيِّنَةُ ۝ رَسُولٌ مِّنَ اللَّهِ يَتْلُو صُحُفًا مُّطَهَّرَةً ۝ فِيهَا كُتُبٌ قَيِّمَةٌ ۝ وَمَا تَفَرَّقَ الَّذِينَ أُوتُوا الْكِتَابَ إِلَّا مِن بَعْدِ مَا جَاءَتْهُمُ الْبَيِّنَةُ ۝ وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ حُنَفَاءَ وَيُقِيمُوا الصَّلَاةَ وَيُؤْتُوا الزَّكَاةَ ۚ وَذَٰلِكَ دِينُ الْقَيِّمَةِ ۝ إِنَّ الَّذِينَ كَفَرُوا مِنْ أَهْلِ الْكِتَابِ وَالْمُشْرِكِينَ فِي نَارِ جَهَنَّمَ خَالِدِينَ فِيهَا ۚ أُولَٰئِكَ هُمْ شَرُّ الْبَرِيَّةِ ۝ إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ أُولَٰئِكَ هُمْ خَيْرُ الْبَرِيَّةِ ۝ جَزَاؤُهُمْ عِندَ رَبِّهِمْ جَنَّاتُ عَدْنٍ تَجْرِي مِن تَحْتِهَا الْأَنْهَارُ خَالِدِينَ فِيهَا أَبَدًا ۚ رَّضِيَ اللَّهُ عَنْهُمْ وَرَضُوا عَنْهُ ۚ ذَٰلِكَ لِمَنْ خَشِيَ رَبَّهُ',
+    latin: 'Lam yakunil-lażīna kafarū min ahlil-kitābi wal-musyrikīna munfakkīna ḥattā ta’tiyahumul-bayyinah. Rasūlum minallāhi yatlū ṣuḥufam muṭahharah. Fīhā kutubun qayyimah. Wa mā tafarraqal-lażīna ūtul-kitāba illā mim ba‘di mā jā’at-humul-bayyinah. Wa mā umirū illā liya‘budullāha mukhliṣīna lahud-dīna ḥunafā’a wa yuqīmuṣ-ṣalāta wa yu’tuz-zakāta wa żālika dīnul-qayyimah. Innal-lażīna kafarū min ahlil-kitābi wal-musyrikīna fī nāri jahannama khālidīna fīhā, ulā’ika hum syarrul-bariyyah. Innal-lażīna āmanū wa ‘amiluṣ-ṣāliḥāti ulā’ika hum khairul-bariyyah. Jazā’uhum ‘inda rabbihim jannātu ‘adnin tajrī min taḥtihal-anhāru khālidīna fīhā abadā, raḍiyallāhu ‘anhum wa raḍū ‘anhu, żālika liman khasyiya rabbah.',
+    arti: 'Orang-orang yang kafir dari golongan Ahli Kitab dan orang-orang musyrik tidak akan meninggalkan (kekafiran) sampai datang kepada mereka bukti yang nyata, (yaitu) seorang Rasul dari Allah yang membacakan lembaran-lembaran yang suci, di dalamnya terdapat (isi) kitab-kitab yang lurus. Dan tidaklah terpecah-belah orang-orang yang diberi kitab kecuali setelah datang kepada mereka bukti yang nyata. Padahal mereka hanya diperintah menyembah Allah dengan ikhlas menaati-Nya semata-mata karena agama, dengan lurus, dan agar menegakkan salat serta menunaikan zakat; dan itulah agama yang lurus. Sungguh, orang-orang yang kafir dari golongan Ahli Kitab dan orang-orang musyrik (akan masuk) ke neraka Jahanam, kekal di dalamnya. Mereka itu seburuk-buruk makhluk. Sungguh, orang-orang yang beriman dan mengerjakan kebajikan, mereka itu sebaik-baik makhluk. Balasan mereka di sisi Tuhan mereka ialah surga ‘Adn yang mengalir di bawahnya sungai-sungai, mereka kekal di dalamnya selama-lamanya. Allah ridha terhadap mereka dan mereka pun ridha kepada-Nya. Yang demikian itu bagi orang yang takut kepada Tuhannya.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus yang masyhur. Surah ini berbicara tentang datangnya bukti nyata (Rasul & wahyu), inti perintah agama (ikhlas), serta pembagian akhir manusia: seburuk & sebaik-baik makhluk.',
+    tafsir:
+      'Allah menegaskan bahwa seluruh syariat para nabi berintikan satu hal: menyembah Allah dengan ikhlas & lurus, menegakkan salat, menunaikan zakat — itulah agama yang lurus. Lalu manusia terbagi: yang kufur menjadi seburuk-buruk makhluk, sedangkan yang beriman & beramal saleh menjadi sebaik-baik makhluk dengan balasan surga ‘Adn dan ridha Allah.',
+    hikmah:
+      'Yang dituntut bukan banyaknya amal semata, tapi kemurnian niat di baliknya. Dan derajat tertinggi — "sebaik-baik makhluk" — bukan ditentukan rupa, harta, atau keturunan, melainkan iman yang dibuktikan dengan amal.',
+    linguistik:
+      'Kata «mukhliṣīna» (dari kh-l-ṣ: memurnikan) menjadi kunci: ibadah yang sah adalah yang murni untuk Allah. Penyebutan «dīnul-qayyimah» (agama yang lurus & kokoh) membingkai keikhlasan sebagai esensi. Dan kontras «syarrul-bariyyah» vs «khairul-bariyyah» menutup surah dengan pembagian nasib yang ditentukan iman & amal.',
+    amalan:
+      'Periksa niat dalam tiap ibadah: untuk Allah, atau untuk dilihat orang? Latih keikhlasan dengan menyembunyikan sebagian amal kebaikanmu. Dan kejar gelar "khairul bariyyah" bukan dengan pencitraan, tapi dengan iman yang konsisten dibuktikan amal nyata.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'az-zalzalah-1-8',
+    kajianKata: [
+      { kata: 'مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ', latin: 'miṡqāla żarratin khairay yarah', arti: 'seberat zarrah kebaikan pun, ia akan melihatnya',
+        poin: [
+          '«miṡqāla żarratin» — seberat ZARRAH (partikel terkecil): sekecil apa pun kebaikan/keburukan, TERLIHAT balasannya.',
+          'Diulang simetris: «khairan yarah» / «syarran yarah» — tak ada yang luput, sekecil apa pun.',
+          'Pesannya: jangan remehkan kebaikan kecil, & jangan anggap sepele dosa kecil.',
+        ],
+        asalKata: { huruf: ['ذ', 'ر', 'ر'], makna: 'partikel terkecil — debu/semut terkecil',
+          gambar: 'Orang Arab memakai «żarrah» untuk <b>sesuatu yang paling kecil</b> — semut terkecil, atau debu halus yang tampak melayang dalam seberkas cahaya matahari. Al-Qur’an memilihnya untuk menegaskan: timbangan akhirat <b>sehalus itu</b>. Tak ada senyum, langkah, atau bisikan niat yang terlalu kecil untuk dicatat. Yang "sedikit" di matamu bisa jadi penentu di mata-Nya.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'تُحَدِّثُ أَخْبَارَهَا', latin: 'tuḥaddiṡu akhbārahā', arti: 'bumi menyampaikan beritanya',
+        poin: [
+          '«tuḥaddiṡu akhbārahā» — bumi sendiri "bercerita" tentang segala yang diperbuat di atasnya: saksi yang tak terbantah.',
+          'Tempat kau berbuat pun akan bersaksi — tak ada yang benar-benar tersembunyi.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Jangan remehkan kebaikan sekecil apa pun — ia terlihat.',
+      'Jangan sepelekan dosa kecil — ia pun terlihat.',
+      'Bahkan bumi tempatmu berpijak akan bersaksi.',
+    ],
+    surah: 'Az-Zalzalah',
+    surahNo: 99,
+    ayatNo: '1–8',
+    juz: 30,
+    tema: ['Hari akhir', 'Amal kecil', 'Pertanggungjawaban'],
+    gratis: false,
+    arab: 'إِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا ۝ وَأَخْرَجَتِ الْأَرْضُ أَثْقَالَهَا ۝ وَقَالَ الْإِنسَانُ مَا لَهَا ۝ يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا ۝ بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا ۝ يَوْمَئِذٍ يَصْدُرُ النَّاسُ أَشْتَاتًا لِّيُرَوْا أَعْمَالَهُمْ ۝ فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ ۝ وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ',
+    latin: 'Iżā zulzilatil-arḍu zilzālahā. Wa akhrajatil-arḍu aṡqālahā. Wa qālal-insānu mā lahā. Yauma’iżin tuḥaddiṡu akhbārahā. Bi’anna rabbaka auḥā lahā. Yauma’iżiy yaṣdurun-nāsu asytātal liyurau a‘mālahum. Fa may ya‘mal miṡqāla żarratin khairay yarah. Wa may ya‘mal miṡqāla żarratin syarray yarah.',
+    arti: 'Apabila bumi diguncangkan dengan guncangannya (yang dahsyat), dan bumi telah mengeluarkan beban-beban beratnya, dan manusia bertanya, "Apa yang terjadi padanya?" Pada hari itu bumi menyampaikan beritanya, karena sesungguhnya Tuhanmu telah memerintahkannya. Pada hari itu manusia keluar (dari kubur) dalam keadaan berkelompok-kelompok, untuk diperlihatkan kepada mereka (balasan) perbuatannya. Maka barangsiapa mengerjakan kebaikan seberat zarrah, niscaya dia akan melihat(nya). Dan barangsiapa mengerjakan kejahatan seberat zarrah, niscaya dia akan melihat(nya).',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus tunggal. Sebagian ulama menyebut konteks pengingat agar tidak meremehkan kebaikan kecil maupun dosa kecil; maknanya berlaku umum tentang ketelitian hisab.',
+    tafsir:
+      'Surah ini melukiskan dahsyatnya Hari Kiamat: bumi berguncang & mengeluarkan isinya, bahkan "bercerita" tentang amal yang diperbuat di atasnya. Manusia keluar berkelompok untuk diperlihatkan amalnya — hingga kebaikan & keburukan seberat zarrah pun terlihat balasannya. Tak ada yang terlalu kecil untuk dihitung.',
+    hikmah:
+      'Ketelitian hisab Allah menggeser cara kita memandang amal: tak ada kebaikan yang sia-sia, dan tak ada dosa yang benar-benar "kecil". Bahkan bumi menjadi saksi — maka berhati-hatilah, dan jangan pernah meremehkan secuil kebaikan.',
+    linguistik:
+      'Pilihan «żarrah» (partikel terkecil) menegaskan kehalusan timbangan akhirat. Pengulangan simetris «khairan yarah / syarran yarah» menutup surah dengan keseimbangan yang menggetarkan. Dan «tuḥaddiṡu akhbārahā» (bumi bercerita) adalah personifikasi yang menghidupkan betapa tak ada perbuatan yang tersembunyi.',
+    amalan:
+      'Perbanyak kebaikan-kebaikan kecil yang sering diremehkan: menyingkirkan duri di jalan, senyum, sedekah receh rutin, menahan kata buruk. Dan jauhi dosa-dosa "kecil" yang dianggap sepele. Bayangkan "rekaman bumi" atas perbuatanmu — ia akan bersaksi.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1891,7 +2025,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-qadr-1-5', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -2087,6 +2221,18 @@ const HIKMAH_KATA = {
   'al-qadr-1-5': [
     'Satu malam bisa mengalahkan 83 tahun — buru keberkahannya.',
     'Nilai waktumu dari isinya, bukan dari panjangnya.',
+  ],
+  'al-alaq-1-5': [
+    'Wahyu pertama: "Bacalah." Menuntut ilmu itu ibadah.',
+    'Ikat ilmumu dengan nama Tuhan, agar tak melahirkan kesombongan.',
+  ],
+  'al-bayyinah-1-8': [
+    'Inti agama: murnikan ibadah hanya untuk Allah.',
+    '"Sebaik-baik makhluk" itu gelar yang diraih dengan iman & amal.',
+  ],
+  'az-zalzalah-1-8': [
+    'Jangan remehkan kebaikan sekecil zarrah — ia terlihat.',
+    'Jangan sepelekan dosa sekecil zarrah — ia pun terlihat.',
   ],
 };
 
