@@ -1730,6 +1730,148 @@ const AYAT = [
       'Jadikan cermin: jangan andalkan status, koneksi, atau harta sebagai "jaminan" — yang menjamin hanyalah iman & amal. Dan jauhi peran "ḥammālatal-ḥaṭab" zaman kini: meneruskan gosip, tangkapan layar, atau berita yang menyulut permusuhan. Berhentikan fitnah di tanganmu, jangan menyebarkannya.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari'],
   },
+  {
+    id: 'ad-duha-1-11',
+    kajianKata: [
+      { kata: 'مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ', latin: 'mā wadda‘aka rabbuka wa mā qalā', arti: 'Tuhanmu tidak meninggalkanmu dan tidak (pula) membencimu',
+        poin: [
+          'Konteks: wahyu sempat terhenti, musuh mengejek "Tuhanmu telah meninggalkanmu." Allah menjawab dengan kelembutan luar biasa.',
+          '«wadda‘aka» bukan sekadar "pergi" — «wadā‘» = perpisahan yang disengaja & menyakitkan; justru itu yang dinafikan.',
+          'Halusnya menggetarkan: «mā qalā» — kata ganti "-mu" sengaja DIBUANG (tak dikatakan "membencimu"), seolah Allah tak sudi menyandingkan kata "benci" dengan dirimu.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'وَدَّعَ', latin: 'Wadda‘a', sifat: ['Perpisahan yang DISENGAJA', 'Bentuk paling menyakitkan'] },
+          { arab: 'تَرَكَ', latin: 'Taraka', alt: true, sifat: ['Sekadar "meninggalkan"', 'Lebih ringan'] },
+        ], catatan: 'Dinafikan «wadda‘a» — bahkan perpisahan terhalus pun tak terjadi antara kau & Tuhanmu.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari–Muslim'] },
+      { kata: 'وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ', latin: 'wa lasaufa yu‘ṭīka rabbuka fa tarḍā', arti: 'dan kelak Tuhanmu pasti memberimu, sehingga engkau ridha',
+        poin: [
+          'Janji paling melapangkan: "Tuhanmu akan terus memberi sampai engkau RIDHA (puas)."',
+          'Batas pemberian-Nya adalah kepuasanmu — «fa tarḍā» — bukan sekadar kecukupan minimal.',
+        ],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'] },
+      { kata: 'وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ', latin: 'wa ammā bini‘mati rabbika fa ḥaddiṡ', arti: 'dan terhadap nikmat Tuhanmu, ceritakanlah',
+        poin: [
+          'Tiga pemberian masa lalu berbuah tiga perintah: yatim→dilindungi, bingung→ditunjuki, miskin→dicukupkan.',
+          'Maka: dulu yatim → jangan keras pada yatim; dulu meminta → jangan hardik peminta; diberi nikmat → ceritakan (syukuri).',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Saat merasa "ditinggalkan" Allah, surah ini turun untukmu: Dia tak pergi.',
+      'Yang terbaik bukan di belakang (dunia), tapi di depan (akhirat & janji-Nya).',
+      'Kebaikan yang dulu kau terima, jadikan alasan berbuat baik pada yang kini lemah.',
+    ],
+    surah: 'Aḍ-Ḍuḥā',
+    surahNo: 93,
+    ayatNo: '1–11',
+    juz: 30,
+    tema: ['Penghiburan', 'Harapan', 'Syukur'],
+    gratis: false,
+    arab: 'وَالضُّحَىٰ ۝ وَاللَّيْلِ إِذَا سَجَىٰ ۝ مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ ۝ وَلَلْآخِرَةُ خَيْرٌ لَّكَ مِنَ الْأُولَىٰ ۝ وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ ۝ أَلَمْ يَجِدْكَ يَتِيمًا فَآوَىٰ ۝ وَوَجَدَكَ ضَالًّا فَهَدَىٰ ۝ وَوَجَدَكَ عَائِلًا فَأَغْنَىٰ ۝ فَأَمَّا الْيَتِيمَ فَلَا تَقْهَرْ ۝ وَأَمَّا السَّائِلَ فَلَا تَنْهَرْ ۝ وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ',
+    latin: 'Waḍ-ḍuḥā. Wal-laili iżā sajā. Mā wadda‘aka rabbuka wa mā qalā. Wa lal-ākhiratu khairul laka minal-ūlā. Wa lasaufa yu‘ṭīka rabbuka fa tarḍā. Alam yajidka yatīman fa āwā. Wa wajadaka ḍāllan fa hadā. Wa wajadaka ‘ā’ilan fa agnā. Fa ammal-yatīma fa lā taqhar. Wa ammas-sā’ila fa lā tanhar. Wa ammā bini‘mati rabbika fa ḥaddiṡ.',
+    arti: 'Demi waktu duha, dan demi malam apabila telah sunyi, Tuhanmu tidak meninggalkanmu dan tidak (pula) membencimu. Dan sungguh, yang kemudian (akhirat) lebih baik bagimu daripada yang permulaan (dunia). Dan kelak Tuhanmu pasti memberikan karunia-Nya kepadamu, sehingga engkau menjadi puas. Bukankah Dia mendapatimu sebagai yatim, lalu Dia melindungimu? Dan Dia mendapatimu sebagai orang yang bingung, lalu Dia memberi petunjuk. Dan Dia mendapatimu sebagai orang yang kekurangan, lalu Dia memberi kecukupan. Maka terhadap anak yatim janganlah engkau berlaku sewenang-wenang, dan terhadap orang yang meminta janganlah engkau menghardik, dan terhadap nikmat Tuhanmu hendaklah engkau menyatakannya (bersyukur).',
+    asbabunNuzul:
+      'Wahyu sempat terhenti turun selama beberapa waktu, lalu ada yang berkata Tuhan Muhammad telah meninggalkannya. Maka turun surah ini menghibur Nabi ﷺ dengan penegasan kasih sayang Allah (HR. Bukhari–Muslim).',
+    tafsir:
+      'Allah bersumpah demi terang duha & tenangnya malam untuk menenangkan Nabi ﷺ: Dia tidak meninggalkan & tidak membenci beliau; akhirat lebih baik dari dunia; dan Allah akan terus memberi hingga beliau ridha. Lalu Allah mengingatkan tiga karunia masa lalu (perlindungan, hidayah, kecukupan) dan menjadikannya dasar tiga perintah: menyayangi yatim, lembut pada peminta, & menyebarkan syukur.',
+    hikmah:
+      'Jeda & kesepian dalam perjalanan iman bukan tanda ditinggalkan. Justru di situ Allah menanamkan harap: yang terbaik ada di depan, dan kebaikan yang pernah kau terima adalah panggilan untuk membaikkan orang lain.',
+    linguistik:
+      'Dipilih «wadda‘a» (perpisahan yang disengaja) untuk dinafikan — meniadakan bentuk perpisahan yang paling menyakitkan. Lalu pada «mā qalā», objek "-ka" sengaja dibuang demi kelembutan, agar kata "benci" tak pernah bersanding dengan diri sang kekasih. Susunan «alam yajidka… fa…» (tiga karunia) lalu «fa ammā… fa…» (tiga perintah) membentuk paralel yang memikat: tiap nikmat melahirkan tanggung jawab.',
+    amalan:
+      'Saat hatimu terasa "kosong" & jauh dari Allah, baca & resapi Ad-Duha — itu bukan tanda ditinggalkan. Lalu amalkan penutupnya: santuni yatim, jangan hardik orang yang meminta tolong, dan "ceritakan nikmat" dengan bersyukur (bukan pamer) agar orang termotivasi pada kebaikan.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim'],
+  },
+  {
+    id: 'at-tin-1-8',
+    kajianKata: [
+      { kata: 'لَقَدْ خَلَقْنَا الْإِنسَانَ فِي أَحْسَنِ تَقْوِيمٍ', latin: 'laqad khalaqnal-insāna fī aḥsani taqwīm', arti: 'sungguh Kami menciptakan manusia dalam bentuk sebaik-baiknya',
+        poin: [
+          '«aḥsani taqwīm» — sebaik-baik bentuk: tegak fisiknya, sempurna akal & fitrahnya; potensi tertinggi.',
+          'Lalu «asfala sāfilīn» (serendah-rendahnya) — manusia berpotensi DUA arah: paling mulia atau paling hina.',
+          'Pembedanya: «illal-lażīna āmanū wa ‘amiluṣ-ṣāliḥāt» — iman & amal saleh yang menahan di puncak.',
+        ],
+        asalKata: { huruf: ['ق', 'و', 'م'], makna: 'menjadikan tegak & seimbang sempurna',
+          gambar: 'Akar «q-w-m» (berdiri tegak — akar yang sama dengan «iqāmah» salat & «al-Qayyūm») melahirkan «taqwīm»: <b>menata sesuatu agar tegak, lurus, & seimbang sempurna</b>. Manusia dicipta «fī aḥsani taqwīm» — bukan hanya tubuh yang tegak, tapi <b>akal, fitrah, & potensi</b> yang ditata paling pas. Namun ketegakan itu amanah: ia bisa runtuh ke «asfala sāfilīn». Sosok yang sama bisa naik semulia malaikat atau jatuh sehina binatang — <b>pilihan ada padanya</b>.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ', latin: 'alaisallāhu bi’aḥkamil-ḥākimīn', arti: 'bukankah Allah hakim yang paling adil?',
+        poin: [
+          '«aḥkamil-ḥākimīn» (bentuk superlatif): seadil & sebijak-bijak hakim — penutup yang menjawab "kenapa mendustakan hari pembalasan?".',
+          'Mustahil Yang mencipta manusia "sebaik bentuk" lalu membiarkannya tanpa hisab — itu bukan keadilan.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Kau dicipta dalam bentuk terbaik — jangan turunkan dirimu ke yang terhina.',
+      'Yang menjaga di puncak: iman + amal saleh.',
+      'Hidup pasti dihisab — Allah hakim yang paling adil.',
+    ],
+    surah: 'At-Tīn',
+    surahNo: 95,
+    ayatNo: '1–8',
+    juz: 30,
+    tema: ['Kemuliaan manusia', 'Iman & amal', 'Hari akhir'],
+    gratis: false,
+    arab: 'وَالتِّينِ وَالزَّيْتُونِ ۝ وَطُورِ سِينِينَ ۝ وَهَٰذَا الْبَلَدِ الْأَمِينِ ۝ لَقَدْ خَلَقْنَا الْإِنسَانَ فِي أَحْسَنِ تَقْوِيمٍ ۝ ثُمَّ رَدَدْنَاهُ أَسْفَلَ سَافِلِينَ ۝ إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ ۝ فَمَا يُكَذِّبُكَ بَعْدُ بِالدِّينِ ۝ أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ',
+    latin: 'Wat-tīni waz-zaitūn. Wa ṭūri sīnīn. Wa hāżal-baladil-amīn. Laqad khalaqnal-insāna fī aḥsani taqwīm. Ṡumma radadnāhu asfala sāfilīn. Illal-lażīna āmanū wa ‘amiluṣ-ṣāliḥāti fa lahum ajrun gairu mamnūn. Fa mā yukażżibuka ba‘du bid-dīn. Alaisallāhu bi’aḥkamil-ḥākimīn.',
+    arti: 'Demi (buah) tin dan zaitun, demi gunung Sinai, dan demi negeri (Mekah) yang aman ini. Sungguh, Kami telah menciptakan manusia dalam bentuk yang sebaik-baiknya. Kemudian Kami kembalikan dia ke tempat yang serendah-rendahnya, kecuali orang-orang yang beriman dan mengerjakan kebajikan; maka mereka akan mendapat pahala yang tidak ada putus-putusnya. Maka apa yang menyebabkan (mereka) mendustakanmu tentang hari pembalasan setelah itu? Bukankah Allah hakim yang paling adil?',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Surah ini bersumpah dengan tempat-tempat & nikmat penuh berkah, lalu menegaskan kemuliaan asal penciptaan manusia & tanggung jawabnya.',
+    tafsir:
+      'Setelah bersumpah dengan tin, zaitun, Tursina, & Mekah yang aman, Allah menegaskan bahwa manusia dicipta dalam sebaik-baik bentuk, namun dapat jatuh ke serendah-rendahnya — kecuali yang beriman & beramal saleh. Ditutup dengan penegasan keadilan Allah sebagai hakim teragung: mustahil ciptaan semulia ini dibiarkan tanpa hisab.',
+    hikmah:
+      'Manusia bukan sekadar tubuh yang tegak, tapi potensi yang ditata sempurna. Yang menjaga potensi itu tetap "di atas" adalah iman & amal; tanpanya, makhluk termulia bisa jatuh paling rendah.',
+    linguistik:
+      'Kata «taqwīm» (dari q-w-m: menegakkan & menyeimbangkan) menggambarkan kesempurnaan tata cipta manusia, dikontraskan tajam dengan «asfala sāfilīn». Penutup «aḥkamil-ḥākimīn» dalam bentuk superlatif menutup argumen tentang keniscayaan hari pembalasan: keadilan sempurna menuntut adanya hisab.',
+    amalan:
+      'Hargai dirimu sebagai ciptaan "sebaik bentuk": jaga tubuh, asah akal, & rawat fitrah dengan iman + amal saleh — itulah yang menahanmu di puncak. Saat tergoda merendahkan diri pada hal hina, ingat: kau diciptakan untuk derajat yang jauh lebih tinggi.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-qadr-1-5',
+    kajianKata: [
+      { kata: 'لَيْلَةِ الْقَدْرِ', latin: 'lailatil-qadr', arti: 'malam kemuliaan (Lailatul Qadr)',
+        poin: [
+          '«al-qadr» berlapis makna: malam KEMULIAAN (agung) sekaligus malam KETETAPAN (takdir tahunan ditetapkan).',
+          '«khairum min alfi syahr» — lebih baik dari 1000 bulan (≈ 83 tahun): satu malam mengungguli seumur hidup.',
+        ],
+        asalKata: { huruf: ['ق', 'د', 'ر'], makna: 'kemuliaan & ketetapan/ukuran',
+          gambar: 'Akar «q-d-r» menyimpan dua makna yang menyatu indah: <b>kemuliaan & keagungan</b> (orang ber-"qadar" tinggi), sekaligus <b>ukuran & ketetapan</b> (taqdir). Maka «Lailatul-Qadr» adalah malam yang <b>agung kedudukannya</b> sekaligus malam <b>ditetapkannya takdir</b> setahun ke depan. Pantas ia "lebih baik dari seribu bulan" — pada malam inilah Al-Qur’an yang mengubah dunia mulai diturunkan.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ', latin: 'salāmun hiya ḥattā maṭla‘il-fajr', arti: 'sejahteralah (malam itu) sampai terbit fajar',
+        poin: [
+          '«salāmun hiya» — malam itu seluruhnya KESELAMATAN & kedamaian, hingga fajar.',
+          'Turun para malaikat & Ruh (Jibril) "min kulli amr" — membawa segala urusan kebaikan dengan izin-Nya.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Satu malam bisa lebih berharga dari 83 tahun — jangan sia-siakan Ramadhan.',
+      'Nilai waktu bukan dari panjangnya, tapi dari berkahnya.',
+      'Cari Lailatul Qadr di sepuluh malam terakhir Ramadhan.',
+    ],
+    surah: 'Al-Qadr',
+    surahNo: 97,
+    ayatNo: '1–5',
+    juz: 30,
+    tema: ['Lailatul Qadr', 'Keutamaan waktu', 'Al-Qur’an'],
+    gratis: false,
+    arab: 'إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ ۝ وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ ۝ لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ ۝ تَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ ۝ سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ',
+    latin: 'Innā anzalnāhu fī lailatil-qadr. Wa mā adrāka mā lailatul-qadr. Lailatul-qadri khairum min alfi syahr. Tanazzalul-malā’ikatu war-rūḥu fīhā bi’iżni rabbihim min kulli amr. Salāmun hiya ḥattā maṭla‘il-fajr.',
+    arti: 'Sesungguhnya Kami telah menurunkannya (Al-Qur’an) pada malam kemuliaan. Dan tahukah kamu apakah malam kemuliaan itu? Malam kemuliaan itu lebih baik daripada seribu bulan. Pada malam itu turun para malaikat dan Ruh (Jibril) dengan izin Tuhannya untuk mengatur segala urusan. Sejahteralah (malam itu) sampai terbit fajar.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul tunggal yang masyhur. Keutamaan Lailatul Qadr ditegaskan banyak hadis sahih, dan Nabi ﷺ menganjurkan mencarinya pada sepuluh malam terakhir Ramadhan, terutama malam-malam ganjil.',
+    tafsir:
+      'Surah ini mengagungkan malam diturunkannya Al-Qur’an: malam yang nilainya melampaui seribu bulan, saat para malaikat & Jibril turun membawa ketetapan kebaikan dengan izin Allah, dan malam itu penuh keselamatan hingga fajar. Sebuah karunia waktu yang menuntut kita memburu keberkahannya.',
+    hikmah:
+      'Allah memuliakan umat ini dengan satu malam yang ibadahnya menandingi puluhan tahun. Pelajarannya: nilai sebuah waktu tak diukur dari durasinya, tapi dari keberkahan & ketaatan yang mengisinya.',
+    linguistik:
+      'Kata «al-qadr» sengaja bermakna ganda — kemuliaan & ketetapan takdir — keduanya benar & menyatu. Pengulangan «lailatul-qadr» tiga kali mengagungkan kedudukannya, dan «salāmun hiya» (didahulukan) menegaskan bahwa malam itu seutuhnya keselamatan, dari awal hingga fajar.',
+    amalan:
+      'Hidupkan sepuluh malam terakhir Ramadhan dengan salat, tilawah, & doa — terutama "Allāhumma innaka ‘afuwwun tuḥibbul-‘afwa fa‘fu ‘annī" (doa yang diajarkan Nabi ﷺ untuk malam Qadr). Perlakukan waktu luangmu sebagai modal: isi dengan yang berkah, bukan yang sia-sia.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Jami‘ at-Tirmidzi (doa malam Qadr)'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -1749,7 +1891,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-insyirah-5-6', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-qadr-1-5', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -1932,6 +2074,19 @@ const HIKMAH_KATA = {
   'al-masad-1-5': [
     'Status, koneksi, harta — tak menjamin apa pun tanpa iman.',
     'Jangan jadi penyebar fitnah; hentikan api permusuhan di tanganmu.',
+  ],
+  'ad-duha-1-11': [
+    'Saat merasa ditinggalkan, ingat: Dia tak pernah pamit darimu.',
+    'Yang terbaik menunggu di depan — teruslah melangkah.',
+    'Balas kebaikan yang dulu kau terima dengan menolong yang kini lemah.',
+  ],
+  'at-tin-1-8': [
+    'Kau dicipta sebaik bentuk — pantang merendahkan diri pada yang hina.',
+    'Iman & amal yang menahanmu tetap "di atas".',
+  ],
+  'al-qadr-1-5': [
+    'Satu malam bisa mengalahkan 83 tahun — buru keberkahannya.',
+    'Nilai waktumu dari isinya, bukan dari panjangnya.',
   ],
 };
 
