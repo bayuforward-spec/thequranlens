@@ -2497,6 +2497,186 @@ const AYAT = [
       'Saat merasa terlalu berdosa untuk kembali, ingat «al-Gafūr al-Wadūd»: Dia mengampuni & mencintai yang pulang kepada-Nya. Tumbuhkan cinta kepada Allah, bukan sekadar takut. Dan saat diuji karena kebaikan, bersandarlah pada Tuhan yang Maha Kuasa atas segala kehendak-Nya.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'at-tariq-5-8',
+    kajianKata: [
+      { kata: 'فَلْيَنظُرِ الْإِنسَانُ مِمَّ خُلِقَ', latin: 'fal-yanẓuril-insānu mimma khuliq', arti: 'maka hendaklah manusia memperhatikan dari apa dia diciptakan',
+        poin: [
+          '«fal-yanẓuril-insānu mimma khuliq» — perhatikan asalmu: dari «mā’in dāfiq» (air yang terpancar), sesuatu yang hina & lemah.',
+          'Renungan asal-usul = obat kesombongan: dari setetes, mengapa berani angkuh?',
+        ],
+        asalKata: { huruf: ['د', 'ف', 'ق'], makna: 'tertuang & terpancar deras',
+          gambar: 'Akar «d-f-q» berarti <b>tertuang/terpancar dengan deras</b>. Al-Qur’an memilihnya untuk asal-usulmu: «mā’in dāfiq» — setetes yang terpancar, sesuatu yang <b>hina, lemah, & tak berdaya</b>. Renungan ini menampar dua arah sekaligus: <b>obat kesombongan</b> (dari air hina, mengapa angkuh?) dan <b>bukti kebangkitan</b> (Yang mampu mencipta dari setetes, tentu mampu menghidupkan kembali).' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'إِنَّهُ عَلَىٰ رَجْعِهِ لَقَادِرٌ', latin: 'innahū ‘alā raj‘ihī laqādir', arti: 'sungguh Dia benar-benar kuasa mengembalikannya (hidup)',
+        poin: [
+          'Argumen tak terbantah: Yang menciptakanmu dari setetes, PASTI kuasa mengembalikanmu hidup.',
+          'Maka hari kebangkitan bukan dongeng — ia keniscayaan logis dari kuasa Pencipta.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Ingat asalmu dari setetes — runtuhlah kesombongan.',
+      'Yang mencipta dari tiada, mudah mengulang — kebangkitan itu pasti.',
+      'Tubuhmu sendiri adalah bukti & pengingat.',
+    ],
+    surah: 'Aṭ-Ṭāriq',
+    surahNo: 86,
+    ayatNo: '5–8',
+    juz: 30,
+    tema: ['Asal penciptaan', 'Kebangkitan', 'Rendah hati'],
+    gratis: false,
+    arab: 'فَلْيَنظُرِ الْإِنسَانُ مِمَّ خُلِقَ ۝ خُلِقَ مِن مَّاءٍ دَافِقٍ ۝ يَخْرُجُ مِن بَيْنِ الصُّلْبِ وَالتَّرَائِبِ ۝ إِنَّهُ عَلَىٰ رَجْعِهِ لَقَادِرٌ',
+    latin: 'Fal-yanẓuril-insānu mimma khuliq. Khuliqa min mā’in dāfiq. Yakhruju mim bainiṣ-ṣulbi wat-tarā’ib. Innahū ‘alā raj‘ihī laqādir.',
+    arti: 'Maka hendaklah manusia memperhatikan dari apa dia diciptakan. Dia diciptakan dari air (mani) yang terpancar, yang keluar dari antara tulang punggung dan tulang dada. Sungguh, Allah benar-benar kuasa untuk mengembalikannya (hidup setelah mati).',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Ayat ini mengajak manusia merenungi asal-usulnya yang hina sebagai bukti kuasa Allah & keniscayaan kebangkitan.',
+    tafsir:
+      'Allah memerintahkan manusia memperhatikan asalnya — dari setetes air yang terpancar — sebagai bukti dua hal: betapa lemah & hinanya asal-usulnya (penawar kesombongan), dan bahwa Yang menciptakannya dari ketiadaan pasti kuasa membangkitkannya kembali.',
+    hikmah:
+      'Mengingat asal yang hina meruntuhkan kesombongan, dan sekaligus meneguhkan keyakinan akan hari kebangkitan: tak masuk akal mengingkari kuasa mengulang bagi Dzat yang telah memulai dari tiada.',
+    linguistik:
+      'Kata «dāfiq» (dari d-f-q: terpancar deras) melukiskan asal manusia yang lemah. Lalu «innahū ‘alā raj‘ihī laqādir» menutup dengan logika kuat: kemampuan mencipta pertama kali adalah dalil pasti atas kemampuan mengembalikan.',
+    amalan:
+      'Saat kesombongan menyusup (karena harta, jabatan, prestasi), ingat asalmu dari setetes air. Dan saat ragu pada akhirat, renungi: Yang menciptamu dari tiada pasti mampu membangkitkanmu. Jadikan keduanya pengingat untuk rendah hati & bersiap.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-balad-11-16',
+    kajianKata: [
+      { kata: 'فَلَا اقْتَحَمَ الْعَقَبَةَ', latin: 'falaqtaḥamal-‘aqabah', arti: 'tetapi dia tidak menempuh jalan yang mendaki lagi sukar',
+        poin: [
+          '«al-‘aqabah» — jalan MENDAKI yang terjal: gambaran bahwa kebaikan sejati itu BERAT, melawan tarikan nafsu & harta.',
+          '«iqtaḥama» (menerjang) — menempuhnya butuh keberanian & tekad, bukan langkah santai.',
+          'Isi pendakian itu konkret: «fakku raqabah» (membebaskan budak), memberi makan yatim & miskin di hari kelaparan.',
+        ],
+        asalKata: { huruf: ['ع', 'ق', 'ب'], makna: 'tanjakan terjal di pegunungan',
+          gambar: 'Akar «‘-q-b» berkait dengan <b>tumit & ujung</b>; «al-‘aqabah» = <b>jalan menanjak terjal</b> di pegunungan yang berat didaki. Al-Qur’an memakainya untuk amal kebaikan: memerdekakan budak, memberi makan yatim & miskin di masa sulit — semua itu "mendaki", <b>melawan gravitasi kikir & ego</b>. Kebaikan jarang menurun & mudah; ia menanjak. Dan «iqtaḥama» (menerjang) menegaskan: butuh tekad, bukan sekadar niat.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'أَوْ إِطْعَامٌ فِي يَوْمٍ ذِي مَسْغَبَةٍ', latin: 'au iṭ‘āmun fī yaumin żī masgabah', arti: 'atau memberi makan pada hari kelaparan',
+        poin: [
+          'Sedekah paling bernilai: «fī yaumin żī masgabah» — di masa KELAPARAN, saat memberi terasa paling berat.',
+          'Diutamakan yatim kerabat & miskin yang melarat — kebaikan yang menjangkau yang paling membutuhkan.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Kebaikan sejati itu "mendaki" — berat, melawan kikir & ego.',
+      'Sedekah paling bernilai saat memberi terasa paling berat.',
+      'Jangkau yang paling membutuhkan: yatim & miskin yang melarat.',
+    ],
+    surah: 'Al-Balad',
+    surahNo: 90,
+    ayatNo: '11–16',
+    juz: 30,
+    tema: ['Amal yang berat', 'Sedekah', 'Membebaskan & memberi makan'],
+    gratis: false,
+    arab: 'فَلَا اقْتَحَمَ الْعَقَبَةَ ۝ وَمَا أَدْرَاكَ مَا الْعَقَبَةُ ۝ فَكُّ رَقَبَةٍ ۝ أَوْ إِطْعَامٌ فِي يَوْمٍ ذِي مَسْغَبَةٍ ۝ يَتِيمًا ذَا مَقْرَبَةٍ ۝ أَوْ مِسْكِينًا ذَا مَتْرَبَةٍ',
+    latin: 'Falaqtaḥamal-‘aqabah. Wa mā adrāka mal-‘aqabah. Fakku raqabah. Au iṭ‘āmun fī yaumin żī masgabah. Yatīman żā maqrabah. Au miskīnan żā matrabah.',
+    arti: 'Tetapi dia tidak menempuh jalan yang mendaki lagi sukar. Dan tahukah kamu apakah jalan yang mendaki lagi sukar itu? (Yaitu) melepaskan perbudakan, atau memberi makan pada hari kelaparan, (kepada) anak yatim yang ada hubungan kerabat, atau orang miskin yang sangat fakir.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Surah ini menegaskan bahwa manusia diciptakan untuk berjuang, dan menyodorkan "jalan mendaki" berupa amal-amal sosial yang berat namun mulia.',
+    tafsir:
+      'Allah mencela orang yang tidak menempuh "al-‘aqabah" — jalan mendaki kebaikan — lalu menjelaskannya: membebaskan budak, memberi makan di masa kelaparan kepada yatim kerabat & orang miskin yang melarat. Kebaikan sejati menuntut pengorbanan, terutama saat memberi terasa berat.',
+    hikmah:
+      'Kebaikan yang bernilai biasanya "menanjak" — berlawanan dengan kecenderungan kikir & nyaman. Justru di titik terberat itulah amal paling dihargai. Surah ini mengarahkan kemurahan kepada yang paling membutuhkan.',
+    linguistik:
+      'Kata «al-‘aqabah» (tanjakan terjal) menggambarkan beratnya amal kebaikan, diperkuat «iqtaḥama» (menerjang dengan tekad). Pilihan «fī yaumin żī masgabah» (hari kelaparan) menonjolkan nilai sedekah pada saat tersulit, & «matrabah» (sangat fakir, sampai berdebu) menukik pada yang paling papa.',
+    amalan:
+      'Pilih satu "pendakian" pekan ini: bantu pembebasan utang seseorang, beri makan yang lapar, santuni yatim/dhuafa — terutama saat dompetmu sedang seret (di situ nilainya berlipat). Latih diri menerjang kebaikan yang berat, bukan hanya yang nyaman.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'asy-syams-7-10',
+    kajianKata: [
+      { kata: 'قَدْ أَفْلَحَ مَن زَكَّاهَا', latin: 'qad aflaḥa man zakkāhā', arti: 'sungguh beruntung orang yang menyucikan jiwanya',
+        poin: [
+          'Jiwa diberi DUA potensi: «fujūrahā wa taqwāhā» (kecenderungan jahat & takwa) — kamu yang memilih.',
+          'Beruntung «man zakkāhā» (menyucikan & menumbuhkan jiwa); rugi «man dassāhā» (mengubur & mengerdilkannya).',
+        ],
+        asalKata: { huruf: ['د', 'س', 'س'], makna: 'menyembunyikan & mengubur dalam kotoran',
+          gambar: 'Akar «d-s-s» berarti <b>menyusupkan & menyembunyikan</b> sesuatu (dari sini «dassa» — mengubur dalam tanah). Maka «man dassāhā» = orang yang <b>mengubur & mengerdilkan jiwanya</b> di bawah dosa, menyembunyikan fitrahnya yang bersih hingga lemas. Lawannya «zakkā» (menyucikan + menumbuhkan). Dua kata berlawanan arah: satu menumbuhkan jiwa ke atas, satu menguburnya ke bawah — dan pilihannya di tanganmu.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'فَأَلْهَمَهَا فُجُورَهَا وَتَقْوَاهَا', latin: 'fa alhamahā fujūrahā wa taqwāhā', arti: 'maka Dia mengilhamkan kepadanya (jalan) kejahatan dan ketakwaannya',
+        poin: [
+          '«alhamahā» — Allah mengilhamkan pada jiwa pengenalan akan jahat & takwa: kau punya kompas batin.',
+          'Maka tak ada alasan "tak tahu" — fitrah membisikkan mana yang baik; tinggal kau ikuti atau kubur.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Jiwamu diberi kompas baik-buruk — ikuti, jangan kubur.',
+      'Menyucikan jiwa = menumbuhkannya; mengotorinya = mengerdilkannya.',
+      'Sukses & gagal sejati ditentukan di dalam jiwa, bukan di luar.',
+    ],
+    surah: 'Asy-Syams',
+    surahNo: 91,
+    ayatNo: '7–10',
+    juz: 30,
+    tema: ['Menyucikan jiwa', 'Fitrah', 'Pilihan'],
+    gratis: false,
+    arab: 'وَنَفْسٍ وَمَا سَوَّاهَا ۝ فَأَلْهَمَهَا فُجُورَهَا وَتَقْوَاهَا ۝ قَدْ أَفْلَحَ مَن زَكَّاهَا ۝ وَقَدْ خَابَ مَن دَسَّاهَا',
+    latin: 'Wa nafsiw wa mā sawwāhā. Fa alhamahā fujūrahā wa taqwāhā. Qad aflaḥa man zakkāhā. Wa qad khāba man dassāhā.',
+    arti: 'Demi jiwa serta penyempurnaan (ciptaan)nya, maka Dia mengilhamkan kepadanya (jalan) kejahatan dan ketakwaannya. Sungguh beruntung orang yang menyucikannya (jiwa), dan sungguh rugi orang yang mengotorinya.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Bagian ini menegaskan bahwa jiwa dibekali pengenalan akan jalan baik & buruk, lalu keberuntungan ditentukan oleh pilihan menyucikan atau mengotorinya.',
+    tafsir:
+      'Setelah sumpah panjang dengan tanda-tanda alam, Allah menyebut jiwa yang disempurnakan & diilhami pengetahuan akan kejahatan & ketakwaan. Maka keberuntungan milik yang menyucikan jiwanya, dan kerugian bagi yang menguburnya dalam dosa. Inti surah: nasibmu ditentukan oleh apa yang kau lakukan pada jiwamu.',
+    hikmah:
+      'Setiap orang dibekali "kompas batin" yang mengenali baik & buruk. Tanggung jawab terbesar manusia adalah merawat jiwanya — menyucikan & menumbuhkannya — bukan menenggelamkannya di bawah dosa hingga fitrahnya lemas.',
+    linguistik:
+      'Kontras «zakkā» (menyucikan + menumbuhkan) dengan «dassā» (dari d-s-s: menyembunyikan & mengubur) menggambarkan dua arah berlawanan bagi jiwa: tumbuh ke atas atau terkubur ke bawah. Kata «alhama» (mengilhamkan) menegaskan bahwa pengenalan baik-buruk adalah bekal fitrah, bukan sesuatu yang asing.',
+    amalan:
+      'Rawat jiwamu seperti merawat kebun: bersihkan "gulma" (dosa, dengki, riya) & tanam "benih" (zikir, ilmu, amal). Saat hati membisikkan keburukan, ingat kau punya kompas takwa — ikuti bisikan kebaikan, jangan kubur ia.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-lail-5-7',
+    kajianKata: [
+      { kata: 'فَأَمَّا مَنْ أَعْطَىٰ وَاتَّقَىٰ', latin: 'fa ammā man a‘ṭā wattaqā', arti: 'adapun orang yang memberi dan bertakwa',
+        poin: [
+          'Tiga kunci: «a‘ṭā» (memberi/sedekah) + «ittaqā» (bertakwa) + «ṣaddaqa bil-ḥusnā» (membenarkan balasan terbaik).',
+          'Balasannya «sanuyassiruhū lil-yusrā» — Kami MUDAHKAN ia menuju kemudahan: tiap kebaikan membuka kebaikan berikutnya.',
+          'Lawannya (ayat 8–10): yang kikir & merasa cukup → "dimudahkan menuju kesukaran". Hidup memantulkan pilihanmu.',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'الْيُسْرَىٰ', latin: 'Al-Yusrā', sifat: ['Buah memberi + takwa', 'Tiap kebaikan membuka kebaikan'] },
+          { arab: 'الْعُسْرَىٰ', latin: 'Al-‘Usrā', alt: true, sifat: ['Buah kikir + merasa cukup', 'Tiap keburukan menyeret keburukan'] },
+        ], catatan: 'Hidup memudahkan jalan yang kau pilih — menuju kemudahan, atau kesukaran.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'وَصَدَّقَ بِالْحُسْنَىٰ', latin: 'wa ṣaddaqa bil-ḥusnā', arti: 'dan membenarkan (adanya pahala) yang terbaik',
+        poin: [
+          '«ṣaddaqa bil-ḥusnā» — membenarkan & yakin pada balasan terbaik (surga): keyakinan yang menggerakkan kemurahan.',
+          'Memberi jadi ringan saat kau YAKIN ada ganti yang lebih baik di sisi Allah.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Memberi + takwa + yakin pada balasan → hidup dimudahkan.',
+      'Tiap kebaikan membuka pintu kebaikan berikutnya.',
+      'Kikir & merasa cukup justru menyeret ke kesukaran.',
+    ],
+    surah: 'Al-Lail',
+    surahNo: 92,
+    ayatNo: '5–7',
+    juz: 30,
+    tema: ['Kemurahan', 'Takwa', 'Kemudahan dari Allah'],
+    gratis: false,
+    arab: 'فَأَمَّا مَنْ أَعْطَىٰ وَاتَّقَىٰ ۝ وَصَدَّقَ بِالْحُسْنَىٰ ۝ فَسَنُيَسِّرُهُ لِلْيُسْرَىٰ',
+    latin: 'Fa ammā man a‘ṭā wattaqā. Wa ṣaddaqa bil-ḥusnā. Fa sanuyassiruhū lil-yusrā.',
+    arti: 'Maka barangsiapa memberikan (hartanya di jalan Allah) dan bertakwa, dan membenarkan (adanya pahala) yang terbaik (surga), maka akan Kami mudahkan baginya jalan menuju kemudahan (kebahagiaan).',
+    asbabunNuzul:
+      'Sebagian riwayat mengaitkan ayat-ayat ini dengan kedermawanan Abu Bakar aṣ-Ṣiddīq yang gemar membebaskan budak-budak yang disiksa karena iman. Maknanya berlaku umum bagi setiap pemberi yang bertakwa (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Allah membagi manusia menurut sikapnya pada harta & iman: yang memberi, bertakwa, & membenarkan balasan terbaik akan dimudahkan menuju kemudahan; sedang yang kikir & merasa cukup (ayat berikutnya) dimudahkan menuju kesukaran. Pilihan kita pada kebaikan menentukan arah kemudahan hidup.',
+    hikmah:
+      'Kebaikan & keburukan saling berantai: satu kebaikan memudahkan kebaikan berikutnya, satu kekikiran menyeret kesulitan. Maka memberi bukan kehilangan — ia "pelumas" yang memudahkan jalan hidup & akhirat.',
+    linguistik:
+      'Kontras «al-yusrā» (kemudahan) vs «al-‘usrā» (kesukaran) membingkai dua jalan hidup. Kata «ṣaddaqa bil-ḥusnā» (membenarkan balasan terbaik) menautkan kemurahan dengan keyakinan — sebab memberi terasa ringan hanya bila hati yakin akan ganti yang lebih baik.',
+    amalan:
+      'Biasakan memberi — meski sedikit & rutin — sambil meneguhkan keyakinan akan ganti terbaik dari Allah. Amati bagaimana kemurahan justru "memudahkan" urusanmu. Jauhi sifat kikir & merasa cukup tanpa Allah, sebab ia diam-diam mempersulit hidup.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -2516,7 +2696,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['an-naba-1-5', 'an-naziat-37-41', 'abasa-1-7', 'at-takwir-8-9', 'al-infitar-6-8', 'al-mutaffifin-1-3', 'al-insyiqaq-6', 'al-buruj-14-16', 'al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['an-naba-1-5', 'an-naziat-37-41', 'abasa-1-7', 'at-takwir-8-9', 'al-infitar-6-8', 'al-mutaffifin-1-3', 'al-insyiqaq-6', 'al-buruj-14-16', 'at-tariq-5-8', 'al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'al-balad-11-16', 'asy-syams-7-10', 'al-lail-5-7', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -2768,6 +2948,22 @@ const HIKMAH_KATA = {
   'al-buruj-14-16': [
     'Dia tak hanya mengampuni — Dia mencintai yang kembali.',
     'Saat tertindas karena iman, ingat: Tuhanmu Al-Wadūd.',
+  ],
+  'at-tariq-5-8': [
+    'Ingat asalmu dari setetes — runtuh sudah kesombongan.',
+    'Yang mencipta dari tiada, pasti mampu membangkitkan.',
+  ],
+  'al-balad-11-16': [
+    'Kebaikan sejati itu mendaki — beranikan diri menerjangnya.',
+    'Sedekah paling bernilai saat memberi terasa paling berat.',
+  ],
+  'asy-syams-7-10': [
+    'Rawat jiwamu: sucikan & tumbuhkan, jangan kubur dengan dosa.',
+    'Kau punya kompas baik-buruk — ikuti yang baik.',
+  ],
+  'al-lail-5-7': [
+    'Memberi bukan kehilangan — ia memudahkan jalanmu.',
+    'Tiap kebaikan membuka kebaikan berikutnya.',
   ],
 };
 
