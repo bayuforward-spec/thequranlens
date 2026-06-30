@@ -2318,6 +2318,185 @@ const AYAT = [
       'Hormati & lindungi kehidupan, terutama yang lemah & tak bersuara (anak, perempuan, kaum tertindas). Jangan pernah meremehkan kezaliman "kecil" pada mereka — semua dicatat. Dan syukuri ajaran yang memuliakan martabat manusia.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'al-infitar-6-8',
+    kajianKata: [
+      { kata: 'مَا غَرَّكَ بِرَبِّكَ الْكَرِيمِ', latin: 'mā garraka bi rabbikal-karīm', arti: 'apa yang memperdayakanmu terhadap Tuhanmu Yang Maha Pemurah?',
+        poin: [
+          'Pertanyaan yang menyentuh: «mā garraka» — APA yang memperdayamu hingga berani durhaka?',
+          'Disebut «bi rabbikal-KARĪM» (Yang Maha Pemurah), bukan "Yang Maha Keras" — seakan kemurahan-Nya sendiri yang membuatmu lengah & berani.',
+          'Pelajaran halus: jangan jadikan kesabaran & kemurahan Allah sebagai alasan meremehkan-Nya.',
+        ],
+        asalKata: { huruf: ['غ', 'ر', 'ر'], makna: 'tertipu oleh yang tampak aman',
+          gambar: 'Akar «gh-r-r» berarti <b>tertipu oleh sesuatu yang tampak aman</b> — «al-garar» dalam jual-beli = transaksi menipu yang tampak menguntungkan. «Mā garraka» = apa yang menipumu hingga lengah? Jawabannya tersirat pada «al-Karīm»: <b>justru kemurahan & kesabaran Allah</b> yang sering disalahpahami — ditutup-Nya aibmu, ditunda-Nya hukuman, lalu kau kira Dia tak peduli. Padahal itu kemurahan, bukan kelalaian.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'الَّذِي خَلَقَكَ فَسَوَّاكَ فَعَدَلَكَ', latin: 'allażī khalaqaka fa sawwāka fa ‘adalak', arti: 'yang menciptakanmu, menyempurnakanmu, dan menyeimbangkanmu',
+        poin: [
+          'Tiga karunia berurutan: «khalaqaka» (mencipta) → «sawwāka» (menyempurnakan) → «‘adalaka» (menyeimbangkan).',
+          'Tubuh & dirimu adalah bukti kemurahan-Nya — maka malulah durhaka pada Yang begitu memuliakanmu.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Jangan salah paham: kemurahan Allah bukan tanda Dia tak peduli.',
+      'Tubuhmu yang sempurna sudah cukup jadi alasan untuk taat, bukan durhaka.',
+      'Yang menutupi aibmu & menunda hukumanmu layak kau syukuri, bukan kau remehkan.',
+    ],
+    surah: 'Al-Infiṭār',
+    surahNo: 82,
+    ayatNo: '6–8',
+    juz: 30,
+    tema: ['Kemurahan Allah', 'Mengenal diri', 'Syukur'],
+    gratis: false,
+    arab: 'يَا أَيُّهَا الْإِنسَانُ مَا غَرَّكَ بِرَبِّكَ الْكَرِيمِ ۝ الَّذِي خَلَقَكَ فَسَوَّاكَ فَعَدَلَكَ ۝ فِي أَيِّ صُورَةٍ مَّا شَاءَ رَكَّبَكَ',
+    latin: 'Yā ayyuhal-insānu mā garraka bi rabbikal-karīm. Allażī khalaqaka fa sawwāka fa ‘adalak. Fī ayyi ṣūratim mā syā’a rakkabak.',
+    arti: 'Wahai manusia! Apakah yang telah memperdayakanmu (berbuat durhaka) terhadap Tuhanmu Yang Maha Pemurah? Yang telah menciptakanmu lalu menyempurnakan kejadianmu dan menjadikan (susunan tubuh)mu seimbang. Dalam bentuk apa saja yang Dia kehendaki, Dia menyusun tubuhmu.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Ayat ini menyentil manusia dengan pertanyaan lembut: apa yang membuatnya berani durhaka kepada Tuhan yang justru Maha Pemurah kepadanya.',
+    tafsir:
+      'Allah menegur manusia dengan pertanyaan menggugah: apa yang memperdayamu sehingga lalai & durhaka kepada Tuhanmu Yang Maha Pemurah — yang menciptakan, menyempurnakan, & menyeimbangkan tubuhmu dalam bentuk terbaik? Penyebutan sifat "al-Karīm" justru menambah dalam rasa malu seharusnya.',
+    hikmah:
+      'Banyak orang menyalahartikan kemurahan & kesabaran Allah sebagai kelalaian, lalu berani bermaksiat. Surah ini meluruskan: kelembutan-Nya menutupi aib & menunda hukuman adalah anugerah, bukan tanda Dia tak peduli.',
+    linguistik:
+      'Penyebutan «al-Karīm» (Maha Pemurah) di tempat yang menuntut taat justru menukik: kemurahan-Nya itulah yang sering "memperdaya". Kata «garra» (dari gh-r-r: tertipu oleh yang tampak aman) menangkap psikologi manusia yang terlena oleh penangguhan hukuman.',
+    amalan:
+      'Saat tergoda menunda taubat karena "toh Allah Maha Pengampun", ingat ayat ini: jangan jadikan kemurahan-Nya sebagai modal bermaksiat. Sebaliknya, balas kemurahan dengan rasa malu & ketaatan. Renungi kesempurnaan tubuhmu sebagai pengingat harian.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-mutaffifin-1-3',
+    kajianKata: [
+      { kata: 'وَيْلٌ لِّلْمُطَفِّفِينَ', latin: 'wailul lil-muṭaffifīn', arti: 'celakalah orang-orang yang curang (dalam takaran)',
+        poin: [
+          '«at-taṭfīf» = curang yang SEDIKIT — mengurangi takaran/timbangan secuil; namun balasannya «wail» (celaka).',
+          'Mengerikan: dosa "kecil" yang dianggap remeh pun mendatangkan ancaman keras.',
+        ],
+        asalKata: { huruf: ['ط', 'ف', 'ف'], makna: 'sedikit; curang dalam jumlah kecil',
+          gambar: 'Akar «ṭ-f-f» bermakna <b>sesuatu yang sedikit & di tepi</b> (ṭaff = pinggir). «Taṭfīf» = curang dalam <b>jumlah yang sedikit</b> — mengurangi takaran secuil yang nyaris tak terlihat. Mengerikan: Al-Qur’an menjatuhkan «wail» (celaka) untuk kecurangan SEKECIL itu. Sebab yang dirusak bukan sekadar timbangan, tapi <b>kejujuran & kepercayaan</b> — dan dosa kecil yang diremehkan sering jadi pintu kehancuran.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'وَإِذَا كَالُوهُمْ أَو وَّزَنُوهُمْ يُخْسِرُونَ', latin: 'wa iżā kālūhum au wazanūhum yukhsirūn', arti: 'apabila menakar/menimbang untuk orang lain, mereka menguranginya',
+        poin: [
+          'Penyakitnya: STANDAR GANDA — minta dipenuhi saat menerima, tapi mengurangi saat memberi.',
+          'Berlaku luas: bukan cuma timbangan pedagang, tapi setiap "mengurangi hak" orang — kerja, janji, pelayanan.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Curang sedikit pun mengundang celaka — kejujuran tak boleh ditawar.',
+      'Jangan berstandar ganda: adil untuk diri, longgar untuk orang.',
+      '"Mengurangi hak orang" tak terbatas timbangan — termasuk kerja & janji.',
+    ],
+    surah: 'Al-Muṭaffifīn',
+    surahNo: 83,
+    ayatNo: '1–3',
+    juz: 30,
+    tema: ['Kejujuran', 'Keadilan', 'Hak orang lain'],
+    gratis: false,
+    arab: 'وَيْلٌ لِّلْمُطَفِّفِينَ ۝ الَّذِينَ إِذَا اكْتَالُوا عَلَى النَّاسِ يَسْتَوْفُونَ ۝ وَإِذَا كَالُوهُمْ أَو وَّزَنُوهُمْ يُخْسِرُونَ',
+    latin: 'Wailul lil-muṭaffifīn. Allażīna iżaktālū ‘alan-nāsi yastaufūn. Wa iżā kālūhum au wazanūhum yukhsirūn.',
+    arti: 'Celakalah orang-orang yang curang (dalam menakar dan menimbang)! (Yaitu) orang-orang yang apabila menerima takaran dari orang lain mereka minta dipenuhi, dan apabila mereka menakar atau menimbang untuk orang lain, mereka menguranginya.',
+    asbabunNuzul:
+      'Diriwayatkan bahwa ketika Nabi ﷺ tiba di Madinah, penduduknya termasuk yang paling buruk dalam menakar & menimbang; lalu turun surah ini, dan mereka pun memperbaiki timbangan mereka (Tafsir Ibnu Katsir).',
+    tafsir:
+      'Ancaman keras "celaka" bagi para pengurang takaran & timbangan, yang berstandar ganda: menuntut penuh saat menerima hak, tetapi mengurangi saat menunaikan hak orang lain. Surah ini menegakkan kejujuran ekonomi sebagai bagian dari iman.',
+    hikmah:
+      'Yang dikecam bukan sekadar selisih gram, tapi mentalitas tidak jujur & standar ganda. Bila kecurangan sekecil ini diancam celaka, betapa kita harus menjaga setiap hak orang lain dalam muamalah.',
+    linguistik:
+      'Kata «muṭaffifīn» (dari ṭ-f-f: sedikit) menyorot bahwa kecurangan yang dikecam adalah yang kecil & samar — justru karena itulah ia berbahaya, sebab pelakunya merasa aman. Kontras «yastaufūn» (minta penuh) vs «yukhsirūn» (mengurangi) menelanjangi standar ganda mereka.',
+    amalan:
+      'Tegakkan kejujuran dalam takaran terkecil: penuhi hak pelanggan, karyawan, & rekan seperti kau ingin hakmu dipenuhi. Hindari "mengurangi" diam-diam — waktu kerja, kualitas, janji. Uji dirimu: apakah standarmu sama untuk diri & untuk orang lain?',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-insyiqaq-6',
+    kajianKata: [
+      { kata: 'إِنَّكَ كَادِحٌ إِلَىٰ رَبِّكَ كَدْحًا', latin: 'innaka kādiḥun ilā rabbika kadḥā', arti: 'sesungguhnya kamu bekerja keras menuju Tuhanmu',
+        poin: [
+          '«kādiḥ» — bekerja keras dengan susah-payah & lelah; hidup digambarkan sebagai PERJALANAN penuh jerih.',
+          '«ilā rabbika… fa mulāqīh» — tiap langkah & susahmu menuju satu titik: berjumpa Tuhanmu. Pasti.',
+          'Pertanyaannya bukan "apakah kau lelah" — tapi "MENUJU apa kelelahanmu?": menuju Allah, atau yang fana?',
+        ],
+        asalKata: { huruf: ['ك', 'د', 'ح'], makna: 'bekerja keras hingga berbekas & letih',
+          gambar: 'Akar «k-d-ḥ» berarti <b>bekerja keras hingga membekas & meletihkan</b> — sampai meninggalkan goresan. Al-Qur’an memilihnya untuk hidup manusia: kau <b>terus mengerahkan tenaga</b>, suka atau tidak, hingga berbekas. Pertanyaannya bukan apakah kau berjerih — semua berjerih — tapi <b>ke mana</b> jerihmu bermuara. Surah ini menjawab: «ilā rabbika» — menuju Tuhanmu, dan kau pasti berjumpa dengan-Nya.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'فَمُلَاقِيهِ', latin: 'fa mulāqīh', arti: 'maka kamu akan menemui-Nya',
+        poin: [
+          '«fa mulāqīh» — maka kau PASTI menemui-Nya: tujuan perjalanan ini tak terhindarkan.',
+          'Mengubah cara memandang lelah: bukan menuju kubur yang gelap, tapi menuju perjumpaan dengan Tuhan.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Semua orang lelah berjuang — yang membedakan: menuju apa.',
+      'Arahkan jerih payahmu kepada Allah, agar tak sia-sia.',
+      'Hidup adalah perjalanan menuju perjumpaan dengan-Nya.',
+    ],
+    surah: 'Al-Insyiqāq',
+    surahNo: 84,
+    ayatNo: '6',
+    juz: 30,
+    tema: ['Makna hidup', 'Perjumpaan dengan Allah', 'Tujuan'],
+    gratis: false,
+    arab: 'يَا أَيُّهَا الْإِنسَانُ إِنَّكَ كَادِحٌ إِلَىٰ رَبِّكَ كَدْحًا فَمُلَاقِيهِ',
+    latin: 'Yā ayyuhal-insānu innaka kādiḥun ilā rabbika kadḥan fa mulāqīh.',
+    arti: 'Wahai manusia! Sesungguhnya kamu telah bekerja keras menuju Tuhanmu dengan susah payah, maka kamu pasti akan menemui-Nya.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Ayat ini menegaskan hakikat perjalanan hidup setiap manusia: berjerih payah yang pasti bermuara pada perjumpaan dengan Allah.',
+    tafsir:
+      'Allah menyapa manusia: hidupmu adalah kerja keras yang melelahkan, dan ke mana pun arahnya, ia berujung pada perjumpaan dengan Tuhanmu. Pengakuan ini menuntut kesadaran agar jerih payah itu diarahkan kepada Allah, bukan habis untuk yang sia-sia.',
+    hikmah:
+      'Setiap orang berletih dalam hidupnya — bekerja, berjuang, menanggung. Yang menentukan nilai bukan beratnya, tapi arahnya. Mengarahkan seluruh jerih kepada Allah menjadikan lelah pun bernilai ibadah.',
+    linguistik:
+      'Kata «kādiḥ» (dari k-d-ḥ: kerja keras yang membekas) melukiskan hidup sebagai pengerahan tenaga tanpa henti. Frasa «ilā rabbika… fa mulāqīh» memberi arah & kepastian: jerih itu menuju Allah, dan perjumpaan dengan-Nya pasti terjadi.',
+    amalan:
+      'Tinjau ke mana energimu terbesar tertuju setiap hari — apakah ada porsi yang benar-benar "menuju Allah"? Niatkan pekerjaan & lelahmu sebagai ibadah & jalan mendekat kepada-Nya, agar tak ada keringat yang sia-sia di hari perjumpaan.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-buruj-14-16',
+    kajianKata: [
+      { kata: 'وَهُوَ الْغَفُورُ الْوَدُودُ', latin: 'wa huwal-gafūrul-wadūd', arti: 'dan Dialah Yang Maha Pengampun, Maha Pengasih',
+        poin: [
+          '«al-Wadūd» — Yang Maha MENCINTAI: bukan sekadar mengasihi, tapi cinta yang ditampakkan dalam perlakuan lembut.',
+          'Berdampingan «al-Gafūr al-Wadūd»: Dia mengampuni dosamu, LALU tetap mencintaimu — ampunan yang disertai kasih.',
+          'Di tengah kisah Aṣḥābul-Ukhdūd (penyiksaan orang beriman), nama ini menenangkan: Tuhanmu Maha Pencinta.',
+        ],
+        asalKata: { huruf: ['و', 'د', 'د'], makna: 'cinta yang lembut & ditampakkan',
+          gambar: 'Akar «w-d-d» bukan cinta yang tersimpan diam, tapi <b>kasih yang ditampakkan dalam sikap & perlakuan</b> — dari sini «mawaddah» (kasih sayang suami-istri). Pola «fa‘ūl» pada «al-Wadūd» menambah intensitas: <b>Maha Mencintai, terus-menerus</b>. Letaknya menakjubkan: tepat setelah «al-Gafūr» — Dia tak hanya mengampuni hamba yang kembali, tapi <b>menyambutnya dengan cinta</b>. Diampuni saja sudah lega; diampuni LALU dicintai — itulah puncak kemurahan.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'فَعَّالٌ لِّمَا يُرِيدُ', latin: 'fa‘‘ālul limā yurīd', arti: 'Maha Kuasa berbuat apa yang Dia kehendaki',
+        poin: [
+          '«fa‘‘ālul limā yurīd» — cinta & ampunan-Nya ditopang KUASA mutlak: tak ada yang membatasi kehendak-Nya.',
+          'Maka harapkan ampunan & cinta-Nya tanpa ragu — Dia sungguh mampu mewujudkannya.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Dia tak hanya mengampuni — Dia mencintai hamba yang kembali.',
+      'Saat tertindas karena iman, ingat: Tuhanmu Al-Wadūd (Maha Pencinta).',
+      'Ampunan & cinta-Nya ditopang kuasa tanpa batas — jangan putus asa.',
+    ],
+    surah: 'Al-Burūj',
+    surahNo: 85,
+    ayatNo: '14–16',
+    juz: 30,
+    tema: ['Nama Allah', 'Cinta & ampunan', 'Sabar atas ujian'],
+    gratis: false,
+    arab: 'وَهُوَ الْغَفُورُ الْوَدُودُ ۝ ذُو الْعَرْشِ الْمَجِيدُ ۝ فَعَّالٌ لِّمَا يُرِيدُ',
+    latin: 'Wa huwal-gafūrul-wadūd. Żul-‘arsyil-majīd. Fa‘‘ālul limā yurīd.',
+    arti: 'Dan Dialah Yang Maha Pengampun, Maha Pengasih, yang memiliki ‘Arsy, lagi Maha Mulia, Maha Kuasa berbuat apa yang Dia kehendaki.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus untuk ayat ini. Ia datang dalam konteks kisah Aṣḥābul-Ukhdūd (orang-orang beriman yang dibakar di parit), menenangkan kaum mukmin dengan sifat-sifat Allah yang agung.',
+    tafsir:
+      'Setelah memaparkan kekejaman penindas orang beriman, Allah menutup dengan sifat-sifat-Nya: Maha Pengampun lagi Maha Pengasih (al-Wadūd), pemilik ‘Arsy yang mulia, dan Maha Kuasa berbuat apa pun yang Dia kehendaki. Penyebutan kasih di tengah kisah penyiksaan menanamkan harapan & ketenangan.',
+    hikmah:
+      'Nama «al-Wadūd» menyingkap bahwa hubungan hamba dengan Allah bukan sekadar takut & ampunan, tapi juga cinta. Dia mengampuni lalu menyambut dengan kasih — penghiburan terbesar bagi orang yang berdosa maupun yang tertindas.',
+    linguistik:
+      'Kata «al-Wadūd» (dari w-d-d: cinta yang ditampakkan, pola fa‘ūl yang intensif) diletakkan tepat setelah «al-Gafūr» — menggabungkan ampunan dengan kasih. Penutup «fa‘‘ālul limā yurīd» menegaskan bahwa cinta & ampunan itu ditopang kuasa mutlak yang tak terbatas.',
+    amalan:
+      'Saat merasa terlalu berdosa untuk kembali, ingat «al-Gafūr al-Wadūd»: Dia mengampuni & mencintai yang pulang kepada-Nya. Tumbuhkan cinta kepada Allah, bukan sekadar takut. Dan saat diuji karena kebaikan, bersandarlah pada Tuhan yang Maha Kuasa atas segala kehendak-Nya.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -2337,7 +2516,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['an-naba-1-5', 'an-naziat-37-41', 'abasa-1-7', 'at-takwir-8-9', 'al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['an-naba-1-5', 'an-naziat-37-41', 'abasa-1-7', 'at-takwir-8-9', 'al-infitar-6-8', 'al-mutaffifin-1-3', 'al-insyiqaq-6', 'al-buruj-14-16', 'al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -2573,6 +2752,22 @@ const HIKMAH_KATA = {
   'at-takwir-8-9': [
     'Keadilan Allah tak melewatkan satu korban pun.',
     'Yang dibungkam di dunia, diberi suara di akhirat.',
+  ],
+  'al-infitar-6-8': [
+    'Kemurahan Allah bukan tanda Dia tak peduli — jangan disalahgunakan.',
+    'Tubuhmu yang sempurna sudah cukup jadi alasan untuk taat.',
+  ],
+  'al-mutaffifin-1-3': [
+    'Curang sedikit pun mengundang celaka — kejujuran tak ditawar.',
+    'Jangan berstandar ganda: adil untuk diri, longgar untuk orang.',
+  ],
+  'al-insyiqaq-6': [
+    'Semua orang lelah — yang membedakan: menuju apa.',
+    'Arahkan jerih payahmu kepada Allah, agar tak sia-sia.',
+  ],
+  'al-buruj-14-16': [
+    'Dia tak hanya mengampuni — Dia mencintai yang kembali.',
+    'Saat tertindas karena iman, ingat: Tuhanmu Al-Wadūd.',
   ],
 };
 
