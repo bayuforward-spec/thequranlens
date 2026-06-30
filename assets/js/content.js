@@ -2137,6 +2137,187 @@ const AYAT = [
       'Latih "jiwa yang tenang" sejak sekarang: perbanyak zikir (sumber ketenangan, QS 13:28), latih ridha pada takdir, & kurangi kegelisahan pada dunia. Tujuanmu bukan sekadar ridha pada Allah, tapi sampai Dia ridha padamu — kejar itu lewat ketaatan.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'an-naba-1-5',
+    kajianKata: [
+      { kata: 'عَنِ النَّبَإِ الْعَظِيمِ', latin: '‘anin-naba’il-‘aẓīm', arti: 'tentang berita yang besar',
+        poin: [
+          'Dibuka dengan pertanyaan retoris «‘amma yatasā’alūn» (tentang apa mereka bertanya?) — memancing perhatian sebelum menjawab.',
+          '«an-naba’» = berita BESAR & pasti benar (bukan «khabar» biasa) — yakni hari Kebangkitan.',
+        ],
+        asalKata: { huruf: ['ن', 'ب', 'ء'], makna: 'berita besar, penting, & benar',
+          gambar: 'Bahasa Arab membedakan «khabar» (kabar biasa, apa saja) dari «naba’»: <b>berita besar, penting, & bermanfaat yang pasti benar</b> — dari akar yang sama lahir kata «nabī» (pembawa berita agung dari langit). Maka hari Kebangkitan disebut «an-naba’ al-‘aẓīm» — bukan gosip yang bisa diabaikan, tapi <b>berita terbesar</b> yang menentukan nasib tiap orang, yang anehnya justru paling sering diperdebatkan & dilalaikan.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'كَلَّا سَيَعْلَمُونَ', latin: 'kallā saya‘lamūn', arti: 'sekali-kali tidak! kelak mereka akan mengetahui',
+        poin: [
+          'Pengulangan «kallā saya‘lamūn» — ancaman bertingkat bagi yang meragukan hari Kebangkitan.',
+          'Kepastian ditegaskan dua kali: keraguan mereka pasti terjawab — tapi terlambat.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Berita terbesar hidupmu (akhirat) justru paling sering dilalaikan.',
+      'Yang kini diragukan, kelak pasti diketahui — siapkan dirimu.',
+      'Hidup bukan tanpa kelanjutan; ada "naba’ ‘aẓīm" yang menanti.',
+    ],
+    surah: 'An-Naba’',
+    surahNo: 78,
+    ayatNo: '1–5',
+    juz: 30,
+    tema: ['Hari Kebangkitan', 'Keyakinan', 'Kelalaian'],
+    gratis: false,
+    arab: 'عَمَّ يَتَسَاءَلُونَ ۝ عَنِ النَّبَإِ الْعَظِيمِ ۝ الَّذِي هُمْ فِيهِ مُخْتَلِفُونَ ۝ كَلَّا سَيَعْلَمُونَ ۝ ثُمَّ كَلَّا سَيَعْلَمُونَ',
+    latin: '‘Amma yatasā’alūn. ‘Anin-naba’il-‘aẓīm. Allażī hum fīhi mukhtalifūn. Kallā saya‘lamūn. Ṡumma kallā saya‘lamūn.',
+    arti: 'Tentang apakah mereka saling bertanya? Tentang berita yang besar (hari Kebangkitan), yang mereka perselisihkan. Sekali-kali tidak! Kelak mereka akan mengetahui. Kemudian sekali-kali tidak! Kelak mereka akan mengetahui.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Surah ini turun menjawab perdebatan & keraguan kaum musyrik tentang hari Kebangkitan, lalu memaparkan bukti-bukti kuasa Allah.',
+    tafsir:
+      'Allah membuka dengan pertanyaan retoris: apa yang mereka perdebatkan? Yaitu "berita besar" — hari Kebangkitan yang mereka ragukan. Lalu ditegaskan dua kali "kelak mereka akan mengetahui" sebagai ancaman, sebelum surah memaparkan tanda-tanda kekuasaan Allah di alam sebagai bukti keniscayaannya.',
+    hikmah:
+      'Hal terbesar yang menentukan nasib abadi manusia justru paling banyak dilalaikan & diperdebatkan. Orang sibuk pada kabar receh, tapi lalai pada "berita besar" yang pasti datang.',
+    linguistik:
+      'Dipilih «naba’» (berita besar & pasti benar), bukan «khabar» (kabar biasa) — menegaskan bobot hari Kebangkitan. Pertanyaan «‘amma yatasā’alūn» menarik perhatian, dan pengulangan «kallā saya‘lamūn» memberi tekanan ancaman yang berlapis.',
+    amalan:
+      'Periksa porsi perhatianmu: berapa banyak untuk kabar dunia yang fana, berapa untuk "berita besar" akhirat? Sisihkan waktu mengingat akhirat tiap hari (ziarah kubur sesekali, baca ayat hari akhir) agar ia tak terlalaikan.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'an-naziat-37-41',
+    kajianKata: [
+      { kata: 'وَنَهَى النَّفْسَ عَنِ الْهَوَىٰ', latin: 'wa nahan-nafsa ‘anil-hawā', arti: 'dan menahan diri dari hawa nafsu',
+        poin: [
+          'Dua poros nasib: «ṭagā wa āṡaral-ḥayātad-dunyā» (melampaui batas & utamakan dunia) → neraka.',
+          'Lawannya: «khāfa maqāma rabbihī wa nahan-nafsa ‘anil-hawā» (takut kebesaran Tuhan & MENAHAN jiwa dari hawa) → surga.',
+          'Surga diraih bukan hanya dengan banyak amal, tapi dengan MENAHAN nafsu dari yang dilarang.',
+        ],
+        asalKata: { huruf: ['ه', 'و', 'ي'], makna: 'kecenderungan nafsu yang menjatuhkan',
+          gambar: 'Akar «h-w-y» berarti <b>jatuh & turun ke bawah</b> (dari sini «hāwiyah» = jurang neraka). «Hawā» = kecenderungan nafsu yang <b>menarik jiwa ke bawah</b> — ke kenikmatan sesaat yang menjatuhkan. Menggetarkan: kata untuk "keinginan nafsu" satu akar dengan "jatuh". Maka «nahan-nafsa ‘anil-hawā» = menahan jiwa dari yang menjatuhkannya — itulah harga surga.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'مَنْ خَافَ مَقَامَ رَبِّهِ', latin: 'man khāfa maqāma rabbih', arti: 'orang yang takut akan kebesaran Tuhannya',
+        poin: [
+          'Bukan sekadar takut, tapi «khāfa maqāma rabbih» — sadar akan KEBESARAN & pengawasan Tuhannya.',
+          'Rasa diawasi itulah yang melahirkan kekuatan menahan diri saat sendirian.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Surga bukan hanya soal banyak amal — tapi berani menahan nafsu.',
+      '"Hawa" seakar dengan "jatuh": menurutinya berarti menjatuhkan diri.',
+      'Rasa diawasi Allah adalah rem terkuat saat tak ada yang melihat.',
+    ],
+    surah: 'An-Nāzi‘āt',
+    surahNo: 79,
+    ayatNo: '37–41',
+    juz: 30,
+    tema: ['Melawan hawa nafsu', 'Takut kepada Allah', 'Surga & neraka'],
+    gratis: false,
+    arab: 'فَأَمَّا مَن طَغَىٰ ۝ وَآثَرَ الْحَيَاةَ الدُّنْيَا ۝ فَإِنَّ الْجَحِيمَ هِيَ الْمَأْوَىٰ ۝ وَأَمَّا مَنْ خَافَ مَقَامَ رَبِّهِ وَنَهَى النَّفْسَ عَنِ الْهَوَىٰ ۝ فَإِنَّ الْجَنَّةَ هِيَ الْمَأْوَىٰ',
+    latin: 'Fa ammā man ṭagā. Wa āṡaral-ḥayātad-dunyā. Fa innal-jaḥīma hiyal-ma’wā. Wa ammā man khāfa maqāma rabbihī wa nahan-nafsa ‘anil-hawā. Fa innal-jannata hiyal-ma’wā.',
+    arti: 'Maka adapun orang yang melampaui batas, dan lebih mengutamakan kehidupan dunia, maka sungguh, nerakalah tempat tinggalnya. Dan adapun orang yang takut kepada kebesaran Tuhannya dan menahan diri dari keinginan hawa nafsunya, maka sungguh, surgalah tempat tinggalnya.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Penutup An-Nāzi‘āt ini meringkas dua jalan manusia & kesudahannya: mengikuti hawa, atau menahannya karena takut kepada Allah.',
+    tafsir:
+      'Allah membagi manusia menjadi dua: yang melampaui batas & mengutamakan dunia, tempatnya neraka; dan yang takut akan kebesaran Tuhannya lalu menahan jiwanya dari hawa nafsu, tempatnya surga. Penentu nasib bukan keadaan lahir, tapi sikap hati terhadap nafsu & terhadap Allah.',
+    hikmah:
+      'Inti perjuangan seorang hamba adalah menahan nafsunya dari yang dilarang. Yang menggerakkan kekuatan itu bukan pengawasan manusia, tapi kesadaran akan kebesaran & pengawasan Allah di setiap saat.',
+    linguistik:
+      'Kata «hawā» (dari h-w-y: jatuh) menyiratkan bahwa menuruti nafsu berarti menjatuhkan diri ke bawah. Frasa «maqāma rabbih» (kedudukan/kebesaran Tuhannya) memperdalam makna takut — bukan takut biasa, tapi pengagungan yang melahirkan pengendalian diri.',
+    amalan:
+      'Latih "menahan nafsu" dari hal kecil: tahan pandangan, tahan kata, tahan belanja impulsif, tahan amarah. Saat sendirian & tergoda, hadirkan «maqāma rabbih» — bahwa Allah melihat. Itulah otot takwa yang menentukan tempat tinggalmu kelak.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'abasa-1-7',
+    kajianKata: [
+      { kata: 'عَبَسَ وَتَوَلَّىٰ أَن جَاءَهُ الْأَعْمَىٰ', latin: '‘abasa wa tawallā an jā’ahul-a‘mā', arti: 'dia bermuka masam dan berpaling karena seorang buta datang kepadanya',
+        poin: [
+          'Allah menegur Nabi ﷺ — kekasih-Nya — karena bermuka masam pada «al-a‘mā» (Ibnu Ummi Maktum) yang tulus mencari ilmu, demi melayani pembesar Quraisy.',
+          'Pelajaran keras: yang menentukan perhatian bukan STATUS, tapi kesungguhan mencari kebenaran.',
+          'Bahkan Nabi pun ditegur — bukti Al-Qur’an wahyu, bukan karangan beliau (mustahil seseorang menegur diri sendiri sekeras ini).',
+        ],
+        banding: { tipe: 'banding', item: [
+          { arab: 'الْأَعْمَىٰ', latin: 'Al-a‘mā', sifat: ['Tulus & sungguh mencari', 'Layak diutamakan'] },
+          { arab: 'مَنِ اسْتَغْنَىٰ', latin: 'Manistagnā', alt: true, sifat: ['Merasa cukup, tak butuh', 'Dipalingkan dari kebenaran'] },
+        ], catatan: 'Yang diutamakan: si tulus pencari kebenaran, bukan si pongah yang merasa cukup.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi'] },
+      { kata: 'وَمَا يُدْرِيكَ لَعَلَّهُ يَزَّكَّىٰ', latin: 'wa mā yudrīka la‘allahū yazzakkā', arti: 'tahukah engkau, barangkali dia ingin menyucikan diri',
+        poin: [
+          '«la‘allahū yazzakkā» — boleh jadi sang buta itu (akan) menyucikan diri: nilai seseorang dari potensi takwanya, bukan rupa/hartanya.',
+          'Yang miskin & lemah bisa jadi lebih mulia di sisi Allah daripada pembesar yang berpaling.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Hargai orang dari ketulusannya mencari kebenaran, bukan dari status & hartanya.',
+      'Jangan abaikan yang lemah demi mengambil hati yang berpengaruh.',
+      'Al-Qur’an menegur Nabi sendiri — bukti kejujuran wahyu.',
+    ],
+    surah: '‘Abasa',
+    surahNo: 80,
+    ayatNo: '1–7',
+    juz: 30,
+    tema: ['Keadilan sikap', 'Kemuliaan sejati', 'Kejujuran wahyu'],
+    gratis: false,
+    arab: 'عَبَسَ وَتَوَلَّىٰ ۝ أَن جَاءَهُ الْأَعْمَىٰ ۝ وَمَا يُدْرِيكَ لَعَلَّهُ يَزَّكَّىٰ ۝ أَوْ يَذَّكَّرُ فَتَنفَعَهُ الذِّكْرَىٰ ۝ أَمَّا مَنِ اسْتَغْنَىٰ ۝ فَأَنتَ لَهُ تَصَدَّىٰ ۝ وَمَا عَلَيْكَ أَلَّا يَزَّكَّىٰ',
+    latin: '‘Abasa wa tawallā. An jā’ahul-a‘mā. Wa mā yudrīka la‘allahū yazzakkā. Au yażżakkaru fa tanfa‘ahuż-żikrā. Ammā manistagnā. Fa anta lahū taṣaddā. Wa mā ‘alaika allā yazzakkā.',
+    arti: 'Dia (Muhammad) bermuka masam dan berpaling, karena seorang buta telah datang kepadanya. Dan tahukah engkau barangkali dia ingin menyucikan dirinya, atau dia ingin mendapatkan pengajaran yang memberi manfaat kepadanya? Adapun orang yang merasa dirinya serba cukup, maka engkau melayaninya. Padahal tidak ada (cela) atasmu kalau dia tidak menyucikan diri.',
+    asbabunNuzul:
+      'Diriwayatkan bahwa ketika Nabi ﷺ sedang berbicara dengan para pembesar Quraisy yang diharap masuk Islam, datang Ibnu Ummi Maktum (seorang buta) bertanya tentang Islam. Nabi ﷺ tampak kurang berkenan karena fokus pada para pembesar, lalu turun teguran ini (riwayat masyhur, lihat Tafsir Ibnu Katsir & Tirmidzi).',
+    tafsir:
+      'Allah menegur Nabi ﷺ yang bermuka masam pada seorang buta yang tulus mencari ilmu, sementara beliau sibuk melayani pembesar yang merasa cukup. Teguran ini menegaskan timbangan Allah: yang berharga adalah kesungguhan mencari kebenaran & potensi takwa, bukan status sosial.',
+    hikmah:
+      'Allah menggeser ukuran kemuliaan dari pangkat & harta ke ketulusan hati. Bahwa Al-Qur’an menegur Nabi-Nya sendiri dengan begitu terbuka adalah bukti ia wahyu murni, bukan karangan manusia.',
+    linguistik:
+      'Pembukaan dengan kata kerja orang ketiga «‘abasa» (dia bermuka masam) sebelum beralih menyapa langsung adalah bentuk teguran yang lembut sekaligus tegas. Kontras «al-a‘mā» (yang tulus) dengan «manistagnā» (yang merasa cukup) menukik ke inti pelajaran: perhatian layak diberikan pada pencari kebenaran.',
+    amalan:
+      'Periksa caramu memperlakukan orang: apakah hangat pada yang "berguna" & dingin pada yang lemah? Latih memberi perhatian tulus pada pencari ilmu/kebaikan tanpa memandang status. Muliakan orang kecil yang bersungguh-sungguh menuju Allah.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Jami‘ at-Tirmidzi'],
+  },
+  {
+    id: 'at-takwir-8-9',
+    kajianKata: [
+      { kata: 'وَإِذَا الْمَوْءُودَةُ سُئِلَتْ', latin: 'wa iżal-mau’ūdatu su’ilat', arti: 'dan apabila bayi perempuan yang dikubur hidup-hidup ditanya',
+        poin: [
+          '«al-mau’ūdah» — bayi perempuan yang dulu dikubur hidup-hidup oleh sebagian Arab jahiliah karena dianggap aib.',
+          'Di Hari Kiamat, justru SI KORBAN yang ditanya — sebuah tuntutan keadilan yang menohok pelakunya.',
+          'Al-Qur’an membela yang paling tak berdaya: bahkan bayi yang dibungkam, kelak diberi suara.',
+        ],
+        asalKata: { huruf: ['و', 'أ', 'د'], makna: 'mengubur (bayi) hidup-hidup',
+          gambar: 'Akar «w-’-d» bermakna khusus: <b>mengubur bayi hidup-hidup</b> — kebiadaban jahiliah terhadap anak perempuan. Al-Qur’an menyebut korbannya «al-mau’ūdah» (yang dikubur) lalu menjadikannya <b>SAKSI yang ditanya</b>, bukan pelakunya. Susunannya menggetarkan: yang lemah & dibungkam di dunia, di akhirat <b>diberi suara untuk menuntut</b>. Keadilan-Nya tak melewatkan satu korban pun.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'بِأَيِّ ذَنبٍ قُتِلَتْ', latin: 'bi’ayyi żambin qutilat', arti: 'karena dosa apa dia dibunuh?',
+        poin: [
+          'Pertanyaan yang menohok pelakunya: "karena dosa APA ia dibunuh?" — sebab ia tak punya dosa sama sekali.',
+          'Membela hak hidup & martabat anak perempuan, berabad sebelum isu itu mendunia.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Keadilan Allah tak melewatkan korban mana pun — bahkan yang dibungkam.',
+      'Yang lemah di dunia akan diberi suara di akhirat.',
+      'Islam memuliakan & membela anak perempuan sejak awal.',
+    ],
+    surah: 'At-Takwīr',
+    surahNo: 81,
+    ayatNo: '8–9',
+    juz: 30,
+    tema: ['Keadilan', 'Membela yang lemah', 'Hari akhir'],
+    gratis: false,
+    arab: 'وَإِذَا الْمَوْءُودَةُ سُئِلَتْ ۝ بِأَيِّ ذَنبٍ قُتِلَتْ',
+    latin: 'Wa iżal-mau’ūdatu su’ilat. Bi’ayyi żambin qutilat.',
+    arti: 'Dan apabila bayi-bayi perempuan yang dikubur hidup-hidup ditanya, karena dosa apa dia dibunuh?',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus untuk dua ayat ini. Keduanya bagian dari rangkaian tanda Hari Kiamat dalam At-Takwīr, menyinggung tradisi keji jahiliah mengubur bayi perempuan hidup-hidup.',
+    tafsir:
+      'Di antara peristiwa dahsyat Hari Kiamat: bayi perempuan yang dahulu dikubur hidup-hidup ditanya "karena dosa apa engkau dibunuh?". Pertanyaan kepada korban ini sejatinya tuntutan keadilan atas pelakunya, menegaskan bahwa tak ada kezaliman yang luput dari perhitungan Allah.',
+    hikmah:
+      'Allah membela yang paling lemah & tak bersuara. Pesan ini menanamkan penghormatan pada kehidupan & martabat manusia — khususnya anak perempuan — dan menenangkan setiap korban kezaliman bahwa keadilan pasti datang.',
+    linguistik:
+      'Dipilih kata «al-mau’ūdah» (dari w-’-d: mengubur hidup-hidup) yang spesifik & menggugah. Yang ditanya adalah korban, bukan pelaku — gaya bahasa yang justru melipatgandakan beratnya tuntutan atas pelakunya, sekaligus mengangkat martabat sang korban.',
+    amalan:
+      'Hormati & lindungi kehidupan, terutama yang lemah & tak bersuara (anak, perempuan, kaum tertindas). Jangan pernah meremehkan kezaliman "kecil" pada mereka — semua dicatat. Dan syukuri ajaran yang memuliakan martabat manusia.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -2156,7 +2337,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['an-naba-1-5', 'an-naziat-37-41', 'abasa-1-7', 'at-takwir-8-9', 'al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -2376,6 +2557,22 @@ const HIKMAH_KATA = {
   'al-fajr-27-30': [
     'Tenang sejati lahir dari bergantung pada Allah, bukan dunia.',
     'Kejar bukan hanya ridha-mu pada-Nya, tapi ridha-Nya padamu.',
+  ],
+  'an-naba-1-5': [
+    'Berita terbesar hidupmu (akhirat) jangan kalah perhatian dari kabar dunia.',
+    'Yang kini diragukan, kelak pasti diketahui — siapkan diri.',
+  ],
+  'an-naziat-37-41': [
+    'Harga surga: berani menahan nafsu dari yang menjatuhkan.',
+    'Rasa diawasi Allah adalah rem terkuat saat sendirian.',
+  ],
+  'abasa-1-7': [
+    'Muliakan orang dari ketulusannya, bukan status & hartanya.',
+    'Jangan abaikan yang lemah demi mengambil hati yang berpengaruh.',
+  ],
+  'at-takwir-8-9': [
+    'Keadilan Allah tak melewatkan satu korban pun.',
+    'Yang dibungkam di dunia, diberi suara di akhirat.',
   ],
 };
 
