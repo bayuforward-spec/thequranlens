@@ -2006,6 +2006,137 @@ const AYAT = [
       'Perbanyak kebaikan-kebaikan kecil yang sering diremehkan: menyingkirkan duri di jalan, senyum, sedekah receh rutin, menahan kata buruk. Dan jauhi dosa-dosa "kecil" yang dianggap sepele. Bayangkan "rekaman bumi" atas perbuatanmu — ia akan bersaksi.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
+  {
+    id: 'al-ala-14-17',
+    kajianKata: [
+      { kata: 'قَدْ أَفْلَحَ مَن تَزَكَّىٰ', latin: 'qad aflaḥa man tazakkā', arti: 'sungguh beruntung orang yang menyucikan diri',
+        poin: [
+          '«aflaḥa» (beruntung — dari akar falāḥ/petani membelah tanah) diraih oleh «man tazakkā».',
+          '«tazakkā» bukan sekadar "membersihkan" — akar z-k-w berarti SUCI sekaligus TUMBUH.',
+        ],
+        asalKata: { huruf: ['ز', 'ك', 'و'], makna: 'suci sekaligus tumbuh-berkembang',
+          gambar: 'Akar «z-k-w» (akar yang sama dengan "zakat") menyatukan dua makna indah: <b>menyucikan</b> dan <b>menumbuhkan</b>. Seperti kebun yang dibersihkan dari gulma justru makin subur, jiwa yang disucikan dari dosa & kikir justru <b>tumbuh & berkembang</b>. Maka «qad aflaḥa man tazakkā»: keberuntungan milik yang membersihkan hatinya — dan pembersihan itu <b>bukan mengurangi, melainkan menumbuhkan</b>.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'وَالْآخِرَةُ خَيْرٌ وَأَبْقَىٰ', latin: 'wal-ākhiratu khairuw wa abqā', arti: 'padahal akhirat lebih baik dan lebih kekal',
+        poin: [
+          'Diagnosis abadi: «bal tu’ṡirūnal-ḥayātad-dunyā» — kamu LEBIH MEMILIH dunia (yang dekat & cepat).',
+          'Padahal akhirat «khairun» (lebih baik — kualitas) DAN «abqā» (lebih kekal — durasi): dua keunggulan sekaligus.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Sukses = menyucikan jiwa, bukan menumpuk dunia.',
+      'Membersihkan hati bukan mengurangi — justru menumbuhkan.',
+      'Dunia cepat & fana; akhirat lebih baik & kekal.',
+    ],
+    surah: 'Al-A‘lā',
+    surahNo: 87,
+    ayatNo: '14–17',
+    juz: 30,
+    tema: ['Menyucikan jiwa', 'Dunia vs akhirat', 'Keberuntungan'],
+    gratis: false,
+    arab: 'قَدْ أَفْلَحَ مَن تَزَكَّىٰ ۝ وَذَكَرَ اسْمَ رَبِّهِ فَصَلَّىٰ ۝ بَلْ تُؤْثِرُونَ الْحَيَاةَ الدُّنْيَا ۝ وَالْآخِرَةُ خَيْرٌ وَأَبْقَىٰ',
+    latin: 'Qad aflaḥa man tazakkā. Wa żakarasma rabbihī fa ṣallā. Bal tu’ṡirūnal-ḥayātad-dunyā. Wal-ākhiratu khairuw wa abqā.',
+    arti: 'Sungguh beruntung orang yang menyucikan diri (dengan beriman), dan mengingat nama Tuhannya, lalu dia salat. Tetapi kamu (orang-orang kafir) memilih kehidupan dunia, padahal kehidupan akhirat itu lebih baik dan lebih kekal.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus untuk potongan ayat ini. Bagian penutup Al-A‘lā ini merangkum jalan keberuntungan (menyucikan jiwa, zikir, salat) dan menegur kecenderungan manusia mengutamakan dunia.',
+    tafsir:
+      'Allah menegaskan bahwa keberuntungan sejati milik orang yang menyucikan jiwanya, mengingat Tuhannya, lalu menegakkan salat. Lalu Dia menegur kecenderungan manusia yang lebih memilih kehidupan dunia yang dekat, padahal akhirat lebih baik mutunya dan lebih kekal masanya.',
+    hikmah:
+      'Ukuran sukses dibalik: bukan seberapa banyak dunia kau kumpulkan, tapi seberapa bersih jiwamu. Dan pembersihan jiwa, seperti merawat kebun, justru menumbuhkannya — bukan menguranginya.',
+    linguistik:
+      'Kata «tazakkā» (dari z-k-w: suci + tumbuh) menyiratkan bahwa menyucikan diri adalah pertumbuhan, bukan kehilangan. Penutup «khairuw wa abqā» menggabungkan dua keunggulan akhirat sekaligus: lebih baik (kualitas) dan lebih kekal (durasi) — menjawab tuntas kenapa tak layak menukar akhirat dengan dunia.',
+    amalan:
+      'Sisihkan waktu "menyucikan jiwa" tiap hari: istighfar, muhasabah, sedekah (yang menumbuhkan, bukan mengurangi harta). Saat tergoda mengutamakan dunia, ucap pada diri: "khairuw wa abqā" — yang di sana lebih baik & lebih kekal.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-ghasyiyah-17-20',
+    kajianKata: [
+      { kata: 'أَفَلَا يَنظُرُونَ إِلَى الْإِبِلِ كَيْفَ خُلِقَتْ', latin: 'afalā yanẓurūna ilal-ibili kaifa khuliqat', arti: 'tidakkah mereka memperhatikan unta, bagaimana ia diciptakan?',
+        poin: [
+          'Renungan dimulai dari «al-ibil» (UNTA) — makhluk paling dekat & akrab bagi orang Arab, bukan yang jauh.',
+          'Empat tatapan menaik: unta (dekat) → langit (tinggi) → gunung (kokoh) → bumi (hamparan).',
+          'Pertanyaannya «KAIFA» (bagaimana) — mengajak mengamati DESAIN & ketelitiannya, bukan sekadar keberadaannya.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'وَإِلَى الْجِبَالِ كَيْفَ نُصِبَتْ', latin: 'wa ilal-jibāli kaifa nuṣibat', arti: 'dan gunung-gunung, bagaimana ia ditegakkan?',
+        poin: [
+          'Tiap detail unta "pas" untuk gurun (punuk, kaki, mata, perut) — bukti adanya Perancang.',
+          'Iman menguat lewat MEMPERHATIKAN ciptaan dengan saksama, bukan sekadar melewatinya.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
+    ],
+    hikmahPoin: [
+      'Tanda kebesaran-Nya ada di hal terdekat — perhatikanlah.',
+      'Iman menguat lewat tadabbur ciptaan, bukan hanya teori.',
+      'Mulai mengenal Allah dari yang dekat (unta), bukan yang jauh.',
+    ],
+    surah: 'Al-Ghāsyiyah',
+    surahNo: 88,
+    ayatNo: '17–20',
+    juz: 30,
+    tema: ['Tadabbur ciptaan', 'Bukti keesaan', 'Akal & iman'],
+    gratis: false,
+    arab: 'أَفَلَا يَنظُرُونَ إِلَى الْإِبِلِ كَيْفَ خُلِقَتْ ۝ وَإِلَى السَّمَاءِ كَيْفَ رُفِعَتْ ۝ وَإِلَى الْجِبَالِ كَيْفَ نُصِبَتْ ۝ وَإِلَى الْأَرْضِ كَيْفَ سُطِحَتْ',
+    latin: 'Afalā yanẓurūna ilal-ibili kaifa khuliqat. Wa ilas-samā’i kaifa rufi‘at. Wa ilal-jibāli kaifa nuṣibat. Wa ilal-arḍi kaifa suṭiḥat.',
+    arti: 'Maka tidakkah mereka memperhatikan unta, bagaimana ia diciptakan? Dan langit, bagaimana ia ditinggikan? Dan gunung-gunung, bagaimana ia ditegakkan? Dan bumi, bagaimana ia dihamparkan?',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus. Ayat ini mengajak orang yang ragu untuk memperhatikan ciptaan di sekitarnya sebagai bukti kekuasaan & kebijaksanaan Penciptanya.',
+    tafsir:
+      'Allah mengajak manusia menatap empat hal: unta yang akrab di kehidupan mereka, langit yang ditinggikan tanpa tiang, gunung yang ditegakkan kokoh, dan bumi yang dihamparkan. Semua dirancang dengan ketelitian yang menuntun akal jujur kepada pengakuan akan Sang Pencipta.',
+    hikmah:
+      'Bukti keimanan tak selalu jauh & rumit; ia tersebar pada hal-hal terdekat yang kita lewati tiap hari. Yang dibutuhkan hanyalah berhenti sejenak untuk benar-benar "memperhatikan", bukan sekadar melihat.',
+    linguistik:
+      'Dipilih «al-ibil» (unta) sebagai contoh pertama karena ialah makhluk paling lekat dengan keseharian audiens awal — pelajaran dimulai dari yang dekat. Kata tanya «kaifa» (bagaimana) mengarahkan perhatian pada cara & desain penciptaan, bukan sekadar fakta keberadaannya — mengundang perenungan, bukan hafalan.',
+    amalan:
+      'Biasakan "tadabbur 1 menit": saat melihat langit, hujan, tubuhmu, atau hewan, berhenti & tanya "bagaimana ini dirancang?" lalu ucapkan "Subḥānallāh". Jadikan alam sekitar sebagai pengingat harian akan kebesaran-Nya.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
+  {
+    id: 'al-fajr-27-30',
+    kajianKata: [
+      { kata: 'يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ', latin: 'yā ayyatuhan-nafsul-muṭma’innah', arti: 'wahai jiwa yang tenang',
+        poin: [
+          '«al-muṭma’innah» — jiwa yang TENANG & mantap: berlabuh pada Allah hingga tak gelisah oleh dunia.',
+          'Panggilan paling lembut di akhir hidup: "wahai jiwa yang tenang, kembalilah…" — sambutan, bukan hardikan.',
+        ],
+        asalKata: { huruf: ['ط', 'م', 'ن'], makna: 'tenang yang kokoh & menetap',
+          gambar: 'Akar «ṭ-m-’-n» menggambarkan <b>ketenangan yang kokoh & menetap</b> — tanah rata yang stabil disebut "muṭma’inn". Maka «an-nafsul-muṭma’innah» adalah jiwa yang <b>berlabuh tenang pada Allah</b>: tak diombang-ambing ketakutan dunia, tak gelisah oleh kehilangan. Ketenangan ini buah dari zikir — «alā biżikrillāhi taṭma’innul-qulūb» (QS 13:28). Dialah jiwa yang dipanggil pulang dengan penuh kasih.' },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+      { kata: 'ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً', latin: 'irji‘ī ilā rabbiki rāḍiyatam marḍiyyah', arti: 'kembalilah kepada Tuhanmu dengan ridha dan diridhai',
+        poin: [
+          'Pulang dalam keadaan «rāḍiyah» (kamu ridha pada Allah) DAN «marḍiyyah» (Allah ridha padamu): dua arah cinta bertemu.',
+          'Puncak kebahagiaan: bukan sekadar kau ridha pada-Nya, tapi Dia pun ridha padamu.',
+        ],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
+    ],
+    hikmahPoin: [
+      'Ketenangan sejati lahir dari bergantung pada Allah, bukan pada dunia.',
+      'Akhir terindah: dipanggil pulang dengan lembut.',
+      'Kejar ridha-Nya, bukan sekadar ridha-mu.',
+    ],
+    surah: 'Al-Fajr',
+    surahNo: 89,
+    ayatNo: '27–30',
+    juz: 30,
+    tema: ['Ketenangan jiwa', 'Husnul khatimah', 'Ridha'],
+    gratis: false,
+    arab: 'يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ ۝ ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً ۝ فَادْخُلِي فِي عِبَادِي ۝ وَادْخُلِي جَنَّتِي',
+    latin: 'Yā ayyatuhan-nafsul-muṭma’innah. Irji‘ī ilā rabbiki rāḍiyatam marḍiyyah. Fadkhulī fī ‘ibādī. Wadkhulī jannatī.',
+    arti: 'Wahai jiwa yang tenang! Kembalilah kepada Tuhanmu dengan hati yang ridha dan diridhai-Nya. Maka masuklah ke dalam golongan hamba-hamba-Ku, dan masuklah ke dalam surga-Ku.',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus yang pasti. Ayat penutup Al-Fajr ini melukiskan sambutan terindah bagi jiwa yang tenang saat kembali kepada Tuhannya.',
+    tafsir:
+      'Setelah memaparkan kesudahan orang yang tamak pada dunia, Allah menutup dengan sambutan bagi jiwa yang tenang: dipanggil dengan lembut untuk kembali kepada Tuhannya dalam keadaan ridha & diridhai, lalu dipersilakan masuk ke golongan hamba-hamba-Nya dan ke dalam surga-Nya.',
+    hikmah:
+      'Tujuan perjalanan jiwa adalah ketenangan yang berlabuh pada Allah. Jiwa yang tenang itulah yang kelak dipanggil pulang dengan kasih — bukan dengan ketakutan. Ketenangan itu dilatih sejak di dunia, lewat zikir & kepasrahan.',
+    linguistik:
+      'Kata «al-muṭma’innah» (dari ṭ-m-’-n: tenang yang kokoh) menggambarkan jiwa yang tak goyah. Pasangan «rāḍiyah» (subjek-aktif: ia ridha) & «marḍiyyah» (objek-pasif: ia diridhai) membentuk keseimbangan indah — cinta dua arah antara hamba & Tuhannya, puncak kebahagiaan yang dituju.',
+    amalan:
+      'Latih "jiwa yang tenang" sejak sekarang: perbanyak zikir (sumber ketenangan, QS 13:28), latih ridha pada takdir, & kurangi kegelisahan pada dunia. Tujuanmu bukan sekadar ridha pada Allah, tapi sampai Dia ridha padamu — kejar itu lewat ketaatan.',
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
+  },
 ];
 
 // Ayat Hari Ini — berputar stabil berdasarkan tanggal (sama untuk semua dalam satu hari)
@@ -2025,7 +2156,7 @@ const MUSIM = [
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
-    episodes: ['ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
+    episodes: ['al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
 
 // Kata yang dikaji pada tiap ayat → ditonjolkan (glow), sisanya di-fade pada Ayah Display.
@@ -2233,6 +2364,18 @@ const HIKMAH_KATA = {
   'az-zalzalah-1-8': [
     'Jangan remehkan kebaikan sekecil zarrah — ia terlihat.',
     'Jangan sepelekan dosa sekecil zarrah — ia pun terlihat.',
+  ],
+  'al-ala-14-17': [
+    'Sukses sejati: menyucikan jiwa, bukan menumpuk dunia.',
+    'Membersihkan hati itu menumbuhkan, bukan mengurangi.',
+  ],
+  'al-ghasyiyah-17-20': [
+    'Bukti kebesaran-Nya ada di hal terdekat — berhentilah memperhatikan.',
+    'Iman menguat lewat menatap ciptaan, bukan sekadar melewatinya.',
+  ],
+  'al-fajr-27-30': [
+    'Tenang sejati lahir dari bergantung pada Allah, bukan dunia.',
+    'Kejar bukan hanya ridha-mu pada-Nya, tapi ridha-Nya padamu.',
   ],
 };
 
