@@ -65,3 +65,31 @@ Karena app sudah PWA, Android bisa dibungkus jadi **TWA** (Trusted Web Activity)
 - Menaruh **`assetlinks.json`** untuk TWA.
 - Menyiapkan **screenshot** listing.
 - (Bila pilih B) integrasi **IAP** — ini pekerjaan besar, dibahas terpisah.
+
+---
+
+## 💳 EDISI PLAY STORE dengan Google Play Billing (dipilih)
+
+**Arsitektur (sudah dibuat di kode):** satu kode, sadar-lingkungan.
+- Di dalam **app TWA** → `assets/js/billing.js` memakai **Digital Goods API + Play Billing**; UI Mayar disembunyikan otomatis (`body.mode-play`).
+- Di **browser web** → tetap Mayar (Digital Goods API tak tersedia → otomatis fallback).
+
+### Yang HARUS kamu lakukan (di luar kode)
+1. **Play Console** ($25) → **Create app**.
+2. Buat **Products → Subscriptions** dengan **Product ID**:
+   - `quranlens_bulanan` (Rp 49.000 / bulan)
+   - `quranlens_tahunan` (Rp 399.000 / tahun)
+   > Kalau kamu pakai ID lain, beri tahu aku → kusesuaikan `SKU` di `billing.js`.
+3. **Bungkus jadi TWA dengan billing aktif**:
+   - **Bubblewrap**: `bubblewrap init --manifest https://thequranlensindonesia.com/manifest.webmanifest`, lalu di `twa-manifest.json` aktifkan
+     `"features": { "playBilling": { "enabled": true } }` → `bubblewrap build` → hasil `.aab`.
+   - **Atau PWABuilder** → Android → aktifkan opsi **Play Billing**.
+4. Upload `.aab` ke **Internal testing** → tambah email tester → tes pembelian dengan **akun lisensi tester** (pembelian tes tak menagih uang sungguhan).
+5. **Verifikasi server (WAJIB sebelum produksi):** buat endpoint yang memverifikasi *purchase token* ke **Google Play Developer API** (butuh *service account* + akses Play) sebelum mengaktifkan Premium — agar tak bisa dipalsukan. *(Aku bisa bantu bangun ini di server Render.)*
+
+### Status kode
+- ✅ `billing.js` (Digital Goods API + Payment Request) + deteksi TWA + sembunyikan Mayar.
+- ✅ Tombol langganan otomatis reroute ke Play Billing saat di app.
+- ⏳ SKU masih placeholder (`quranlens_bulanan/tahunan`) — sesuaikan dengan Play Console-mu.
+- ⏳ Verifikasi token sisi-server (menyusul, sebelum rilis publik).
+

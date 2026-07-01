@@ -83,6 +83,15 @@ const App = {
     this.renderKataHariIni();
     this.renderKoleksi();
     this.showKataNotif(false);
+
+    // Deteksi edisi Play Store (TWA) → aktifkan Google Play Billing, sembunyikan Mayar.
+    if (window.PlayBilling) {
+      PlayBilling.init().then((ada) => {
+        if (!ada) return;
+        document.body.classList.add('mode-play');
+        PlayBilling.pulihkan().then(() => this.refreshProUI());
+      });
+    }
   },
 
   switchTab(name) {
@@ -478,7 +487,17 @@ const App = {
   openUpgrade() { document.getElementById('modalUpgrade').classList.add('show'); },
   closeUpgrade() { document.getElementById('modalUpgrade').classList.remove('show'); },
 
-  beli(paket) {
+  async beli(paket) {
+    // Edisi Play Store (TWA): pakai Google Play Billing, bukan Mayar.
+    if (window.PlayBilling && PlayBilling.tersedia()) {
+      this.toast('Membuka pembayaran Google Play…');
+      let ok = false;
+      try { ok = await PlayBilling.beli(paket); } catch (e) { ok = false; }
+      if (ok) { this.closeUpgrade(); this.afterUnlock(); this.toast(`🎉 Langganan ${paket} aktif via Google Play.`); }
+      else this.toast('Pembayaran dibatalkan atau gagal.');
+      return;
+    }
+    // Edisi web: Mayar.
     if (Payment.checkout(paket)) {
       this.toast('Mengarahkan ke pembayaran Mayar…');
     } else {

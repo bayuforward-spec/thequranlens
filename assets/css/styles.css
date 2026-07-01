@@ -452,3 +452,6 @@ footer .note { font-size: .74rem; opacity: .8; margin-top: 8px; max-width: 640px
 .kol-note b { color: var(--gold-label); }
 .kol-open { background: none; border: none; color: var(--gold); font-family: var(--label); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; padding: 0; }
 .kol-open:hover { text-decoration: underline; }
+
+/* Edisi Play Store (TWA): sembunyikan UI pembayaran Mayar (aktivasi Order ID) */
+body.mode-play .manual { display: none !important; }
