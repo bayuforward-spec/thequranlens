@@ -1,18 +1,20 @@
 {
   "name": "The Quran Lens — Keajaiban di Balik Setiap Ayat",
   "short_name": "Quran Lens",
-  "description": "Satu ayat, sejuta makna. Asbabun nuzul, tafsir, hikmah, keajaiban linguistik, & amalan keseharian dari setiap ayat Al-Qur'an.",
+  "description": "Melihat melalui kata. Kajian linguistik Al-Qur'an mendalam: kenapa Allah memilih kata itu, bukan alternatifnya — asbabun nuzul, tafsir, hikmah, & amalan dari setiap ayat.",
+  "id": "/",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0a0907",
+  "orientation": "portrait",
+  "background_color": "#0b0a07",
   "theme_color": "#0b0a07",
   "lang": "id",
+  "dir": "ltr",
+  "categories": ["education", "books", "lifestyle"],
   "icons": [
-    {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0907'/><rect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='%23e3c069' stroke-opacity='.35' stroke-width='1.5'/><text x='50' y='70' font-size='54' text-anchor='middle' fill='%23e3c069'>%DB%9E</text></svg>",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
