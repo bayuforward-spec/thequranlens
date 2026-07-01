@@ -59,6 +59,15 @@ const App = {
       }
     }
 
+    // Akses PENINJAU (ustadz/reviewer): buka semua episode tanpa bayar via ?akses=KODE.
+    // Catatan: kode ini sisi-klien (terlihat di source) — cukup untuk peninjauan;
+    // ganti bila bocor. Perlindungan sungguhan menyusul (konten sisi-server).
+    if (new URLSearchParams(location.search).get('akses') === 'tashih-ql-9f3k') {
+      Store.setPro('Peninjau', 'TASHIH');
+      if (window.history.replaceState) history.replaceState({}, document.title, location.pathname);
+      setTimeout(() => this.toast('✓ Akses peninjau aktif — seluruh episode terbuka.'), 500);
+    }
+
     this.renderStreak(Store.catatKunjungan());
     this.refreshProUI();
     this.refreshFontUI();
