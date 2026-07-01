@@ -432,14 +432,20 @@ footer .note { font-size: .74rem; opacity: .8; margin-top: 8px; max-width: 640px
 .khi-ref { font-family: var(--display); font-style: italic; font-size: 1.2rem; line-height: 1.5; color: var(--body); max-width: 46ch; margin: 10px auto; }
 .khi-src { font-family: var(--label); font-size: .6rem; letter-spacing: .12em; color: var(--gold-label); text-transform: uppercase; margin-bottom: 14px; }
 
-/* ===== Koleksi bertema ===== */
-.kol { border: 1px solid var(--card-line); border-radius: var(--radius); background: var(--bg-warm); padding: 22px; margin-bottom: 18px; box-shadow: var(--card-shadow); }
-.kol-head { display: flex; gap: 14px; align-items: flex-start; border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 8px; }
-.kol-ico { font-size: 1.9rem; line-height: 1; }
-.kol-judul { font-family: var(--display); font-weight: 700; font-size: 1.5rem; color: var(--gold); margin: 0; }
-.kol-desc { color: var(--sub); font-size: .98rem; margin: 4px 0 0; line-height: 1.5; }
-.kol-item { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-.kol-item:last-child { border-bottom: none; }
+/* ===== Koleksi bertema (accordion) ===== */
+.kol { border: 1px solid var(--card-line); border-radius: var(--radius); background: var(--bg-warm); margin-bottom: 14px; box-shadow: var(--card-shadow); overflow: hidden; }
+.kol-head { width: 100%; display: flex; gap: 14px; align-items: center; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 20px; color: var(--body); }
+.kol-head:hover { background: var(--gold-soft); }
+.kol-ico { font-size: 1.9rem; line-height: 1; flex: none; }
+.kol-htext { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.kol-judul { font-family: var(--display); font-weight: 700; font-size: 1.35rem; color: var(--gold); }
+.kol-desc { color: var(--sub); font-size: .92rem; line-height: 1.45; }
+.kol-count { font-family: var(--label); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-label); margin-top: 4px; }
+.kol-chevron { flex: none; color: var(--gold); font-size: 1.1rem; transition: transform .3s; }
+.kol.open .kol-chevron { transform: rotate(180deg); }
+.kol-items { max-height: 0; overflow: hidden; transition: max-height .35s ease; padding: 0 20px; }
+.kol.open .kol-items { max-height: 4000px; padding-bottom: 8px; }
+.kol-item { display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
 .kol-no { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--gold-soft); color: var(--gold); display: grid; place-items: center; font-family: var(--label); font-size: .74rem; box-shadow: inset 0 0 0 1px var(--line); }
 .kol-surah { font-family: var(--label); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-label); }
 .kol-note { font-size: 1.02rem; line-height: 1.62; color: var(--reading); margin: 4px 0 8px; }

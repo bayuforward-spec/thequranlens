@@ -640,15 +640,21 @@ const App = {
     } catch (e) {}
   },
 
-  /* ---------- Koleksi bertema ---------- */
+  /* ---------- Koleksi bertema (accordion) ---------- */
   renderKoleksi() {
     const box = document.getElementById('daftarKoleksi');
     if (!box || typeof KOLEKSI === 'undefined') return;
     box.innerHTML = KOLEKSI.map(kol => `
-      <div class="kol">
-        <div class="kol-head"><span class="kol-ico">${kol.ikon || '✦'}</span>
-          <div><h3 class="kol-judul">${kol.judul}</h3><p class="kol-desc">${kol.deskripsi || ''}</p></div>
-        </div>
+      <div class="kol" id="kol-${kol.id}">
+        <button class="kol-head" onclick="App.toggleKoleksi('${kol.id}')" aria-expanded="false">
+          <span class="kol-ico">${kol.ikon || '✦'}</span>
+          <span class="kol-htext">
+            <span class="kol-judul">${kol.judul}</span>
+            <span class="kol-desc">${kol.deskripsi || ''}</span>
+            <span class="kol-count">${kol.items.length} ayat · ketuk untuk buka</span>
+          </span>
+          <span class="kol-chevron">▾</span>
+        </button>
         <div class="kol-items">
           ${kol.items.map((it, i) => {
             const a = cariAyat(it.id); if (!a) return '';
@@ -656,13 +662,22 @@ const App = {
               <div class="kol-no">${i + 1}</div>
               <div class="kol-body">
                 <div class="kol-surah">QS. ${a.surah} : ${a.ayatNo}</div>
-                <p class="kol-note">💡 <b>Untuk orang tua:</b> ${it.catatan}</p>
+                <p class="kol-note">💡 <b>${kol.label || 'Renungan'}:</b> ${it.catatan}</p>
                 <button class="kol-open" onclick="App.gotoEpisode('${a.id}')">Buka episode →</button>
               </div>
             </div>`;
           }).join('')}
         </div>
       </div>`).join('');
+  },
+
+  toggleKoleksi(id) {
+    const el = document.getElementById('kol-' + id);
+    if (!el) return;
+    const open = el.classList.toggle('open');
+    const btn = el.querySelector('.kol-head');
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   },
 };
 window.App = App;
