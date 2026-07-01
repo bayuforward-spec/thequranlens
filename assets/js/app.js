@@ -80,12 +80,16 @@ const App = {
     this.renderPricing('pricingFull');
     this.renderFaq();
     this.renderTersimpan();
+    this.renderKataHariIni();
+    this.renderKoleksi();
+    this.showKataNotif(false);
   },
 
   switchTab(name) {
     document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
     document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + name));
     if (name === 'tersimpan') this.renderTersimpan();
+    if (name === 'koleksi') this.renderKoleksi();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
@@ -581,6 +585,84 @@ const App = {
     t.classList.add('show');
     clearTimeout(this._tt);
     this._tt = setTimeout(() => t.classList.remove('show'), 3200);
+  },
+
+  /* ---------- Kata Hari Ini + pengingat ---------- */
+  renderKataHariIni() {
+    const box = document.getElementById('kataHariIni');
+    if (!box) return;
+    const a = cariAyat(ayatHariIni().id);
+    if (!a) { box.innerHTML = ''; return; }
+    const k = (Array.isArray(a.kajianKata) && a.kajianKata.length) ? a.kajianKata[0] : null;
+    const refleksi = (Array.isArray(a.hikmahPoin) && a.hikmahPoin[0]) || a.hikmah || '';
+    const on = Store.reminderOn();
+    box.innerHTML = `<div class="khi framed">
+      <div class="khi-top">
+        <span class="khi-label">✦ Kata Hari Ini</span>
+        <button class="khi-bell ${on ? 'on' : ''}" onclick="App.toggleReminder()" title="${on ? 'Matikan pengingat' : 'Aktifkan pengingat harian'}" aria-label="Pengingat harian">${on ? '🔔' : '🔕'}</button>
+      </div>
+      <div class="khi-arab" lang="ar" dir="rtl">${k ? k.kata : a.arab.split(/\s+/).slice(0, 3).join(' ')}</div>
+      ${k ? `<div class="khi-gloss"><b>${k.latin || ''}</b> — ${k.arti || ''}</div>` : ''}
+      <p class="khi-ref">${this.teaser(refleksi, 160)}</p>
+      <div class="khi-src">QS. ${a.surah} : ${a.ayatNo}</div>
+      <button class="btn gold" onclick="App.gotoEpisode('${a.id}')">Renungkan hari ini →</button>
+    </div>`;
+  },
+
+  async toggleReminder() {
+    if (Store.reminderOn()) {
+      Store.setReminder(false); this.renderKataHariIni();
+      this.toast('🔕 Pengingat harian dimatikan.'); return;
+    }
+    if (!('Notification' in window)) { this.toast('Browser ini tak mendukung notifikasi.'); return; }
+    let perm = Notification.permission;
+    if (perm !== 'granted') { try { perm = await Notification.requestPermission(); } catch (e) {} }
+    if (perm !== 'granted') { this.toast('Izin notifikasi belum diberikan.'); return; }
+    Store.setReminder(true); this.renderKataHariIni();
+    this.showKataNotif(true);
+    this.toast('🔔 Pengingat aktif — Kata Hari Ini muncul tiap kamu buka app di hari baru.');
+  },
+
+  async showKataNotif(force) {
+    if (!Store.reminderOn() || !('Notification' in window) || Notification.permission !== 'granted') return;
+    const today = new Date().toISOString().slice(0, 10);
+    if (!force && Store.reminder().last === today) return;
+    const a = cariAyat(ayatHariIni().id); if (!a) return;
+    const k = (Array.isArray(a.kajianKata) && a.kajianKata.length) ? a.kajianKata[0] : null;
+    const ref = (Array.isArray(a.hikmahPoin) && a.hikmahPoin[0]) || a.hikmah || '';
+    const body = (k ? `${k.latin} — ${k.arti}. ` : '') + this.teaser(ref, 90);
+    try {
+      const reg = navigator.serviceWorker && await navigator.serviceWorker.ready;
+      const opts = { body, tag: 'kata-' + today, data: { url: './' } };
+      if (reg && reg.showNotification) await reg.showNotification('✦ Kata Hari Ini — ' + a.surah, opts);
+      else new Notification('✦ Kata Hari Ini — ' + a.surah, opts);
+      Store.markReminderShown(today);
+    } catch (e) {}
+  },
+
+  /* ---------- Koleksi bertema ---------- */
+  renderKoleksi() {
+    const box = document.getElementById('daftarKoleksi');
+    if (!box || typeof KOLEKSI === 'undefined') return;
+    box.innerHTML = KOLEKSI.map(kol => `
+      <div class="kol">
+        <div class="kol-head"><span class="kol-ico">${kol.ikon || '✦'}</span>
+          <div><h3 class="kol-judul">${kol.judul}</h3><p class="kol-desc">${kol.deskripsi || ''}</p></div>
+        </div>
+        <div class="kol-items">
+          ${kol.items.map((it, i) => {
+            const a = cariAyat(it.id); if (!a) return '';
+            return `<div class="kol-item">
+              <div class="kol-no">${i + 1}</div>
+              <div class="kol-body">
+                <div class="kol-surah">QS. ${a.surah} : ${a.ayatNo}</div>
+                <p class="kol-note">💡 <b>Untuk orang tua:</b> ${it.catatan}</p>
+                <button class="kol-open" onclick="App.gotoEpisode('${a.id}')">Buka episode →</button>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`).join('');
   },
 };
 window.App = App;

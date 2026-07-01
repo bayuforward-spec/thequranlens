@@ -2980,8 +2980,31 @@ function episodeMeta(id) {
   return null;
 }
 
+/* ─────────── Koleksi bertema (kemas ulang episode jadi "journey") ─────────── */
+const KOLEKSI = [
+  {
+    id: 'parenting',
+    judul: 'Tafsir Juz Amma untuk Parenting',
+    ikon: '👨‍👩‍👧',
+    deskripsi: 'Nilai-nilai Juz 30 untuk mendidik anak — menjaga fitrah, menumbuhkan cinta ilmu, akidah pertama, akhlak lisan, hingga kasih sayang pada yang lemah.',
+    items: [
+      { id: 'at-tin-1-8', catatan: 'Tiap anak lahir dalam sebaik-baik bentuk & fitrah suci. Tugas orang tua: menjaga & menumbuhkan fitrah itu, bukan merusaknya.' },
+      { id: 'asy-syams-7-10', catatan: 'Anak dibekali "kompas" baik-buruk. Peran orang tua: menumbuhkan sisi baiknya (zakkā), bukan menguburnya (dassā) dengan contoh & didikan buruk.' },
+      { id: 'al-alaq-1-5', catatan: 'Wahyu pertama: "Bacalah!" Tanamkan cinta ilmu & membaca sejak dini — dan ikat dengan nama Allah agar ilmu melahirkan adab, bukan sombong.' },
+      { id: 'al-ikhlas-1-4', catatan: 'Pelajaran akidah PERTAMA untuk anak: mengenal Allah Yang Esa & tempat bergantung. Fondasi sebelum yang lain.' },
+      { id: 'an-nas-1-6', catatan: 'Ajari anak berlindung kepada Allah dari bisikan buruk — jadikan muʿawwiżatān (An-Nās & Al-Falaq) rutinitas menjelang tidur mereka.' },
+      { id: 'ad-duha-1-11', catatan: 'Model pengasuhan penuh kasih: "jangan hardik" yang lemah, dan ajari syukur dengan "menceritakan nikmat". Allah pun menghibur Nabi-Nya dengan lembut.' },
+      { id: 'al-maun-1-7', catatan: 'Didik kepedulian sosial: menyayangi yatim & miskin. Ibadah yang tak menumbuhkan kasih itu kosong — ajarkan pada anak sejak kecil.' },
+      { id: 'al-humazah-1-9', catatan: 'Didik akhlak lisan: jangan mengejek, mencela, atau body-shaming. Latih anak menjaga kata & tidak merendahkan orang.' },
+      { id: 'at-takatsur-1-8', catatan: 'Lawan budaya pamer & menumpuk sejak dini. Ajari anak makna "cukup" & bahwa nikmat akan ditanya penggunaannya.' },
+      { id: 'az-zalzalah-1-8', catatan: 'Ajari anak: kebaikan sekecil zarrah pun berharga & terlihat. Motivasi berbuat baik kecil, dan waspada meremehkan keburukan kecil.' },
+    ],
+  },
+];
+
 window.AYAT = AYAT;
 window.MUSIM = MUSIM;
+window.KOLEKSI = KOLEKSI;
 window.ayatHariIni = ayatHariIni;
 window.cariAyat = cariAyat;
 window.episodeMeta = episodeMeta;

@@ -40,6 +40,7 @@
     <nav class="tabs" id="tabs">
       <button class="tab active" data-tab="beranda">Beranda</button>
       <button class="tab" data-tab="kajian">Kajian</button>
+      <button class="tab" data-tab="koleksi">Koleksi</button>
       <button class="tab" data-tab="tersimpan">Tersimpan</button>
       <button class="tab" data-tab="langganan">Langganan</button>
     </nav>
@@ -68,6 +69,8 @@
         <div class="streak-pill" id="streakPill"></div>
       </div>
 
+      <div id="kataHariIni"></div>
+
       <div class="divider-short"></div>
       <h2 class="section-title">Cicipi gratis</h2>
       <p class="section-sub">Beberapa episode terbuka penuh. Rasakan kedalamannya dulu.</p>
@@ -91,6 +94,13 @@
         <aside class="navigator" id="navigator"></aside>
         <div class="episode" id="episodeBox"></div>
       </div>
+    </section>
+
+    <!-- ============ KOLEKSI (Journey bertema) ============ -->
+    <section class="panel" id="panel-koleksi">
+      <h2 class="section-title">Koleksi</h2>
+      <p class="section-sub">Perjalanan tadabbur bertema — ayat pilihan yang dirangkai untuk satu tujuan.</p>
+      <div class="wrap-narrow"><div id="daftarKoleksi"></div></div>
     </section>
 
     <!-- ============ TERSIMPAN ============ -->
@@ -167,6 +177,12 @@
   <script src="assets/js/storage.js"></script>
   <script src="assets/js/payment.js"></script>
   <script src="assets/js/app.js"></script>
-  <script>App.init();</script>
+  <script>
+    App.init();
+    // Daftarkan service worker (PWA + notifikasi kata harian)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+    }
+  </script>
 </body>
 </html>

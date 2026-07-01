@@ -9,6 +9,7 @@ const Store = {
   KEY_MARK: 'quranlens_bookmark',
   KEY_STREAK: 'quranlens_streak',
   KEY_DONE: 'quranlens_done',
+  KEY_REMINDER: 'quranlens_reminder',
 
   /* ---------- Premium ---------- */
   isPro() {
@@ -49,6 +50,22 @@ const Store = {
     return i < 0; // true bila baru ditandai selesai
   },
   doneCount(ids) { return (ids || []).filter(id => this.isDone(id)).length; },
+
+  /* ---------- Pengingat "Kata Hari Ini" ---------- */
+  reminder() {
+    try { return JSON.parse(localStorage.getItem(this.KEY_REMINDER)) || { on: false, last: null }; }
+    catch { return { on: false, last: null }; }
+  },
+  reminderOn() { return this.reminder().on; },
+  setReminder(on) {
+    const r = this.reminder(); r.on = !!on;
+    localStorage.setItem(this.KEY_REMINDER, JSON.stringify(r));
+    return r;
+  },
+  markReminderShown(dateStr) {
+    const r = this.reminder(); r.last = dateStr;
+    localStorage.setItem(this.KEY_REMINDER, JSON.stringify(r));
+  },
 
   /* ---------- Streak harian (retensi) ---------- */
   streak() {
