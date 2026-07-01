@@ -24,6 +24,12 @@ const ordered = [];
 MUSIM.forEach((m) => (m.episodes || []).forEach((id) => { const a = cariAyat(id); if (a && !seen.has(id)) { seen.add(id); ordered.push({ a, musim: m.label }); } }));
 AYAT.forEach((a) => { if (!seen.has(a.id)) { seen.add(a.id); ordered.push({ a, musim: '(tak terdaftar)' }); } });
 
+// Rentang opsional: node tools/ekspor-tashih.js out.html <mulai> <akhir> (nomor episode, 1-indexed)
+const _s = parseInt(process.argv[3], 10), _e = parseInt(process.argv[4], 10);
+const _range = Number.isFinite(_s) && Number.isFinite(_e);
+const _off = _range ? _s - 1 : 0;
+const sel = _range ? ordered.slice(_s - 1, _e) : ordered;
+
 function vizToText(b) {
   if (!b) return '';
   if (b.tipe === 'akar') return `<div class="viz"><b>Akar kata:</b> ${(b.huruf || []).join(' · ')} — ${esc(b.teks)}</div>`;
@@ -65,10 +71,10 @@ const lapisan = (a) => [
   ['Amalan & Kehidupan', a.amalan],
 ].filter(([, v]) => v).map(([t, v]) => `<div class="lap"><h4>${t}</h4><p>${esc(v)}</p></div>`).join('');
 
-const episodes = ordered.map(({ a, musim }, idx) => `
+const episodes = sel.map(({ a, musim }, idx) => `
   <section class="ep">
     <div class="ep-h">
-      <span class="ep-no">#${idx + 1}</span>
+      <span class="ep-no">#${idx + 1 + _off}</span>
       <h2>QS. ${esc(a.surah)} : ${esc(a.ayatNo)} <small>(surah ${a.surahNo} · Juz ${a.juz} · ${esc(musim)} · id: ${esc(a.id)})</small></h2>
     </div>
     <div class="teks">
@@ -122,7 +128,7 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
   <section class="cover">
     <h1>The Quran Lens</h1>
     <div class="sub">Naskah untuk Tashih (Pemeriksaan Keilmuan)</div>
-    <div class="meta">Total: <b>${ordered.length} episode</b> · ${MUSIM.length} musim<br>Mohon koreksi: teks Arab, transliterasi, terjemah, klaim balaghah/akar kata, & riwayat.</div>
+    <div class="meta">${_range ? `Batch pilot: <b>episode #${_s}–#${_e}</b> (${sel.length} episode)` : `Total: <b>${sel.length} episode</b> · ${MUSIM.length} musim`}<br>Mohon koreksi: teks Arab, transliterasi, terjemah, klaim balaghah/akar kata, & riwayat.</div>
     <div class="note">
       <b>Kepada Ustadz/Ahli yang kami hormati,</b><br><br>
       Mohon berkenan memeriksa naskah ini. Fokus tashih:<br>
@@ -138,4 +144,4 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
 </body></html>`;
 
 fs.writeFileSync(out, html);
-console.log('HTML tashih ditulis:', out, '—', ordered.length, 'episode');
+console.log('HTML tashih ditulis:', out, '—', sel.length, 'episode', _range ? `(#${_s}–#${_e})` : '');
