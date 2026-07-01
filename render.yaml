@@ -21,6 +21,13 @@ services:
         value: "false"
       - key: ALLOW_ORIGIN            # domain frontend Anda; "*" boleh untuk awal
         value: "*"
+      # --- Google Play Billing (edisi Play Store) — isi manual saat siap ---
+      - key: GOOGLE_SA_EMAIL         # email service account (akses Play Developer API)
+        sync: false
+      - key: GOOGLE_SA_KEY           # private key PEM service account (baris baru = \n)
+        sync: false
+      - key: PLAY_PACKAGE_NAME       # package name app, mis. id.thequranlens.app
+        sync: false
       # Jika memasang Disk persisten, arahkan penyimpanan ke sana:
       # - key: DATA_FILE
       #   value: /var/data/subs.json

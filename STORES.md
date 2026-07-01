@@ -91,5 +91,14 @@ Karena app sudah PWA, Android bisa dibungkus jadi **TWA** (Trusted Web Activity)
 - ✅ `billing.js` (Digital Goods API + Payment Request) + deteksi TWA + sembunyikan Mayar.
 - ✅ Tombol langganan otomatis reroute ke Play Billing saat di app.
 - ⏳ SKU masih placeholder (`quranlens_bulanan/tahunan`) — sesuaikan dengan Play Console-mu.
-- ⏳ Verifikasi token sisi-server (menyusul, sebelum rilis publik).
+- ✅ **Verifikasi token sisi-server** (`server/play-verify.js` + `POST /api/play/verify`) — Premium hanya aktif setelah Google mengonfirmasi. Perlu env: `GOOGLE_SA_EMAIL`, `GOOGLE_SA_KEY`, `PLAY_PACKAGE_NAME` (isi di Render saat siap).
+
+### Cara menyiapkan Service Account (untuk verifikasi server)
+1. **Google Cloud Console** → buat **Service Account** → unduh **JSON key**.
+2. **Play Console** → *Users & permissions* → undang email service account itu → beri izin **View financial data / Manage orders** (untuk API langganan).
+3. Aktifkan **Google Play Android Developer API** di project Cloud.
+4. Di **Render → Environment**, isi:
+   - `GOOGLE_SA_EMAIL` = client_email dari JSON
+   - `GOOGLE_SA_KEY` = private_key dari JSON (baris baru boleh `\n`)
+   - `PLAY_PACKAGE_NAME` = package name app (mis. `id.thequranlens.app`)
 

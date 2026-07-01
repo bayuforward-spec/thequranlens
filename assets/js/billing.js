@@ -44,9 +44,20 @@ const PlayBilling = {
     await resp.complete('success');
     if (!token) return false;
 
-    // TODO(produksi): kirim { token, sku } ke server → verifikasi ke Google Play
-    // Developer API → baru aktifkan. Untuk sekarang (uji internal) aktifkan lokal
-    // & acknowledge agar langganan tak di-refund otomatis oleh Google.
+    // Verifikasi ke server (aman): Premium hanya aktif bila Google mengonfirmasi.
+    const apiBase = (window.Payment && Payment.CONFIG && Payment.CONFIG.apiBase) || '';
+    if (apiBase) {
+      try {
+        const r = await fetch(apiBase + '/api/play/verify', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, sku }),
+        });
+        const j = await r.json();
+        if (j && j.active) { Store.setPro(paket, 'PLAY'); return true; }
+        return false;
+      } catch (e) { return false; }
+    }
+    // Tanpa server (khusus uji internal): acknowledge lokal & aktifkan langsung.
     try { if (this.service.acknowledge) await this.service.acknowledge(token, 'onetime'); } catch (e) {}
     Store.setPro(paket, 'PLAY:' + token.slice(0, 12));
     return true;

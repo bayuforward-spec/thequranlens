@@ -34,6 +34,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const { URL } = require('url');
+const { verifyPlaySubscription } = require('./play-verify');
 
 const CFG = {
   port: parseInt(process.env.PORT || '8787', 10),
@@ -266,6 +267,31 @@ const server = http.createServer(async (req, res) => {
     Store.upsert(rec);
     console.log(`[webhook] order ${rec.order} -> ${rec.status} (${rec.paket})`);
     return kirimJSON(res, 200, { ok: true, order: rec.order, status: rec.status });
+  }
+
+  // Verifikasi pembelian Google Play (edisi Play Store / TWA)
+  if (req.method === 'POST' && pathname === '/api/play/verify') {
+    let raw;
+    try { raw = await bacaRawBody(req); } catch (e) { return kirimJSON(res, 413, { error: e.message }); }
+    let b;
+    try { b = JSON.parse(raw); } catch { return kirimJSON(res, 400, { active: false, error: 'Body bukan JSON' }); }
+    if (!b.token || !b.sku) return kirimJSON(res, 400, { active: false, error: 'token & sku wajib' });
+    try {
+      const r = await verifyPlaySubscription(b.token, b.sku);
+      if (!r.active) return kirimJSON(res, 200, { active: false, error: r.error });
+      const rec = {
+        order: 'PLAY:' + String(b.token).slice(0, 16),
+        paket: r.paket, email: '', status: 'active', aktif: true,
+        expiresAt: r.expiresAt, source: 'play',
+      };
+      Store.upsert(rec);
+      console.log(`[play] langganan aktif: ${rec.paket} (exp ${r.expiresAt})`);
+      const payload = { order: rec.order, paket: r.paket, expiresAt: r.expiresAt };
+      return kirimJSON(res, 200, { active: true, ...payload, token: buatToken(payload) });
+    } catch (e) {
+      console.warn('[play] verifikasi gagal:', e.message);
+      return kirimJSON(res, 502, { active: false, error: e.message });
+    }
   }
 
   // Verifikasi status langganan (dipanggil aplikasi)
