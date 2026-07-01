@@ -1,7 +1,7 @@
 /* sw.js — Service Worker The Quran Lens (PWA + notifikasi kata harian).
  * Strategi network-first: konten selalu diambil terbaru saat online,
  * cache dipakai sebagai cadangan agar app tetap jalan saat offline. */
-const CACHE = 'quranlens-v1';
+const CACHE = 'quranlens-v2';
 const SHELL = [
   './', 'index.html', 'gratis.html', 'manifest.webmanifest',
   'assets/css/styles.css',
@@ -20,8 +20,11 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
+  const sameOrigin = new URL(e.request.url).origin === self.location.origin;
+  // Same-origin: paksa revalidasi ke server (no-cache) agar konten selalu terbaru.
+  const req = sameOrigin ? fetch(e.request.url, { cache: 'no-cache' }) : fetch(e.request);
   e.respondWith(
-    fetch(e.request)
+    req
       .then((res) => {
         const copy = res.clone();
         caches.open(CACHE).then((c) => c.put(e.request, copy)).catch(() => {});
