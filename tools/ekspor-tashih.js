@@ -15,6 +15,7 @@ const AYAT = global.window.AYAT || [];
 const MUSIM = global.window.MUSIM || [];
 const cariAyat = global.window.cariAyat;
 const out = process.argv[2] || path.join(__dirname, '..', 'tashih.html');
+const WORD = out.toLowerCase().endsWith('.doc'); // mode dokumen Word (HTML .doc)
 
 const esc = (s) => String(s == null ? '' : s);
 
@@ -87,10 +88,13 @@ const episodes = sel.map(({ a, musim }, idx) => `
     <h3>Kajian Ayat Menyeluruh</h3>
     ${lapisan(a)}
     ${Array.isArray(a.sumber) ? `<div class="src big">Rujukan utama: ${a.sumber.map(esc).join(' · ')}</div>` : ''}
-    <div class="catatan"><b>Catatan tashih ustadz:</b><div class="lines"></div></div>
+    <div class="catatan"><b>Catatan tashih ustadz:</b>
+      <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
   </section>`).join('');
 
-const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
+const html = `${WORD
+  ? '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><meta name=ProgId content=Word.Document><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->'
+  : '<!doctype html><html lang="id"><head><meta charset="utf-8">'}<style>
   @page { size: A4; margin: 16mm 14mm; }
   * { box-sizing: border-box; }
   body { font-family: 'Lora', Georgia, serif; color: #1a1a1a; line-height: 1.55; font-size: 11pt; }
@@ -106,17 +110,17 @@ const html = `<!doctype html><html lang="id"><head><meta charset="utf-8"><style>
   .ep-h h2 { font-size: 15pt; margin: 0; }
   .ep-h small { font-weight: 400; color: #777; font-size: 8.5pt; }
   .teks { background: #f7f3e8; border: 1px solid #e5dcc2; border-radius: 8px; padding: 10pt 12pt; margin: 8pt 0; }
-  .arab { font-family: 'Amiri', serif; font-size: 19pt; line-height: 2; direction: rtl; text-align: right; color: #1a1408; }
+  .arab { font-family: 'Amiri', 'Traditional Arabic', 'Arabic Typesetting', 'Scheherazade New', serif; font-size: 19pt; line-height: 2; direction: rtl; text-align: right; color: #1a1408; }
   .latin, .arti { font-size: 10.5pt; margin-top: 4pt; }
   h3 { font-size: 11.5pt; color: #8a6d12; border-bottom: 1px solid #e0d3a8; padding-bottom: 2pt; margin: 12pt 0 6pt; text-transform: uppercase; letter-spacing: .04em; }
   .kata { border: 1px solid #e2e2e2; border-left: 3px solid #c9a84c; border-radius: 6px; padding: 8pt 10pt; margin-bottom: 7pt; page-break-inside: avoid; }
   .kata-h { font-size: 11pt; margin-bottom: 4pt; }
-  .kata-h .ar { font-family: 'Amiri', serif; font-size: 15pt; }
+  .kata-h .ar { font-family: 'Amiri', 'Traditional Arabic', 'Arabic Typesetting', 'Scheherazade New', serif; font-size: 15pt; }
   .kn { background: #eee; border-radius: 4px; padding: 0 5pt; font-size: 8pt; color: #555; }
   .poin { margin: 4pt 0 4pt 16pt; } .poin li { margin-bottom: 2pt; font-size: 10.5pt; }
   .viz { background: #fbf9f1; border: 1px dashed #d9cba0; border-radius: 5px; padding: 5pt 8pt; margin: 5pt 0; font-size: 10pt; }
-  .viz ul { margin: 3pt 0 3pt 16pt; } .viz .ar { font-family: 'Amiri', serif; }
-  .viz b[lang="ar"] { font-family: 'Amiri', serif; font-size: 13pt; }
+  .viz ul { margin: 3pt 0 3pt 16pt; } .viz .ar { font-family: 'Amiri', 'Traditional Arabic', 'Arabic Typesetting', 'Scheherazade New', serif; }
+  .viz b[lang="ar"] { font-family: 'Amiri', 'Traditional Arabic', 'Arabic Typesetting', 'Scheherazade New', serif; font-size: 13pt; }
   .asal { background: #f4f8f4; border-color: #bcd; }
   .chosen { color: #1a7a3a; font-weight: 700; } .alt { color: #999; }
   .mini { font-size: 10pt; font-style: italic; color: #444; margin-top: 4pt; }
