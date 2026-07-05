@@ -22,11 +22,11 @@ const AYAT = [
       {
         kata: 'بِسْمِ', latin: 'Bismi', arti: 'Dengan (menyebut) nama',
         poin: [
-          'بِ — satu huruf bermakna "dengan". Ia menyandarkan seluruh perbuatan kepada Allah.',
-          'Ada kata kerja yang sengaja disembunyikan: "dengan nama Allah, aku memulai".',
+          'بِ — satu huruf yang berfungsi isti‘ānah (mohon pertolongan): "dengan (pertolongan) nama Allah".',
+          'Ada kata kerja yang sengaja disembunyikan di awal: "dengan nama Allah, aku memulai".',
           'Disembunyikan justru agar mencakup apa pun yang sedang kamu mulai.',
         ],
-        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi', 'Mu‘jam Mufaṣṣal I‘rāb'],
       },
       {
         kata: 'اللَّهِ', latin: 'Allāh', arti: 'Allah',
@@ -50,7 +50,7 @@ const AYAT = [
         ],
         akar: { tipe: 'akar', huruf: ['ر', 'ح', 'م'], teks: 'Satu akar: raḥmah (rahmat)' },
         asalKata: { huruf: ['ر', 'ح', 'م'], makna: 'rahim — kandungan ibu',
-          gambar: 'Akar «r-ḥ-m» adalah akar kata «ar-raḥim»: <b>rahim/kandungan ibu</b>. Dari sanalah lahir gambaran rahmat paling murni — ruang yang <b>menyelimuti, menghangatkan, dan menumbuhkan</b> makhluk lemah tanpa diminta dan tanpa balasan. Dalam hadis Nabi ﷺ, Allah berfirman: "Aku Ar-Raḥmān, Aku ciptakan rahim dan Kuambilkan namanya dari nama-Ku." Maka membuka dengan «Ar-Raḥmān Ar-Raḥīm» berarti menghadirkan kasih yang memeluk bak rahim — sebelum satu pun perintah disebut.' },
+          gambar: 'Akar «r-ḥ-m» adalah akar kata «ar-raḥim»: <b>rahim/kandungan ibu</b>. Dari sanalah lahir gambaran rahmat paling murni — ruang yang <b>menyelimuti, menghangatkan, dan menumbuhkan</b> makhluk lemah tanpa diminta dan tanpa balasan. Dalam hadis Nabi ﷺ, Allah berfirman: "Aku Ar-Raḥmān, Aku menciptakan rahim dan Aku ambilkan namanya dari nama-Ku. Maka barangsiapa menyambungnya (silaturahim), Aku menyambung hubungan dengannya; dan barangsiapa memutuskannya, Aku memutus darinya." Maka membuka dengan «Ar-Raḥmān Ar-Raḥīm» berarti menghadirkan kasih yang memeluk bak rahim — sebelum satu pun perintah disebut.' },
         banding: { tipe: 'banding', item: [
           { arab: 'الرَّحْمَٰن', latin: 'Ar-Raḥmān', sifat: ['Pola «fa‘lān» → keluasan', 'Untuk SELURUH makhluk', 'Di dunia'] },
           { arab: 'الرَّحِيم', latin: 'Ar-Raḥīm', sifat: ['Pola «fa‘īl» → kesinambungan', 'Khusus orang beriman', 'Kekal · di akhirat'] },
@@ -89,6 +89,8 @@ const AYAT = [
       'Dua nama dipilih dari akar yang sama (raḥmah): «Ar-Raḥmān» dan «Ar-Raḥīm». «Ar-Raḥmān» berpola «fa‘lān» yang menunjukkan keluasan dan kepenuhan — rahmat yang meliputi SELURUH makhluk, mukmin maupun kafir, di dunia. «Ar-Raḥīm» berpola «fa‘īl» yang menunjukkan kesinambungan & kekhususan — rahmat yang terus-menerus, khusus bagi orang beriman di akhirat. Maka berpasangan keduanya merangkum rahmat Allah yang luas (kuantitas) sekaligus kekal (kontinuitas) — keseimbangan yang tak terwakili satu kata saja.',
     amalan:
       'Biasakan ucapkan "Bismillah" saat makan, masuk rumah, bekerja, hingga menyalakan kendaraan. Saat merasa berat memulai sesuatu (tugas, taubat, langkah baru), mulailah dengan menyebut nama Allah agar hati lebih ringan dan yakin ditolong.',
+    catatanUstadz:
+      'Jangan memahami basmalah sebagai jaminan keberhasilan dunia. Basmalah adalah sebab untuk memohon pertolongan dan keberkahan Allah — hasil akhirnya tetap sesuai hikmah dan kehendak-Nya.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
@@ -97,7 +99,7 @@ const AYAT = [
       {
         kata: 'الْحَمْدُ', latin: 'Al-Ḥamd', arti: 'Segala puji',
         poin: [
-          '«Al-» (istighrāq) = SEGALA macam pujian, dari siapa pun, kapan pun — seluruhnya milik Allah.',
+          '«Al-» di sini istighrāq (SEGALA macam pujian) sekaligus li al-jins (SEGALA jenis pujian) — seluruhnya milik Allah.',
           'Dia dipuji atas keindahan Dzat-Nya, bukan hanya atas pemberian — dipuji walau kau belum menerima apa-apa.',
           'Disusun tanpa kata kerja → pujian itu TETAP & abadi milik-Nya, bukan kejadian sesaat.',
         ],
@@ -173,6 +175,8 @@ const AYAT = [
       'Dipilih «al-ḥamd» (dengan alif-lam istighrāq) bukan «ḥamd» — maknanya SEGALA jenis pujian, mutlak dan menyeluruh, hanya milik Allah. «Ḥamd» pun berbeda dari «madḥ»: ḥamd adalah pujian yang disertai cinta dan pengagungan, sedangkan madḥ bisa sekadar sanjungan tanpa rasa. Lalu «Rabb» — satu kata padat yang mencakup Pencipta, Pemilik, Pemelihara, sekaligus Pengatur; jauh lebih luas dari sekадar "Tuhan". «Al-‘ālamīn» (seluruh alam) menegaskan rububiyah-Nya tak terbatas pada manusia saja.',
     amalan:
       'Jadikan "Alhamdulillah" refleks atas nikmat kecil sekalipun (napas, makanan, kesehatan). Latih "jurnal syukur" — tulis 3 nikmat tiap malam. Saat mengeluh, hentikan dan ganti dengan menghitung yang sudah Allah beri.',
+    catatanUstadz:
+      'Tetaplah mengucap "Alhamdulillah" meski sedang diuji. Sebab Allah tetap memiliki sifat-sifat yang sempurna dan layak dipuji dalam setiap keadaan. Ketahuilah, di balik ujian ada skenario Allah yang besar untuk kehidupanmu yang lebih baik.',
     sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395', 'Tafsir As-Sa‘di'],
   },
   {
@@ -222,6 +226,8 @@ const AYAT = [
       'Perhatikan penempatannya. Setelah «Rabbil ‘ālamīn» yang menonjolkan kekuasaan dan keagungan (bisa membangkitkan rasa gentar), Allah segera mengulang «Ar-Raḥmānir-Raḥīm». Susunan ini menyeimbangkan jiwa: tepat saat hati membesarkan keagungan-Nya, ia langsung ditenangkan oleh rahmat-Nya. Pengulangan di sini bukan sekadar penegasan, tapi penataan emosi pembaca — sebuah keindahan struktur (naẓm) yang khas Al-Qur’an.',
     amalan:
       'Saat merasa dosa terlalu banyak hingga putus asa dari ampunan, ingat ayat ini: Penguasa semesta itu Maha Pengasih. Jangan biarkan rasa takut menjauhkanmu dari-Nya; justru datang dan memohon ampun adalah wujud beriman pada rahmat-Nya.',
+    catatanUstadz:
+      'Ibadah yang benar dibangun atas keseimbangan tiga hal: mahabbah (cinta), khauf (takut), dan rajā’ (harap).',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
@@ -275,7 +281,7 @@ const AYAT = [
     gratis: false,
     arab: 'مَالِكِ يَوْمِ الدِّينِ',
     latin: 'Māliki yaumid-dīn.',
-    arti: 'Pemilik (Raja) hari pembalasan.',
+    arti: 'Yang menguasai hari pembalasan.',
     asbabunNuzul:
       'Tidak ada asbabun nuzul khusus. Ayat ini mengalihkan kesadaran pembaca dari rahmat ke pertanggungjawaban, menyeimbangkan harap dengan rasa tanggung jawab.',
     tafsir:
@@ -283,9 +289,11 @@ const AYAT = [
     hikmah:
       'Keyakinan akan hari pembalasan adalah rem moral terkuat: ia menjaga manusia tetap jujur saat sendirian, karena sadar semua dipertanggungjawabkan.',
     linguistik:
-      'Ada dua qira’at mutawatir yang keduanya sahih: «Māliki» (Pemilik) dan «Māliki» dibaca «Māliki/Māaliki» (Raja/Penguasa). Keindahannya, kedua bacaan saling melengkapi makna: «Mālik» menekankan kepemilikan penuh atas hari itu, sedangkan «Malik» menekankan kedaulatan & otoritas memerintah. Dipilih pula «yaumid-dīn» (hari pembalasan) — kata «dīn» di sini bermakna "balasan/perhitungan", menegaskan bahwa hari itu adalah hari keadilan sempurna, bukan sekadar akhir kehidupan.',
+      'Ada dua qira’at mutawatir yang keduanya sahih: «Mālik» (dibaca "Māliki" — Pemilik) dan «Malik» (dibaca "Maliki" — Raja/Penguasa). Keindahannya, kedua bacaan saling melengkapi makna: «Mālik» menekankan kepemilikan penuh atas hari itu, sedangkan «Malik» menekankan kedaulatan & otoritas memerintah. Dipilih pula «yaumid-dīn» (hari pembalasan) — kata «dīn» di sini bermakna "balasan/perhitungan", menegaskan bahwa hari itu adalah hari keadilan sempurna, bukan sekadar akhir kehidupan.',
     amalan:
       'Sebelum mengambil keputusan saat tidak ada yang melihat (transaksi, ujian, janji), hadirkan kesadaran "Māliki yaumid-dīn" — ada hari ketika ini semua dihisab. Ini melatih integritas dari dalam, bukan karena takut manusia.',
+    catatanUstadz:
+      'Jangan tertipu oleh kekuasaan dunia. Semua jabatan, kekayaan, dan pengaruh akan berakhir. Pada hari pembalasan, hanya Allah yang memiliki kekuasaan mutlak.',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi', 'Kitab qira’at mutawatir'],
   },
   {
@@ -334,7 +342,7 @@ const AYAT = [
     latin: 'Iyyāka na‘budu wa iyyāka nasta‘īn.',
     arti: 'Hanya kepada Engkau kami menyembah dan hanya kepada Engkau kami memohon pertolongan.',
     asbabunNuzul:
-      'Tidak ada asbabun nuzul khusus. Ayat ini adalah poros Al-Fatihah: peralihan dari memuji Allah (ayat 1–4) menuju ikrar penghambaan dan permohonan (ayat 5–7). Dalam hadis qudsi, Allah menyebut ayat ini "antara Aku dan hamba-Ku".',
+      'Tidak ada asbabun nuzul khusus. Ayat ini adalah poros Al-Fatihah: peralihan dari mengenal & memuji Allah (ayat 1–4) menuju ikrar penghambaan dan permohonan. Dalam hadis qudsi, Allah menyebut bagian ini "antara Aku dan hamba-Ku, dan bagi hamba-Ku apa yang ia minta".',
     tafsir:
       'Pengakuan bahwa ibadah hanya ditujukan kepada Allah, dan pertolongan hanya dimohon dari-Nya. Ibadah didahulukan atas permohonan: tunaikan dulu hak Allah, baru sampaikan kebutuhan diri.',
     hikmah:
@@ -343,6 +351,8 @@ const AYAT = [
       'Inilah keajaiban yang sering membuat orang merinding. Kata «iyyāka» (objek: "hanya kepada-Mu") didahulukan sebelum kata kerja «na‘budu» (menyembah). Dalam kaidah balaghah, mendahulukan objek (taqdīmul ma‘mūl) berfungsi sebagai «ḥaṣr» — pembatasan mutlak: "hanya kepada-Mu, tidak kepada yang lain." Lebih menakjubkan lagi, terjadi «iltifāt» (peralihan gaya): dari membicarakan Allah sebagai orang ketiga ("Dia, Tuhan semesta alam") menjadi menyapa-Nya langsung sebagai orang kedua ("Engkau"). Seolah, setelah memuji-Nya, hamba menjadi begitu dekat hingga berani berbicara langsung di hadapan-Nya. Dan «na‘budu» didahulukan dari «nasta‘īn»: hak Allah (ibadah) sebelum kepentingan diri (pertolongan).',
     amalan:
       'Resapi ayat ini di setiap salat sebagai pembaruan ikrar: aku tak mengabdi pada gengsi, atasan, atau harta — hanya pada Allah. Saat menghadapi masalah, datangi Allah lebih dulu (doa, salat hajat) sebelum bergantung pada manusia.',
+    catatanUstadz:
+      'Masalah terbesar manusia bukan kurang rezeki, tetapi kurang mengenal Rabb-nya. Karena itu Al-Fatihah tidak dibuka dengan permintaan, melainkan dengan pengenalan tentang siapa Allah yang sedang kita hadapi.',
     sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395 (hadis qudsi)', 'Tafsir As-Sa‘di'],
   },
   {

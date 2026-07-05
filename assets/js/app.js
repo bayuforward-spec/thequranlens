@@ -22,6 +22,7 @@ const App = {
     { key: 'linguistik',   ico: '✨', label: 'Kajian Linguistik',  premium: true, comparison: true },
     { key: 'hikmah',       ico: '🌿', label: 'Hikmah',             premium: false },
     { key: 'amalan',       ico: '🤲', label: 'Amalan & Kehidupan', premium: true },
+    { key: 'catatanUstadz', ico: '✔︎', label: 'Catatan Ustadz', premium: false },
   ],
 
   PAKET: [
