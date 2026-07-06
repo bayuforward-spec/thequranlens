@@ -61,7 +61,7 @@ const AYAT = [
     hikmahPoin: [
       'Mulai dengan nama-Nya — bukan dengan kekuatanmu.',
       'Yang biasa pun berubah jadi ibadah.',
-      'Berat melangkah? Bismillah dulu.',
+      'Berat melangkah? Bismillah dulu — bukan agar masalah lenyap, tapi agar hati ingat kamu tak berjalan sendiri.',
     ],
     visual: [
       { tipe: 'akar', huruf: ['ر', 'ح', 'م'], teks: 'Satu akar: raḥmah (rahmat)' },
@@ -2751,7 +2751,7 @@ AYAT.forEach(a => {
 // Hikmah singkat untuk SETIAP kata yang dikaji (urut sesuai kajianKata tiap episode).
 const HIKMAH_KATA = {
   'al-fatihah-1': [
-    'Kamu tak pernah memulai sendirian. Sebut nama-Nya, langkah kecil pun jadi besar.',
+    'Kamu tak pernah memulai sendirian. Sebut nama-Nya, dan langkahmu bersandar pada Yang Maha Kuat.',
     'Saat menyebut nama-Nya, kamu sedang menyandarkan diri pada satu-satunya yang tak pernah lemah.',
     'Sebelum perintah, sebelum ancaman — Dia perkenalkan diri lewat rahmat. Begitu Dia ingin dikenal.',
   ],
@@ -2759,7 +2759,7 @@ const HIKMAH_KATA = {
     'Memuji-Nya menjernihkan hati dari ujub. Yang hebat darimu, asalnya dari-Nya.',
     'Pujianmu bukan hadiah untuk-Nya — itu pengakuan atas yang memang milik-Nya.',
     'Dia tak sekadar mencipta lalu pergi. Dia memelihara, tiap detik, termasuk detik ini.',
-    'Kamu satu di antara tak terhitung makhluk yang Dia urus — dan Dia tak pernah keteteran.',
+    'Kamu satu di antara makhluk tak terhitung yang Dia urus — dan tak satu pun luput dari pemeliharaan-Nya.',
   ],
   'al-fatihah-3': [
     'Diagungkan, lalu ditenangkan. Sebesar apa pun takutmu pada-Nya, rahmat-Nya selalu lebih besar.',
