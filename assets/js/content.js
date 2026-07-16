@@ -367,8 +367,8 @@ const AYAT = [
         banding: { tipe: 'banding', item: [
           { arab: 'اهْدِنَا', latin: 'Ihdinā', sifat: ['Menuntun lembut + tunjukkan jalan', 'Sekaligus teguhkan di atasnya'] },
           { arab: 'أَرْشِدْنَا', latin: 'Arshidnā', alt: true, sifat: ['Sekadar "beri petunjuk arah"', 'Tanpa kelembutan menuntun'] },
-        ], catatan: '«hidāyah» menuntun dengan lembut sampai tujuan — lebih dari sekadar menunjukkan arah.' },
-        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
+        ], catatan: '«hidāyah» bukan sekadar menunjukkan arah — ia menuntun, memberi taufik, memudahkan, meneguhkan hati, dan mengantarkan hingga tujuan.' },
+        sumber: ['Tafsir Al-Qurthubi', 'Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'الصِّرَاطَ الْمُسْتَقِيمَ', latin: 'aṣ-Ṣirāṭal-mustaqīm', arti: 'jalan yang lurus',
@@ -379,10 +379,11 @@ const AYAT = [
         banding: { tipe: 'banding', item: [
           { arab: 'الصِّرَاط', latin: 'aṣ-Ṣirāṭ', sifat: ['Tunggal & definitif', 'Satu jalan lurus'] },
           { arab: 'سُبُل', latin: 'Subul', alt: true, sifat: ['Bentuk jamak', 'Jalan-jalan yang bercabang / sesat'] },
+          { arab: 'طَرِيق', latin: 'Ṭarīq', alt: true, sifat: ['Jalan yang sudah dilalui', 'Sekadar rute — tanpa jaminan lurus'] },
         ], catatan: 'Satu jalan lurus — melawan banyak jalan yang menyesatkan.' },
         asalKata: { huruf: ['ص', 'ر', 'ط'], makna: 'menelan / melahap',
           gambar: 'Akar «ṣ-r-ṭ» bermakna <b>menelan</b> (saraṭa asy-syai’a: ia melahapnya). Orang Arab menamai jalan besar «ṣirāṭ» karena ia begitu <b>luas dan terang</b> hingga seakan "menelan" siapa pun yang melaluinya — pejalan seolah lenyap ditelan lebarnya, tak tersesat ke tepi. Maka «aṣ-ṣirāṭ al-mustaqīm» bukan lorong sempit yang membuat ragu, melainkan jalan benderang yang sanggup menampung semua penempuhnya menuju satu tujuan.' },
-        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi', 'Mu‘jam Maqayis al-Lughah', 'Lisan al-‘Arab', 'Kamus Al-Munawwir', 'Al-Itqan'],
       },
     ],
     hikmahPoin: [
@@ -415,6 +416,8 @@ const AYAT = [
       'Dipilih «aṣ-ṣirāṭ» (jalan) dalam bentuk tunggal-definitif (ma‘rifah): satu jalan lurus yang jelas, berlawanan dengan ayat lain yang menyebut «subul» (jalan-jalan, jamak) untuk jalan-jalan sesat yang bercabang. «Al-mustaqīm» berarti lurus tanpa belok — jalan terdekat menuju tujuan. Menariknya, doa ini memakai kata kerja perintah «ihdinā» (bimbinglah kami) padahal diucapkan oleh orang yang sudah beriman — menyiratkan bahwa hidayah berlapis: hidayah menuju kebenaran DAN hidayah keteguhan di atasnya.',
     amalan:
       'Saat membaca ayat ini dalam salat, hadirkan benar-benar permohonannya — jangan otomatis. Jadikan ia doa saat bingung mengambil keputusan besar (karier, jodoh, hijrah): "Ya Allah, tunjukkan jalan yang lurus." Lalu ikhtiar dengan ilmu dan istikharah.',
+    catatanUstadz:
+      'Setiap keputusan hidup butuh hidayah Allah. Dalam memilih pekerjaan, pasangan, teman, atau mengambil keputusan apa pun, biasakan memohon: "Ya Allah, tunjukkilah aku jalan yang Engkau ridai."',
     sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
@@ -447,7 +450,7 @@ const AYAT = [
           'Mereka yang beramal tanpa ilmu → tersesat.',
           'Selamat menuntut dua: ilmu yang benar + amal yang lurus.',
         ],
-        sumber: ['Tafsir As-Sa‘di'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir at-Tanwir'],
       },
     ],
     hikmahPoin: [
@@ -480,7 +483,9 @@ const AYAT = [
       'Perhatikan keindahan adab dalam pemilihan kata. Saat menyebut nikmat, Allah memakai kalimat aktif yang menyandarkan langsung kepada diri-Nya: «an‘amta ‘alaihim» (Engkau yang memberi nikmat). Namun saat menyebut murka, dipakai bentuk pasif «al-magḍūbi ‘alaihim» (mereka yang dimurkai) — TIDAK dikatakan "yang Engkau murkai". Penyandaran nikmat kepada Allah dan penghindaran penyandaran murka secara langsung adalah puncak adab dalam berbicara tentang Allah: kebaikan dinisbatkan kepada-Nya, sedangkan keburukan tidak dilekatkan langsung pada-Nya, sebab murka itu lahir dari perbuatan hamba sendiri.',
     amalan:
       'Setelah membaca ayat ini, ucapkan "āmīn" dengan penuh harap. Jadikan ia pengingat untuk selalu memadukan ilmu dan amal: jangan menunda mengamalkan kebaikan yang sudah diketahui, dan jangan beribadah/bermuamalah tanpa belajar dasarnya lebih dulu.',
-    sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi (riwayat tiga golongan)', 'Tafsir As-Sa‘di'],
+    catatanUstadz:
+      'Ilmu tanpa amal menjerumuskan pada kemurkaan Allah; amal tanpa ilmu menjerumuskan pada kesesatan. Seorang muslim harus menggabungkan keduanya: belajar kebenaran lalu mengamalkannya dengan ikhlas.',
+    sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi (riwayat tiga golongan)', 'Tafsir As-Sa‘di', 'Tafsir at-Tanwir'],
   },
 
   /* ============ SURAH AL-BAQARAH (2) ============ */
