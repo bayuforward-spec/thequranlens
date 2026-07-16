@@ -39,7 +39,7 @@ const AYAT = [
           { arab: 'اللَّه', latin: 'Allāh', sifat: ['Nama Dzat', 'Khusus, tak tertandingi'] },
           { arab: 'إِلٰه', latin: 'ilāh', alt: true, sifat: ['"Sembahan" — umum', 'Bisa untuk apa saja yang disembah'] },
         ], catatan: 'Dipakai nama Dzat «Allāh», bukan kata umum «ilāh».' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
       {
         kata: 'الرَّحْمَٰنِ الرَّحِيمِ', latin: 'Ar-Raḥmān Ar-Raḥīm', arti: 'Yang Maha Pengasih lagi Maha Penyayang',
@@ -55,7 +55,7 @@ const AYAT = [
           { arab: 'الرَّحْمَٰن', latin: 'Ar-Raḥmān', sifat: ['Pola «fa‘lān» → keluasan', 'Untuk SELURUH makhluk', 'Di dunia'] },
           { arab: 'الرَّحِيم', latin: 'Ar-Raḥīm', sifat: ['Pola «fa‘īl» → kesinambungan', 'Khusus orang beriman', 'Kekal · di akhirat'] },
         ], catatan: 'Luas (kuantitas) sekaligus kekal (kontinuitas).' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
     ],
     hikmahPoin: [
@@ -91,7 +91,7 @@ const AYAT = [
       'Biasakan ucapkan "Bismillah" saat makan, masuk rumah, bekerja, hingga menyalakan kendaraan. Saat merasa berat memulai sesuatu (tugas, taubat, langkah baru), mulailah dengan menyebut nama Allah agar hati lebih ringan dan yakin ditolong.',
     catatanUstadz:
       'Jangan memahami basmalah sebagai jaminan keberhasilan dunia. Basmalah adalah sebab untuk memohon pertolongan dan keberkahan Allah — hasil akhirnya tetap sesuai hikmah dan kehendak-Nya.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-fatihah-2',
@@ -110,7 +110,7 @@ const AYAT = [
           { arab: 'مَدْح', latin: 'Madḥ', alt: true, sifat: ['Bisa tanpa rasa / demi pamrih', 'Untuk siapa & apa saja'] },
           { arab: 'شُكْر', latin: 'Syukr', alt: true, sifat: ['Hanya atas nikmat yang diterima', 'Tak mencakup pujian atas Dzat'] },
         ], catatan: 'Dipilih «al-ḥamd» — puncak pujian: tulus, atas Dzat-Nya, bukan sekadar balas budi.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'لِلَّهِ', latin: 'Lillāh', arti: 'Bagi / milik Allah',
@@ -130,7 +130,7 @@ const AYAT = [
           { arab: 'رَبّ', latin: 'Rabb', sifat: ['Pencipta + Pemilik', 'Pemelihara + Pengatur'] },
           { arab: 'خَالِق', latin: 'Khāliq', alt: true, sifat: ['"Pencipta" saja', 'Tak mencakup memelihara & mengatur'] },
         ], catatan: '«Rabb» jauh lebih luas — mencipta sekaligus terus memelihara.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'الْعَالَمِينَ', latin: 'Al-‘ālamīn', arti: 'Seluruh alam',
@@ -177,7 +177,7 @@ const AYAT = [
       'Jadikan "Alhamdulillah" refleks atas nikmat kecil sekalipun (napas, makanan, kesehatan). Latih "jurnal syukur" — tulis 3 nikmat tiap malam. Saat mengeluh, hentikan dan ganti dengan menghitung yang sudah Allah beri.',
     catatanUstadz:
       'Tetaplah mengucap "Alhamdulillah" meski sedang diuji. Sebab Allah tetap memiliki sifat-sifat yang sempurna dan layak dipuji dalam setiap keadaan. Ketahuilah, di balik ujian ada skenario Allah yang besar untuk kehidupanmu yang lebih baik.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395'],
+    sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395', 'Tafsir As-Sa‘di'],
   },
   {
     id: 'al-fatihah-3',
@@ -193,7 +193,7 @@ const AYAT = [
           { arab: 'رَبِّ الْعَالَمِين', latin: 'Rabbil ‘ālamīn', sifat: ['Keagungan & kuasa', 'Bisa membangkitkan gentar'] },
           { arab: 'الرَّحْمٰنِ الرَّحِيم', latin: 'Ar-Raḥmān Ar-Raḥīm', sifat: ['Rahmat & kasih', 'Menenangkan jiwa'] },
         ], catatan: 'Susunannya menyeimbangkan takut & harap.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
     ],
     hikmahPoin: [
@@ -228,7 +228,7 @@ const AYAT = [
       'Saat merasa dosa terlalu banyak hingga putus asa dari ampunan, ingat ayat ini: Penguasa semesta itu Maha Pengasih. Jangan biarkan rasa takut menjauhkanmu dari-Nya; justru datang dan memohon ampun adalah wujud beriman pada rahmat-Nya.',
     catatanUstadz:
       'Ibadah yang benar dibangun atas keseimbangan tiga hal: mahabbah (cinta), khauf (takut), dan rajā’ (harap).',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-fatihah-4',
@@ -259,7 +259,7 @@ const AYAT = [
           { arab: 'يَوْمِ الدِّين', latin: 'Yaumid-dīn', sifat: ['Hari PEMBALASAN / perhitungan', 'Menonjolkan keadilan & hisab'] },
           { arab: 'يَوْمِ الْقِيَامَة', latin: 'Yaumil-qiyāmah', alt: true, sifat: ['"Hari kebangkitan"', 'Menonjolkan peristiwa, bukan hisab'] },
         ], catatan: 'Dipilih «dīn» — fokus pada keadilan & pertanggungjawaban.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
     ],
     hikmahPoin: [
@@ -319,7 +319,7 @@ const AYAT = [
           'Ibadah didahulukan dari permohonan: hak Allah dulu, baru kebutuhanmu.',
           '«iyyāka» diulang — pembatasan ditegaskan dua kali.',
         ],
-        sumber: [],
+        sumber: ['Tafsir As-Sa‘di'],
       },
     ],
     hikmahPoin: [
@@ -353,7 +353,7 @@ const AYAT = [
       'Resapi ayat ini di setiap salat sebagai pembaruan ikrar: aku tak mengabdi pada gengsi, atasan, atau harta — hanya pada Allah. Saat menghadapi masalah, datangi Allah lebih dulu (doa, salat hajat) sebelum bergantung pada manusia.',
     catatanUstadz:
       'Masalah terbesar manusia bukan kurang rezeki, tetapi kurang mengenal Rabb-nya. Karena itu Al-Fatihah tidak dibuka dengan permintaan, melainkan dengan pengenalan tentang siapa Allah yang sedang kita hadapi.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395 (hadis qudsi)'],
+    sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 395 (hadis qudsi)', 'Tafsir As-Sa‘di'],
   },
   {
     id: 'al-fatihah-6',
@@ -368,7 +368,7 @@ const AYAT = [
           { arab: 'اهْدِنَا', latin: 'Ihdinā', sifat: ['Menuntun lembut + tunjukkan jalan', 'Sekaligus teguhkan di atasnya'] },
           { arab: 'أَرْشِدْنَا', latin: 'Arshidnā', alt: true, sifat: ['Sekadar "beri petunjuk arah"', 'Tanpa kelembutan menuntun'] },
         ], catatan: '«hidāyah» menuntun dengan lembut sampai tujuan — lebih dari sekadar menunjukkan arah.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
       {
         kata: 'الصِّرَاطَ الْمُسْتَقِيمَ', latin: 'aṣ-Ṣirāṭal-mustaqīm', arti: 'jalan yang lurus',
@@ -415,7 +415,7 @@ const AYAT = [
       'Dipilih «aṣ-ṣirāṭ» (jalan) dalam bentuk tunggal-definitif (ma‘rifah): satu jalan lurus yang jelas, berlawanan dengan ayat lain yang menyebut «subul» (jalan-jalan, jamak) untuk jalan-jalan sesat yang bercabang. «Al-mustaqīm» berarti lurus tanpa belok — jalan terdekat menuju tujuan. Menariknya, doa ini memakai kata kerja perintah «ihdinā» (bimbinglah kami) padahal diucapkan oleh orang yang sudah beriman — menyiratkan bahwa hidayah berlapis: hidayah menuju kebenaran DAN hidayah keteguhan di atasnya.',
     amalan:
       'Saat membaca ayat ini dalam salat, hadirkan benar-benar permohonannya — jangan otomatis. Jadikan ia doa saat bingung mengambil keputusan besar (karier, jodoh, hijrah): "Ya Allah, tunjukkan jalan yang lurus." Lalu ikhtiar dengan ilmu dan istikharah.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-fatihah-7',
@@ -431,7 +431,7 @@ const AYAT = [
           { arab: 'أَنْعَمْتَ عَلَيْهِم', latin: 'an‘amta ‘alaihim', sifat: ['Bentuk AKTIF', 'Disandarkan ke Allah'] },
           { arab: 'الْمَغْضُوبِ عَلَيْهِم', latin: 'al-magḍūbi ‘alaihim', alt: true, sifat: ['Bentuk PASIF', 'Tak disandarkan langsung'] },
         ], catatan: 'Adab: kebaikan dinisbatkan kepada-Nya; murka tidak.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ', latin: 'gairil-magḍūbi ‘alaihim', arti: 'bukan (jalan) mereka yang dimurkai',
@@ -447,7 +447,7 @@ const AYAT = [
           'Mereka yang beramal tanpa ilmu → tersesat.',
           'Selamat menuntut dua: ilmu yang benar + amal yang lurus.',
         ],
-        sumber: [],
+        sumber: ['Tafsir As-Sa‘di'],
       },
     ],
     hikmahPoin: [
@@ -480,7 +480,7 @@ const AYAT = [
       'Perhatikan keindahan adab dalam pemilihan kata. Saat menyebut nikmat, Allah memakai kalimat aktif yang menyandarkan langsung kepada diri-Nya: «an‘amta ‘alaihim» (Engkau yang memberi nikmat). Namun saat menyebut murka, dipakai bentuk pasif «al-magḍūbi ‘alaihim» (mereka yang dimurkai) — TIDAK dikatakan "yang Engkau murkai". Penyandaran nikmat kepada Allah dan penghindaran penyandaran murka secara langsung adalah puncak adab dalam berbicara tentang Allah: kebaikan dinisbatkan kepada-Nya, sedangkan keburukan tidak dilekatkan langsung pada-Nya, sebab murka itu lahir dari perbuatan hamba sendiri.',
     amalan:
       'Setelah membaca ayat ini, ucapkan "āmīn" dengan penuh harap. Jadikan ia pengingat untuk selalu memadukan ilmu dan amal: jangan menunda mengamalkan kebaikan yang sudah diketahui, dan jangan beribadah/bermuamalah tanpa belajar dasarnya lebih dulu.',
-    sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi (riwayat tiga golongan)'],
+    sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi (riwayat tiga golongan)', 'Tafsir As-Sa‘di'],
   },
 
   /* ============ SURAH AL-BAQARAH (2) ============ */
@@ -525,7 +525,7 @@ const AYAT = [
       'Inilah salah satu isyarat i‘jāz yang paling memukau. Surah-surah berhuruf muqaṭṭa‘ah hampir selalu disusul penyebutan tentang Al-Qur’an (di sini: «Żālikal-kitāb…»). Seolah Allah menantang: Al-Qur’an ini tersusun dari huruf-huruf yang SAMA PERSIS dengan yang kalian (bangsa Arab) kuasai dan banggakan — alif, lām, mīm — namun kalian tetap tak mampu menyusun yang menyamainya. Tantangan «i‘jāz» disampaikan justru lewat bahan baku yang paling dikenal lawan, membungkam mereka dengan "senjata" mereka sendiri. Para ahli bahasa Arab terbaik pun tak sanggup menjawabnya.',
     amalan:
       'Saat menemui hal dalam agama yang belum kau pahami, jangan terburu menolak; akui keterbatasan ilmu dan teruslah belajar. Jadikan huruf-huruf ini pengingat untuk merenungi betapa Al-Qur’an mustahil dikarang manusia — penguat iman saat ragu.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi', 'Tafsir As-Sa‘di'],
   },
   {
     id: 'al-baqarah-2',
@@ -540,7 +540,7 @@ const AYAT = [
           { arab: 'ذٰلِكَ', latin: 'Żālika (itu)', sifat: ['Isyarat "jauh"', 'Mengagungkan', 'Kedudukan tinggi'] },
           { arab: 'هٰذَا', latin: 'Hāżā (ini)', alt: true, sifat: ['Isyarat "dekat"', 'Biasa'] },
         ], catatan: 'Dipilih «żālika» — meninggikan derajat kitab ini.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'الْكِتَابُ', latin: 'Al-Kitāb', arti: 'Kitab (Al-Qur’an)',
@@ -585,7 +585,7 @@ const AYAT = [
           { arab: 'لِّلْمُتَّقِينَ', latin: 'lil-muttaqīn', sifat: ['Membimbing khusus yang bertakwa', 'Hati yang siap menerima'] },
           { arab: 'لِلنَّاسِ', latin: 'lin-nās', alt: true, sifat: ['Petunjuk untuk semua (2:185)', 'Tersedia, tapi tak semua memetik'] },
         ], catatan: 'Tersedia bagi semua (lin-nās), tapi yang benar-benar TERBIMBING: muttaqīn.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
     ],
     hikmahPoin: [
@@ -618,7 +618,7 @@ const AYAT = [
       'Dipilih kata tunjuk «żālika» (itu — untuk yang jauh), bukan «hāżā» (ini — untuk yang dekat), padahal Al-Qur’an ada di hadapan. Pemakaian isyarat "jauh" di sini justru untuk MENGAGUNGKAN: menunjuk ketinggian dan keluhuran derajat kitab ini, seakan kedudukannya jauh tinggi di atas. Lalu «lā raiba fīh» — peniadaan keraguan dengan «lā» yang menafikan jenis (tidak ada keraguan apa pun, sekecil apa pun). Dan «hudan» (petunjuk) berbentuk nakirah untuk mengisyaratkan keagungan dan keluasan petunjuk itu. Susunan ini menegaskan kepastian mutlak sekaligus kemuliaan kitab dalam beberapa kata ringkas.',
     amalan:
       'Bangun hubungan harian dengan Al-Qur’an meski sedikit (satu ayat dengan maknanya). Tingkatkan takwa — sebab makin bertakwa, makin terbuka pintu memahami petunjuknya. Saat ragu dalam hidup, kembalikan standar pada Al-Qur’an yang "lā raiba fīh".',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-baqarah-3-4',
@@ -633,7 +633,7 @@ const AYAT = [
           { arab: 'يُؤْمِنُونَ', latin: 'Yu’minūn (kini)', sifat: ['Bentuk present · berkelanjutan', 'Iman yang sedang dijalani'] },
           { arab: 'آمَنُوا', latin: 'Āmanū (lampau)', alt: true, sifat: ['Bentuk lampau · selesai', 'Seolah peristiwa yang telah usai'] },
         ], catatan: 'Dipakai bentuk «kini» — iman bukan peristiwa yang telah terjadi, tapi keadaan yang terus hidup.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'وَيُقِيمُونَ الصَّلَاةَ', latin: 'wa yuqīmūnaṣ-ṣalāh', arti: 'dan menegakkan salat',
@@ -647,7 +647,7 @@ const AYAT = [
           { arab: 'يُقِيمُونَ', latin: 'Yuqīmūn', sifat: ['Menegakkan', 'Sempurna & khusyuk'] },
           { arab: 'يُصَلُّونَ', latin: 'Yuṣallūn', alt: true, sifat: ['Sekadar mengerjakan', 'Gugur kewajiban'] },
         ], catatan: 'Salat bukan dalam jadwal mereka — ia dalam arsitektur mereka.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'وَمِمَّا رَزَقْنَاهُمْ يُنفِقُونَ', latin: 'wa mimmā razaqnāhum yunfiqūn', arti: 'dan menginfakkan sebagian rezeki Kami',
@@ -655,7 +655,7 @@ const AYAT = [
           '«min» (sebagian) — meringankan; tak diminta semuanya.',
           '"Rezeki dari Kami" — harta itu titipan; berinfak = mengembalikan pemberian-Nya.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
       {
         kata: 'وَالَّذِينَ يُؤْمِنُونَ بِمَا أُنزِلَ إِلَيْكَ وَمَا أُنزِلَ مِن قَبْلِكَ', latin: 'wallażīna yu’minūna bimā unzila ilaika wa mā unzila min qablik', arti: 'dan beriman pada wahyu kepadamu & sebelummu',
@@ -675,7 +675,7 @@ const AYAT = [
           { arab: 'يُوقِنُونَ', latin: 'Yūqinūn', sifat: ['Yaqīn: keyakinan pasti', 'Menggerakkan amal'] },
           { arab: 'يَعْلَمُونَ', latin: 'Ya‘lamūn', alt: true, sifat: ['Sekadar "tahu"', 'Bisa tahu tapi tak tergerak'] },
         ], catatan: 'Dipilih «yūqinūn» — yakin yang membekas, bukan sekadar pengetahuan.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'],
       },
     ],
     hikmahPoin: [
@@ -707,7 +707,7 @@ const AYAT = [
       'Cermati pilihan kata «yu’minūna bil-gaib» — beriman pada yang GAIB; inilah hakikat iman: membenarkan apa yang tak terindra karena percaya pada sumbernya (wahyu). Lalu «yuqīmūna» (menegakkan), bukan sekadar "mengerjakan" salat — «iqāmah» berarti menunaikannya dengan sempurna syarat, rukun, dan kekhusyukannya. Pada infak dipilih «mimmā razaqnāhum» (SEBAGIAN dari rezeki yang KAMI berikan): kata "sebagian" (huruf «min» yang menunjukkan tab‘īḍ) meringankan — tak diminta semuanya; dan "rezeki dari Kami" mengingatkan bahwa harta itu titipan Allah, sehingga berinfak sejatinya mengembalikan sebagian pemberian-Nya. Pada keyakinan akhirat, kata «hum» didahulukan («hum yūqinūn») untuk menegaskan kekhususan: merekalah yang benar-benar yakin.',
     amalan:
       'Audit lima ciri ini pada dirimu: kualitas imanmu pada yang gaib, kekhusyukan salatmu (bukan sekadar gugur kewajiban), rutinitas sedekahmu (mulai dari nominal kecil tapi konsisten), dan kesungguhan menyiapkan bekal akhirat. Pilih satu yang paling lemah untuk diperbaiki pekan ini.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-baqarah-5',
@@ -722,7 +722,7 @@ const AYAT = [
           { arab: 'عَلَىٰ هُدًى', latin: '‘alā hudan', sifat: ['DI ATAS petunjuk', 'Kokoh & menguasai'] },
           { arab: 'أَصَابَهُ هُدًى', latin: 'sekadar "tersentuh"', alt: true, sifat: ['Tersentuh sesekali', 'Tak mantap'] },
         ], catatan: 'Bukan sekadar tersentuh hidayah — tapi kokoh di atasnya.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'وَأُولَٰئِكَ هُمُ الْمُفْلِحُونَ', latin: 'wa ulā’ika humul-mufliḥūn', arti: 'dan merekalah orang-orang yang beruntung',
@@ -732,7 +732,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ف', 'ل', 'ح'], makna: 'membelah & menembus tanah',
           gambar: 'Dalam bahasa Arab klasik, «fallāḥ» adalah <b>petani</b>: ia membelah tanah keras dengan bajak, menanam benih, lalu menembuslah tunas kehidupan dari bawah. Dari sinilah «falāḥ» bermakna keberuntungan sejati — bukan rezeki yang jatuh gratis, tapi keselamatan yang diraih setelah <b>menembus</b> kesulitan dan merawat amal hingga berbuah. Itulah yang diserukan tiap azan: «ḥayya ‘alal-falāḥ» — mari menuju keberuntungan.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
     ],
     hikmahPoin: [
@@ -765,7 +765,7 @@ const AYAT = [
       'Dipilih ungkapan «‘alā hudan» — dengan kata «‘alā» (di atas) — bukan sekadar "mendapat petunjuk". Gambarannya: mereka seakan BERADA DI ATAS dan ditopang oleh petunjuk, kokoh dan mantap, seperti penunggang yang menguasai kendaraannya — bukan sekadar tersentuh hidayah sesekali. Lalu pengulangan «ulā’ika» (mereka itu) dua kali menegaskan dan memuliakan kedudukan mereka. Penutupnya «humul-mufliḥūn» memakai «hum» (kata ganti pemisah) yang berfungsi «ḥaṣr»: HANYA merekalah orang-orang yang beruntung — keberuntungan sejati dikhususkan bagi mereka, bukan yang lain. «Al-falāḥ» sendiri berasal dari makna "membelah/menembus", yakni meraih yang diharapkan dan selamat dari yang ditakuti.',
     amalan:
       'Definisikan ulang "sukses" dalam hidupmu memakai standar ayat ini. Saat membandingkan diri dengan pencapaian dunia orang lain di media sosial, ingat: «al-mufliḥūn» adalah mereka yang di atas hidayah. Tetapkan satu target "keberuntungan akhirat" (mis. konsistensi ibadah) sepenting target karier.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-baqarah-255',
@@ -780,7 +780,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ق', 'و', 'م'], makna: 'berdiri sendiri & menegakkan yang lain',
           gambar: '«Al-Qayyūm» berpola «fay‘ūl» — bentuk <b>mubalaghah</b> (sangat & terus-menerus) dari akar «q-w-m». Maknanya berlapis: Dia <b>berdiri sendiri</b> tanpa butuh apa pun, sekaligus <b>yang menegakkan & mengurus seluruh makhluk</b> tiada henti. Langit, bumi, dan dirimu tegak <b>bukan dengan sendirinya</b> — ditopang-Nya tiap detik; andai Dia berhenti "menegakkan" sekejap, semua runtuh. Maka tepat sesudahnya: «tak mengantuk & tak tidur».' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'] },
       { kata: 'لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ', latin: 'lā ta’khużuhū sinatuw wa lā naum', arti: 'tak mengantuk dan tak tidur',
         poin: ['Urutan menaik: kantuk samar pun tak menyentuh-Nya, apalagi tidur.'],
         banding: { tipe: 'banding', item: [
@@ -793,7 +793,7 @@ const AYAT = [
         sumber: ['Tafsir Ibnu Katsir'] },
       { kata: 'مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ', latin: 'man żal-lażī yasyfa‘u ‘indahū illā bi’iżnih', arti: 'siapa yang memberi syafaat tanpa izin-Nya',
         poin: ['Tak ada syafaat kecuali dengan izin-Nya — menutup celah kesyirikan.'],
-        sumber: [] },
+        sumber: ['Tafsir As-Sa‘di'] },
       { kata: 'يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ', latin: 'ya‘lamu mā baina aidīhim wa mā khalfahum', arti: 'Dia tahu yang di depan & di belakang mereka',
         poin: ['Ilmu-Nya meliputi masa lalu & masa depan makhluk.'],
         sumber: ['Tafsir Ibnu Katsir'] },
@@ -805,7 +805,7 @@ const AYAT = [
         sumber: ['Tafsir Ibnu Katsir'] },
       { kata: 'وَلَا يَئُودُهُ حِفْظُهُمَا', latin: 'wa lā ya’ūduhū ḥifẓuhumā', arti: 'Dia tak merasa berat memelihara keduanya',
         poin: ['«ya’ūduhū»: menjaga semesta sama sekali tak membebani-Nya.'],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'وَهُوَ الْعَلِيُّ الْعَظِيمُ', latin: 'wa huwal-‘aliyyul-‘aẓīm', arti: 'Dia Maha Tinggi, Maha Besar',
         poin: ['Penutup: ketinggian & keagungan yang sempurna.'],
         sumber: ['Tafsir Ibnu Katsir'] },
@@ -855,7 +855,7 @@ const AYAT = [
           { arab: 'وُسْع', latin: 'Wus‘', sifat: ['Kadar yang lapang', 'Di bawah batas maksimal'] },
           { arab: 'طَاقَة', latin: 'Ṭāqah', alt: true, sifat: ['Batas maksimal kemampuan', 'Mepet, memberatkan'] },
         ], catatan: 'Allah membebani jauh lebih ringan dari batas akhir kekuatan kita.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ', latin: 'lahā mā kasabat wa ‘alaihā maktasabat', arti: 'baginya kebaikan yang ia usahakan, atasnya keburukan yang ia perbuat',
@@ -869,7 +869,7 @@ const AYAT = [
           { arab: 'كَسَبَتْ', latin: 'kasabat', sifat: ['Bentuk sederhana', 'Untuk KEBAIKAN'] },
           { arab: 'اكْتَسَبَتْ', latin: 'iktasabat', alt: true, sifat: ['Bentuk «ifti‘āl»', 'Untuk KEBURUKAN — perlu kesengajaan'] },
         ], catatan: 'Luasnya rahmat tersembunyi dalam satu pilihan kata kerja.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا', latin: 'rabbanā lā tu’ākhiżnā in nasīnā au akhṭa’nā', arti: 'Ya Tuhan kami, jangan hukum kami bila lupa atau salah',
@@ -910,7 +910,7 @@ const AYAT = [
       'Dipilih kata «wus‘ahā» (kesanggupan/kelapangan) — bukan «ṭāqatahā» (batas maksimal kemampuan). Wus‘ adalah kadar yang masih lapang dan nyaman dijangkau, DI BAWAH batas maksimal — menunjukkan Allah membebani jauh lebih ringan dari batas akhir kekuatan kita. Lebih halus lagi: kebaikan disebut «kasabat» (bentuk sederhana), sedangkan keburukan «iktasabat» (bentuk if‘ti‘āl yang menyiratkan usaha & kesengajaan lebih). Isyaratnya: kebaikan dicatat dengan mudah meski niat ringan, sementara keburukan baru "membebani" bila diupayakan dan disengaja — gambaran luasnya rahmat Allah yang tersembunyi dalam satu pilihan kata kerja.',
     amalan:
       'Jika kamu terjebak rasa bersalah berlebihan (overthinking dosa, was-was), kembalikan pada prinsip ayat: Allah hanya menuntut sekadar wus‘ (yang lapang) bagimu. Hafalkan rangkaian doa di ujung ayat ini sebagai penutup ibadah; ia doa para sahabat yang dijawab "qad fa‘altu" (sudah Aku kabulkan) oleh Allah.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 125'],
+    sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 125', 'Tafsir As-Sa‘di'],
   },
 
   /* ============ JUZ 30 — Ayat masyhur ============ */
@@ -929,7 +929,7 @@ const AYAT = [
           { arab: 'مَعَ', latin: 'Ma‘a (bersama)', sifat: ['Menempel pada kesulitan', 'Bukan menunggu jauh'] },
           { arab: 'بَعْدَ', latin: 'Ba‘da (sesudah)', alt: true, sifat: ['Menunggu di kejauhan', 'Tertunda'] },
         ], catatan: 'Kemudahan itu menyertai kesulitan, bukan datang belakangan.' },
-        sumber: ['Tafsir Ibnu Katsir'],
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'],
       },
       {
         kata: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا', latin: 'inna ma‘al-‘usri yusrā', arti: '(diulang) sesungguhnya bersama kesulitan ada kemudahan',
@@ -976,7 +976,7 @@ const AYAT = [
       'Inilah keajaiban yang membuat para ulama takjub. Kata «al-‘usr» (kesulitan) memakai alif-lam (ma‘rifah/definitif) dan diulang dua kali — dalam kaidah Arab, isim ma‘rifah yang diulang menunjuk benda yang SAMA. Sebaliknya «yusrā» (kemudahan) tanpa alif-lam (nakirah/indefinitif) dan diulang — isim nakirah yang diulang menunjuk dua hal BERBEDA. Maka maknanya: satu kesulitan, tetapi DUA kemudahan. Ibnu ‘Abbas pun menyimpulkan: «Satu kesulitan tidak akan pernah mengalahkan dua kemudahan.» Tambahan: dipakai kata «ma‘a» (bersama), bukan «ba‘da» (sesudah) — kemudahan itu menempel pada kesulitan, bukan menunggu di kejauhan.',
     amalan:
       'Ketika menghadapi masalah berat — utang, sakit, pekerjaan, atau kegagalan — tuliskan satu kesulitanmu di kertas, lalu daftar dua kemudahan/jalan keluar yang mungkin Allah siapkan. Ini melatih otak melihat peluang, sekaligus mengamalkan keyakinan ayat. Jadikan kalimat ini zikir penenang saat cemas.',
-    sumber: ['Tafsir Ibnu Katsir', 'Riwayat Ibnu ‘Abbas (atsar masyhur)'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Riwayat Ibnu ‘Abbas (atsar masyhur)'],
   },
   {
     id: 'al-asr-1-3',
@@ -985,7 +985,7 @@ const AYAT = [
         poin: ['Allah bersumpah demi waktu — padanya tersingkap untung-rugi manusia.'],
         asalKata: { huruf: ['ع', 'ص', 'ر'], makna: 'memeras hingga keluar sarinya',
           gambar: 'Akar «‘-ṣ-r» berarti <b>memeras</b> — seperti memeras anggur sampai keluar perasannya («‘aṣīr»). Dari sinilah «‘aṣr»: masa, juga waktu sore ketika hari "diperas" menuju ujungnya. Sumpah «demi masa» seakan berkata: hidupmu sedang <b>diperas</b> tetes demi tetes oleh waktu yang tak kembali. Pertanyaannya — adakah "sari" amal yang kau hasilkan dari perasan itu, atau habis sia-sia?' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ', latin: 'innal-insāna lafī khusr', arti: 'sungguh manusia berada dalam kerugian',
         poin: ['«al-insān» (alif-lam jenis): SELURUH manusia tanpa kecuali.', '«lafī khusr»: tenggelam DI DALAM kerugian, bukan sekadar menyentuhnya.'],
         banding: { tipe: 'banding', item: [
@@ -994,10 +994,10 @@ const AYAT = [
         ], catatan: 'Dipilih «al-insān» — yang merugi bukan sekadar tubuh, tapi manusia seutuhnya.' },
         asalKata: { huruf: ['خ', 'س', 'ر'], makna: 'rugi dalam perdagangan',
           gambar: 'Akar «kh-s-r» lahir dari dunia <b>dagang</b>: «khasira fit-tijārah» — modalnya susut, ia pulang membawa lebih sedikit dari yang dibawanya. Al-Qur’an memotret manusia sebagai pedagang yang <b>modalnya adalah umur</b>. Tiap hari modal itu terpakai; bila ditukar dengan yang sia-sia, jadilah «khusr» — bangkrut. Maka surah ini langsung menyebut empat hal yang membuat dagang umur itu <b>untung</b>: iman, amal saleh, saling menasihati kebenaran & kesabaran.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ', latin: 'illal-lażīna āmanū wa ‘amiluṣ-ṣāliḥāt', arti: 'kecuali yang beriman dan beramal saleh',
         poin: ['«illā» — satu-satunya pintu keluar dari kerugian.', 'Iman + amal: dua syarat yang bersifat pribadi.'],
-        sumber: [] },
+        sumber: ['Tafsir As-Sa‘di'] },
       { kata: 'وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ', latin: 'wa tawāṣau bil-ḥaqqi wa tawāṣau biṣ-ṣabr', arti: 'saling menasihati dalam kebenaran & kesabaran',
         poin: ['Dari individual ke komunal: tak cukup baik sendiri.', 'Saling menguatkan dalam kebenaran & kesabaran.'],
         banding: { tipe: 'banding', item: [
@@ -1035,7 +1035,7 @@ const AYAT = [
       'Allah memilih bersumpah «wal-‘aṣr» — demi waktu/masa — karena padanya tersingkap untung-rugi manusia. Kata «al-insān» dengan alif-lam jenis (istighrāq) mencakup SELURUH manusia tanpa kecuali. Lalu «lafī khusr»: huruf «la» penegas + «fī» (di dalam) menggambarkan manusia seolah tenggelam, terbenam DI DALAM kerugian, bukan sekadar menyentuhnya; «khusr» nakirah menyiratkan kerugian yang besar dan tak terkira. Setelah vonis menyeluruh itu, datang «illā» (kecuali) — satu-satunya pintu keluar — diikuti empat sifat yang tersusun rapi dari individual ke komunal. Struktur "vonis umum lalu pengecualian" ini menghentak dan menancap kuat.',
     amalan:
       'Audit waktumu seperti audit keuangan: catat ke mana jam-jammu pergi hari ini. Tetapkan satu amal saleh harian dan satu "saling menasihati" (mengingatkan kebaikan ke orang lain dengan lembut). Jadikan surah ini bacaan saat menutup hari untuk evaluasi diri.',
-    sumber: ['Tafsir Ibnu Katsir', 'Ucapan Imam Asy-Syāfi‘i (riwayat masyhur)'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Ucapan Imam Asy-Syāfi‘i (riwayat masyhur)'],
   },
   {
     id: 'al-kautsar-1-3',
@@ -1121,13 +1121,13 @@ const AYAT = [
           { arab: 'يُصْمَدُ إِلَيْهِ', latin: 'dituju', sifat: ['Tempat SEMUA bergantung', 'Setiap hajat menghadap-Nya'] },
           { arab: 'صَمَدٌ', latin: 'utuh / tanpa rongga', sifat: ['Tak butuh apa pun', 'Tak makan, tak berkurang'] },
         ], catatan: 'Satu kata merangkum dua sisi: Yang dibutuhkan semua, tapi tak membutuhkan apa pun.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'لَمْ يَلِدْ وَلَمْ يُولَدْ', latin: 'lam yalid wa lam yūlad', arti: 'tidak beranak dan tidak diperanakkan',
         poin: ['Menafikan keturunan dari dua arah sekaligus — tidak menurunkan & tidak diturunkan.', 'Menutup setiap celah penyimpangan akidah.'],
         sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'] },
       { kata: 'وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ', latin: 'wa lam yakul lahū kufuwan aḥad', arti: 'dan tidak ada sesuatu pun yang setara dengan Dia',
         poin: ['Tak ada tandingan bagi-Nya dalam bentuk apa pun.', 'Ditutup dengan «Aḥad» — menegaskan keunikan mutlak.'],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Akidah bersih = fondasi semua amal.',
@@ -1175,7 +1175,7 @@ const AYAT = [
           { arab: 'الْفَلَق', latin: 'al-Falaq', sifat: ['Akar: membelah & mengeluarkan', 'Segala yang Allah singkapkan dari gelap'] },
           { arab: 'الصُّبْح', latin: 'aṣ-Ṣubḥ', alt: true, sifat: ['Hanya "waktu subuh"', 'Tak menonjolkan kuasa membelah gelap'] },
         ], catatan: 'Dipilih «al-falaq» — menegaskan Tuhan yang membelah gelap & memunculkan terang.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'غَاسِقٍ إِذَا وَقَبَ', latin: 'gāsiqin iżā waqab', arti: 'kejahatan malam apabila telah gelap gulita',
         poin: [
           '«gāsiq»: kegelapan malam yang pekat — saat kejahatan & rasa takut paling leluasa.',
@@ -1201,7 +1201,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ح', 'س', 'د'], makna: 'mengharap lenyapnya nikmat orang',
           gambar: 'Sebagian ahli bahasa mengaitkan «ḥasad» dengan «al-ḥasdal» — <b>kutu yang menggerogoti</b> kulit hingga rontok. Begitulah dengki: ia <b>menggerogoti pelakunya dari dalam</b> sebelum mengenai yang didengki, dan baru menjelma bahaya nyata «iżā ḥasad» — ketika ia bertindak. Surah ditutup dengan keburukan hati ini karena ia akar banyak kejahatan lahir.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Tiap takut, kembalikan pada Yang membelah gelap jadi terang.',
@@ -1227,7 +1227,7 @@ const AYAT = [
       'Dipilih «al-falaq» (yang dibelah) alih-alih «aṣ-ṣubḥ» (subuh) untuk menonjolkan kuasa Allah membelah gelap demi memunculkan terang & kehidupan. Lalu «gāsiqin iżā waqab» memotret bahaya yang menyusup diam-diam; «an-naffāṡāt» berpola «fa‘‘āl» yang menyiratkan perbuatan berulang & ditekuni; dan penutup «ḥāsidin iżā ḥasad» menegaskan bahwa dengki membahayakan justru saat dilampiaskan — sebuah urutan dari yang umum (mā khalaq) menuju yang paling tersembunyi (hati yang dengki).',
     amalan:
       'Baca Al-Falaq & An-Nas tiap pagi-petang dan menjelang tidur (digabung Al-Ikhlas, ditiupkan ke telapak lalu diusapkan ke tubuh, sesuai sunnah). Saat cemas tanpa sebab atau merasa diganggu, kembalikan hati pada «Rabbil-falaq». Dan jaga hatimu sendiri dari dengki — ia menggerogoti pemiliknya lebih dulu.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari–Muslim (riwayat ruqyah)'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim (riwayat ruqyah)'],
   },
   {
     id: 'an-nas-1-6',
@@ -1243,7 +1243,7 @@ const AYAT = [
           { arab: 'مَلِك', latin: 'Malik', sifat: ['Raja & penguasa', 'Memerintah & menata'] },
           { arab: 'إِلٰه', latin: 'Ilāh', sifat: ['Sembahan satu-satunya', 'Pemilik hati dari dalam'] },
         ], catatan: 'Tiga tingkat sandaran: dipelihara → dikuasai → disembah. Hanya Dia yang sanggup mengusir bisikan dari dalam dada.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'الْوَسْوَاسِ الْخَنَّاسِ', latin: 'al-waswāsil-khannās', arti: 'bisikan (setan) yang bersembunyi',
         poin: [
           '«al-waswās»: bisikan halus berulang-ulang yang nyaris tak terdengar.',
@@ -1257,7 +1257,7 @@ const AYAT = [
           'Bisikan jahat tak hanya dari jin — juga dari MANUSIA (teman, lingkungan, media).',
           'Penutup yang membuka mata: waspadai pembisik tak kasat mata DAN yang berwujud manusia.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Dia memeliharamu, menguasaimu, dan satu-satunya yang layak disembah — tiga alasan berhenti gelisah.',
@@ -1283,7 +1283,7 @@ const AYAT = [
       'Tiga nama «Rabb–Malik–Ilāh» disusun menaik dari pemeliharaan yang umum menuju penyembahan yang paling khusus, dengan «an-nās» diulang untuk menegaskan kedekatan & cakupan. Kata «al-khannās» (pola mubalaghah dari kh-n-s: mundur & bersembunyi) menggambarkan watak setan yang menciut saat Allah disebut. Penutup «minal-jinnati wan-nās» memperluas ancaman: pembisik bisa berwujud gaib maupun manusia.',
     amalan:
       'Jadikan al-Mu‘awwiżatān (Al-Falaq & An-Nas) bersama Al-Ikhlas sebagai wirid pagi-petang dan menjelang tidur. Saat dilanda waswas — dalam ibadah, keputusan, atau prasangka — segera berta‘awuż dan sebut nama Allah; amati bagaimana bisikan itu surut. Pilih pula teman & asupan media yang tak menjadi "pembisik" dari golongan manusia.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari–Muslim (riwayat ruqyah)'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim (riwayat ruqyah)'],
   },
   {
     id: 'al-kafirun-1-6',
@@ -1298,7 +1298,7 @@ const AYAT = [
           { arab: 'أَعْبُدُ', latin: 'a‘budu (kata kerja)', sifat: ['Terikat waktu', 'Menafikan tiap masa: kini & nanti'] },
           { arab: 'عَابِد', latin: '‘ābid (kata sifat)', sifat: ['Identitas yang melekat', 'Menafikan sebagai jati diri'] },
         ], catatan: 'Ditolak di setiap waktu (kata kerja) sekaligus sebagai jati diri (kata sifat) — total.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'لَكُمْ دِينُكُمْ وَلِيَ دِينِ', latin: 'lakum dīnukum wa liya dīn', arti: 'untukmu agamamu, dan untukku agamaku',
         poin: [
           'Ketegasan akidah, bukan kebencian: tiap pihak bertanggung jawab penuh atas pilihannya.',
@@ -1330,7 +1330,7 @@ const AYAT = [
       'Permainan bentuk kata: «a‘budu» (fi‘l muḍāri‘) menafikan ibadah pada masa kini & mendatang, «‘abadtum» (fi‘l māḍī) pada masa lampau, dan «‘ābid» (ism fā‘il) menafikannya sebagai sifat yang melekat. Tiga bentuk berbeda untuk satu pesan: pemisahan yang menyeluruh di setiap dimensi waktu & jati diri.',
     amalan:
       'Terapkan «lakum dīnukum» dalam keseharian: hormati tetangga & rekan beda keyakinan, bantu urusan sosial mereka, tapi jangan ikut ritual atau kompromi yang mencederai tauhid. Toleransi sosial: ya; sinkretisme akidah: tidak. Saat ditekan agar "ikut sedikit demi rukun", surah ini jawabannya.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'an-nasr-1-3',
@@ -1342,7 +1342,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ف', 'ت', 'ح'], makna: 'membuka yang tertutup',
           gambar: 'Akar «f-t-ḥ» berarti <b>membuka</b> — pintu atau gerbang yang tadinya terkunci. Al-Qur’an tak menyebut kemenangan dengan kata "menaklukkan" atau "menghancurkan", melainkan «fatḥ»: <b>terbukanya</b> Mekah, dan lebih dalam lagi — <b>terbukanya hati manusia</b> hingga berbondong masuk Islam. Kemenangan sejati bukan meremukkan lawan, tapi <b>membuka pintu hidayah</b>.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ', latin: 'fa sabbiḥ biḥamdi rabbika wastagfirh', arti: 'maka bertasbihlah memuji Tuhanmu dan mohonlah ampun',
         poin: [
           'Puncak kemenangan justru diperintah «istigfar» (mohon ampun) — bukan pesta. Adab yang membalik logika dunia.',
@@ -1378,7 +1378,7 @@ const AYAT = [
       '«Naṣr» didahulukan atas «fatḥ» — kemenangan adalah akibat, pertolongan Allah adalah sebab. Kata «fatḥ» (membuka) dipilih, bukan penaklukan, menyiratkan terbukanya hati. Dan penutup «tawwāb» (pola mubalaghah) menegaskan keluasan ampunan-Nya yang tak pernah jemu.',
     amalan:
       'Biasakan menutup ibadah & pencapaian dengan istighfar (Nabi ﷺ beristighfar 3x seusai salat). Saat meraih sukses — lulus, naik jabatan, proyek selesai — tahan euforia, ucapkan "alhamdulillah" lalu "astaghfirullah": akui itu pemberian-Nya dan tutupi kekuranganmu.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari'],
   },
   {
     id: 'al-fil-1-5',
@@ -1390,7 +1390,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ع', 'ص', 'ف'], makna: 'daun & jerami kering sisa tanaman',
           gambar: '«‘Aṣf» adalah <b>kulit & daun kering</b> yang tersisa setelah biji dipanen — lalu «ma’kūl»: <b>sudah dikunyah</b> ternak hingga berlubang dan hancur. Bayangkan: pasukan bergajah, kekuatan militer paling menakutkan di zamannya, diakhiri menjadi <b>ampas yang terinjak & tercerna</b>. Allah tak perlu tentara tandingan — cukup burung kecil membawa batu. Begitulah akhir kesombongan yang menantang-Nya.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ', latin: 'wa arsala ‘alaihim ṭairan abābīl', arti: 'dan Dia mengirim kepada mereka burung yang berbondong-bondong',
         poin: [
           '«ṭairan abābīl»: burung berbondong-bondong — makhluk kecil dijadikan tentara Allah.',
@@ -1422,7 +1422,7 @@ const AYAT = [
       'Puncak penghinaan dilukiskan dengan «ka‘aṣfin ma’kūl» — bukan sekadar "hancur", tapi seperti daun kering sisa panen yang telah dikunyah ternak: hampa, berlubang, terinjak. Kontras tajam dengan kebesaran "aṣḥābul-fīl" di awal surah menegaskan betapa kecil kesombongan di hadapan Allah.',
     amalan:
       'Saat menghadapi pihak zalim yang tampak mustahil dilawan (atasan sewenang-wenang, sistem timpang), tegakkan yang benar semampumu lalu serahkan hasilnya pada Allah — Pemilik "burung ababil". Dan periksa dirimu: jangan jadi pihak yang sombong dengan kekuatan, sebab akhirnya bisa seremeh «‘aṣf».',
-    sumber: ['Tafsir Ibnu Katsir', 'Sirah Ibnu Hisyam'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sirah Ibnu Hisyam'],
   },
   {
     id: 'quraisy-1-4',
@@ -1433,7 +1433,7 @@ const AYAT = [
           'Rezeki & rasa aman — dua tiang yang membuat hidup tegak; keduanya murni pemberian-Nya.',
           'Sambungan dari Al-Fīl: keamanan Quraisy (termasuk dari pasukan gajah) itu anugerah — maka «fal-ya‘budū» (maka sembahlah Dia).',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'لِإِيلَافِ قُرَيْشٍ', latin: 'li’īlāfi quraisy', arti: 'karena kebiasaan (kemudahan) orang Quraisy',
         poin: [
           '«īlāf»: kebiasaan & jaminan aman perjalanan dagang Quraisy — musim dingin ke Yaman, musim panas ke Syam.',
@@ -1465,7 +1465,7 @@ const AYAT = [
       'Dua kebutuhan paling mendasar manusia diringkas indah: «aṭ‘amahum min jū‘» (pangan) lalu «āmanahum min khauf» (keamanan) — urutan yang menutup seluruh fondasi hidup tenteram. Huruf «fa» pada «fal-ya‘budū» menjadikan ibadah sebagai konsekuensi logis & wajar dari limpahan nikmat itu.',
     amalan:
       'Mulai harimu dengan menghitung dua nikmat ini: ada makanan, ada rasa aman. Banyak orang kehilangan salah satunya. Lalu sambungkan rasa syukur itu ke ibadah — sujud sebagai "balasan" atas kenyang & aman yang sering kau anggap biasa.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-maun-1-7',
@@ -1480,7 +1480,7 @@ const AYAT = [
           { arab: 'عَن صَلَاتِهِم', latin: '‘an (dari/tentang)', sifat: ['Melalaikan hakikat & waktunya', 'Salat kosong — inilah yang dicela'] },
           { arab: 'فِي صَلَاتِهِم', latin: 'fī (di dalam)', alt: true, sifat: ['Pikiran sesekali melayang', 'Manusiawi — tidak dicela'] },
         ], catatan: 'Satu huruf — «‘an» vs «fī» — memisahkan celaan dari kelalaian manusiawi biasa.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'وَيَمْنَعُونَ الْمَاعُونَ', latin: 'wa yamna‘ūnal-mā‘ūn', arti: 'dan enggan (memberi) bantuan kecil',
         poin: [
           '«al-mā‘ūn»: bantuan kecil sehari-hari — barang pinjaman, pertolongan ringan — yang pun mereka enggan beri.',
@@ -1512,7 +1512,7 @@ const AYAT = [
       'Pilihan «‘an ṣalātihim» (bukan «fī ṣalātihim») sangat tajam: «fī» berarti lalai sesaat di dalam salat — wajar & manusiawi; «‘an» berarti lalai akan salat itu sendiri — meremehkan waktu, makna, & kelangsungannya. Lalu ditutup «al-mā‘ūn» (bantuan terkecil) untuk menunjukkan betapa kerasnya hati yang dimaksud.',
     amalan:
       'Jadikan salatmu "berbekas": seusai salat, lakukan satu kebaikan sosial — pinjamkan barang, bantu tetangga, sisihkan untuk yatim/miskin. Periksa niat: apakah ibadahmu untuk Allah atau untuk dilihat? Dan jangan remehkan pertolongan kecil — di situ iman diuji.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'at-takatsur-1-8',
@@ -1525,7 +1525,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ك', 'ث', 'ر'], makna: 'saling berlomba memperbanyak',
           gambar: 'Dari akar «k-ṡ-r» (banyak) — akar yang sama dengan «al-Kauṡar». Tapi di pola «tafā‘ul» («takāṡur») maknanya menjadi <b>saling berlomba menumpuk</b>: siapa punya lebih banyak. Pola ini menyiratkan <b>kompetisi tanpa ujung</b>, sebab "lebih banyak" tak pernah terasa cukup. Sindirannya abadi: angka pengikut, pamer harta, scroll tanpa henti — perlombaan yang baru berhenti «ḥattā zurtumul-maqābir», saat kau diantar ke kubur.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'عِلْمَ الْيَقِينِ ۝ عَيْنَ الْيَقِينِ', latin: '‘ilmal-yaqīn … ‘ainal-yaqīn', arti: 'pengetahuan yang yakin … penglihatan yang yakin',
         poin: [
           'Tingkat keyakinan: «‘ilmul-yaqīn» (yakin lewat ilmu/kabar) lalu «‘ainul-yaqīn» (yakin lewat melihat langsung).',
@@ -1557,7 +1557,7 @@ const AYAT = [
       'Pola «tafā‘ul» pada «takāṡur» menyiratkan kompetisi timbal-balik yang tak berujung. Kata «zurtum» (berziarah/berkunjung) untuk kubur menyindir bahwa dunia hanya persinggahan. Lalu gradasi «‘ilmul-yaqīn» → «‘ainul-yaqīn» menggambarkan keyakinan yang naik dari kabar menjadi penglihatan langsung.',
     amalan:
       'Lawan "takāṡur" dengan jeda syukur: sebelum membeli/memamerkan, tanya "apakah ini kebutuhan atau sekadar lomba?". Kurangi membandingkan diri di media sosial. Dan biasakan bertanya pada tiap nikmat: "akan kujawab apa nanti saat ditanya tentang ini?"',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-humazah-1-9',
@@ -1579,7 +1579,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ح', 'ط', 'م'], makna: 'meremukkan hingga berkeping',
           gambar: 'Akar «ḥ-ṭ-m» berarti <b>meremukkan, menghancurkan jadi serpihan</b> — dipakai untuk kayu kering yang patah berderak. Neraka ini dinamai «al-Ḥuṭamah» karena <b>meremukkan</b> apa pun yang dilempar ke dalamnya. Dan azabnya menukik tepat ke sasaran: «taṭṭali‘u ‘alal-af’idah» — <b>naik sampai ke hati</b>, sebab di hati itulah bersarang kesombongan mencela dan ilusi bahwa harta bisa mengekalkan.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Mencela dengan lisan atau isyarat — dosa yang diremehkan, azabnya meremukkan.',
@@ -1605,7 +1605,7 @@ const AYAT = [
       'Pola «fu‘alah» pada «humazah/lumazah» menunjukkan kebiasaan yang mendarah daging. Nama neraka «al-Ḥuṭamah» (dari ḥ-ṭ-m: meremukkan) dipilih agar selaras dengan watak pelakunya yang "meremukkan" kehormatan orang. Dan «taṭṭali‘u ‘alal-af’idah» (naik ke hati) menukik ke akar penyakitnya.',
     amalan:
       'Jaga lisan & jari dari ghibah, mencela fisik (body-shaming), dan komentar merendahkan di media sosial — itu "humaz/lumaz" zaman ini. Dan periksa hubunganmu dengan harta: kau yang memilikinya, atau ia yang menguasaimu? Perbanyak sedekah agar harta jadi bekal, bukan beban.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-adiyat-1-11',
@@ -1623,7 +1623,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ك', 'ن', 'د'], makna: 'sangat ingkar nikmat; tanah tandus',
           gambar: 'Orang Arab menyebut «arḍun kanūd» — <b>tanah tandus</b> yang sudah disiram & ditanami namun <b>tak menumbuhkan apa-apa</b>. «Kanūd» juga dipakai untuk orang yang <b>mengingat satu musibah dan melupakan seribu nikmat</b>. Maka ayat ini melukis hati yang seperti tanah gersang: dicurahi karunia tiada henti, tapi tak "menumbuhkan" syukur. Indahnya, sumpah dibuka dengan <b>kuda perang yang setia mengerahkan segenap tenaganya</b> untuk tuannya — kontras tajam dengan manusia yang ingkar pada Penciptanya.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Kuda pun setia berkorban untuk tuannya — bagaimana kita kepada Pencipta?',
@@ -1649,7 +1649,7 @@ const AYAT = [
       'Rangkaian «ḍabḥā – qadḥā – ṣubḥā» berirama cepat & berderap, meniru gerak kuda yang berpacu. Kata «kanūd» dipilih karena maknanya kaya: ingkar nikmat sekaligus "tanah yang tak menumbuhkan". Dan «ḥuṣṣila mā fiṣ-ṣudūr» (dilahirkan/dibongkar isi dada) menegaskan bahwa yang dinilai bukan sekadar lahir, tapi isi hati.',
     amalan:
       'Lawan sifat «kanūd» dengan jurnal syukur: tiap malam catat 3 nikmat hari itu, agar hatimu tak gersang. Saat tertimpa satu masalah, sengaja hitung nikmat yang masih ada agar tak "mengingat musibah & melupakan karunia". Dan jaga niat dalam dada — sebab kelak ia yang dibongkar.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-qariah-1-11',
@@ -1661,7 +1661,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ق', 'ر', 'ع'], makna: 'mengetuk & memukul keras hingga berbunyi',
           gambar: 'Akar «q-r-‘» berarti <b>mengetuk/memukul dengan keras</b> sampai berbunyi — «qar‘ul-bāb» = menggedor pintu. Kiamat disebut «al-Qāri‘ah»: Hari yang <b>menggedor</b> — memukul telinga dengan dahsyat suaranya, menggedor hati dengan kengeriannya, hingga tak seorang pun bisa pura-pura tak mendengar. Bukan ketukan halus; ini gedoran yang <b>memaksa seluruh makhluk terjaga & sadar</b>.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'كَالْفَرَاشِ الْمَبْثُوثِ ۝ كَالْعِهْنِ الْمَنفُوشِ', latin: 'kal-farāsyil-mabṡūṡ … kal-‘ihnil-manfūsy', arti: 'seperti laron beterbangan … seperti bulu dihambur',
         poin: [
           'Manusia «kal-farāsyil-mabṡūṡ»: laron beterbangan — panik, tak tentu arah, menghambur tanpa sadar bahaya.',
@@ -1693,7 +1693,7 @@ const AYAT = [
       'Nama «al-Qāri‘ah» (yang menggedor) langsung menanamkan kegentaran, diperkuat pengulangan retoris «mal-qāri‘ah… wa mā adrāka». Dua tasybih (perumpamaan) berturut — laron yang berhamburan & bulu yang dihambur — melukiskan kelemahan makhluk & runtuhnya yang kokoh dengan imaji yang mudah terbayang.',
     amalan:
       'Jadikan "timbangan" sebagai lensa harian: sebelum bertindak, tanya "ini menambah berat timbangan kebaikan atau tidak?". Perbanyak amal ringan bernilai berat (zikir, senyum, menyingkirkan gangguan di jalan, sedekah kecil rutin) — sebab di hari itu, yang menyelamatkan adalah beratnya, bukan besarnya di mata manusia.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-masad-1-5',
@@ -1738,7 +1738,7 @@ const AYAT = [
       'Keindahannya pada permainan kata: nama «Abū Lahab» (lahab = nyala api) berpadu dengan ancaman «nāran żāta lahab». Pengulangan «tabbat… wa tabb» menegaskan kebinasaan ganda (usaha & diri). Dan «ḥammālatal-ḥaṭab» memakai kiasan pembawa kayu bakar untuk melukiskan penyebar fitnah yang "menyalakan" api permusuhan.',
     amalan:
       'Jadikan cermin: jangan andalkan status, koneksi, atau harta sebagai "jaminan" — yang menjamin hanyalah iman & amal. Dan jauhi peran "ḥammālatal-ḥaṭab" zaman kini: meneruskan gosip, tangkapan layar, atau berita yang menyulut permusuhan. Berhentikan fitnah di tanganmu, jangan menyebarkannya.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari'],
   },
   {
     id: 'ad-duha-1-11',
@@ -1759,13 +1759,13 @@ const AYAT = [
           'Janji paling melapangkan: "Tuhanmu akan terus memberi sampai engkau RIDHA (puas)."',
           'Batas pemberian-Nya adalah kepuasanmu — «fa tarḍā» — bukan sekadar kecukupan minimal.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir As-Sa‘di', 'Tafsir Ibnu Katsir'] },
       { kata: 'وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ', latin: 'wa ammā bini‘mati rabbika fa ḥaddiṡ', arti: 'dan terhadap nikmat Tuhanmu, ceritakanlah',
         poin: [
           'Tiga pemberian masa lalu berbuah tiga perintah: yatim→dilindungi, bingung→ditunjuki, miskin→dicukupkan.',
           'Maka: dulu yatim → jangan keras pada yatim; dulu meminta → jangan hardik peminta; diberi nikmat → ceritakan (syukuri).',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Saat merasa "ditinggalkan" Allah, surah ini turun untukmu: Dia tak pergi.',
@@ -1791,7 +1791,7 @@ const AYAT = [
       'Dipilih «wadda‘a» (perpisahan yang disengaja) untuk dinafikan — meniadakan bentuk perpisahan yang paling menyakitkan. Lalu pada «mā qalā», objek "-ka" sengaja dibuang demi kelembutan, agar kata "benci" tak pernah bersanding dengan diri sang kekasih. Susunan «alam yajidka… fa…» (tiga karunia) lalu «fa ammā… fa…» (tiga perintah) membentuk paralel yang memikat: tiap nikmat melahirkan tanggung jawab.',
     amalan:
       'Saat hatimu terasa "kosong" & jauh dari Allah, baca & resapi Ad-Duha — itu bukan tanda ditinggalkan. Lalu amalkan penutupnya: santuni yatim, jangan hardik orang yang meminta tolong, dan "ceritakan nikmat" dengan bersyukur (bukan pamer) agar orang termotivasi pada kebaikan.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari–Muslim'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim'],
   },
   {
     id: 'at-tin-1-8',
@@ -1804,13 +1804,13 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ق', 'و', 'م'], makna: 'menjadikan tegak & seimbang sempurna',
           gambar: 'Akar «q-w-m» (berdiri tegak — akar yang sama dengan «iqāmah» salat & «al-Qayyūm») melahirkan «taqwīm»: <b>menata sesuatu agar tegak, lurus, & seimbang sempurna</b>. Manusia dicipta «fī aḥsani taqwīm» — bukan hanya tubuh yang tegak, tapi <b>akal, fitrah, & potensi</b> yang ditata paling pas. Namun ketegakan itu amanah: ia bisa runtuh ke «asfala sāfilīn». Sosok yang sama bisa naik semulia malaikat atau jatuh sehina binatang — <b>pilihan ada padanya</b>.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ', latin: 'alaisallāhu bi’aḥkamil-ḥākimīn', arti: 'bukankah Allah hakim yang paling adil?',
         poin: [
           '«aḥkamil-ḥākimīn» (bentuk superlatif): seadil & sebijak-bijak hakim — penutup yang menjawab "kenapa mendustakan hari pembalasan?".',
           'Mustahil Yang mencipta manusia "sebaik bentuk" lalu membiarkannya tanpa hisab — itu bukan keadilan.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Kau dicipta dalam bentuk terbaik — jangan turunkan dirimu ke yang terhina.',
@@ -1836,7 +1836,7 @@ const AYAT = [
       'Kata «taqwīm» (dari q-w-m: menegakkan & menyeimbangkan) menggambarkan kesempurnaan tata cipta manusia, dikontraskan tajam dengan «asfala sāfilīn». Penutup «aḥkamil-ḥākimīn» dalam bentuk superlatif menutup argumen tentang keniscayaan hari pembalasan: keadilan sempurna menuntut adanya hisab.',
     amalan:
       'Hargai dirimu sebagai ciptaan "sebaik bentuk": jaga tubuh, asah akal, & rawat fitrah dengan iman + amal saleh — itulah yang menahanmu di puncak. Saat tergoda merendahkan diri pada hal hina, ingat: kau diciptakan untuk derajat yang jauh lebih tinggi.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-qadr-1-5',
@@ -1848,7 +1848,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ق', 'د', 'ر'], makna: 'kemuliaan & ketetapan/ukuran',
           gambar: 'Akar «q-d-r» menyimpan dua makna yang menyatu indah: <b>kemuliaan & keagungan</b> (orang ber-"qadar" tinggi), sekaligus <b>ukuran & ketetapan</b> (taqdir). Maka «Lailatul-Qadr» adalah malam yang <b>agung kedudukannya</b> sekaligus malam <b>ditetapkannya takdir</b> setahun ke depan. Pantas ia "lebih baik dari seribu bulan" — pada malam inilah Al-Qur’an yang mengubah dunia mulai diturunkan.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ', latin: 'salāmun hiya ḥattā maṭla‘il-fajr', arti: 'sejahteralah (malam itu) sampai terbit fajar',
         poin: [
           '«salāmun hiya» — malam itu seluruhnya KESELAMATAN & kedamaian, hingga fajar.',
@@ -1880,7 +1880,7 @@ const AYAT = [
       'Kata «al-qadr» sengaja bermakna ganda — kemuliaan & ketetapan takdir — keduanya benar & menyatu. Pengulangan «lailatul-qadr» tiga kali mengagungkan kedudukannya, dan «salāmun hiya» (didahulukan) menegaskan bahwa malam itu seutuhnya keselamatan, dari awal hingga fajar.',
     amalan:
       'Hidupkan sepuluh malam terakhir Ramadhan dengan salat, tilawah, & doa — terutama "Allāhumma innaka ‘afuwwun tuḥibbul-‘afwa fa‘fu ‘annī" (doa yang diajarkan Nabi ﷺ untuk malam Qadr). Perlakukan waktu luangmu sebagai modal: isi dengan yang berkah, bukan yang sia-sia.',
-    sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi (doa malam Qadr)'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Jami‘ at-Tirmidzi (doa malam Qadr)'],
   },
   {
     id: 'al-alaq-1-5',
@@ -1899,7 +1899,7 @@ const AYAT = [
           '«‘allama bil-qalam» — Allah mengajar dengan PENA: ilmu diabadikan & diwariskan lewat tulisan.',
           '«‘allamal-insāna mā lam ya‘lam» — sumber semua ilmu manusia adalah pengajaran-Nya; maka tetaplah rendah hati.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Agama ini lahir dengan "Bacalah" — menuntut ilmu adalah ibadah.',
@@ -1925,7 +1925,7 @@ const AYAT = [
       'Kata «iqra’» (dari q-r-’: menghimpun & membaca) dipilih sebagai pembuka — fondasi ilmu — dan langsung diikat «bismi rabbika». Penyebutan «al-qalam» (pena) menegaskan keabadian ilmu lewat tulisan, dan «mā lam ya‘lam» mengingatkan bahwa seluruh pengetahuan manusia bersumber dari pengajaran-Nya.',
     amalan:
       'Jadikan menuntut ilmu (terutama ilmu agama) sebagai ibadah rutin — sisihkan waktu membaca tiap hari. Awali belajar dengan menyebut nama Allah & niat mengenal-Nya. Dan tiap kali ilmumu bertambah, tambah pula kerendahan hatimu, sebab semua itu pemberian-Nya.',
-    sumber: ['Tafsir Ibnu Katsir', 'Sahih Bukhari–Muslim'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Sahih Bukhari–Muslim'],
   },
   {
     id: 'al-bayyinah-1-8',
@@ -1937,7 +1937,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['خ', 'ل', 'ص'], makna: 'murni, jernih, tanpa campuran',
           gambar: 'Akar «kh-l-ṣ» berarti <b>murni & jernih, bebas dari campuran</b> — emas «khāliṣ» = emas tanpa karat. «Mukhliṣīna lahud-dīn» = memurnikan ibadah <b>hanya untuk Allah</b>, tak dicampuri riya atau pamrih. Inilah benang merah seluruh nabi: bukan banyaknya ritual, tapi <b>kemurnian niat</b> di baliknya. Ibadah yang tercampur tujuan lain, seperti emas bercampur logam, turun nilainya.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'أُولَٰئِكَ هُمْ خَيْرُ الْبَرِيَّةِ', latin: 'ulā’ika hum khairul-bariyyah', arti: 'mereka itulah sebaik-baik makhluk',
         poin: [
           'Orang beriman & beramal saleh disebut «khairul bariyyah» — sebaik-baik makhluk, mengungguli seluruh ciptaan.',
@@ -1969,7 +1969,7 @@ const AYAT = [
       'Kata «mukhliṣīna» (dari kh-l-ṣ: memurnikan) menjadi kunci: ibadah yang sah adalah yang murni untuk Allah. Penyebutan «dīnul-qayyimah» (agama yang lurus & kokoh) membingkai keikhlasan sebagai esensi. Dan kontras «syarrul-bariyyah» vs «khairul-bariyyah» menutup surah dengan pembagian nasib yang ditentukan iman & amal.',
     amalan:
       'Periksa niat dalam tiap ibadah: untuk Allah, atau untuk dilihat orang? Latih keikhlasan dengan menyembunyikan sebagian amal kebaikanmu. Dan kejar gelar "khairul bariyyah" bukan dengan pencitraan, tapi dengan iman yang konsisten dibuktikan amal nyata.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'az-zalzalah-1-8',
@@ -1982,7 +1982,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ذ', 'ر', 'ر'], makna: 'partikel terkecil — debu/semut terkecil',
           gambar: 'Orang Arab memakai «żarrah» untuk <b>sesuatu yang paling kecil</b> — semut terkecil, atau debu halus yang tampak melayang dalam seberkas cahaya matahari. Al-Qur’an memilihnya untuk menegaskan: timbangan akhirat <b>sehalus itu</b>. Tak ada senyum, langkah, atau bisikan niat yang terlalu kecil untuk dicatat. Yang "sedikit" di matamu bisa jadi penentu di mata-Nya.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'تُحَدِّثُ أَخْبَارَهَا', latin: 'tuḥaddiṡu akhbārahā', arti: 'bumi menyampaikan beritanya',
         poin: [
           '«tuḥaddiṡu akhbārahā» — bumi sendiri "bercerita" tentang segala yang diperbuat di atasnya: saksi yang tak terbantah.',
@@ -2014,7 +2014,7 @@ const AYAT = [
       'Pilihan «żarrah» (partikel terkecil) menegaskan kehalusan timbangan akhirat. Pengulangan simetris «khairan yarah / syarran yarah» menutup surah dengan keseimbangan yang menggetarkan. Dan «tuḥaddiṡu akhbārahā» (bumi bercerita) adalah personifikasi yang menghidupkan betapa tak ada perbuatan yang tersembunyi.',
     amalan:
       'Perbanyak kebaikan-kebaikan kecil yang sering diremehkan: menyingkirkan duri di jalan, senyum, sedekah receh rutin, menahan kata buruk. Dan jauhi dosa-dosa "kecil" yang dianggap sepele. Bayangkan "rekaman bumi" atas perbuatanmu — ia akan bersaksi.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-ala-14-17',
@@ -2026,13 +2026,13 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ز', 'ك', 'و'], makna: 'suci sekaligus tumbuh-berkembang',
           gambar: 'Akar «z-k-w» (akar yang sama dengan "zakat") menyatukan dua makna indah: <b>menyucikan</b> dan <b>menumbuhkan</b>. Seperti kebun yang dibersihkan dari gulma justru makin subur, jiwa yang disucikan dari dosa & kikir justru <b>tumbuh & berkembang</b>. Maka «qad aflaḥa man tazakkā»: keberuntungan milik yang membersihkan hatinya — dan pembersihan itu <b>bukan mengurangi, melainkan menumbuhkan</b>.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'وَالْآخِرَةُ خَيْرٌ وَأَبْقَىٰ', latin: 'wal-ākhiratu khairuw wa abqā', arti: 'padahal akhirat lebih baik dan lebih kekal',
         poin: [
           'Diagnosis abadi: «bal tu’ṡirūnal-ḥayātad-dunyā» — kamu LEBIH MEMILIH dunia (yang dekat & cepat).',
           'Padahal akhirat «khairun» (lebih baik — kualitas) DAN «abqā» (lebih kekal — durasi): dua keunggulan sekaligus.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Sukses = menyucikan jiwa, bukan menumpuk dunia.',
@@ -2058,7 +2058,7 @@ const AYAT = [
       'Kata «tazakkā» (dari z-k-w: suci + tumbuh) menyiratkan bahwa menyucikan diri adalah pertumbuhan, bukan kehilangan. Penutup «khairuw wa abqā» menggabungkan dua keunggulan akhirat sekaligus: lebih baik (kualitas) dan lebih kekal (durasi) — menjawab tuntas kenapa tak layak menukar akhirat dengan dunia.',
     amalan:
       'Sisihkan waktu "menyucikan jiwa" tiap hari: istighfar, muhasabah, sedekah (yang menumbuhkan, bukan mengurangi harta). Saat tergoda mengutamakan dunia, ucap pada diri: "khairuw wa abqā" — yang di sana lebih baik & lebih kekal.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-ghasyiyah-17-20',
@@ -2069,7 +2069,7 @@ const AYAT = [
           'Empat tatapan menaik: unta (dekat) → langit (tinggi) → gunung (kokoh) → bumi (hamparan).',
           'Pertanyaannya «KAIFA» (bagaimana) — mengajak mengamati DESAIN & ketelitiannya, bukan sekadar keberadaannya.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'وَإِلَى الْجِبَالِ كَيْفَ نُصِبَتْ', latin: 'wa ilal-jibāli kaifa nuṣibat', arti: 'dan gunung-gunung, bagaimana ia ditegakkan?',
         poin: [
           'Tiap detail unta "pas" untuk gurun (punuk, kaki, mata, perut) — bukti adanya Perancang.',
@@ -2101,7 +2101,7 @@ const AYAT = [
       'Dipilih «al-ibil» (unta) sebagai contoh pertama karena ialah makhluk paling lekat dengan keseharian audiens awal — pelajaran dimulai dari yang dekat. Kata tanya «kaifa» (bagaimana) mengarahkan perhatian pada cara & desain penciptaan, bukan sekadar fakta keberadaannya — mengundang perenungan, bukan hafalan.',
     amalan:
       'Biasakan "tadabbur 1 menit": saat melihat langit, hujan, tubuhmu, atau hewan, berhenti & tanya "bagaimana ini dirancang?" lalu ucapkan "Subḥānallāh". Jadikan alam sekitar sebagai pengingat harian akan kebesaran-Nya.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-fajr-27-30',
@@ -2113,13 +2113,13 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ط', 'م', 'ن'], makna: 'tenang yang kokoh & menetap',
           gambar: 'Akar «ṭ-m-’-n» menggambarkan <b>ketenangan yang kokoh & menetap</b> — tanah rata yang stabil disebut "muṭma’inn". Maka «an-nafsul-muṭma’innah» adalah jiwa yang <b>berlabuh tenang pada Allah</b>: tak diombang-ambing ketakutan dunia, tak gelisah oleh kehilangan. Ketenangan ini buah dari zikir — «alā biżikrillāhi taṭma’innul-qulūb» (QS 13:28). Dialah jiwa yang dipanggil pulang dengan penuh kasih.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً', latin: 'irji‘ī ilā rabbiki rāḍiyatam marḍiyyah', arti: 'kembalilah kepada Tuhanmu dengan ridha dan diridhai',
         poin: [
           'Pulang dalam keadaan «rāḍiyah» (kamu ridha pada Allah) DAN «marḍiyyah» (Allah ridha padamu): dua arah cinta bertemu.',
           'Puncak kebahagiaan: bukan sekadar kau ridha pada-Nya, tapi Dia pun ridha padamu.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Ketenangan sejati lahir dari bergantung pada Allah, bukan pada dunia.',
@@ -2145,7 +2145,7 @@ const AYAT = [
       'Kata «al-muṭma’innah» (dari ṭ-m-’-n: tenang yang kokoh) menggambarkan jiwa yang tak goyah. Pasangan «rāḍiyah» (subjek-aktif: ia ridha) & «marḍiyyah» (objek-pasif: ia diridhai) membentuk keseimbangan indah — cinta dua arah antara hamba & Tuhannya, puncak kebahagiaan yang dituju.',
     amalan:
       'Latih "jiwa yang tenang" sejak sekarang: perbanyak zikir (sumber ketenangan, QS 13:28), latih ridha pada takdir, & kurangi kegelisahan pada dunia. Tujuanmu bukan sekadar ridha pada Allah, tapi sampai Dia ridha padamu — kejar itu lewat ketaatan.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'an-naba-1-5',
@@ -2157,7 +2157,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ن', 'ب', 'ء'], makna: 'berita besar, penting, & benar',
           gambar: 'Bahasa Arab membedakan «khabar» (kabar biasa, apa saja) dari «naba’»: <b>berita besar, penting, & bermanfaat yang pasti benar</b> — dari akar yang sama lahir kata «nabī» (pembawa berita agung dari langit). Maka hari Kebangkitan disebut «an-naba’ al-‘aẓīm» — bukan gosip yang bisa diabaikan, tapi <b>berita terbesar</b> yang menentukan nasib tiap orang, yang anehnya justru paling sering diperdebatkan & dilalaikan.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'كَلَّا سَيَعْلَمُونَ', latin: 'kallā saya‘lamūn', arti: 'sekali-kali tidak! kelak mereka akan mengetahui',
         poin: [
           'Pengulangan «kallā saya‘lamūn» — ancaman bertingkat bagi yang meragukan hari Kebangkitan.',
@@ -2189,7 +2189,7 @@ const AYAT = [
       'Dipilih «naba’» (berita besar & pasti benar), bukan «khabar» (kabar biasa) — menegaskan bobot hari Kebangkitan. Pertanyaan «‘amma yatasā’alūn» menarik perhatian, dan pengulangan «kallā saya‘lamūn» memberi tekanan ancaman yang berlapis.',
     amalan:
       'Periksa porsi perhatianmu: berapa banyak untuk kabar dunia yang fana, berapa untuk "berita besar" akhirat? Sisihkan waktu mengingat akhirat tiap hari (ziarah kubur sesekali, baca ayat hari akhir) agar ia tak terlalaikan.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'an-naziat-37-41',
@@ -2202,7 +2202,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ه', 'و', 'ي'], makna: 'kecenderungan nafsu yang menjatuhkan',
           gambar: 'Akar «h-w-y» berarti <b>jatuh & turun ke bawah</b> (dari sini «hāwiyah» = jurang neraka). «Hawā» = kecenderungan nafsu yang <b>menarik jiwa ke bawah</b> — ke kenikmatan sesaat yang menjatuhkan. Menggetarkan: kata untuk "keinginan nafsu" satu akar dengan "jatuh". Maka «nahan-nafsa ‘anil-hawā» = menahan jiwa dari yang menjatuhkannya — itulah harga surga.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'مَنْ خَافَ مَقَامَ رَبِّهِ', latin: 'man khāfa maqāma rabbih', arti: 'orang yang takut akan kebesaran Tuhannya',
         poin: [
           'Bukan sekadar takut, tapi «khāfa maqāma rabbih» — sadar akan KEBESARAN & pengawasan Tuhannya.',
@@ -2234,7 +2234,7 @@ const AYAT = [
       'Kata «hawā» (dari h-w-y: jatuh) menyiratkan bahwa menuruti nafsu berarti menjatuhkan diri ke bawah. Frasa «maqāma rabbih» (kedudukan/kebesaran Tuhannya) memperdalam makna takut — bukan takut biasa, tapi pengagungan yang melahirkan pengendalian diri.',
     amalan:
       'Latih "menahan nafsu" dari hal kecil: tahan pandangan, tahan kata, tahan belanja impulsif, tahan amarah. Saat sendirian & tergoda, hadirkan «maqāma rabbih» — bahwa Allah melihat. Itulah otot takwa yang menentukan tempat tinggalmu kelak.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'abasa-1-7',
@@ -2255,7 +2255,7 @@ const AYAT = [
           '«la‘allahū yazzakkā» — boleh jadi sang buta itu (akan) menyucikan diri: nilai seseorang dari potensi takwanya, bukan rupa/hartanya.',
           'Yang miskin & lemah bisa jadi lebih mulia di sisi Allah daripada pembesar yang berpaling.',
         ],
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
     ],
     hikmahPoin: [
       'Hargai orang dari ketulusannya mencari kebenaran, bukan dari status & hartanya.',
@@ -2281,7 +2281,7 @@ const AYAT = [
       'Pembukaan dengan kata kerja orang ketiga «‘abasa» (dia bermuka masam) sebelum beralih menyapa langsung adalah bentuk teguran yang lembut sekaligus tegas. Kontras «al-a‘mā» (yang tulus) dengan «manistagnā» (yang merasa cukup) menukik ke inti pelajaran: perhatian layak diberikan pada pencari kebenaran.',
     amalan:
       'Periksa caramu memperlakukan orang: apakah hangat pada yang "berguna" & dingin pada yang lemah? Latih memberi perhatian tulus pada pencari ilmu/kebaikan tanpa memandang status. Muliakan orang kecil yang bersungguh-sungguh menuju Allah.',
-    sumber: ['Tafsir Ibnu Katsir', 'Jami‘ at-Tirmidzi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Jami‘ at-Tirmidzi'],
   },
   {
     id: 'at-takwir-8-9',
@@ -2294,7 +2294,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['و', 'أ', 'د'], makna: 'mengubur (bayi) hidup-hidup',
           gambar: 'Akar «w-’-d» bermakna khusus: <b>mengubur bayi hidup-hidup</b> — kebiadaban jahiliah terhadap anak perempuan. Al-Qur’an menyebut korbannya «al-mau’ūdah» (yang dikubur) lalu menjadikannya <b>SAKSI yang ditanya</b>, bukan pelakunya. Susunannya menggetarkan: yang lemah & dibungkam di dunia, di akhirat <b>diberi suara untuk menuntut</b>. Keadilan-Nya tak melewatkan satu korban pun.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'بِأَيِّ ذَنبٍ قُتِلَتْ', latin: 'bi’ayyi żambin qutilat', arti: 'karena dosa apa dia dibunuh?',
         poin: [
           'Pertanyaan yang menohok pelakunya: "karena dosa APA ia dibunuh?" — sebab ia tak punya dosa sama sekali.',
@@ -2326,7 +2326,7 @@ const AYAT = [
       'Dipilih kata «al-mau’ūdah» (dari w-’-d: mengubur hidup-hidup) yang spesifik & menggugah. Yang ditanya adalah korban, bukan pelaku — gaya bahasa yang justru melipatgandakan beratnya tuntutan atas pelakunya, sekaligus mengangkat martabat sang korban.',
     amalan:
       'Hormati & lindungi kehidupan, terutama yang lemah & tak bersuara (anak, perempuan, kaum tertindas). Jangan pernah meremehkan kezaliman "kecil" pada mereka — semua dicatat. Dan syukuri ajaran yang memuliakan martabat manusia.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-infitar-6-8',
@@ -2339,7 +2339,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['غ', 'ر', 'ر'], makna: 'tertipu oleh yang tampak aman',
           gambar: 'Akar «gh-r-r» berarti <b>tertipu oleh sesuatu yang tampak aman</b> — «al-garar» dalam jual-beli = transaksi menipu yang tampak menguntungkan. «Mā garraka» = apa yang menipumu hingga lengah? Jawabannya tersirat pada «al-Karīm»: <b>justru kemurahan & kesabaran Allah</b> yang sering disalahpahami — ditutup-Nya aibmu, ditunda-Nya hukuman, lalu kau kira Dia tak peduli. Padahal itu kemurahan, bukan kelalaian.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'الَّذِي خَلَقَكَ فَسَوَّاكَ فَعَدَلَكَ', latin: 'allażī khalaqaka fa sawwāka fa ‘adalak', arti: 'yang menciptakanmu, menyempurnakanmu, dan menyeimbangkanmu',
         poin: [
           'Tiga karunia berurutan: «khalaqaka» (mencipta) → «sawwāka» (menyempurnakan) → «‘adalaka» (menyeimbangkan).',
@@ -2371,7 +2371,7 @@ const AYAT = [
       'Penyebutan «al-Karīm» (Maha Pemurah) di tempat yang menuntut taat justru menukik: kemurahan-Nya itulah yang sering "memperdaya". Kata «garra» (dari gh-r-r: tertipu oleh yang tampak aman) menangkap psikologi manusia yang terlena oleh penangguhan hukuman.',
     amalan:
       'Saat tergoda menunda taubat karena "toh Allah Maha Pengampun", ingat ayat ini: jangan jadikan kemurahan-Nya sebagai modal bermaksiat. Sebaliknya, balas kemurahan dengan rasa malu & ketaatan. Renungi kesempurnaan tubuhmu sebagai pengingat harian.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-mutaffifin-1-3',
@@ -2383,7 +2383,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ط', 'ف', 'ف'], makna: 'sedikit; curang dalam jumlah kecil',
           gambar: 'Akar «ṭ-f-f» bermakna <b>sesuatu yang sedikit & di tepi</b> (ṭaff = pinggir). «Taṭfīf» = curang dalam <b>jumlah yang sedikit</b> — mengurangi takaran secuil yang nyaris tak terlihat. Mengerikan: Al-Qur’an menjatuhkan «wail» (celaka) untuk kecurangan SEKECIL itu. Sebab yang dirusak bukan sekadar timbangan, tapi <b>kejujuran & kepercayaan</b> — dan dosa kecil yang diremehkan sering jadi pintu kehancuran.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'وَإِذَا كَالُوهُمْ أَو وَّزَنُوهُمْ يُخْسِرُونَ', latin: 'wa iżā kālūhum au wazanūhum yukhsirūn', arti: 'apabila menakar/menimbang untuk orang lain, mereka menguranginya',
         poin: [
           'Penyakitnya: STANDAR GANDA — minta dipenuhi saat menerima, tapi mengurangi saat memberi.',
@@ -2415,7 +2415,7 @@ const AYAT = [
       'Kata «muṭaffifīn» (dari ṭ-f-f: sedikit) menyorot bahwa kecurangan yang dikecam adalah yang kecil & samar — justru karena itulah ia berbahaya, sebab pelakunya merasa aman. Kontras «yastaufūn» (minta penuh) vs «yukhsirūn» (mengurangi) menelanjangi standar ganda mereka.',
     amalan:
       'Tegakkan kejujuran dalam takaran terkecil: penuhi hak pelanggan, karyawan, & rekan seperti kau ingin hakmu dipenuhi. Hindari "mengurangi" diam-diam — waktu kerja, kualitas, janji. Uji dirimu: apakah standarmu sama untuk diri & untuk orang lain?',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-insyiqaq-6',
@@ -2428,7 +2428,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ك', 'د', 'ح'], makna: 'bekerja keras hingga berbekas & letih',
           gambar: 'Akar «k-d-ḥ» berarti <b>bekerja keras hingga membekas & meletihkan</b> — sampai meninggalkan goresan. Al-Qur’an memilihnya untuk hidup manusia: kau <b>terus mengerahkan tenaga</b>, suka atau tidak, hingga berbekas. Pertanyaannya bukan apakah kau berjerih — semua berjerih — tapi <b>ke mana</b> jerihmu bermuara. Surah ini menjawab: «ilā rabbika» — menuju Tuhanmu, dan kau pasti berjumpa dengan-Nya.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'فَمُلَاقِيهِ', latin: 'fa mulāqīh', arti: 'maka kamu akan menemui-Nya',
         poin: [
           '«fa mulāqīh» — maka kau PASTI menemui-Nya: tujuan perjalanan ini tak terhindarkan.',
@@ -2460,7 +2460,7 @@ const AYAT = [
       'Kata «kādiḥ» (dari k-d-ḥ: kerja keras yang membekas) melukiskan hidup sebagai pengerahan tenaga tanpa henti. Frasa «ilā rabbika… fa mulāqīh» memberi arah & kepastian: jerih itu menuju Allah, dan perjumpaan dengan-Nya pasti terjadi.',
     amalan:
       'Tinjau ke mana energimu terbesar tertuju setiap hari — apakah ada porsi yang benar-benar "menuju Allah"? Niatkan pekerjaan & lelahmu sebagai ibadah & jalan mendekat kepada-Nya, agar tak ada keringat yang sia-sia di hari perjumpaan.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-buruj-14-16',
@@ -2473,7 +2473,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['و', 'د', 'د'], makna: 'cinta yang lembut & ditampakkan',
           gambar: 'Akar «w-d-d» bukan cinta yang tersimpan diam, tapi <b>kasih yang ditampakkan dalam sikap & perlakuan</b> — dari sini «mawaddah» (kasih sayang suami-istri). Pola «fa‘ūl» pada «al-Wadūd» menambah intensitas: <b>Maha Mencintai, terus-menerus</b>. Letaknya menakjubkan: tepat setelah «al-Gafūr» — Dia tak hanya mengampuni hamba yang kembali, tapi <b>menyambutnya dengan cinta</b>. Diampuni saja sudah lega; diampuni LALU dicintai — itulah puncak kemurahan.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'فَعَّالٌ لِّمَا يُرِيدُ', latin: 'fa‘‘ālul limā yurīd', arti: 'Maha Kuasa berbuat apa yang Dia kehendaki',
         poin: [
           '«fa‘‘ālul limā yurīd» — cinta & ampunan-Nya ditopang KUASA mutlak: tak ada yang membatasi kehendak-Nya.',
@@ -2505,7 +2505,7 @@ const AYAT = [
       'Kata «al-Wadūd» (dari w-d-d: cinta yang ditampakkan, pola fa‘ūl yang intensif) diletakkan tepat setelah «al-Gafūr» — menggabungkan ampunan dengan kasih. Penutup «fa‘‘ālul limā yurīd» menegaskan bahwa cinta & ampunan itu ditopang kuasa mutlak yang tak terbatas.',
     amalan:
       'Saat merasa terlalu berdosa untuk kembali, ingat «al-Gafūr al-Wadūd»: Dia mengampuni & mencintai yang pulang kepada-Nya. Tumbuhkan cinta kepada Allah, bukan sekadar takut. Dan saat diuji karena kebaikan, bersandarlah pada Tuhan yang Maha Kuasa atas segala kehendak-Nya.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'at-tariq-5-8',
@@ -2517,7 +2517,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['د', 'ف', 'ق'], makna: 'tertuang & terpancar deras',
           gambar: 'Akar «d-f-q» berarti <b>tertuang/terpancar dengan deras</b>. Al-Qur’an memilihnya untuk asal-usulmu: «mā’in dāfiq» — setetes yang terpancar, sesuatu yang <b>hina, lemah, & tak berdaya</b>. Renungan ini menampar dua arah sekaligus: <b>obat kesombongan</b> (dari air hina, mengapa angkuh?) dan <b>bukti kebangkitan</b> (Yang mampu mencipta dari setetes, tentu mampu menghidupkan kembali).' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'إِنَّهُ عَلَىٰ رَجْعِهِ لَقَادِرٌ', latin: 'innahū ‘alā raj‘ihī laqādir', arti: 'sungguh Dia benar-benar kuasa mengembalikannya (hidup)',
         poin: [
           'Argumen tak terbantah: Yang menciptakanmu dari setetes, PASTI kuasa mengembalikanmu hidup.',
@@ -2549,7 +2549,7 @@ const AYAT = [
       'Kata «dāfiq» (dari d-f-q: terpancar deras) melukiskan asal manusia yang lemah. Lalu «innahū ‘alā raj‘ihī laqādir» menutup dengan logika kuat: kemampuan mencipta pertama kali adalah dalil pasti atas kemampuan mengembalikan.',
     amalan:
       'Saat kesombongan menyusup (karena harta, jabatan, prestasi), ingat asalmu dari setetes air. Dan saat ragu pada akhirat, renungi: Yang menciptamu dari tiada pasti mampu membangkitkanmu. Jadikan keduanya pengingat untuk rendah hati & bersiap.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-balad-11-16',
@@ -2562,7 +2562,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['ع', 'ق', 'ب'], makna: 'tanjakan terjal di pegunungan',
           gambar: 'Akar «‘-q-b» berkait dengan <b>tumit & ujung</b>; «al-‘aqabah» = <b>jalan menanjak terjal</b> di pegunungan yang berat didaki. Al-Qur’an memakainya untuk amal kebaikan: memerdekakan budak, memberi makan yatim & miskin di masa sulit — semua itu "mendaki", <b>melawan gravitasi kikir & ego</b>. Kebaikan jarang menurun & mudah; ia menanjak. Dan «iqtaḥama» (menerjang) menegaskan: butuh tekad, bukan sekadar niat.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'أَوْ إِطْعَامٌ فِي يَوْمٍ ذِي مَسْغَبَةٍ', latin: 'au iṭ‘āmun fī yaumin żī masgabah', arti: 'atau memberi makan pada hari kelaparan',
         poin: [
           'Sedekah paling bernilai: «fī yaumin żī masgabah» — di masa KELAPARAN, saat memberi terasa paling berat.',
@@ -2594,7 +2594,7 @@ const AYAT = [
       'Kata «al-‘aqabah» (tanjakan terjal) menggambarkan beratnya amal kebaikan, diperkuat «iqtaḥama» (menerjang dengan tekad). Pilihan «fī yaumin żī masgabah» (hari kelaparan) menonjolkan nilai sedekah pada saat tersulit, & «matrabah» (sangat fakir, sampai berdebu) menukik pada yang paling papa.',
     amalan:
       'Pilih satu "pendakian" pekan ini: bantu pembebasan utang seseorang, beri makan yang lapar, santuni yatim/dhuafa — terutama saat dompetmu sedang seret (di situ nilainya berlipat). Latih diri menerjang kebaikan yang berat, bukan hanya yang nyaman.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'asy-syams-7-10',
@@ -2606,7 +2606,7 @@ const AYAT = [
         ],
         asalKata: { huruf: ['د', 'س', 'س'], makna: 'menyembunyikan & mengubur dalam kotoran',
           gambar: 'Akar «d-s-s» berarti <b>menyusupkan & menyembunyikan</b> sesuatu (dari sini «dassa» — mengubur dalam tanah). Maka «man dassāhā» = orang yang <b>mengubur & mengerdilkan jiwanya</b> di bawah dosa, menyembunyikan fitrahnya yang bersih hingga lemas. Lawannya «zakkā» (menyucikan + menumbuhkan). Dua kata berlawanan arah: satu menumbuhkan jiwa ke atas, satu menguburnya ke bawah — dan pilihannya di tanganmu.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'فَأَلْهَمَهَا فُجُورَهَا وَتَقْوَاهَا', latin: 'fa alhamahā fujūrahā wa taqwāhā', arti: 'maka Dia mengilhamkan kepadanya (jalan) kejahatan dan ketakwaannya',
         poin: [
           '«alhamahā» — Allah mengilhamkan pada jiwa pengenalan akan jahat & takwa: kau punya kompas batin.',
@@ -2638,7 +2638,7 @@ const AYAT = [
       'Kontras «zakkā» (menyucikan + menumbuhkan) dengan «dassā» (dari d-s-s: menyembunyikan & mengubur) menggambarkan dua arah berlawanan bagi jiwa: tumbuh ke atas atau terkubur ke bawah. Kata «alhama» (mengilhamkan) menegaskan bahwa pengenalan baik-buruk adalah bekal fitrah, bukan sesuatu yang asing.',
     amalan:
       'Rawat jiwamu seperti merawat kebun: bersihkan "gulma" (dosa, dengki, riya) & tanam "benih" (zikir, ilmu, amal). Saat hati membisikkan keburukan, ingat kau punya kompas takwa — ikuti bisikan kebaikan, jangan kubur ia.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
   {
     id: 'al-lail-5-7',
@@ -2653,7 +2653,7 @@ const AYAT = [
           { arab: 'الْيُسْرَىٰ', latin: 'Al-Yusrā', sifat: ['Buah memberi + takwa', 'Tiap kebaikan membuka kebaikan'] },
           { arab: 'الْعُسْرَىٰ', latin: 'Al-‘Usrā', alt: true, sifat: ['Buah kikir + merasa cukup', 'Tiap keburukan menyeret keburukan'] },
         ], catatan: 'Hidup memudahkan jalan yang kau pilih — menuju kemudahan, atau kesukaran.' },
-        sumber: ['Tafsir Ibnu Katsir'] },
+        sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di'] },
       { kata: 'وَصَدَّقَ بِالْحُسْنَىٰ', latin: 'wa ṣaddaqa bil-ḥusnā', arti: 'dan membenarkan (adanya pahala) yang terbaik',
         poin: [
           '«ṣaddaqa bil-ḥusnā» — membenarkan & yakin pada balasan terbaik (surga): keyakinan yang menggerakkan kemurahan.',
@@ -2685,7 +2685,7 @@ const AYAT = [
       'Kontras «al-yusrā» (kemudahan) vs «al-‘usrā» (kesukaran) membingkai dua jalan hidup. Kata «ṣaddaqa bil-ḥusnā» (membenarkan balasan terbaik) menautkan kemurahan dengan keyakinan — sebab memberi terasa ringan hanya bila hati yakin akan ganti yang lebih baik.',
     amalan:
       'Biasakan memberi — meski sedikit & rutin — sambil meneguhkan keyakinan akan ganti terbaik dari Allah. Amati bagaimana kemurahan justru "memudahkan" urusanmu. Jauhi sifat kikir & merasa cukup tanpa Allah, sebab ia diam-diam mempersulit hidup.',
-    sumber: ['Tafsir Ibnu Katsir', 'Tafsir Al-Qurthubi'],
+    sumber: ['Tafsir Ibnu Katsir', 'Tafsir As-Sa‘di', 'Tafsir Al-Qurthubi'],
   },
 ];
 
