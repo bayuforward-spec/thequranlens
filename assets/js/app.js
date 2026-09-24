@@ -85,6 +85,13 @@ const App = {
     this.renderKoleksi();
     this.showKataNotif(false);
 
+    // Belajar Nahwu: deep link #nahwu/… langsung membuka tab-nya
+    if (window.Nahwu) {
+      Nahwu.init();
+      Tanya.init();
+      if (location.hash.startsWith('#nahwu')) this.switchTab('nahwu');
+    }
+
     // Deteksi edisi Play Store (TWA) → aktifkan Google Play Billing, sembunyikan Mayar.
     if (window.PlayBilling) {
       PlayBilling.init().then((ada) => {
@@ -100,6 +107,9 @@ const App = {
     document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + name));
     if (name === 'tersimpan') this.renderTersimpan();
     if (name === 'koleksi') this.renderKoleksi();
+    document.body.classList.toggle('nw-active', name === 'nahwu');
+    if (name === 'nahwu' && window.Nahwu) Nahwu.show();
+    else if (location.hash.startsWith('#nahwu')) history.replaceState(null, '', location.pathname + location.search);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
@@ -196,6 +206,7 @@ const App = {
     </div>`;
 
     h += this.renderAyahDisplay(ayat);
+    if (window.Nahwu) h += Nahwu.renderEpisodeLink(ayat);
     if (Array.isArray(ayat.kajianKata) && ayat.kajianKata.length) {
       h += this.renderKajianKata(ayat, open);
       h += `<div class="hr-grad"></div><div class="kajian-label section"><span class="kj-ico">📖</span>Kajian Ayat Menyeluruh</div>`;

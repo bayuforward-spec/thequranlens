@@ -1,6 +1,7 @@
 # 🔐 Backend Verifikasi Langganan — The Quran Lens
 
-Server kecil **tanpa dependensi** (hanya Node bawaan) yang menutup celah bypass
+Server kecil (Node bawaan + satu dependensi: `@anthropic-ai/sdk` untuk fitur
+"Tanya ustadz AI") yang menutup celah bypass
 pada gating sisi-klien. Premium hanya aktif bila Order ID **tercatat di server**
 lewat **webhook Scalev yang terverifikasi tanda tangannya**.
 
@@ -23,7 +24,8 @@ cd server
 cp .env.example .env     # lalu isi nilainya
 node server.js           # atau: npm start
 ```
-Butuh **Node ≥ 18**. Tidak ada `npm install` (nol dependensi).
+Butuh **Node ≥ 18**. Jalankan `npm install` sekali (memasang `@anthropic-ai/sdk`).
+Verifikasi langganan tetap jalan tanpa paket itu; hanya fitur tanya yang mati.
 
 Buat secret:
 ```bash
@@ -47,6 +49,19 @@ Selama `apiBase` kosong, aplikasi tetap berjalan dalam **mode demo** sisi-klien.
 | `DATA_FILE` | Lokasi penyimpanan JSON (default `./data/subs.json`) |
 | `STATIC_DIR` | Folder app statis untuk dilayani sekalian (opsional) |
 | `ALLOW_ORIGIN` | Nilai CORS (default `*`; batasi di produksi) |
+| `ANTHROPIC_API_KEY` | Kunci API Anthropic untuk `POST /api/nahwu/tanya`. Kosong = fitur tanya mati |
+| `TANYA_PER_JAM` | Batas pertanyaan per IP per jam (default 30) |
+
+## Tanya ustadz AI (halaman Belajar Nahwu)
+`POST /api/nahwu/tanya` meneruskan pertanyaan ke Claude (`claude-opus-5`) dan
+mengalirkan jawaban sebagai `text/event-stream`. API key **hanya** di server;
+frontend (`assets/js/nahwu-tanya.js`) cuma tahu `apiBase`. Tombol "Tanya ustadz AI"
+baru muncul bila `/api/health` melaporkan `"tanya": true`.
+
+Pengendali biaya: body ≤ 40 KB, ≤ 8 giliran, pesan ≤ 2.000 karakter, konteks
+≤ 4.000 karakter, kuota per IP per jam (`TANYA_PER_JAM`, disimpan di memori —
+reset saat server restart). Pantau pemakaian di console.anthropic.com dan pasang
+batas belanja bulanan di sana.
 
 ## ⚠️ Yang WAJIB Anda sesuaikan dengan Scalev
 Skema payload & metode tanda tangan tiap penyedia berbeda. Cek dokumentasi

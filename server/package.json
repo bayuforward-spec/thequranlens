@@ -2,7 +2,7 @@
   "name": "quran-lens-server",
   "version": "1.0.0",
   "private": true,
-  "description": "Backend verifikasi langganan Scalev untuk The Quran Lens (tanpa dependensi).",
+  "description": "Backend The Quran Lens: verifikasi langganan + Tanya ustadz AI (Belajar Nahwu).",
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
@@ -10,5 +10,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
   }
 }

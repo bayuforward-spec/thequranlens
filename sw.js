@@ -1,11 +1,12 @@
 /* sw.js — Service Worker The Quran Lens (PWA + notifikasi kata harian).
  * Strategi network-first: konten selalu diambil terbaru saat online,
  * cache dipakai sebagai cadangan agar app tetap jalan saat offline. */
-const CACHE = 'quranlens-v6';
+const CACHE = 'quranlens-v7';
 const SHELL = [
   './', 'index.html', 'gratis.html', 'manifest.webmanifest',
   'assets/css/styles.css',
-  'assets/js/content.js', 'assets/js/storage.js', 'assets/js/payment.js', 'assets/js/billing.js', 'assets/js/app.js',
+  'assets/js/content.js', 'assets/js/storage.js', 'assets/js/payment.js', 'assets/js/billing.js',
+  'assets/js/nahwu-data.js', 'assets/js/nahwu.js', 'assets/js/nahwu-tanya.js', 'assets/js/app.js',
 ];
 
 self.addEventListener('install', (e) => {

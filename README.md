@@ -23,6 +23,10 @@ Setiap ayat mengikuti **satu skema baku** — inilah produk inti & pembedanya:
 - **Bookmark** & **Streak harian** — pendorong retensi
 - **Gratis vs Premium** — lapisan "wow" (asbabun nuzul, tafsir, linguistik, amalan)
   dikunci sebagai pemicu beli; *Hikmah* terbuka gratis sebagai cicipan
+- **Belajar Nahwu** — tab *Nahwu*: 12 pertemuan (materi, analisis ayat per kata
+  dengan warna i'rob, latihan, quiz, progres). Episode Kajian yang ayatnya dibedah
+  di modul ini menampilkan kotak **Analisis nahwu**. Gratis seluruhnya.
+  Opsional: **Tanya ustadz AI** lewat backend (`ANTHROPIC_API_KEY` di server)
 - **PWA** — bisa di-_install_ sebagai aplikasi di HP
 
 ## 💰 Model Monetisasi (Scalev)
@@ -43,6 +47,12 @@ python3 -m http.server 8000
 # buka http://localhost:8000
 ```
 
+## ✅ Pemeriksaan sebelum commit
+```bash
+node tools/validasi-konten.js   # episode Kajian
+node tools/validasi-nahwu.js    # data Belajar Nahwu + tautan ayat ↔ episode
+```
+
 ## ✍️ Menambah Ayat Baru
 Cukup edit satu file: **`assets/js/content.js`**. Salin satu objek di array
 `AYAT`, isi ke-6 lapisan + sumber, lalu tempel. Tidak perlu menyentuh kode lain.
@@ -54,11 +64,15 @@ index.html                # Landing + shell aplikasi (tab navigasi)
 assets/css/styles.css     # Tema zamrud & emas
 assets/js/content.js      # 🟢 Mesin konten — skema baku + ayat (edit di sini)
 assets/js/app.js          # Render 6 lapisan, gating Premium, bookmark, streak
-assets/js/storage.js      # Status Premium, bookmark, streak (localStorage)
+assets/js/storage.js      # Status Premium, bookmark, streak, progres nahwu (localStorage)
+assets/js/nahwu-data.js   # 🟢 Data kursus Belajar Nahwu (12 pertemuan) + helper tautan ayat
+assets/js/nahwu.js        # Halaman Belajar Nahwu (sidebar, materi, ayat, latihan, quiz, widget)
+assets/js/nahwu-tanya.js  # Panel "Tanya ustadz AI" → server /api/nahwu/tanya
 assets/js/payment.js      # Integrasi checkout Scalev + verifikasi backend
 manifest.webmanifest      # Konfigurasi PWA
 server/                   # 🔐 Backend verifikasi langganan (anti-bypass)
   ├─ server.js            #    Webhook Scalev + endpoint /api/verify
+  ├─ nahwu-tanya.js       #    POST /api/nahwu/tanya (Claude, streaming)
   └─ README.md            #    Cara pasang & sesuaikan dengan Scalev
 STRATEGI.md               # Strategi bisnis & konten
 ```

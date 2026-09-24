@@ -10,6 +10,8 @@ const Store = {
   KEY_STREAK: 'quranlens_streak',
   KEY_DONE: 'quranlens_done',
   KEY_REMINDER: 'quranlens_reminder',
+  KEY_NAHWU: 'quranlens_nahwu',
+  KEY_NAHWU_LAMA: 'nahwu-progress-v1', // file HTML mandiri "Nahwu 12 Pertemuan"
 
   /* ---------- Premium ---------- */
   isPro() {
@@ -65,6 +67,24 @@ const Store = {
   markReminderShown(dateStr) {
     const r = this.reminder(); r.last = dateStr;
     localStorage.setItem(this.KEY_REMINDER, JSON.stringify(r));
+  },
+
+  /* ---------- Progres Belajar Nahwu ----------
+   * { read: {p: true}, quiz: {p: skorTerbaik%}, lat: {p: {ei: {done, ok}}}, ayat: {p: ['vi-wi', …]} }
+   * Progres dari file HTML mandiri (key lama) diimpor sekali bila key baru belum ada. */
+  nahwu() {
+    const kosong = { read: {}, quiz: {}, lat: {}, ayat: {} };
+    try {
+      let raw = localStorage.getItem(this.KEY_NAHWU);
+      if (!raw) {
+        raw = localStorage.getItem(this.KEY_NAHWU_LAMA);
+        if (raw) localStorage.setItem(this.KEY_NAHWU, raw);
+      }
+      return Object.assign(kosong, raw ? JSON.parse(raw) : {});
+    } catch { return kosong; }
+  },
+  setNahwu(s) {
+    try { localStorage.setItem(this.KEY_NAHWU, JSON.stringify(s)); } catch (e) {}
   },
 
   /* ---------- Streak harian (retensi) ---------- */

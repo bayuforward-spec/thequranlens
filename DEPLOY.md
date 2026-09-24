@@ -34,7 +34,7 @@ Dua bagian yang di-deploy terpisah:
 2. **New → Web Service** → pilih repo yang sama.
 3. Render membaca `render.yaml` otomatis. Jika diminta manual:
    - **Root Directory**: `server`
-   - **Runtime**: Node · **Build**: *(kosong)* · **Start**: `node server.js`
+   - **Runtime**: Node · **Build**: `npm install` · **Start**: `node server.js`
    - **Health Check Path**: `/api/health`
 4. **Environment** → isi variabel:
    | Key | Nilai |
@@ -43,6 +43,7 @@ Dua bagian yang di-deploy terpisah:
    | `TOKEN_SECRET` | (Render bisa generate otomatis) |
    | `SCALEV_SIGNATURE_HEADER` | `x-scalev-signature` (sesuaikan dgn Scalev) |
    | `ALLOW_ORIGIN` | URL frontend kamu, mis. `https://quran-lens.netlify.app` |
+   | `ANTHROPIC_API_KEY` | *(opsional)* mengaktifkan "Tanya ustadz AI" di halaman Nahwu |
 5. **Create Web Service**. Kamu dapat URL seperti `https://quran-lens-api.onrender.com`.
 6. Tes: buka `https://quran-lens-api.onrender.com/api/health` → harus `{"ok":true,...}`.
 

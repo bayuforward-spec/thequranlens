@@ -45,6 +45,7 @@
     <nav class="tabs" id="tabs">
       <button class="tab active" data-tab="beranda">Beranda</button>
       <button class="tab" data-tab="kajian">Kajian</button>
+      <button class="tab" data-tab="nahwu">Nahwu</button>
       <button class="tab" data-tab="koleksi">Koleksi</button>
       <button class="tab" data-tab="tersimpan">Tersimpan</button>
       <button class="tab" data-tab="langganan">Langganan</button>
@@ -98,6 +99,15 @@
         <div class="nav-scrim" id="navScrim" onclick="App.toggleDrawer(false)"></div>
         <aside class="navigator" id="navigator"></aside>
         <div class="episode" id="episodeBox"></div>
+      </div>
+    </section>
+
+    <!-- ============ BELAJAR NAHWU (12 pertemuan) ============ -->
+    <section class="panel nahwu" id="panel-nahwu">
+      <button class="drawer-btn nw-side-btn" onclick="Nahwu.toggleSide()">☰ Daftar Pertemuan</button>
+      <div class="nw-shell">
+        <aside class="nw-side" id="nwSide"></aside>
+        <div class="nw-main" id="nwView"></div>
       </div>
     </section>
 
@@ -183,6 +193,9 @@
   <script src="assets/js/storage.js"></script>
   <script src="assets/js/payment.js"></script>
   <script src="assets/js/billing.js"></script>
+  <script src="assets/js/nahwu-data.js"></script>
+  <script src="assets/js/nahwu.js"></script>
+  <script src="assets/js/nahwu-tanya.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
     App.init();
