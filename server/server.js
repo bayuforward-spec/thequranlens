@@ -25,7 +25,7 @@
  *   STATIC_DIR               Folder aplikasi statis untuk dilayani (opsional)
  *   ALLOW_ORIGIN             Nilai CORS Access-Control-Allow-Origin (default '*')
  *   ANTHROPIC_API_KEY        Kunci API Anthropic untuk /api/nahwu/tanya (kosong = fitur mati)
- *   TANYA_PER_JAM            Batas pertanyaan per IP per jam (default 30)
+ *   TANYA_PER_JAM            Batas pertanyaan per IP per jam (default 10)
  *
  * CATATAN: Nama field/header pasti Mayar dikonfirmasi dari 1 transaksi tes
  * (set MAYAR_WEBHOOK_DEBUG=true, lihat log, lalu matikan). normalizeEvent() &

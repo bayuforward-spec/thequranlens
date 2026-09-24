@@ -50,10 +50,10 @@ Selama `apiBase` kosong, aplikasi tetap berjalan dalam **mode demo** sisi-klien.
 | `STATIC_DIR` | Folder app statis untuk dilayani sekalian (opsional) |
 | `ALLOW_ORIGIN` | Nilai CORS (default `*`; batasi di produksi) |
 | `ANTHROPIC_API_KEY` | Kunci API Anthropic untuk `POST /api/nahwu/tanya`. Kosong = fitur tanya mati |
-| `TANYA_PER_JAM` | Batas pertanyaan per IP per jam (default 30) |
+| `TANYA_PER_JAM` | Batas pertanyaan per IP per jam (default 10) |
 
 ## Tanya ustadz AI (halaman Belajar Nahwu)
-`POST /api/nahwu/tanya` meneruskan pertanyaan ke Claude (`claude-opus-5`) dan
+`POST /api/nahwu/tanya` meneruskan pertanyaan ke Claude (`claude-sonnet-5`) dan
 mengalirkan jawaban sebagai `text/event-stream`. API key **hanya** di server;
 frontend (`assets/js/nahwu-tanya.js`) cuma tahu `apiBase`. Tombol "Tanya ustadz AI"
 baru muncul bila `/api/health` melaporkan `"tanya": true`.

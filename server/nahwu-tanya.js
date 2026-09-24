@@ -7,16 +7,16 @@
  *
  * API key Anthropic hanya dibaca dari env ANTHROPIC_API_KEY (tidak pernah dikirim
  * ke klien). Pengaman biaya: batas ukuran body, panjang pesan & konteks, jumlah
- * giliran, serta kuota per IP per jam (TANYA_PER_JAM, default 30; di memori).
+ * giliran, serta kuota per IP per jam (TANYA_PER_JAM, default 10; di memori).
  */
 'use strict';
 
-const MODEL = 'claude-opus-5';
+const MODEL = 'claude-sonnet-5';
 const MAX_BODY = 40_000;       // byte
 const MAX_PESAN = 2_000;       // karakter per pesan
 const MAX_KONTEKS = 4_000;     // karakter konteks halaman
 const MAX_GILIRAN = 8;
-const PER_JAM = parseInt(process.env.TANYA_PER_JAM || '30', 10);
+const PER_JAM = parseInt(process.env.TANYA_PER_JAM || '10', 10);
 
 let client = null;
 function getClient() {
@@ -95,14 +95,12 @@ async function handle(req, res, raw, { allowOrigin, kirimJSON }) {
   });
   const kirim = (obj) => res.write(`data: ${JSON.stringify(obj)}\n\n`);
 
-  const stream = c.beta.messages.stream({
+  const stream = c.messages.stream({
     model: MODEL,
     max_tokens: 16000,
     thinking: { type: 'adaptive' },
-    output_config: { effort: 'low' }, // tanya-jawab singkat: hemat token & cepat
-    // Bila classifier menolak, API mengulang di model cadangan yang direkomendasikan.
-    betas: ['server-side-fallback-2026-07-01'],
-    fallbacks: 'default',
+    // medium: Sonnet 5 di 'low' berisiko terlalu dangkal untuk uraian i'rob
+    output_config: { effort: 'medium' },
     system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
     messages,
   });
