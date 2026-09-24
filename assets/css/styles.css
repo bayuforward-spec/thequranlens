@@ -462,3 +462,192 @@ footer .note { font-size: .74rem; opacity: .8; margin-top: 8px; max-width: 640px
 
 /* Edisi Play Store (TWA): sembunyikan UI pembayaran Mayar (aktivasi Order ID) */
 body.mode-play .manual { display: none !important; }
+
+/* ============================================================
+   BELAJAR NAHWU — 12 pertemuan (assets/js/nahwu.js)
+   Kode warna i'rob dipertahankan: rofa' biru, nashob hijau, jer merah,
+   jazm ungu, mabni abu-abu (garis putus-putus). Varian terang di bawah.
+   ============================================================ */
+:root {
+  --irob-r: #7fa8e8; --irob-n: #74c597; --irob-j: #e48d8d; --irob-z: #b79ceb; --irob-m: #98a09b;
+  --nw-good: #74c597; --nw-bad: #e48d8d;
+}
+:root[data-theme="light"] {
+  --irob-r: #2458a6; --irob-n: #2b7a4b; --irob-j: #a63a3a; --irob-z: #6a48a3; --irob-m: #6f7571;
+  --nw-good: #2b7a4b; --nw-bad: #a63a3a;
+}
+.irob-r { --irob: var(--irob-r); } .irob-n { --irob: var(--irob-n); } .irob-j { --irob: var(--irob-j); }
+.irob-z { --irob: var(--irob-z); } .irob-m { --irob: var(--irob-m); }
+.irob-bg-r { background: var(--irob-r); } .irob-bg-n { background: var(--irob-n); } .irob-bg-j { background: var(--irob-j); }
+.irob-bg-z { background: var(--irob-z); } .irob-bg-m { background: var(--irob-m); }
+.irob-fg-r { color: var(--irob-r); } .irob-fg-n { color: var(--irob-n); } .irob-fg-j { color: var(--irob-j); }
+.irob-fg-z { color: var(--irob-z); } .irob-fg-m { color: var(--irob-m); }
+
+.nahwu { padding: 0 16px 40px; }
+.nw-side-btn { margin-bottom: 14px; }
+.nw-shell { max-width: 1220px; margin: 0 auto; }
+.nw-main { min-width: 0; max-width: 900px; }
+
+/* Sidebar pertemuan */
+.nw-side { display: none; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 12px; background: var(--card-bg); margin-bottom: 18px; }
+.nw-side.open { display: block; }
+.nw-logo { font-family: var(--arab); font-size: 2rem; color: var(--gold); direction: rtl; text-align: right; line-height: 1.4; }
+.nw-by { font-family: var(--label); font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-label); }
+.nw-overall { font-size: .8rem; color: var(--sub); margin: 12px 0 10px; }
+.nw-bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-top: 5px; }
+.nw-bar i { display: block; height: 100%; background: var(--gold); transition: width .4s; }
+.nw-nav { display: flex; gap: 10px; align-items: center; width: 100%; text-align: left; background: none; border: 0; color: var(--body); font-family: var(--font); font-size: .84rem; line-height: 1.3; padding: 7px 8px; border-radius: 9px; cursor: pointer; }
+.nw-nav:hover { background: var(--gold-soft); }
+.nw-nav.on { background: var(--gold-soft); color: var(--gold); font-weight: 600; }
+.nw-num { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: .7rem; font-weight: 700; border: 1.5px solid var(--faded); color: var(--sub); }
+.nw-num.part { border-color: var(--gold); color: var(--gold); }
+.nw-num.done { background: var(--gold); border-color: var(--gold); color: #2a1f05; }
+.nw-sync { font-size: .72rem; color: var(--sub); margin-top: 10px; opacity: .85; }
+
+/* Beranda kursus */
+.nw-hero { text-align: center; padding: 26px 8px 8px; }
+.nw-hero .kicker { font-family: var(--label); display: inline-block; font-size: .62rem; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: var(--gold-label); margin: 8px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--card-line); }
+.nw-hero h2 { font-family: var(--display); font-weight: 700; font-size: 2.3rem; line-height: 1.15; color: var(--gold); margin-bottom: 12px; }
+.nw-hero-ar { font-family: var(--arab); font-size: 2.2rem; line-height: 1.9; color: var(--gold); direction: rtl; }
+.nw-hero-ar u { text-decoration: none; border-bottom: 4px solid var(--irob); padding: 0 .1em; }
+.nw-hero-ar u.irob-m { border-bottom-style: dotted; }
+.nw-lead { font-family: var(--display); font-style: italic; color: var(--sub); font-size: 1.12rem; max-width: 640px; margin: 0 auto 10px; }
+.nw-lead.nw-small { font-size: .98rem; margin-top: 18px; text-align: center; }
+.nw-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; font-size: .84rem; color: var(--sub); margin: 8px 0 14px; }
+.nw-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.nw-legend b { width: 22px; height: 4px; border-radius: 2px; display: inline-block; }
+.nw-card .nw-legend { justify-content: flex-start; }
+.nw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; margin-top: 18px; }
+.nw-gcard { display: flex; flex-direction: column; gap: 4px; text-align: left; cursor: pointer; border: 1px solid var(--line); background: var(--card-bg); border-radius: var(--radius); padding: 14px 15px; color: var(--body); font-family: var(--font); transition: .18s; }
+.nw-gcard:hover { border-color: var(--card-line); box-shadow: var(--glow); }
+.nw-gn { font-family: var(--label); font-size: .58rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-label); }
+.nw-gt { font-weight: 600; line-height: 1.3; margin-bottom: 6px; }
+.nw-dots { display: flex; gap: 5px; }
+.nw-dots i { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--faded); }
+.nw-dots i.on { background: var(--gold); border-color: var(--gold); }
+.nw-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 10px; }
+.nw-center { justify-content: center; }
+.nw-pager { justify-content: space-between; margin-top: 18px; }
+
+/* Pertemuan */
+.nw-kicker { font-family: var(--label); font-size: .64rem; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-label); margin-top: 14px; }
+.nw-title { font-family: var(--display); font-weight: 700; font-size: 2.3rem; line-height: 1.12; color: var(--gold); margin: 4px 0; }
+.nw-sub { font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--sub); }
+.nw-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 16px 0 18px; overflow-x: auto; }
+.nw-tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 10px 14px; font-family: var(--label); font-size: .66rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--sub); white-space: nowrap; cursor: pointer; }
+.nw-tabs button[aria-selected="true"] { color: var(--gold); border-color: var(--gold); }
+.nw-ck { color: var(--ok); margin-left: 6px; }
+.nw-card { background: var(--card-bg); border: 1px solid var(--card-line); border-radius: var(--radius); padding: 24px 26px; box-shadow: var(--card-shadow); color: var(--reading); }
+.nw-card h3 { font-family: var(--display); font-weight: 700; font-size: 1.35rem; color: var(--gold); margin: 22px 0 8px; }
+.nw-card h3:first-child { margin-top: 0; }
+.nw-card p { margin: 8px 0; max-width: 68ch; }
+.nw-card ol { padding-left: 1.4em; margin: 8px 0; }
+.nw-muted { color: var(--sub); }
+
+/* Konten materi (HTML dari nahwu-data.js) */
+.nahwu .ar, .nahwu [lang="ar"] { font-family: var(--arab); direction: rtl; unicode-bidi: isolate; }
+.nahwu .ar { font-size: 1.3em; line-height: 1.9; color: var(--gold); }
+.nahwu .ar.big { display: block; text-align: center; font-size: 1.75rem; margin: 12px 0; max-width: none; }
+.nahwu .note { background: var(--gold-soft); border-left: 3px solid var(--gold-label); padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 14px 0; font-size: .95rem; }
+.nahwu .tw { overflow-x: auto; }
+.nahwu table.t { border-collapse: collapse; width: 100%; margin: 10px 0 14px; font-size: .9rem; }
+.nahwu table.t th, .nahwu table.t td { border-bottom: 1px solid var(--line); padding: 8px 9px; vertical-align: top; text-align: left; }
+.nahwu table.t th { font-family: var(--label); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-label); font-weight: 600; }
+.nahwu table.t td.ar, .nahwu table.t .nw-r { text-align: right; }
+.nahwu .tag { display: inline-block; padding: 0 7px; border-radius: 5px; font-size: .78rem; font-weight: 700; color: #0c0a07; }
+.nahwu .tag.r { background: var(--irob-r); } .nahwu .tag.n { background: var(--irob-n); } .nahwu .tag.j { background: var(--irob-j); }
+.nahwu .tag.z { background: var(--irob-z); } .nahwu .tag.m { background: var(--irob-m); }
+:root[data-theme="light"] .nahwu .tag, :root[data-theme="light"] .nw-tag { color: #fff; }
+.nw-done-row { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+/* Analisis ayat: garis bawah berwarna per kata */
+.nw-verse { margin: 0 0 20px; padding: 6px 0 18px; border-bottom: 1px dashed var(--line); scroll-margin-top: 90px; }
+.nw-verse:last-child { border-bottom: 0; }
+.nw-verse.sorot { background: var(--gold-soft); border-radius: 12px; padding: 12px 14px 18px; }
+.nw-vref { font-family: var(--label); font-size: .64rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-label); }
+.nw-words { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 8px 0; }
+.nw-w { font-family: var(--arab); font-size: 1.95rem; line-height: 1.7; color: var(--gold); background: none; border: 0; padding: 0 6px; border-bottom: 4px solid var(--irob); border-radius: 6px 6px 0 0; cursor: pointer; }
+.nw-w.irob-m { border-bottom-style: dotted; }
+.nw-w:hover, .nw-w.on { background: var(--gold-soft); }
+.nw-vid { font-family: var(--display); font-style: italic; font-size: 1.08rem; color: var(--sub); margin: 2px 0 8px; }
+.nw-explain { min-height: 3rem; background: var(--bg-warm); border: 1px solid var(--line); border-radius: 11px; padding: 10px 14px; font-size: .94rem; }
+.nw-hw { font-family: var(--arab); font-size: 1.55rem; color: var(--gold); margin-right: 12px; }
+.nw-pill { font-size: .72rem; font-weight: 600; padding: 1px 8px; border-radius: 5px; border: 1px solid var(--card-line); margin-right: 6px; color: var(--sub); }
+.nw-tag { font-size: .72rem; font-weight: 700; padding: 1px 8px; border-radius: 5px; color: #0c0a07; }
+.nw-ket { margin-top: 4px; }
+.nw-eplink { margin-top: 10px; background: none; border: 0; padding: 4px 0; font-family: var(--label); font-size: .62rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); cursor: pointer; }
+.nw-eplink:hover { text-decoration: underline; }
+
+/* Latihan & quiz */
+.nw-ex { margin-bottom: 30px; }
+.nw-meta { display: flex; justify-content: space-between; font-size: .82rem; color: var(--sub); margin-bottom: 8px; }
+.nw-qcard { border: 1px solid var(--line); border-radius: 12px; padding: 18px; text-align: center; background: var(--bg-warm); }
+.nw-q { font-family: var(--arab); font-size: 2.1rem; line-height: 1.6; color: var(--gold); direction: rtl; }
+.nw-a { font-family: var(--arab); font-size: 1.7rem; color: var(--ok); direction: rtl; margin: 8px 0; }
+.nw-why { font-size: .88rem; color: var(--sub); margin-top: 8px; }
+.nw-qtext { font-size: 1.06rem; font-weight: 600; }
+.nw-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin: 14px 0 6px; }
+.nw-opt { border: 1.5px solid var(--line); background: var(--bg-warm); color: var(--body); border-radius: 10px; padding: 10px 12px; text-align: left; font-family: var(--font); font-size: .92rem; cursor: pointer; min-height: 44px; }
+.nw-opt:hover:not(:disabled) { border-color: var(--gold); }
+.nw-opt:disabled { cursor: default; }
+.nw-opt.good { border-color: var(--nw-good); background: color-mix(in srgb, var(--nw-good) 14%, var(--bg-warm)); }
+.nw-opt.bad { border-color: var(--nw-bad); background: color-mix(in srgb, var(--nw-bad) 14%, var(--bg-warm)); }
+.nw-fb { font-size: .93rem; margin: 10px 0; }
+.nw-fb.good b { color: var(--nw-good); } .nw-fb.bad b { color: var(--nw-bad); }
+.nw-score { font-family: var(--display); font-size: 2.6rem; font-weight: 700; }
+.nw-score.good { color: var(--nw-good); } .nw-score.bad { color: var(--nw-bad); }
+.nw-score-sm { font-size: 1.1rem; font-weight: 600; }
+
+/* Widget materi */
+.nw-seg { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.nw-seg button { border: 1px solid var(--card-line); background: transparent; color: var(--body); border-radius: 999px; padding: 6px 14px; font-family: var(--font); font-size: .86rem; cursor: pointer; }
+.nw-seg button[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: #2a1f05; }
+.nw-amil { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nw-box { border: 1px solid var(--line); border-radius: 12px; padding: 12px; text-align: center; background: var(--bg-warm); }
+.nw-box small { color: var(--sub); }
+.nw-s { font-family: var(--arab); font-size: 1.9rem; direction: rtl; color: var(--gold); }
+.nw-s b { font-weight: 400; border-bottom: 4px solid var(--irob); padding: 0 .1em; }
+.nw-s b.irob-m { border-bottom-style: dotted; }
+.nw-odd { font-weight: 700; }
+.nw-ul { border-bottom: 3px solid var(--irob); }
+
+/* Kotak "Analisis nahwu" di halaman episode */
+.nw-epbox { margin: 18px 0 8px; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-warm); }
+.nw-epbox-label { font-family: var(--label); font-size: .64rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-label); }
+.nw-epbox p { font-size: .92rem; color: var(--sub); margin: 4px 0 0; }
+.nw-epbox .btn { padding: 10px 16px; font-size: .64rem; }
+
+/* Tanya ustadz AI (hanya tampil di tab Nahwu) */
+.nw-askfab { position: fixed; right: 18px; bottom: 18px; z-index: 70; border: 0; cursor: pointer; font-family: var(--label); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 13px 20px; border-radius: 999px; background: linear-gradient(135deg, #f6dd88, var(--gold)); color: #2a1f05; box-shadow: var(--glow); }
+body:not(.nw-active) .nw-askfab, body:not(.nw-active) .nw-ask { display: none; }
+.nw-askfab[hidden], .nw-ask[hidden] { display: none; }
+.nw-ask { position: fixed; right: 16px; bottom: 16px; z-index: 71; width: min(440px, calc(100vw - 32px)); height: min(620px, calc(100vh - 32px)); display: flex; flex-direction: column; background: var(--bg-warm); border: 1px solid var(--card-line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.nw-askh { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.nw-askh b { font-family: var(--display); font-size: 1.15rem; color: var(--gold); }
+.nw-askh small { display: block; color: var(--sub); font-size: .72rem; }
+.nw-askh .nw-row { margin: 0; flex-wrap: nowrap; gap: 6px; }
+.nw-askh button { background: none; border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; color: var(--sub); font-family: var(--font); font-size: .78rem; cursor: pointer; }
+.nw-asklog { flex: 1; overflow: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.nw-msg { max-width: 92%; padding: 9px 12px; border-radius: 12px; font-size: .9rem; line-height: 1.6; overflow-wrap: anywhere; }
+.nw-msg.u { align-self: flex-end; background: var(--gold); color: #2a1f05; }
+.nw-msg.u .ar { color: #2a1f05; }
+.nw-msg.a { align-self: flex-start; background: var(--card-bg); border: 1px solid var(--line); }
+.nw-msg.a.err { color: var(--nw-bad); }
+.nw-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.nw-chips button { border: 1px solid var(--card-line); background: transparent; color: var(--body); border-radius: 999px; padding: 5px 12px; font-family: var(--font); font-size: .8rem; text-align: left; cursor: pointer; }
+.nw-askf { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line); }
+.nw-askf textarea { flex: 1; resize: none; font-family: var(--font); font-size: .9rem; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; background: var(--bg); color: var(--body); max-height: 120px; }
+.nw-askf .btn { padding: 10px 16px; }
+.nw-askfoot { font-size: .7rem; color: var(--sub); text-align: center; padding: 0 10px 8px; }
+
+@media (min-width: 861px) {
+  .nw-side-btn { display: none; }
+  .nw-shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 34px; align-items: start; }
+  .nw-side { display: block; position: sticky; top: 76px; max-height: calc(100vh - 96px); overflow: auto; margin: 14px 0 0; }
+}
+@media (max-width: 720px) {
+  .nw-card { padding: 18px 16px; }
+  .nw-title, .nw-hero h2 { font-size: 1.9rem; }
+  .nw-amil { grid-template-columns: 1fr; }
+  .nw-ask { right: 8px; left: 8px; bottom: 8px; width: auto; height: calc(100vh - 16px); }
+}

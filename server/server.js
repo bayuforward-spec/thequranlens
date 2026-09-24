@@ -11,7 +11,8 @@
  * ── Endpoint ────────────────────────────────────────────────────────────────
  *   POST /api/mayar/webhook    Terima event Mayar (signature diverifikasi)
  *   GET  /api/verify?order=ID   Cek status langganan sebuah Order ID
- *   GET  /api/health            Health check
+ *   POST /api/nahwu/tanya       "Tanya ustadz AI" (Belajar Nahwu) → Claude, dialirkan (SSE)
+ *   GET  /api/health            Health check (+ tanya:true bila fitur tanya aktif)
  *   (opsional) static files     Melayani aplikasi bila STATIC_DIR di-set
  *
  * ── Konfigurasi (environment variables) ─────────────────────────────────────
@@ -23,6 +24,8 @@
  *   DATA_FILE                Lokasi file penyimpanan (default ./data/subs.json)
  *   STATIC_DIR               Folder aplikasi statis untuk dilayani (opsional)
  *   ALLOW_ORIGIN             Nilai CORS Access-Control-Allow-Origin (default '*')
+ *   ANTHROPIC_API_KEY        Kunci API Anthropic untuk /api/nahwu/tanya (kosong = fitur mati)
+ *   TANYA_PER_JAM            Batas pertanyaan per IP per jam (default 30)
  *
  * CATATAN: Nama field/header pasti Mayar dikonfirmasi dari 1 transaksi tes
  * (set MAYAR_WEBHOOK_DEBUG=true, lihat log, lalu matikan). normalizeEvent() &
@@ -35,6 +38,7 @@ const fs = require('fs');
 const path = require('path');
 const { URL } = require('url');
 const { verifyPlaySubscription } = require('./play-verify');
+const tanya = require('./nahwu-tanya');
 
 const CFG = {
   port: parseInt(process.env.PORT || '8787', 10),
@@ -186,13 +190,13 @@ function kirimJSON(res, status, obj) {
   res.end(body);
 }
 
-function bacaRawBody(req) {
+function bacaRawBody(req, maxBytes = 1_000_000) {
   return new Promise((resolve, reject) => {
     const chunks = [];
     let total = 0;
     req.on('data', (c) => {
       total += c.length;
-      if (total > 1_000_000) { reject(new Error('Body terlalu besar')); req.destroy(); return; }
+      if (total > maxBytes) { reject(new Error('Body terlalu besar')); req.destroy(); return; }
       chunks.push(c);
     });
     req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
@@ -229,7 +233,7 @@ const server = http.createServer(async (req, res) => {
 
   // Health
   if (req.method === 'GET' && pathname === '/api/health') {
-    return kirimJSON(res, 200, { ok: true, service: 'quran-lens', time: new Date().toISOString() });
+    return kirimJSON(res, 200, { ok: true, service: 'quran-lens', tanya: tanya.aktif(), time: new Date().toISOString() });
   }
 
   // Webhook Mayar
@@ -292,6 +296,13 @@ const server = http.createServer(async (req, res) => {
       console.warn('[play] verifikasi gagal:', e.message);
       return kirimJSON(res, 502, { active: false, error: e.message });
     }
+  }
+
+  // Tanya ustadz AI (halaman Belajar Nahwu)
+  if (req.method === 'POST' && pathname === '/api/nahwu/tanya') {
+    let raw;
+    try { raw = await bacaRawBody(req, tanya.MAX_BODY); } catch (e) { return kirimJSON(res, 413, { code: 'too_large' }); }
+    return tanya.handle(req, res, raw, { allowOrigin: CFG.allowOrigin, kirimJSON });
   }
 
   // Verifikasi status langganan (dipanggil aplikasi)

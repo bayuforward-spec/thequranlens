@@ -8,7 +8,7 @@ services:
     runtime: node
     rootDir: server
     plan: free
-    buildCommand: ""
+    buildCommand: npm install   # memasang @anthropic-ai/sdk (fitur Tanya ustadz AI)
     startCommand: node server.js
     healthCheckPath: /api/health
     autoDeploy: true
@@ -21,6 +21,11 @@ services:
         value: "false"
       - key: ALLOW_ORIGIN            # domain frontend Anda; "*" boleh untuk awal
         value: "*"
+      # --- Belajar Nahwu: "Tanya ustadz AI" — kosongkan untuk mematikan fitur ---
+      - key: ANTHROPIC_API_KEY       # kunci API dari console.anthropic.com (RAHASIA, isi manual)
+        sync: false
+      - key: TANYA_PER_JAM           # batas pertanyaan per IP per jam (pengendali biaya)
+        value: "30"
       # --- Google Play Billing (edisi Play Store) — isi manual saat siap ---
       - key: GOOGLE_SA_EMAIL         # email service account (akses Play Developer API)
         sync: false
