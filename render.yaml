@@ -25,7 +25,7 @@ services:
       - key: ANTHROPIC_API_KEY       # kunci API dari console.anthropic.com (RAHASIA, isi manual)
         sync: false
       - key: TANYA_PER_JAM           # batas pertanyaan per IP per jam (pengendali biaya)
-        value: "30"
+        value: "10"
       # --- Google Play Billing (edisi Play Store) — isi manual saat siap ---
       - key: GOOGLE_SA_EMAIL         # email service account (akses Play Developer API)
         sync: false
