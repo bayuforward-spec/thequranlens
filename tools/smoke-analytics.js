@@ -83,8 +83,12 @@ function findLog(page, name) {
     body: 'data: {"t":"Jawaban uji"}\n\ndata: {"done":true}\n\n',
   }));
 
+  await page.route('**/assets/js/ga-config.js', (r) => r.fulfill({
+    contentType: 'application/javascript',
+    body: 'window.QL_GA_MEASUREMENT_ID = "";',
+  }));
   const land = base + '/index.html?utm_source=youtube&utm_medium=deskripsi&utm_campaign=comeback_okt26&utm_content=link1&utm_term=kata&analytics_debug=1';
-  console.log('\n[tanpa Measurement ID]');
+  console.log('\n[ID kosong]');
   await page.goto(land, { waitUntil: 'domcontentloaded', referer: 'https://www.youtube.com/watch?v=rahasia' });
   await page.waitForFunction(() => window.Analytics && window.App);
 
@@ -222,25 +226,44 @@ function findLog(page, name) {
   const st = await page2.evaluate(() => (window.__analyticsLog || []).find((r) => r.name === 'ga_status'));
   cek(st && st.params.active === '1' && st.params.page_view === 'otomatis', 'debug: page_view otomatis saat ID ada');
 
+  console.log('\n[ID bawaan di file]');
+  const contextDefault = await browser.newContext({ viewport: { width: 1280, height: 900 }, serviceWorkers: 'block' });
+  const pageDefault = await contextDefault.newPage();
+  pageDefault.on('pageerror', (e) => errors.push(String(e)));
+  await pageDefault.route('**/*googletagmanager.com/**', (r) => r.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
+  await pageDefault.route('**/*google-analytics.com/**', (r) => r.fulfill({ status: 204, body: '' }));
+  await pageDefault.route('**/*fonts.googleapis.com/**', (r) => r.abort());
+  await pageDefault.route('**/*fonts.gstatic.com/**', (r) => r.abort());
+  await pageDefault.goto(base + '/index.html?analytics_debug=1', { waitUntil: 'domcontentloaded' });
+  await pageDefault.waitForFunction(() => window.Analytics && (window.__analyticsLog || []).some((r) => r.name === 'ga_status'));
+  const bawaanSrc = await pageDefault.evaluate(() => [...document.scripts].map((s) => s.src));
+  cek(bawaanSrc.some((s) => s.indexOf('https://www.googletagmanager.com/gtag/js?id=G-6QBQF976B0') === 0), 'file ga-config.js memuat gtag tanpa build');
+  const bawaanStatus = await pageDefault.evaluate(() => (window.__analyticsLog || []).find((r) => r.name === 'ga_status'));
+  cek(bawaanStatus && bawaanStatus.params.active === '1' && bawaanStatus.params.page_view === 'otomatis', 'ID bawaan mengaktifkan page_view');
+
   console.log('\n[gratis & privasi]');
   const context3 = await browser.newContext({ viewport: { width: 1280, height: 900 }, serviceWorkers: 'block' });
   const page3 = await context3.newPage();
   page3.on('pageerror', (e) => errors.push(String(e)));
+  await page3.route('**/*googletagmanager.com/**', (r) => r.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
+  await page3.route('**/*google-analytics.com/**', (r) => r.fulfill({ status: 204, body: '' }));
   await page3.route('**/*fonts.googleapis.com/**', (r) => r.abort());
   await page3.route('**/*fonts.gstatic.com/**', (r) => r.abort());
   await page3.goto(base + '/gratis.html?utm_source=instagram&utm_medium=bio&utm_campaign=al-ikhlas&analytics_debug=1', { waitUntil: 'domcontentloaded' });
   await page3.waitForFunction(() => (window.__analyticsLog || []).some((r) => r.name === 'episode_read'));
   const etalase = await page3.evaluate(() => (window.__analyticsLog || []).find((r) => r.name === 'episode_read'));
   cek(etalase && etalase.params.episode_id === 'al-ikhlas-1-4' && etalase.params.ft_source === 'instagram' && etalase.params.lt_medium === 'bio', 'gratis.html episode_read + UTM');
-  const gtagGratis = await page3.evaluate(() => [...document.scripts].some((s) => /googletagmanager/.test(s.src)));
-  cek(!gtagGratis, 'gratis.html tanpa ID tidak memuat gtag');
+  const gtagGratis = await page3.evaluate(() => [...document.scripts].map((s) => s.src));
+  cek(gtagGratis.some((s) => s.indexOf('id=G-6QBQF976B0') !== -1), 'gratis.html memakai ID di ga-config.js');
 
   const page4 = await context3.newPage();
   page4.on('pageerror', (e) => errors.push(String(e)));
+  await page4.route('**/*googletagmanager.com/**', (r) => r.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
+  await page4.route('**/*google-analytics.com/**', (r) => r.fulfill({ status: 204, body: '' }));
   await page4.goto(base + '/privacy.html?analytics_debug=1', { waitUntil: 'domcontentloaded' });
   await page4.waitForFunction(() => (window.__analyticsLog || []).some((r) => r.name === 'ga_status'));
   const priv = await page4.evaluate(() => (window.__analyticsLog || []).find((r) => r.name === 'ga_status'));
-  cek(priv && priv.params.active === '0', 'privacy.html analitik no-op tanpa ID');
+  cek(priv && priv.params.active === '1', 'privacy.html ikut ID bawaan');
   const adaCatatan = await page4.evaluate(() => /Analitik kunjungan/.test(document.body.innerText) && /Google Signals/.test(document.body.innerText));
   cek(adaCatatan, 'halaman privasi menyebut analitik dan menolak Google Signals');
 

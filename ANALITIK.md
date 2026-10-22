@@ -5,34 +5,49 @@ diterbitkan **GitHub Pages** dari branch `main` (bukan Netlify/Vercel, bukan
 Render). Backend Render (`quran-lens-api`) hanya verifikasi Mayar & Tanya
 ustadz — **jangan** menaruh Measurement ID di sana.
 
-Google Analytics **tidak dimuat** sampai Measurement ID diisi lewat langkah
-di bawah. Tidak ada ID yang ditulis di kode.
+Measurement ID tertulis di `assets/js/ga-config.js`. GitHub Pages menyajikan
+file itu **apa adanya** dari branch `main` (tanpa build, tanpa pindah ke
+GitHub Actions). String kosong = gtag tidak dimuat.
 
 Yang dikirim hanya analitik kunjungan. Tidak ada iklan, remarketing, Google
 Signals, atau personalisasi iklan.
 
 ---
 
-## 1. Yang harus pemilik lakukan
+## 1. Di mana ID-nya, dan cara mematikan
 
-1. Buat properti **GA4** (bukan Universal Analytics) di [analytics.google.com](https://analytics.google.com).
-   Admin → **Data streams** → **Web** → URL `https://thequranlensindonesia.com` → salin **Measurement ID** (`G-XXXXXXXX`).
-2. **Gabungkan PR ini** dulu. Situs tetap terbit dari branch; analitik masih mati (itu sengaja).
-3. Di GitHub, buka repo **bayuforward-spec/thequranlens** → **Settings** → **Secrets and variables** → **Actions** → tab **Variables** → **New repository variable**.
-   - Name: `GA_MEASUREMENT_ID`
-   - Value: Measurement ID tadi, bentuknya `G-` diikuti huruf dan angka (punya Anda sendiri — jangan dipakai ID contoh)
-   
-   Ini padanan `NEXT_PUBLIC_GA_MEASUREMENT_ID` untuk situs statis ini. Jangan commit ID-nya.
-4. Masih di Settings → **Pages** → **Build and deployment** → **Source**: ganti dari *Deploy from a branch* menjadi **GitHub Actions**.
-5. Tab **Actions** → workflow **GitHub Pages** → **Run workflow** pada branch `main`. Tunggu hijau.
-   Situs yang terbit isinya sama; yang berubah hanya ID analitik yang disuntikkan saat deploy.
-   Jalankan workflow segera setelah mengganti sumber Pages.
-6. Di produk Mayar **the-quran-lens** → **Track** → **URL Param**, daftarkan nama parameter ini lalu simpan:
+ID yang dipakai produksi ada di **`assets/js/ga-config.js`**:
+
+```javascript
+window.QL_GA_MEASUREMENT_ID = "G-6QBQF976B0";
+```
+
+Itu Measurement ID properti GA4 situs ini. ID ini memang terlihat di sumber halaman — itu normal untuk gtag. Tidak perlu mengisi environment variable, dan **jangan** mengganti sumber GitHub Pages ke Actions hanya untuk ini. Push ke `main` sudah cukup: Pages menyalin file tersebut tanpa build.
+
+**Mematikan analitik:** ubah nilai itu menjadi string kosong, lalu push ke `main`.
+
+```javascript
+window.QL_GA_MEASUREMENT_ID = "";
+```
+
+Kosong, atau teks yang bukan `G-` diikuti huruf/angka, membuat `analytics.js` tidak memuat gtag dan tidak menghubungi Google. Peristiwa lokal (`?analytics_debug=1`) tetap bisa dicatat di konsol.
+
+**Menimpa lewat variable (opsional).** Hanya berlaku bila sumber Pages suatu saat diganti ke **GitHub Actions**. Variable repository `GA_MEASUREMENT_ID` (atau `NEXT_PUBLIC_GA_MEASUREMENT_ID`) di **Settings → Secrets and variables → Actions → Variables**:
+
+| Nilai variable | Hasil saat workflow Actions berjalan |
+|---|---|
+| tidak diisi | File di repo dipakai apa adanya (`G-6QBQF976B0`, atau `""` bila sudah dikosongkan) |
+| `G-XXXXXXXX` yang valid | Menimpa nilai di file yang di-deploy |
+| `off` | Menulis string kosong — analitik mati pada deploy Actions itu |
+
+Deploy dari branch **tidak** membaca variable ini.
+
+Yang masih perlu di dashboard (bukan di kode):
+
+1. Produk Mayar **the-quran-lens** → **Track** → **URL Param**, daftarkan lalu simpan:
    `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `plan`.
    Tanpa daftar itu, checkout tetap terbuka, tetapi Mayar tidak menyimpan asal trafik di transaksi.
-7. Di GA4 → Admin → **Events**, tandai sebagai **key event**: `premium_checkout_click`, `lanjutkan_membaca`, `save_episode`, `episode_read`, `tanya_ustadz_used`. (`page_view` sudah otomatis.)
-
-Mengosongkan variable lalu menjalankan workflow lagi mematikan GA tanpa mengubah halaman.
+2. Di GA4 → Admin → **Events**, tandai sebagai **key event**: `premium_checkout_click`, `lanjutkan_membaca`, `save_episode`, `episode_read`, `tanya_ustadz_used`. (`page_view` sudah otomatis.)
 
 ---
 
@@ -127,13 +142,13 @@ Butuh beberapa jam (kadang sampai esok) sebelum laporan standar terisi. DebugVie
 
 ## 6. Memeriksa bahwa peristiwa benar-benar jalan
 
-Tanpa ID (sekarang): buka
+Buka
 
 `https://thequranlensindonesia.com/?utm_source=youtube&utm_medium=deskripsi&utm_campaign=comeback_okt26&analytics_debug=1`
 
-Konsol browser → saring `[analytics]`. Ada `ga_status` dengan `active: 0` dan **tidak** ada permintaan ke `googletagmanager.com`. Peristiwa (baca episode, simpan, klik paket, …) tetap tercatat di konsol dan `window.__analyticsLog`, tetapi tidak dikirim ke Google.
+Konsol browser → saring `[analytics]`. `ga_status` harus `active: 1`, dan ada permintaan ke `googletagmanager.com/gtag/js?id=G-6QBQF976B0`. Peristiwa juga masuk GA4 → Admin → **DebugView** (karena `debug_mode`).
 
-Setelah ID terpasang, URL yang sama menulis `active: 1`, memuat gtag, dan (karena `debug_mode`) peristiwa muncul di GA4 → Admin → **DebugView**.
+Bila ID di `ga-config.js` dikosongkan, URL yang sama menulis `active: 0`, tidak ada permintaan ke Google, dan peristiwa hanya ada di konsol serta `window.__analyticsLog`.
 
 Uji lokal tanpa browser:
 

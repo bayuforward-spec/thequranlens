@@ -1,7 +1,8 @@
 # Menerbitkan situs HANYA bila GitHub Pages sudah disetel ke sumber
 # "GitHub Actions". Selama sumber masih "Deploy from a branch", job deploy
-# dilewati — branch main tetap terbit seperti sekarang, dan analytics tetap
-# nonaktif sampai variable GA_MEASUREMENT_ID diisi. Lihat ANALITIK.md.
+# dilewati — branch main tetap terbit seperti sekarang, beserta Measurement ID
+# yang tertulis di assets/js/ga-config.js. Variable GA_MEASUREMENT_ID hanya
+# menimpa ID itu bila sumber sudah diganti ke Actions. Lihat ANALITIK.md.
 name: GitHub Pages
 
 on:
@@ -38,7 +39,7 @@ jobs:
           else
             echo "deploy=no" >> "$GITHUB_OUTPUT"
             echo "Lewati deploy. Sumber Pages saat ini: ${build_type} (bukan workflow)."
-            echo "Situs tetap terbit dari branch. Analytics nonaktif sampai sumber diganti — lihat ANALITIK.md."
+            echo "Situs tetap terbit dari branch, dengan ID di assets/js/ga-config.js. Lihat ANALITIK.md."
           fi
 
   deploy:
