@@ -81,14 +81,18 @@
   </main>
 
   <!-- Pakai ulang data & fungsi render aplikasi (tanpa init paywall) -->
+  <script src="assets/js/ga-config.js"></script>
+  <script src="assets/js/analytics.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/storage.js"></script>
   <script src="assets/js/payment.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
+    if (window.Analytics) { try { Analytics.init(); } catch (e) {} }
     (function () {
       var a = cariAyat('al-ikhlas-1-4');
       if (!a) return;
+      if (window.Analytics) Analytics.episodeRead(a);
       document.getElementById('lm-ayah').innerHTML = App.renderAyahDisplay(a);
       var html = '';
       (a.kajianKata || []).forEach(function (k, i) {

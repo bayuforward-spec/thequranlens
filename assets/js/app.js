@@ -79,6 +79,7 @@ const App = {
     this.renderBeranda();
     this.renderPricing('pricingBeranda');
     this.renderPricing('pricingFull');
+    if (window.Analytics) Analytics.watchPremium(document.getElementById('pricingBeranda'), 'beranda');
     this.renderFaq();
     this.renderTersimpan();
     this.renderKataHariIni();
@@ -110,6 +111,11 @@ const App = {
     document.body.classList.toggle('nw-active', name === 'nahwu');
     if (name === 'nahwu' && window.Nahwu) Nahwu.show();
     else if (location.hash.startsWith('#nahwu')) history.replaceState(null, '', location.pathname + location.search);
+    if (name !== 'kajian') this._readSent = null;
+    if (name === 'kajian') this.catatBaca();
+    if (name === 'langganan' && window.Analytics) {
+      Analytics.eventOnce('premium:langganan', 'premium_view', { surface: 'langganan' });
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
@@ -181,9 +187,26 @@ const App = {
     if (document.getElementById('panel-kajian').classList.contains('active')) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    this.catatBaca();
   },
 
-  gotoEpisode(id) { this.switchTab('kajian'); this.bukaEpisode(id); },
+  gotoEpisode(id) {
+    this._deferRead = true;
+    this.switchTab('kajian');
+    this._deferRead = false;
+    this.bukaEpisode(id);
+  },
+
+  // Satu episode_read tiap kali episode yang berbeda benar-benar terlihat di Kajian.
+  catatBaca() {
+    if (this._deferRead) return;
+    const panel = document.getElementById('panel-kajian');
+    if (!panel || !panel.classList.contains('active')) return;
+    if (this._readSent === this.current) return;
+    this._readSent = this.current;
+    const a = cariAyat(this.current);
+    if (a && window.Analytics) Analytics.episodeRead(a);
+  },
 
   /* ---------- Render satu Episode ---------- */
   renderEpisode(ayat) {
@@ -354,7 +377,7 @@ const App = {
       <div class="lk">🔒</div>
       <h4>Lanjutkan membaca</h4>
       <p>Buka asbabun nuzul, tafsir, kajian linguistik &amp; amalan untuk episode ini.</p>
-      <button class="btn gold" onclick="App.openUpgrade()">Mulai dari Rp 49rb / bulan</button>
+      <button class="btn gold" onclick="App.openUpgrade('lanjutkan')">Mulai dari Rp 49rb / bulan</button>
     </div>`;
   },
 
@@ -493,10 +516,22 @@ const App = {
     if (btn) { btn.classList.toggle('on', ditandai); btn.textContent = ditandai ? '🔖' : '🏷️'; }
     this.toast(ditandai ? '🔖 Episode disimpan' : 'Dihapus dari tersimpan');
     this.renderTersimpan();
+    if (ditandai && window.Analytics) {
+      const a = (typeof cariAyat === 'function') ? cariAyat(id) : null;
+      Analytics.event('save_episode', a ? Analytics.episodeFields(a) : { episode_id: id });
+    }
   },
 
   /* ---------- Premium / pembayaran ---------- */
-  openUpgrade() { document.getElementById('modalUpgrade').classList.add('show'); },
+  openUpgrade(sumber) {
+    document.getElementById('modalUpgrade').classList.add('show');
+    if (!window.Analytics) return;
+    if (sumber === 'lanjutkan') {
+      const a = (typeof cariAyat === 'function') ? cariAyat(this.current) : null;
+      Analytics.event('lanjutkan_membaca', a ? Analytics.episodeFields(a) : {});
+    }
+    Analytics.eventOnce('premium:modal', 'premium_view', { surface: 'modal' });
+  },
   closeUpgrade() { document.getElementById('modalUpgrade').classList.remove('show'); },
 
   async beli(paket) {

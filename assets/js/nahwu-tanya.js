@@ -100,6 +100,11 @@ const Tanya = {
   async ask(q) {
     q = String(q || '').trim();
     if (!q || this.busy || !this.aktif) return;
+    if (window.Analytics) {
+      Analytics.event('tanya_ustadz_used', {
+        pertemuan: (window.Nahwu && Nahwu.cur) ? String(Nahwu.cur) : '0',
+      });
+    }
     this.hist.push({ role: 'user', content: q });
     this.render();
     const bubble = document.createElement('div');

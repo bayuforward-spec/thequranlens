@@ -189,6 +189,8 @@
 
   <div class="toast" id="toast"></div>
 
+  <script src="assets/js/ga-config.js"></script>
+  <script src="assets/js/analytics.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/storage.js"></script>
   <script src="assets/js/payment.js"></script>
@@ -198,6 +200,7 @@
   <script src="assets/js/nahwu-tanya.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
+    if (window.Analytics) { try { Analytics.init(); } catch (e) {} }
     App.init();
     // Daftarkan service worker (PWA + notifikasi kata harian)
     if ('serviceWorker' in navigator) {
