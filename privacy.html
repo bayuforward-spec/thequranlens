@@ -29,7 +29,7 @@
 
   <main class="pp">
     <h1>Kebijakan Privasi</h1>
-    <div class="updated">Berlaku sejak 1 Juli 2026</div>
+    <div class="updated">Berlaku sejak 1 Juli 2026 · diperbarui 22 Oktober 2026</div>
 
     <p>The Quran Lens ("kami") menghormati privasimu. Kami merancang aplikasi ini untuk mengumpulkan <b>sesedikit mungkin</b> data. Halaman ini menjelaskan data apa yang terlibat, bagaimana digunakan, dan pilihanmu.</p>
 
@@ -39,6 +39,7 @@
       <li>Bookmark & episode yang kamu tandai selesai (progres belajar).</li>
       <li>Streak harian & preferensi tampilan (tema terang/gelap, ukuran teks).</li>
       <li>Status langganan (Premium) & preferensi pengingat "Kata Hari Ini".</li>
+      <li>Asal kunjungan dari tautan kampanye (parameter UTM, halaman masuk, situs perujuk) — lihat bagian Analitik. Ini tetap di perangkatmu, paling lama 90 hari.</li>
     </ul>
     <p>Kamu dapat menghapusnya kapan saja dengan membersihkan data situs/aplikasi di pengaturan browser atau perangkatmu.</p>
 
@@ -51,26 +52,33 @@
     <h2>3. Notifikasi</h2>
     <p>Notifikasi "Kata Hari Ini" hanya dikirim <b>bila kamu mengizinkannya</b>. Kamu dapat mematikannya kapan saja lewat tombol pengingat di aplikasi atau pengaturan perangkat.</p>
 
-    <h2>4. Yang TIDAK kami lakukan</h2>
+    <h2>4. Analitik kunjungan</h2>
+    <p>Bila pengelola mengaktifkannya, situs memuat <b>Google Analytics 4</b> semata-mata untuk menghitung kunjungan dan pemakaian (episode yang dibuka, episode yang disimpan, tampilan harga, klik ke pembayaran). Kami <b>tidak</b> memakai iklan, pemasaran ulang (remarketing), Google Signals, atau personalisasi iklan.</p>
+    <p>Parameter kampanye pada tautan (misalnya dari YouTube, Instagram, atau TikTok) disimpan di perangkatmu agar kami dapat melihat kanal mana yang membantu — bukan untuk mengenali siapa kamu. Kamu dapat menghapusnya dengan membersihkan data situs di browser.</p>
+
+    <h2>5. Yang TIDAK kami lakukan</h2>
     <ul>
       <li>Kami <b>tidak menjual</b> atau menyewakan datamu.</li>
-      <li>Kami <b>tidak memasang iklan pihak ketiga</b> atau pelacak iklan.</li>
+      <li>Kami <b>tidak memasang iklan pihak ketiga</b>, pelacak iklan, Google Signals, atau personalisasi iklan.</li>
       <li>Kami tidak meminta data pribadi sensitif untuk menggunakan aplikasi.</li>
     </ul>
 
-    <h2>5. Layanan pihak ketiga</h2>
-    <p>Kami menggunakan layanan berikut yang memiliki kebijakan privasinya sendiri: <b>Mayar</b> (pembayaran web), <b>Google Play</b> (distribusi & pembayaran aplikasi), serta penyedia hosting untuk situs & server verifikasi.</p>
+    <h2>6. Layanan pihak ketiga</h2>
+    <p>Kami menggunakan layanan berikut yang memiliki kebijakan privasinya sendiri: <b>Mayar</b> (pembayaran web), <b>Google Play</b> (distribusi & pembayaran aplikasi), <b>Google Analytics</b> (hitungan kunjungan, hanya bila diaktifkan), serta penyedia hosting untuk situs & server verifikasi.</p>
 
-    <h2>6. Anak-anak</h2>
+    <h2>7. Anak-anak</h2>
     <p>Aplikasi ini berisi konten edukatif keagamaan yang bersifat umum dan aman untuk segala usia. Kami tidak dengan sengaja mengumpulkan data pribadi dari anak-anak.</p>
 
-    <h2>7. Perubahan</h2>
+    <h2>8. Perubahan</h2>
     <p>Kebijakan ini dapat diperbarui sewaktu-waktu. Perubahan akan dicantumkan pada halaman ini dengan tanggal berlaku terbaru.</p>
 
-    <h2>8. Kontak</h2>
+    <h2>9. Kontak</h2>
     <p>Pertanyaan seputar privasi? Hubungi kami di <a href="mailto:bayuforward@gmail.com">bayuforward@gmail.com</a>.</p>
 
     <a class="back" href="index.html">← Kembali ke aplikasi</a>
   </main>
+  <script src="assets/js/ga-config.js"></script>
+  <script src="assets/js/analytics.js"></script>
+  <script>if (window.Analytics) { try { Analytics.init(); } catch (e) {} }</script>
 </body>
 </html>

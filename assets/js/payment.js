@@ -51,11 +51,18 @@ const Payment = {
 
   checkout(paket) {
     const url = this.CONFIG.checkout[paket];
-    if (this.terkonfigurasi(paket)) {
-      window.open(url, '_blank', 'noopener');
-      return true;
+    if (!this.terkonfigurasi(paket)) return false;
+    // Mayar membaca UTM/plan bila param itu didaftarkan di produk → Track → URL Param.
+    let tujuan = url;
+    if (window.Analytics && typeof Analytics.decorateMayar === 'function') {
+      tujuan = Analytics.decorateMayar(url, paket);
+      Analytics.event('premium_checkout_click', {
+        plan: Analytics.planFor(paket),
+        provider: 'mayar',
+      });
     }
-    return false; // belum dikonfigurasi -> pemanggil tangani fallback
+    window.open(tujuan, '_blank', 'noopener');
+    return true;
   },
 
   cekRedirect() {

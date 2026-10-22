@@ -1,0 +1,78 @@
+# Menerbitkan situs HANYA bila GitHub Pages sudah disetel ke sumber
+# "GitHub Actions". Selama sumber masih "Deploy from a branch", job deploy
+# dilewati — branch main tetap terbit seperti sekarang, dan analytics tetap
+# nonaktif sampai variable GA_MEASUREMENT_ID diisi. Lihat ANALITIK.md.
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quranlens-pages
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      deploy: ${{ steps.src.outputs.deploy }}
+    steps:
+      - name: Apakah Pages memakai GitHub Actions?
+        id: src
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          build_type="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type 2>/dev/null || echo unknown)"
+          echo "build_type=$build_type"
+          if [ "$build_type" = "workflow" ]; then
+            echo "deploy=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "deploy=no" >> "$GITHUB_OUTPUT"
+            echo "Lewati deploy. Sumber Pages saat ini: ${build_type} (bukan workflow)."
+            echo "Situs tetap terbit dari branch. Analytics nonaktif sampai sumber diganti — lihat ANALITIK.md."
+          fi
+
+  deploy:
+    needs: gate
+    if: needs.gate.outputs.deploy == 'yes'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Suntikkan Measurement ID
+        env:
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+        run: node tools/inject-ga.js
+
+      - name: Siapkan artefak
+        run: |
+          mkdir -p _site
+          rsync -a --exclude '.git' --exclude '.github' --exclude '_site' ./ _site/
+          test -f _site/CNAME
+          test -f _site/index.html
+          test -f _site/assets/js/analytics.js
+          test -f _site/assets/js/ga-config.js
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
