@@ -236,6 +236,7 @@ const App = {
     }
     h += this.renderKajianCards(ayat, open);
     if (open) h += this.renderScholar(ayat.sumber);
+    if (open) h += this.renderTadabbur(ayat);
 
     const done = Store.isDone(ayat.id);
     h += `<button class="btn-selesai ${done ? 'done' : ''}" onclick="App.toggleDone('${ayat.id}', this)">
@@ -243,6 +244,33 @@ const App = {
 
     h += this.renderEpNav(ayat);
     return h;
+  },
+
+  // Jurnal Tadabbur: pertanyaan reflektif + catatan pribadi (localStorage) per ayat
+  renderTadabbur(ayat) {
+    if (!ayat.tadabbur) return '';
+    const teks = Store.getJurnal(ayat.id);
+    const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return `<div class="tadabbur framed">
+      <div class="tadabbur-label"><span class="kj-ico">🪔</span>Tadabbur — Renungkan &amp; Tuliskan</div>
+      <p class="tadabbur-tanya">${ayat.tadabbur}</p>
+      <textarea id="jurnal-${ayat.id}" class="tadabbur-input" rows="4" spellcheck="false"
+        placeholder="Tulis renunganmu di sini…"
+        onblur="App.saveTadabbur('${ayat.id}', true)">${esc(teks)}</textarea>
+      <div class="tadabbur-foot">
+        <span class="tadabbur-status" id="jurnal-st-${ayat.id}">${teks ? '✓ Tersimpan di perangkatmu' : '🔒 Pribadi — hanya tersimpan di perangkat ini'}</span>
+        <button class="btn-jurnal" onclick="App.saveTadabbur('${ayat.id}')">Simpan renungan</button>
+      </div>
+    </div>`;
+  },
+
+  saveTadabbur(id, silent) {
+    const el = document.getElementById('jurnal-' + id);
+    if (!el) return;
+    const saved = Store.setJurnal(id, el.value);
+    const st = document.getElementById('jurnal-st-' + id);
+    if (st) st.textContent = saved ? '✓ Tersimpan di perangkatmu' : '🔒 Pribadi — hanya tersimpan di perangkat ini';
+    if (!silent) this.toast(saved ? '🪔 Renungan tersimpan — hanya di perangkatmu.' : 'Catatan dikosongkan.');
   },
 
   toggleDone(id, btn) {

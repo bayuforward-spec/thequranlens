@@ -12,6 +12,7 @@ const Store = {
   KEY_REMINDER: 'quranlens_reminder',
   KEY_NAHWU: 'quranlens_nahwu',
   KEY_NAHWU_LAMA: 'nahwu-progress-v1', // file HTML mandiri "Nahwu 12 Pertemuan"
+  KEY_JURNAL: 'quranlens_jurnal',
 
   /* ---------- Premium ---------- */
   isPro() {
@@ -23,6 +24,21 @@ const Store = {
     localStorage.setItem(this.KEY_PRO, JSON.stringify(data));
     return data;
   },
+
+  /* ---------- Jurnal Tadabbur (catatan renungan pribadi per ayat) ---------- */
+  jurnalAll() {
+    try { return JSON.parse(localStorage.getItem(this.KEY_JURNAL)) || {}; }
+    catch { return {}; }
+  },
+  getJurnal(id) { return this.jurnalAll()[id] || ''; },
+  setJurnal(id, teks) {
+    const all = this.jurnalAll();
+    const t = (teks || '').trim();
+    if (t) all[id] = t; else delete all[id];
+    try { localStorage.setItem(this.KEY_JURNAL, JSON.stringify(all)); } catch {}
+    return all[id] || '';
+  },
+  jurnalCount() { return Object.keys(this.jurnalAll()).length; },
 
   /* ---------- Bookmark ---------- */
   bookmarks() {

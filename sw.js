@@ -1,7 +1,7 @@
 /* sw.js — Service Worker The Quran Lens (PWA + notifikasi kata harian).
  * Strategi network-first: konten selalu diambil terbaru saat online,
  * cache dipakai sebagai cadangan agar app tetap jalan saat offline. */
-const CACHE = 'quranlens-v8';
+const CACHE = 'quranlens-v9';
 const SHELL = [
   './', 'index.html', 'gratis.html', 'privacy.html', 'manifest.webmanifest',
   'assets/css/styles.css',

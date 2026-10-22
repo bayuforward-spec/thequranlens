@@ -18,6 +18,7 @@ const AYAT = [
   /* ============ SURAH AL-FĀTIḤAH (1) ============ */
   {
     id: 'al-fatihah-1',
+    tadabbur: 'Satu hal yang ingin kamu mulai hari ini dengan nama Allah — apa itu, dan apa yang selama ini membuatmu ragu memulainya?',
     kajianKata: [
       {
         kata: 'بِسْمِ', latin: 'Bismi', arti: 'Dengan (menyebut) nama',
@@ -95,6 +96,7 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-2',
+    tadabbur: 'Tuliskan 3 nikmat yang hari ini nyaris kamu lupakan. Mana yang paling sering kamu anggap "biasa saja"?',
     kajianKata: [
       {
         kata: 'الْحَمْدُ', latin: 'Al-Ḥamd', arti: 'Segala puji',
@@ -181,6 +183,7 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-3',
+    tadabbur: 'Kapan terakhir kamu merasa jauh dari rahmat Allah? Tuliskan apa yang ingin kamu sampaikan kepada-Nya sekarang.',
     kajianKata: [
       {
         kata: 'الرَّحْمَٰنِ الرَّحِيمِ', latin: 'Ar-Raḥmān Ar-Raḥīm', arti: 'Yang Maha Pengasih lagi Maha Penyayang',
@@ -232,6 +235,7 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-4',
+    tadabbur: 'Seandainya hari ini adalah hari perhitungan: satu amal apa yang paling kamu syukuri telah kamu lakukan, dan satu apa yang kamu sesali?',
     kajianKata: [
       {
         kata: 'مَالِكِ', latin: 'Mālik', arti: 'Pemilik / Raja',
@@ -298,6 +302,7 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-5',
+    tadabbur: 'Pada siapa atau apa, selain Allah, diam-diam kamu paling bergantung? Tuliskan satu cara untuk mengembalikan sandaran itu hanya kepada-Nya.',
     kajianKata: [
       {
         kata: 'إِيَّاكَ نَعْبُدُ', latin: 'Iyyāka na‘budu', arti: 'Hanya kepada-Mu kami menyembah',
@@ -357,6 +362,7 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-6',
+    tadabbur: 'Satu keputusan yang sedang membingungkanmu — tuliskan di sini, lalu mohon kepada Allah ditunjukkan jalan yang lurus atasnya.',
     kajianKata: [
       {
         kata: 'اهْدِنَا', latin: 'Ihdinā', arti: 'Tunjukilah kami',
@@ -422,6 +428,7 @@ const AYAT = [
   },
   {
     id: 'al-fatihah-7',
+    tadabbur: 'Siapa teladan (nabi atau orang saleh) yang ingin kamu ikuti jejaknya? Tuliskan satu langkah kecil untuk mendekat ke jalan mereka.',
     kajianKata: [
       {
         kata: 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ', latin: 'ṣirāṭal-lażīna an‘amta ‘alaihim', arti: 'jalan orang yang Engkau beri nikmat',
