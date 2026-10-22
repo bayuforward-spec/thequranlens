@@ -122,18 +122,26 @@ syntax.forEach((rel) => {
 
 console.log('\n[tanpa ID]');
 {
-  const src = fs.readFileSync(path.join(root, 'assets/js/analytics.js'), 'utf8')
-    + fs.readFileSync(path.join(root, 'assets/js/ga-config.js'), 'utf8');
-  cek(!/G-[A-Z0-9]{4,}/.test(src), 'tidak ada Measurement ID tertanam di kode');
-  const ctx = boot({ href: 'https://thequranlensindonesia.com/?analytics_debug=1' });
-  const A = ctx.window.Analytics;
-  cek(A.measurementId() === '', 'placeholder bukan ID valid');
-  A.debug = true;
-  A.mountGtag();
-  cek(ctx.window.__scripts.length === 0, 'gtag.js tidak dimuat');
-  cek(!ctx.window.gtag, 'fungsi gtag tidak dibuat');
-  const noted = ctx.window.__logs.some((row) => row[0] === '[analytics]' && row[1] === 'ga_status' && row[2].active === '0');
+  const analyticsSrc = fs.readFileSync(path.join(root, 'assets/js/analytics.js'), 'utf8');
+  const configSrc = fs.readFileSync(path.join(root, 'assets/js/ga-config.js'), 'utf8');
+  cek(!/G-[A-Z0-9]{4,}/.test(analyticsSrc), 'analytics.js tidak menyimpan Measurement ID');
+  cek(configSrc.includes('window.QL_GA_MEASUREMENT_ID = "G-6QBQF976B0"'), 'ga-config.js memakai ID produksi');
+  const kosong = boot({ href: 'https://thequranlensindonesia.com/?analytics_debug=1', id: '' });
+  const A0 = kosong.window.Analytics;
+  cek(A0.measurementId() === '', 'string kosong bukan ID valid');
+  A0.debug = true;
+  A0.mountGtag();
+  cek(kosong.window.__scripts.length === 0, 'gtag.js tidak dimuat bila ID kosong');
+  cek(!kosong.window.gtag, 'fungsi gtag tidak dibuat bila ID kosong');
+  const noted = kosong.window.__logs.some((row) => row[0] === '[analytics]' && row[1] === 'ga_status' && row[2].active === '0');
   cek(noted, 'debug mencatat GA nonaktif');
+
+  const bawaan = boot({ href: 'https://thequranlensindonesia.com/?analytics_debug=1' });
+  const A1 = bawaan.window.Analytics;
+  A1.debug = true;
+  cek(A1.measurementId() === 'G-6QBQF976B0', 'nilai di ga-config.js langsung dipakai (tanpa build)');
+  A1.mountGtag();
+  cek(bawaan.window.__scripts.length === 1 && bawaan.window.__scripts[0].src.indexOf('id=G-6QBQF976B0') !== -1, 'deploy branch memuat gtag dengan ID di file');
 }
 
 console.log('\n[ID valid]');
@@ -283,23 +291,28 @@ console.log('\n[injector]');
 {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ql-ga-'));
   const file = path.join(dir, 'ga-config.js');
-  const sample = 'window.QL_GA_MEASUREMENT_ID = "__GA_MEASUREMENT_ID__";\n';
-  fs.writeFileSync(file, sample);
-  execFileSync(process.execPath, [path.join(root, 'tools/inject-ga.js'), file], {
-    env: Object.assign({}, process.env, { GA_MEASUREMENT_ID: 'G-ABC12345', NEXT_PUBLIC_GA_MEASUREMENT_ID: '' }),
+  const sample = 'window.QL_GA_MEASUREMENT_ID = "G-6QBQF976B0";\n';
+  const run = (env) => execFileSync(process.execPath, [path.join(root, 'tools/inject-ga.js'), file], {
+    env: Object.assign({}, process.env, env),
   });
-  cek(fs.readFileSync(file, 'utf8').includes('"G-ABC12345"'), 'injector menulis ID valid');
   fs.writeFileSync(file, sample);
-  execFileSync(process.execPath, [path.join(root, 'tools/inject-ga.js'), file], {
-    env: Object.assign({}, process.env, { GA_MEASUREMENT_ID: '', NEXT_PUBLIC_GA_MEASUREMENT_ID: 'bukan-id' }),
-  });
-  const kosong = fs.readFileSync(file, 'utf8');
-  cek(kosong.includes('= ""') && !kosong.includes('__GA_MEASUREMENT_ID__'), 'ID tidak valid menjadi string kosong');
+  run({ GA_MEASUREMENT_ID: '', NEXT_PUBLIC_GA_MEASUREMENT_ID: '' });
+  cek(fs.readFileSync(file, 'utf8') === sample, 'variable kosong tidak menimpa ID di file');
+  run({ GA_MEASUREMENT_ID: 'G-ABC12345', NEXT_PUBLIC_GA_MEASUREMENT_ID: '' });
+  cek(fs.readFileSync(file, 'utf8').includes('"G-ABC12345"'), 'variable valid menimpa ID');
+  run({ GA_MEASUREMENT_ID: 'off', NEXT_PUBLIC_GA_MEASUREMENT_ID: '' });
+  cek(fs.readFileSync(file, 'utf8').includes('= ""'), 'off mengosongkan ID (analytics nonaktif)');
+  fs.writeFileSync(file, 'window.QL_GA_MEASUREMENT_ID = "__GA_MEASUREMENT_ID__";\n');
+  run({ GA_MEASUREMENT_ID: 'G-ZZZZ9999', NEXT_PUBLIC_GA_MEASUREMENT_ID: '' });
+  cek(fs.readFileSync(file, 'utf8').includes('"G-ZZZZ9999"') && !fs.readFileSync(file, 'utf8').includes('__GA_MEASUREMENT_ID__'), 'token lama tetap bisa diganti');
+  fs.writeFileSync(file, 'window.QL_LAIN = 1;\n');
   let rejected = false;
-  try {
-    execFileSync(process.execPath, [path.join(root, 'tools/inject-ga.js'), file], { stdio: 'pipe' });
-  } catch (e) { rejected = true; }
-  cek(rejected, 'injector gagal bila token sudah tidak ada');
+  try { run({ GA_MEASUREMENT_ID: 'G-ABC12345' }); } catch (e) { rejected = true; }
+  cek(rejected, 'injector gagal bila penugasan tidak ada');
+  fs.writeFileSync(file, sample);
+  rejected = false;
+  try { run({ GA_MEASUREMENT_ID: 'bukan-id', NEXT_PUBLIC_GA_MEASUREMENT_ID: '' }); } catch (e) { rejected = true; }
+  cek(rejected && fs.readFileSync(file, 'utf8') === sample, 'ID tidak valid ditolak dan file tidak berubah');
 }
 
 console.log('\n' + ok + ' lulus, ' + fail + ' gagal');
