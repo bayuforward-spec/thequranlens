@@ -47,7 +47,7 @@ Yang masih perlu di dashboard (bukan di kode):
 1. Produk Mayar **the-quran-lens** → **Track** → **URL Param**, daftarkan lalu simpan:
    `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `plan`.
    Tanpa daftar itu, checkout tetap terbuka, tetapi Mayar tidak menyimpan asal trafik di transaksi.
-2. Di GA4 → Admin → **Events**, tandai sebagai **key event**: `premium_checkout_click`, `lanjutkan_membaca`, `save_episode`, `episode_read`, `tanya_ustadz_used`. (`page_view` sudah otomatis.)
+2. Di GA4 → Admin → **Events**, tandai sebagai **key event**: `premium_checkout_click`, `lanjutkan_membaca`, `save_episode`, `episode_read`, `tanya_ustadz_used`, `waitlist_submit`. (`page_view` sudah otomatis.)
 
 ---
 
@@ -68,10 +68,18 @@ Setiap peristiwa di bawah ini ikut membawa atribusi (bagian 3) bila ada.
 | `outbound_youtube` | Klik tautan ke YouTube | `link_url` |
 | `outbound_instagram` | Klik tautan ke Instagram | `link_url` |
 | `outbound_tiktok` | Klik tautan ke TikTok | `link_url` |
+| `waitlist_submit` | Klik CTA waitlist di `kelas.html`, atau kembali dengan `?waitlist=ok` | `surface`, `method` (`form_open`/`form_confirm`), `batch`, `tema` |
 
 Belum ada tautan YouTube/Instagram/TikTok di halaman. Pendengarnya sudah pasang: begitu tautan itu ada, kliknya terhitung tanpa ubah kode lagi.
 
-**Waitlist.** Repo ini tidak punya formulir waitlist dan tidak menyimpan pendaftar di database. Peristiwa `waitlist_signup` sengaja tidak dipasang. Kalau nanti ada, kirim peristiwa itu saat simpan berhasil, dan simpan di record yang sama: `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `referrer`, `landing_page` (first-touch dan last-touch).
+**Waitlist.** Halaman `kelas.html` mengirim peristiwa `waitlist_submit` (bukan `waitlist_signup`) lewat `Analytics.event`. Ada dua metode:
+
+| `method` | Kapan |
+|---|---|
+| `form_open` | Pengunjung mengklik CTA yang membuka Google Form (intent) |
+| `form_confirm` | Pengunjung kembali ke `kelas.html?waitlist=ok` setelah submit (set redirect konfirmasi Google Form ke URL itu) |
+
+Parameter tambahan: `surface=kelas`, `batch=1`, `tema=juz30`, plus atribusi UTM first/last-touch yang sudah otomatis. Tidak ada penyimpanan pendaftar di database situs — data ada di Google Forms/Sheets.
 
 Pembelian Google Play (edisi aplikasi) tidak lewat Mayar, jadi tidak masuk `premium_checkout_click`.
 
