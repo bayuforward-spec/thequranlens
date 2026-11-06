@@ -925,6 +925,93 @@ const AYAT = [
     sumber: ['Tafsir Ibnu Katsir', 'Sahih Muslim no. 125', 'Tafsir As-Sa‘di'],
   },
 
+  /* ============ DRAF REVIEW · QS AL-FURQĀN (25):74 ============
+   * Status 6 Nov 2026: DRAF untuk review ustadz dan validasi situs.
+   * Belum ditashih ustadz. Belum disetujui Bayu. Jangan merge dan jangan publish.
+   * Arab, latin, arti disalin verbatim dari Qur'an Kemenag (api 25:74).
+   * Ringkasan tafsir hanya dari Ibnu Katsir, As-Sa'di, dan Al-Muyassar.
+   * gratis tetap false — keputusan Bayu: doa 25:74 tidak dibuka gratis.
+   */
+  {
+    id: 'al-furqan-74',
+    tadabbur: 'Siapa di keluargamu yang ingin kamu doakan agar menjadi penyejuk mata karena ketaatan — sebagaimana ‘Ikrimah menjelaskan ayat ini — bukan karena rupa?',
+    kajianKata: [
+      {
+        kata: 'قُرَّةَ اَعْيُنٍ',
+        latin: 'qurrata a‘yun',
+        arti: 'penyejuk mata',
+        poin: [
+          'Terjemahan Kemenag: «penyejuk mata» dari pasangan dan keturunan.',
+          '‘Ikrimah (dikutip Tafsir Ibnu Katsir): yang dimaksud bukan rupa yang elok atau kecantikan, melainkan agar mereka menjadi orang-orang yang taat.',
+          'Ibn Abbas (dikutip Ibnu Katsir): yang dimaksud orang yang beramal dengan ketaatan, sehingga mata sejuk karenanya di dunia dan akhirat.',
+          'Tafsir Al-Muyassar atas frasa ini: apa yang menyejukkan mata, yang di dalamnya ada keakraban dan kegembiraan.',
+        ],
+        banding: {
+          tipe: 'banding',
+          item: [
+            { arab: 'قُرَّةَ اَعْيُنٍ', latin: 'Qurrata a‘yun (makna ayat)', sifat: ['Ketaatan kepada Allah', 'Bukan soal rupa, menurut ‘Ikrimah'] },
+            { arab: 'صَبَاحَة / جَمَال', latin: 'Rupa / kecantikan (bukan maksud ayat)', alt: true, sifat: ['Disangkal ‘Ikrimah', 'Bukan yang diminta dalam doa ini'] },
+          ],
+          catatan: 'Banding makna dari riwayat ‘Ikrimah di Tafsir Ibnu Katsir — bukan usulan kata alternatif di mushaf. Vokal «ṣabāḥah / jamāl» mengikuti kata dalam tafsir itu, bukan teks ayat.',
+        },
+        sumber: ['Tafsir Ibnu Katsir (riwayat ‘Ikrimah dan Ibn Abbas)', 'Tafsir Al-Muyassar', 'Qur’an Kemenag (terjemahan)'],
+      },
+      {
+        kata: 'هَبْ لَنَا',
+        latin: 'hab lanā',
+        arti: 'anugerahkanlah kepada kami',
+        poin: [
+          'Terjemahan Kemenag: «anugerahkanlah kepada kami».',
+          'Tafsir As-Sa‘di: doa kebaikan pasangan dan keturunan ini sekaligus doa untuk diri sendiri, karena manfaatnya kembali kepada mereka. Karena itu mereka menyebutnya anugerah: «hab lanā».',
+          'As-Sa‘di: «azwāj» di sini mencakup teman, rekan, dan istri. Mata mereka belum sejuk sebelum melihat orang-orang itu taat kepada Tuhan mereka, berilmu, dan beramal.',
+        ],
+        sumber: ['Tafsir As-Sa‘di', 'Qur’an Kemenag (terjemahan)'],
+      },
+      {
+        kata: 'اِمَامًا',
+        latin: 'imāmā',
+        arti: 'pemimpin / teladan',
+        poin: [
+          'Terjemahan Kemenag: «pemimpin bagi orang-orang yang bertakwa».',
+          'Tafsir Al-Muyassar: jadikan kami teladan (قدوة) yang diikuti dalam kebaikan.',
+          'Ibnu Katsir menukil Ibn Abbas, Al-Hasan, Qatadah, As-Suddi, dan Ar-Rabi‘ bin Anas: imam yang diikuti dalam kebaikan.',
+          'Ulama lain yang dinukil Ibnu Katsir — bukan Ibn Abbas dan rekan-rekannya di atas — memaknainya sebagai pemberi petunjuk yang juga mendapat petunjuk, serta penyeru kepada kebaikan, agar ibadah tersambung pada anak dan keturunan dan petunjuknya bermanfaat bagi orang lain.',
+        ],
+        sumber: ['Qur’an Kemenag (terjemahan)', 'Tafsir Al-Muyassar', 'Tafsir Ibnu Katsir'],
+      },
+    ],
+    hikmahPoin: [
+      'Menurut ‘Ikrimah, penyejuk mata yang diminta ayat ini adalah ketaatan, bukan rupa.',
+      'Mendoakan kebaikan keluarga, kata As-Sa‘di, manfaatnya kembali juga kepada yang berdoa.',
+      'Ayat ditutup dengan permohonan dijadikan teladan bagi orang yang bertakwa.',
+    ],
+    surah: 'Al-Furqān',
+    surahNo: 25,
+    ayatNo: '74',
+    juz: 19,
+    tema: ['Doa', 'Keluarga', 'Ketaatan', 'Keteladanan'],
+    gratis: false,
+    arab: 'وَالَّذِيْنَ يَقُوْلُوْنَ رَبَّنَا هَبْ لَنَا مِنْ اَزْوَاجِنَا وَذُرِّيّٰتِنَا قُرَّةَ اَعْيُنٍ وَّاجْعَلْنَا لِلْمُتَّقِيْنَ اِمَامًا',
+    latin: 'Wal-lażīna yaqūlūna rabbanā hab lanā min azwājinā wa żurriyyātinā qurrata a‘yuniw waj‘alnā lil-muttaqīna imāmā(n).',
+    arti: 'Dan, orang-orang yang berkata, “Wahai Tuhan kami, anugerahkanlah kepada kami penyejuk mata dari pasangan dan keturunan kami serta jadikanlah kami sebagai pemimpin bagi orang-orang yang bertakwa.”',
+    asbabunNuzul:
+      'Tidak ada riwayat asbabun nuzul khusus untuk ayat ini pada Tafsir Ibnu Katsir, As-Sa‘di, dan Al-Muyassar yang dipakai sebagai sumber episode. Ayat ini tersambung dengan «walladhīna» pada rangkaian sifat ‘ibādur-raḥmān (hamba-hamba Ar-Raḥmān) dalam mushaf, Al-Furqān 63–76: orang yang berdoa agar pasangan dan keturunannya menjadi penyejuk mata, lalu memohon dijadikan pemimpin bagi orang yang bertakwa. Rentang 63–76 adalah letak mushaf, bukan riwayat sabab yang tertulis di ketiga tafsir itu.',
+    tafsir:
+      'Teks ayat memohon penyejuk mata dari pasangan dan keturunan, lalu memohon dijadikan pemimpin bagi orang yang bertakwa. Ibnu Katsir menjelaskan permohonan «qurrata a‘yun» sebagai permintaan agar dari sulbi dan keturunan mereka lahir orang yang taat dan beribadah kepada Allah semata, tanpa sekutu. ‘Ikrimah (Ibnu Katsir) menegaskan: yang dimaksud bukan rupa atau kecantikan, melainkan ketaatan. Ibn Abbas (Ibnu Katsir): orang yang beramal dengan ketaatan, sehingga mata sejuk karenanya di dunia dan akhirat. Al-Muyassar mengartikan bagian ini sebagai apa yang menyejukkan mata, yang di dalamnya ada keakraban dan kegembiraan. As-Sa‘di menjelaskan bahwa doa ini sekaligus doa untuk diri sendiri, karena manfaatnya kembali kepada yang berdoa, bahkan kebaikan orang-orang itu dapat menjadi sebab kebaikan banyak orang yang terkait dengan mereka. Pada «waj‘alnā lil-muttaqīna imāmā», Al-Muyassar berarti permintaan dijadikan teladan (قدوة) yang diikuti dalam kebaikan. Ibnu Katsir menukil Ibn Abbas, Al-Hasan, Qatadah, As-Suddi, dan Ar-Rabi‘ bin Anas: imam yang diikuti dalam kebaikan. Nukilan «ulama lain» pada Ibnu Katsir memaknainya sebagai pemberi petunjuk yang juga mendapat petunjuk, agar ibadah tersambung pada anak dan keturunan dan petunjuknya bermanfaat bagi orang lain.',
+    hikmah:
+      'Doa untuk pasangan dan keturunan dalam ayat ini, menurut ‘Ikrimah, menempatkan ketaatan di atas rupa. As-Sa‘di menjelaskan bahwa mendoakan kebaikan mereka adalah juga doa untuk diri sendiri, karena manfaatnya kembali kepada yang berdoa — bukan jaminan hasil tertentu. Permohonan «imāmā» adalah cita-cita menjadi teladan bagi orang yang bertakwa. As-Sa‘di menyatakan derajat imamah dalam agama tidak sempurna kecuali dengan sabar dan yakin, seraya mengutip «وَجَعَلْنَاهم أَئِمَّةً يَهْدُونَ بِأَمْرِنَا لَمَّا صَبَرُوا وَكَانُوا بِآيَاتِنَا يُوقِنُونَ» (QS As-Sajdah 32:24).',
+    linguistik:
+      'Fokus Lensa Kata ada pada «qurrata a‘yun». Kemenag menerjemahkannya «penyejuk mata»; ‘Ikrimah, dikutip Ibnu Katsir, membatasi maksudnya pada ketaatan, bukan rupa atau kecantikan; Al-Muyassar menambah nuansa keakraban dan kegembiraan. «Hab lanā» adalah permintaan anugerah. As-Sa‘di membacanya sebagai doa bagi orang lain yang manfaatnya kembali kepada yang berdoa, dan memahami «azwāj» mencakup teman, rekan, dan istri, dengan harapan mereka taat, berilmu, dan beramal. «Imāmā» diterjemahkan Kemenag «pemimpin»; Al-Muyassar menegaskan nuansa teladan (قدوة) yang diikuti dalam kebaikan.',
+    amalan:
+      'Tanpa janji fadhilah atau hasil tertentu: (1) baca ayat ini pelan, lalu doakan pasangan, anak, atau kerabat agar taat kepada Allah; (2) tulis satu kebiasaan kecil di rumah yang meneladankan ketaatan, bukan sekadar nasihat; (3) jangan jadikan doa ini saran medis atau jaminan bahwa anak pasti saleh. Untuk pendalaman, rujuk guru yang dipercaya.',
+    sumber: [
+      'Qur’an Kemenag (LPMQ) — teks dan terjemahan QS 25:74',
+      'Tafsir Ibnu Katsir QS 25:74',
+      'Tafsir As-Sa‘di QS 25:74',
+      'Tafsir Al-Muyassar QS 25:74',
+    ],
+  },
+
   /* ============ JUZ 30 — Ayat masyhur ============ */
   {
     id: 'al-insyirah-5-6',
@@ -2717,6 +2804,8 @@ const MUSIM = [
     episodes: ['al-fatihah-1', 'al-fatihah-2', 'al-fatihah-3', 'al-fatihah-4', 'al-fatihah-5', 'al-fatihah-6', 'al-fatihah-7'] },
   { id: 'musim-1', label: 'Musim 1', surah: 'Al-Baqarah', ket: 'Sedang berjalan',
     episodes: ['al-baqarah-1', 'al-baqarah-2', 'al-baqarah-3-4', 'al-baqarah-5', 'al-baqarah-255', 'al-baqarah-286'] },
+  { id: 'doa', label: 'Doa dalam Al-Qur’an', surah: 'Doa pilihan', ket: 'Seri doa · Premium · draf belum ditashih',
+    episodes: ['al-furqan-74'] },
   { id: 'pilihan', label: 'Juz 30', surah: 'Juz ‘Amma · surah pendek', ket: 'Sedang dilengkapi',
     episodes: ['an-naba-1-5', 'an-naziat-37-41', 'abasa-1-7', 'at-takwir-8-9', 'al-infitar-6-8', 'al-mutaffifin-1-3', 'al-insyiqaq-6', 'al-buruj-14-16', 'at-tariq-5-8', 'al-ala-14-17', 'al-ghasyiyah-17-20', 'al-fajr-27-30', 'al-balad-11-16', 'asy-syams-7-10', 'al-lail-5-7', 'ad-duha-1-11', 'al-insyirah-5-6', 'at-tin-1-8', 'al-alaq-1-5', 'al-qadr-1-5', 'al-bayyinah-1-8', 'az-zalzalah-1-8', 'al-adiyat-1-11', 'al-qariah-1-11', 'at-takatsur-1-8', 'al-asr-1-3', 'al-humazah-1-9', 'al-fil-1-5', 'quraisy-1-4', 'al-maun-1-7', 'al-kautsar-1-3', 'al-kafirun-1-6', 'an-nasr-1-3', 'al-masad-1-5', 'al-ikhlas-1-4', 'al-falaq-1-5', 'an-nas-1-6'] },
 ];
@@ -2740,6 +2829,7 @@ const FOKUS = {
   'al-asr-1-3': ['خُسْرٍ'],
   'al-kautsar-1-3': ['الْكَوْثَرَ', 'الْأَبْتَرُ'],
   'al-ikhlas-1-4': ['أَحَدٌ'],
+  'al-furqan-74': ['قُرَّةَ', 'اَعْيُنٍ', 'اِمَامًا'],
 };
 
 // Kata "alternatif" (yang TIDAK dipilih Al-Qur’an) pada kartu banding → ditampilkan pudar.
@@ -2986,6 +3076,11 @@ const HIKMAH_KATA = {
   'al-lail-5-7': [
     'Memberi bukan kehilangan — ia memudahkan jalanmu.',
     'Tiap kebaikan membuka kebaikan berikutnya.',
+  ],
+  'al-furqan-74': [
+    'Penyejuk mata yang ‘Ikrimah maksudkan di ayat ini adalah ketaatan, bukan rupa.',
+    'Kebaikan yang kamu doakan untuk keluarga, As-Sa‘di katakan kembali juga kepadamu.',
+    'Imam di ayat ini adalah teladan yang diikuti dalam kebaikan.',
   ],
 };
 
