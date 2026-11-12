@@ -3,6 +3,13 @@
 Dokumen ini adalah **"pipa konten"**: alur baku agar menambah satu episode jadi
 cepat, konsisten, dan tahan-typo. Semua konten ada di `assets/js/content.js`.
 
+> 🔒 **Sejak gating sisi-server:** `assets/js/content.js` di repo hanya berisi versi
+> publik (lapisan Premium dipotong jadi cuplikan). Sunting **salinan lengkap di luar repo**
+> (`content-lengkap.js`), validasi dengan `QL_KONTEN=<path> node tools/validasi-konten.js`,
+> lalu jalankan `tools/pisah-konten-premium.js`. Alat itu memperbarui `content.js` publik dan
+> `premium-content.json`; unggah ulang file JSON itu ke Render Secret File.
+> Lihat `server/README.md`.
+
 > 🔑 **Aturan emas:** setelah menambah episode, **selalu** jalankan
 > `node tools/validasi-konten.js`. Kalau hijau ✅, aman. Kalau merah ❌,
 > perbaiki dulu sebelum commit — itu mencegah app blank di produksi.

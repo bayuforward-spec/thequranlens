@@ -6,9 +6,10 @@
  *    Bulanan/Tahunan di halaman Mayar). Salin link-nya ke CONFIG.checkout.
  * 2. Deploy server/ (lihat server/README) lalu isi CONFIG.apiBase dengan URL-nya,
  *    mis. 'https://quranlens.onrender.com'. Webhook Mayar mencatat order yang LUNAS.
- * 3. Pembeli bayar di Mayar → salin Order ID dari struk → tempel di
- *    "Aktivasi dengan Order ID" → server memverifikasi → Premium aktif.
- *    (Bila Mayar mendukung redirect ke ?aktivasi=...&order=..., aktivasi otomatis.)
+ * 3. Pembeli bayar di Mayar → webhook (bertoken) mencatat transaksi setelah
+ *    diverifikasi ulang ke API Mayar → pembeli kembali via Redirect URL
+ *    (?aktivasi=1[&order=...]) atau menempel Order ID di "Aktivasi dengan Order ID"
+ *    → server menerbitkan token sesi → konten Premium diambil dari server (premium.js).
  *
  * CATATAN: API Key & Webhook Secret Mayar TIDAK pernah ditaruh di sini —
  * keduanya hanya di server sebagai environment variable.
@@ -33,15 +34,10 @@ const Payment = {
   // True bila backend verifikasi sudah dipasang
   backendAktif() { return !!this.CONFIG.apiBase; },
 
-  // Verifikasi Order ID ke server. Mengembalikan {active, paket, expiresAt} | {active:false}.
+  // Verifikasi Order ID ke server (dipertahankan untuk kompatibilitas; lihat premium.js).
   async verifikasiOrder(order) {
-    if (!this.backendAktif()) return { active: false, error: 'backend-nonaktif' };
-    try {
-      const r = await fetch(`${this.CONFIG.apiBase}/api/verify?order=${encodeURIComponent(order)}`);
-      return await r.json();
-    } catch (e) {
-      return { active: false, error: 'jaringan' };
-    }
+    if (window.Premium) return Premium.verifikasiOrder(order);
+    return { active: false, error: 'backend-nonaktif' };
   },
 
   terkonfigurasi(paket) {
@@ -65,14 +61,16 @@ const Payment = {
     return true;
   },
 
+  // Kembali dari Mayar: ?aktivasi=<slug|1>&order=<id>. Nama parameter ID transaksi
+  // yang (mungkin) ditambahkan Mayar belum terdokumentasi → beberapa nama diterima.
+  // Tanpa ID → order kosong; app meminta pembeli menempel Order ID.
   cekRedirect() {
     const p = new URLSearchParams(window.location.search);
-    const slug = p.get('aktivasi');
-    const order = p.get('order');
-    if (slug && this.CONFIG.slug[slug]) {
-      return { paket: this.CONFIG.slug[slug], order: order || '-' };
-    }
-    return null;
+    if (!p.has('aktivasi')) return null;
+    const slug = String(p.get('aktivasi') || '').toLowerCase();
+    const order = ['order', 'transactionId', 'transaction_id', 'invoiceId', 'invoice_id', 'id']
+      .map((k) => p.get(k)).find((v) => v && v.trim().length >= 4) || '';
+    return { paket: this.CONFIG.slug[slug] || null, order: order.trim() };
   },
 
   bersihkanURL() {

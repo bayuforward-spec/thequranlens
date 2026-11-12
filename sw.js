@@ -1,12 +1,12 @@
 /* sw.js — Service Worker The Quran Lens (PWA + notifikasi kata harian).
  * Strategi network-first: konten selalu diambil terbaru saat online,
  * cache dipakai sebagai cadangan agar app tetap jalan saat offline. */
-const CACHE = 'quranlens-v9';
+const CACHE = 'quranlens-v10';
 const SHELL = [
   './', 'index.html', 'gratis.html', 'privacy.html', 'manifest.webmanifest',
   'assets/css/styles.css',
   'assets/js/ga-config.js', 'assets/js/analytics.js',
-  'assets/js/content.js', 'assets/js/storage.js', 'assets/js/payment.js', 'assets/js/billing.js',
+  'assets/js/content.js', 'assets/js/storage.js', 'assets/js/payment.js', 'assets/js/premium.js', 'assets/js/billing.js',
   'assets/js/nahwu-data.js', 'assets/js/nahwu.js', 'assets/js/nahwu-tanya.js', 'assets/js/app.js',
 ];
 
@@ -22,6 +22,8 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
+  // API (termasuk konten Premium bertoken) tidak pernah di-cache Service Worker.
+  if (new URL(e.request.url).pathname.startsWith('/api/')) return;
   const sameOrigin = new URL(e.request.url).origin === self.location.origin;
   // Same-origin: paksa revalidasi ke server (no-cache) agar konten selalu terbaru.
   const req = sameOrigin ? fetch(e.request.url, { cache: 'no-cache' }) : fetch(e.request);

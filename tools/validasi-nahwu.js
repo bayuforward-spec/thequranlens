@@ -13,7 +13,8 @@
 const path = require('path');
 
 global.window = {};
-require(path.join(__dirname, '..', 'assets', 'js', 'content.js'));
+// QL_KONTEN = path content.js LENGKAP (di luar repo); default berkas publik (tanpa lapisan Premium)
+require(process.env.QL_KONTEN ? path.resolve(process.env.QL_KONTEN) : path.join(__dirname, '..', 'assets', 'js', 'content.js'));
 require(path.join(__dirname, '..', 'assets', 'js', 'nahwu-data.js'));
 const P = global.window.NAHWU || [];
 const W = global.window.NAHWU_WIDGET || {};

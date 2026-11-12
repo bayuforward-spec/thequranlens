@@ -1,8 +1,8 @@
 /*
  * storage.js — Status Premium, bookmark ayat, & streak harian (localStorage).
  *
- * Catatan: Gating Premium di sini sisi-klien untuk demo produk. Untuk produksi,
- * validasi langganan harus di server (webhook Scalev + autentikasi pengguna).
+ * Status Premium = token sesi dari server (lihat premium.js); konten Premium
+ * hanya bisa diambil dari server dengan token itu.
  */
 const Store = {
   KEY_PRO: 'quranlens_pro',
@@ -14,16 +14,30 @@ const Store = {
   KEY_NAHWU_LAMA: 'nahwu-progress-v1', // file HTML mandiri "Nahwu 12 Pertemuan"
   KEY_JURNAL: 'quranlens_jurnal',
 
-  /* ---------- Premium ---------- */
-  isPro() {
-    const raw = localStorage.getItem(this.KEY_PRO);
-    return raw ? JSON.parse(raw) : null;
+  /* ---------- Premium ----------
+   * Hak akses ditentukan SERVER. Di perangkat hanya disimpan token sesi bertanda
+   * tangan + Order ID pembeli (untuk memeriksa ulang). Tanpa token = bukan Premium. */
+  proMentah() {
+    try { return JSON.parse(localStorage.getItem(this.KEY_PRO)) || null; } catch (e) { return null; }
   },
-  setPro(paket, order) {
-    const data = { paket, order: order || '-', aktifSejak: new Date().toISOString() };
+  isPro() {
+    const p = this.proMentah();
+    if (!p || !p.token) return null;
+    const now = Date.now();
+    if (p.expiresAt && Date.parse(p.expiresAt) <= now) { this.clearPro(); return null; }
+    if (p.tokenExp && p.tokenExp <= now) return null; // perlu diperbarui (Premium.periksaUlang)
+    return p;
+  },
+  setPro(paket, order, extra = {}) {
+    const lama = this.proMentah() || {};
+    const data = {
+      paket, order: order || '-', aktifSejak: lama.aktifSejak || new Date().toISOString(),
+      token: extra.token || null, tokenExp: extra.tokenExp || null, expiresAt: extra.expiresAt || null, cek: Date.now(),
+    };
     localStorage.setItem(this.KEY_PRO, JSON.stringify(data));
     return data;
   },
+  clearPro() { localStorage.removeItem(this.KEY_PRO); },
 
   /* ---------- Jurnal Tadabbur (catatan renungan pribadi per ayat) ---------- */
   jurnalAll() {

@@ -48,25 +48,32 @@ const App = {
       if (t) this.switchTab(t.dataset.tab);
     });
 
-    // Aktivasi otomatis bila pembeli kembali dari checkout Mayar
+    // Aktivasi otomatis bila pembeli kembali dari checkout Mayar (diverifikasi server)
     const redir = Payment.cekRedirect();
     if (redir) {
       Payment.bersihkanURL();
-      if (Payment.backendAktif()) {
-        this.aktifkan(redir.order, redir.paket, true);
-      } else {
-        Store.setPro(redir.paket, redir.order);
-        setTimeout(() => this.toast(`🎉 Pembayaran berhasil! Premium ${redir.paket} aktif.`), 400);
-      }
+      if (redir.order) this.aktifkan(redir.order, redir.paket, true);
+      else setTimeout(() => {
+        this.switchTab('langganan');
+        const d = document.querySelector('#panel-langganan details.manual');
+        if (d) d.open = true;
+        this.toast('Terima kasih! Tempel Order ID dari email/struk Mayar untuk mengaktifkan Premium.');
+      }, 400);
     }
 
-    // Akses PENINJAU (ustadz/reviewer): buka semua episode tanpa bayar via ?akses=KODE.
-    // Catatan: kode ini sisi-klien (terlihat di source) — cukup untuk peninjauan;
-    // ganti bila bocor. Perlindungan sungguhan menyusul (konten sisi-server).
-    if (new URLSearchParams(location.search).get('akses') === 'qlens-tashih-2026') {
-      Store.setPro('Peninjau', 'TASHIH');
+    // Akses PENINJAU (ustadz/reviewer) via ?akses=KODE — kode diperiksa SERVER
+    // (env REVIEWER_CODES), bisa dicabut kapan saja tanpa rilis ulang aplikasi.
+    const kodePeninjau = new URLSearchParams(location.search).get('akses');
+    if (kodePeninjau) {
       if (window.history.replaceState) history.replaceState({}, document.title, location.pathname);
-      setTimeout(() => this.toast('✓ Akses peninjau aktif — seluruh episode terbuka.'), 500);
+      Premium.peninjau(kodePeninjau, () => this.toast('⏳ Server sedang bangun, mohon tunggu (bisa ±1 menit)…'))
+        .then((ok) => {
+          this.toast(ok ? '✓ Akses peninjau aktif — seluruh episode terbuka.' : '⚠️ Kode peninjau tidak berlaku.');
+          if (ok) this.afterUnlock();
+        });
+    } else if (!redir) {
+      // Periksa ulang hak Premium ke server (±24 jam sekali / token hampir habis)
+      Premium.periksaUlang().then(() => this.afterUnlock());
     }
 
     this.renderStreak(Store.catatKunjungan());
@@ -212,7 +219,17 @@ const App = {
   renderEpisode(ayat) {
     const meta = episodeMeta(ayat.id);
     const pro = !!Store.isPro();
-    const open = pro || ayat.gratis;
+    // Lapisan Premium diambil dari server (bukan content.js publik).
+    const memuat = pro && !ayat.gratis && !Premium.sudahDimuat(ayat.id);
+    if (memuat) {
+      Premium.muat(ayat.id).then((ok) => {
+        if (this.current !== ayat.id) return;
+        if (ok) this.renderEpisodeInto();
+        else if (!Store.isPro()) this.afterUnlock();
+        else this.toast('⚠️ Kajian Premium belum termuat. Periksa koneksi lalu buka ulang episode.');
+      });
+    }
+    const open = ayat.gratis || (pro && !memuat);
     const marked = Store.isMarked(ayat.id);
 
     let h = `<nav class="crumbs" aria-label="Posisi">
@@ -229,6 +246,7 @@ const App = {
     </div>`;
 
     h += this.renderAyahDisplay(ayat);
+    if (memuat) h += `<div class="manual-hint" style="text-align:center;margin:12px 0">⏳ Memuat kajian Premium… (server bisa butuh ±1 menit saat baru bangun)</div>`;
     if (window.Nahwu) h += Nahwu.renderEpisodeLink(ayat);
     if (Array.isArray(ayat.kajianKata) && ayat.kajianKata.length) {
       h += this.renderKajianKata(ayat, open);
@@ -576,10 +594,7 @@ const App = {
     if (Payment.checkout(paket)) {
       this.toast('Mengarahkan ke pembayaran Mayar…');
     } else {
-      Store.setPro(paket, 'DEMO');
-      this.closeUpgrade();
-      this.afterUnlock();
-      this.toast(`🎉 (Mode demo) Premium ${paket} aktif. Pasang link Mayar untuk transaksi nyata.`);
+      this.toast('Pembayaran belum tersedia. Silakan coba lagi nanti.');
     }
   },
 
@@ -589,26 +604,23 @@ const App = {
     const paket = sel.value;
     const order = (inp.value || '').trim();
     if (!order) return this.toast('Masukkan Order ID dari Mayar terlebih dahulu.');
-    if (Payment.backendAktif()) {
-      this.aktifkan(order, paket, false);
-    } else {
-      Store.setPro(paket, order);
-      this.closeUpgrade();
-      this.afterUnlock();
-      this.toast(`✓ Premium ${paket} aktif. Terima kasih 💛`);
-    }
+    // Paket ditentukan server dari produk Mayar yang dibayar; pilihan di form hanya petunjuk.
+    this.aktifkan(order, paket, false);
   },
 
   async aktifkan(order, paketHint, dariRedirect) {
     this.toast('Memverifikasi pembayaran…');
-    const hasil = await Payment.verifikasiOrder(order);
+    const hasil = await Premium.verifikasiOrder(order, () => this.toast('⏳ Server sedang bangun, mohon tunggu (bisa ±1 menit)…'));
     if (hasil && hasil.active) {
-      Store.setPro(hasil.paket || paketHint, order);
       this.closeUpgrade();
       this.afterUnlock();
       this.toast(`🎉 Pembayaran terverifikasi! Premium ${hasil.paket || paketHint} aktif.`);
     } else {
-      this.toast('⚠️ Order belum terverifikasi. Pastikan pembayaran selesai, lalu coba lagi.');
+      this.toast(hasil && hasil.alasan === 'jaringan'
+        ? '⚠️ Server belum bisa dihubungi. Coba lagi sebentar lagi — Order ID-mu tetap berlaku.'
+        : hasil && hasil.alasan === 'kedaluwarsa'
+          ? '⚠️ Masa aktif Premium untuk Order ID ini sudah berakhir.'
+          : '⚠️ Order belum terverifikasi. Pastikan pembayaran selesai, lalu coba lagi.');
     }
   },
 

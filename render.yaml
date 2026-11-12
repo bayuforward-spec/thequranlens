@@ -1,7 +1,9 @@
-# Render — deploy backend verifikasi langganan (folder server/)
-# Catatan: tier free berfilesystem EFEMERAL — file data/subs.json TIDAK persisten
-# antar restart/deploy. Untuk uang sungguhan, pasang Disk (berbayar) lalu set
-# DATA_FILE ke path disk, ATAU pindah ke database. Lihat DEPLOY-MAYAR.md.
+# Render — backend The Quran Lens (folder server/)
+# Tier free: filesystem EFEMERAL & service tidur setelah ±15 menit tanpa trafik.
+# Hak akses Premium disimpan di Upstash Redis (STORAGE=upstash, paket gratis) —
+# bukan file lokal. Konten Premium = Secret File "premium-content.json"
+# (Dashboard → Environment → Secret Files → /etc/secrets/premium-content.json).
+# Lihat RENCANA-TRANSAKSI-UJI.md. JANGAN taruh nilai rahasia di file ini.
 services:
   - type: web
     name: quran-lens-api
@@ -13,14 +15,35 @@ services:
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
-      - key: MAYAR_WEBHOOK_SECRET    # isi manual di dashboard (rahasia, dari Mayar)
-        sync: false
-      - key: TOKEN_SECRET            # dibuat otomatis & aman oleh Render
+      # --- Inti (WAJIB) ---
+      - key: TOKEN_SECRET            # penanda tangan token sesi (otomatis)
         generateValue: true
-      - key: MAYAR_WEBHOOK_DEBUG     # set "true" SEMENTARA saat transaksi tes, lalu balik "false"
-        value: "false"
-      - key: ALLOW_ORIGIN            # domain frontend Anda; "*" boleh untuk awal
-        value: "*"
+      - key: ORDER_PEPPER            # rahasia hash Order ID (otomatis; JANGAN diganti setelah ada data)
+        generateValue: true
+      - key: ALLOW_ORIGIN            # domain frontend
+        value: "https://thequranlensindonesia.com"
+      - key: TOKEN_TTL_HARI          # umur token sesi sebelum wajib diperbarui
+        value: "7"
+      # --- Mayar ---
+      - key: MAYAR_WEBHOOK_TOKEN     # token acak panjang; ikut di URL webhook ?token=
+        sync: false
+      - key: MAYAR_API_KEY           # API key Mayar (Dashboard Mayar → Integrasi/API Key)
+        sync: false
+      - key: MAYAR_PRODUK            # JSON productId → paket (lihat RENCANA-TRANSAKSI-UJI.md)
+        sync: false
+      - key: MAYAR_WEBHOOK_SECRET    # opsional: hanya dipakai bila Mayar mengirim header tanda tangan HMAC
+        sync: false
+      # MAYAR_API_BASE default https://api.mayar.id/hl/v2 (sandbox: https://api.mayar.io/hl/v2)
+      # --- Penyimpanan hak akses ---
+      - key: STORAGE
+        value: upstash
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      # --- Akses peninjau (ustadz/reviewer): kode dipisah koma; hapus untuk mencabut ---
+      - key: REVIEWER_CODES
+        sync: false
       # --- Belajar Nahwu: "Tanya ustadz AI" — kosongkan untuk mematikan fitur ---
       - key: ANTHROPIC_API_KEY       # kunci API dari console.anthropic.com (RAHASIA, isi manual)
         sync: false
@@ -33,11 +56,9 @@ services:
         sync: false
       - key: PLAY_PACKAGE_NAME       # package name app, mis. id.thequranlens.app
         sync: false
-      # Jika memasang Disk persisten, arahkan penyimpanan ke sana:
-      # - key: DATA_FILE
-      #   value: /var/data/subs.json
 
-    # Aktifkan blok ini bila ingin data langganan persisten (berbayar):
+    # Alternatif BERBAYAR (bukan default): instance berbayar + Disk persisten,
+    # lalu STORAGE=file dan DATA_FILE=/var/data/akses.json.
     # disk:
     #   name: quran-lens-data
     #   mountPath: /var/data

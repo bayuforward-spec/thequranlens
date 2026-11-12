@@ -1,35 +1,46 @@
 /*
- * server.js — Backend verifikasi langganan The Quran Lens (Mayar).
+ * server.js — Backend The Quran Lens: aktivasi Premium (Mayar + Google Play),
+ * konten Premium bertoken, dan "Tanya ustadz AI".
  *
- * Tujuan: menutup celah bypass pada gating sisi-klien. Status Premium pembeli
- * hanya valid bila TERCATAT di server melalui webhook Mayar yang terverifikasi
- * tanda tangannya. Order ID palsu tidak akan ditemukan -> akses ditolak.
- *
- * Tanpa dependensi (hanya modul bawaan Node >= 18). Penyimpanan: file JSON
- * sederhana (cukup untuk awal; ganti ke database bila skala bertambah).
+ * Alur Mayar (lihat RENCANA-TRANSAKSI-UJI.md):
+ *   1. Pembeli bayar di Mayar → Mayar POST /api/mayar/webhook?token=<MAYAR_WEBHOOK_TOKEN>
+ *   2. Server cek token (constant-time; HMAC header juga diterima bila ada),
+ *      lalu VERIFIKASI ULANG ke API Mayar (GET /hl/v2/transactions/{id}) — status
+ *      harus "paid" dan productId harus terdaftar di MAYAR_PRODUK.
+ *   3. Hak akses disimpan (hash order, paket, productId, expiresAt, waktu aktivasi).
+ *   4. Pembeli kembali ke app (?aktivasi=1&order=...) atau mengetik Order ID →
+ *      POST /api/verify → token sesi bertanda tangan.
+ *   5. Konten Premium hanya dari GET /api/premium/episode/:id dengan token itu.
  *
  * ── Endpoint ────────────────────────────────────────────────────────────────
- *   POST /api/mayar/webhook    Terima event Mayar (signature diverifikasi)
- *   GET  /api/verify?order=ID   Cek status langganan sebuah Order ID
- *   POST /api/nahwu/tanya       "Tanya ustadz AI" (Belajar Nahwu) → Claude, dialirkan (SSE)
- *   GET  /api/health            Health check (+ tanya:true bila fitur tanya aktif)
- *   (opsional) static files     Melayani aplikasi bila STATIC_DIR di-set
+ *   GET  /api/health
+ *   POST /api/mayar/webhook            (alias lama: /api/webhook)
+ *   POST /api/verify   {order}         (GET ?order= tetap diterima)
+ *   POST /api/refresh  {token}
+ *   POST /api/reviewer {kode}          akses peninjau (REVIEWER_CODES, bisa dicabut)
+ *   GET  /api/premium/episode/:id      Authorization: Bearer <token>
+ *   POST /api/play/verify {token, sku} Google Play Billing
+ *   POST /api/nahwu/tanya              Tanya ustadz AI (SSE)
  *
- * ── Konfigurasi (environment variables) ─────────────────────────────────────
- *   PORT                     Default 8787
- *   MAYAR_WEBHOOK_SECRET     Secret untuk verifikasi tanda tangan webhook Mayar
- *   MAYAR_SIGNATURE_HEADER   Kandidat nama header tanda tangan (dipisah koma)
- *   MAYAR_WEBHOOK_DEBUG      'true' = log header+body & lewati verifikasi (1x tes saja)
- *   TOKEN_SECRET             Secret untuk menandatangani token verifikasi ke klien
- *   DATA_FILE                Lokasi file penyimpanan (default ./data/subs.json)
- *   STATIC_DIR               Folder aplikasi statis untuk dilayani (opsional)
- *   ALLOW_ORIGIN             Nilai CORS Access-Control-Allow-Origin (default '*')
- *   ANTHROPIC_API_KEY        Kunci API Anthropic untuk /api/nahwu/tanya (kosong = fitur mati)
- *   TANYA_PER_JAM            Batas pertanyaan per IP per jam (default 10)
- *
- * CATATAN: Nama field/header pasti Mayar dikonfirmasi dari 1 transaksi tes
- * (set MAYAR_WEBHOOK_DEBUG=true, lihat log, lalu matikan). normalizeEvent() &
- * verifyMayar() dibuat toleran terhadap beberapa kemungkinan nama.
+ * ── Environment ─────────────────────────────────────────────────────────────
+ *   TOKEN_SECRET          WAJIB. Rahasia penanda tangan token sesi.
+ *   ORDER_PEPPER          WAJIB. Rahasia hash Order ID (jangan diganti setelah ada data).
+ *   MAYAR_WEBHOOK_TOKEN   Token rahasia di URL webhook (?token=...).
+ *   MAYAR_WEBHOOK_SECRET  (opsional) HMAC-SHA256 bila kelak Mayar mengirim header tanda tangan.
+ *   MAYAR_API_KEY         API key Mayar (akses baca transaksi).
+ *   MAYAR_API_BASE        Default https://api.mayar.id/hl/v2 (sandbox: https://api.mayar.io/hl/v2).
+ *   MAYAR_PRODUK          JSON peta productId → paket/durasi (lihat lib/akses.js).
+ *   MAYAR_PRODUK_FILE     Alternatif: path file JSON yang sama.
+ *   MAYAR_STATUS_LUNAS    Default "paid" (dipisah koma).
+ *   STORAGE               file (default/dev) | upstash
+ *   DATA_FILE             Path file untuk STORAGE=file (default ./data/akses.json)
+ *   UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN   untuk STORAGE=upstash
+ *   PREMIUM_CONTENT_FILE  Default /etc/secrets/premium-content.json lalu ./data/premium-content.json
+ *   REVIEWER_CODES        Kode peninjau dipisah koma (hapus untuk mencabut).
+ *   REVIEWER_HARI         Masa berlaku token peninjau (default 30)
+ *   TOKEN_TTL_HARI        Umur token sesi (default 7)
+ *   ALLOW_ORIGIN          CORS (disarankan https://thequranlensindonesia.com)
+ *   STATIC_DIR, PORT, ANTHROPIC_API_KEY, TANYA_PER_JAM, GOOGLE_SA_EMAIL, GOOGLE_SA_KEY, PLAY_PACKAGE_NAME
  */
 'use strict';
 const http = require('http');
@@ -37,155 +48,48 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const { URL } = require('url');
-const { verifyPlaySubscription } = require('./play-verify');
-const tanya = require('./nahwu-tanya');
 
-const CFG = {
-  port: parseInt(process.env.PORT || '8787', 10),
-  // Mayar (https://mayar.id) — secret webhook & kandidat header tanda tangan.
-  mayarSecret: process.env.MAYAR_WEBHOOK_SECRET || '',
-  mayarSigHeaders: (process.env.MAYAR_SIGNATURE_HEADER || 'x-callback-token,x-mayar-signature,x-mayar-hmac,x-signature,x-hub-signature-256,signature')
-    .toLowerCase().split(',').map((s) => s.trim()).filter(Boolean),
-  // Mode debug: log header+body webhook & lewati verifikasi — HANYA untuk 1x transaksi tes.
-  webhookDebug: process.env.MAYAR_WEBHOOK_DEBUG === 'true',
-  tokenSecret: process.env.TOKEN_SECRET || 'ganti-rahasia-token-ini',
-  dataFile: process.env.DATA_FILE || path.join(__dirname, 'data', 'subs.json'),
-  staticDir: process.env.STATIC_DIR || '',
-  allowOrigin: process.env.ALLOW_ORIGIN || '*',
-};
+const { buatStore } = require('./lib/storage');
+const { buatToken, periksaToken } = require('./lib/token');
+const akses = require('./lib/akses');
+const mayar = require('./lib/mayar');
+const { muatPremium } = require('./lib/premium');
 
-/* ─────────────────────────── Penyimpanan (JSON) ─────────────────────────── */
-const Store = {
-  load() {
-    try { return JSON.parse(fs.readFileSync(CFG.dataFile, 'utf8')); }
-    catch { return { orders: {} }; }
-  },
-  save(db) {
-    fs.mkdirSync(path.dirname(CFG.dataFile), { recursive: true });
-    fs.writeFileSync(CFG.dataFile, JSON.stringify(db, null, 2));
-  },
-  upsert(record) {
-    const db = this.load();
-    db.orders[record.order] = { ...db.orders[record.order], ...record, updatedAt: new Date().toISOString() };
-    this.save(db);
-    return db.orders[record.order];
-  },
-  get(order) { return this.load().orders[order] || null; },
-};
+const HARI = 86400000;
 
-/* ─────────────────────────── Util keamanan ─────────────────────────── */
-// Bandingkan tanda tangan secara timing-safe
-function signaturesMatch(a, b) {
-  const ba = Buffer.from(a || '', 'utf8');
-  const bb = Buffer.from(b || '', 'utf8');
-  if (ba.length !== bb.length) return false;
-  return crypto.timingSafeEqual(ba, bb);
-}
-
-/*
- * Verifikasi webhook Mayar. Karena dokumentasi header bisa berbeda, kita toleran:
- * cocokkan nilai header kandidat terhadap (a) HMAC-SHA256 hex dari raw body, atau
- * (b) token apa adanya (sebagian penyedia mengirim secret langsung sebagai token).
- * Header pasti akan dikonfirmasi dari log transaksi tes (MAYAR_WEBHOOK_DEBUG=true).
- */
-function verifyMayar(rawBody, headers) {
-  if (!CFG.mayarSecret) return { ok: false, reason: 'MAYAR_WEBHOOK_SECRET belum di-set' };
-  const expectedHmac = crypto.createHmac('sha256', CFG.mayarSecret).update(rawBody).digest('hex');
-  for (const h of CFG.mayarSigHeaders) {
-    const val = headers[h];
-    if (!val) continue;
-    const provided = String(val).replace(/^sha256=/i, '').trim();
-    if (signaturesMatch(provided, expectedHmac)) return { ok: true, via: `hmac:${h}` };
-    if (signaturesMatch(provided, CFG.mayarSecret)) return { ok: true, via: `token:${h}` };
-  }
-  return { ok: false, reason: 'Tidak ada header tanda tangan yang cocok' };
-}
-
-// Token verifikasi yang dikirim ke klien (boleh disimpan klien sebagai bukti)
-function buatToken(payload) {
-  const body = Buffer.from(JSON.stringify(payload)).toString('base64url');
-  const sig = crypto.createHmac('sha256', CFG.tokenSecret).update(body).digest('base64url');
-  return `${body}.${sig}`;
-}
-
-/* ─────────────────────────── Normalisasi event Scalev ─────────────────────────── */
-// Map slug paket -> nama paket aplikasi
-const PLAN_SLUG = { bulanan: 'Bulanan', tahunan: 'Tahunan', 'seumur-hidup': 'Seumur Hidup' };
-// Berapa lama satu paket aktif (hari). null = selamanya.
-const PLAN_DURASI = { 'Bulanan': 31, 'Tahunan': 366, 'Seumur Hidup': null };
-
-// Ambil nilai pertama yang ada dari beberapa kemungkinan nama field
-function pick(obj, keys) {
-  for (const k of keys) {
-    if (obj && obj[k] !== undefined && obj[k] !== null && obj[k] !== '') return obj[k];
-  }
-  return undefined;
-}
-
-/*
- * Ubah payload mentah Scalev menjadi catatan langganan baku.
- * TODO(Scalev): sesuaikan nama field di bawah dengan payload resmi Scalev Anda.
- */
-function normalizeEvent(evt) {
-  const data = evt.data || evt.order || evt || {};
-  const order = pick(data, ['order_id', 'orderId', 'id', 'transactionId', 'transaction_id', 'merchantInvoiceId', 'order_number', 'invoice_id']);
-  if (!order) return null;
-
-  const statusRaw = String(pick(data, ['status', 'payment_status', 'state']) || '').toLowerCase();
-  const aktif = ['paid', 'settled', 'success', 'completed', 'active', 'lunas', 'berhasil'].includes(statusRaw);
-
-  // Tentukan paket dari slug/sku/nama produk
-  let paket = PLAN_SLUG[String(pick(data, ['plan', 'paket', 'slug']) || '').toLowerCase()];
-  if (!paket) {
-    const nama = String(pick(data, ['product_name', 'product', 'item_name', 'sku', 'name', 'productName']) || '').toLowerCase();
-    if (nama.includes('seumur') || nama.includes('lifetime')) paket = 'Seumur Hidup';
-    else if (nama.includes('tahun') || nama.includes('annual') || nama.includes('year')) paket = 'Tahunan';
-    else if (nama.includes('bulan') || nama.includes('month')) paket = 'Bulanan';
-  }
-  // Mayar: satu produk untuk kedua paket → bedakan dari NOMINAL pembayaran.
-  if (!paket) {
-    const amount = Number(pick(data, ['amount', 'total', 'grossAmount', 'totalAmount', 'price'])) || 0;
-    if (amount >= 300000) paket = 'Tahunan';
-    else if (amount >= 30000) paket = 'Bulanan';
-  }
-  paket = paket || 'Bulanan';
-
-  const email = pick(data, ['email', 'customer_email', 'buyer_email', 'customerEmail', 'memberEmail']) || '';
-
-  // Masa berlaku: utamakan dari Scalev; jika tidak ada, hitung dari durasi paket.
-  let expiresAt = pick(data, ['period_end', 'expires_at', 'expiry', 'valid_until']) || null;
-  if (!expiresAt) {
-    const durasi = PLAN_DURASI[paket];
-    expiresAt = durasi == null ? null : new Date(Date.now() + durasi * 86400000).toISOString();
-  }
-
-  return {
-    order: String(order),
-    paket,
-    email,
-    status: aktif ? 'active' : statusRaw || 'unknown',
-    aktif,
-    expiresAt,
-    rawStatus: statusRaw,
+function bacaKonfig(env = process.env) {
+  const daftar = (s) => String(s || '').split(',').map((x) => x.trim()).filter(Boolean);
+  const pepper = env.ORDER_PEPPER || '';
+  const cfg = {
+    port: parseInt(env.PORT || '8787', 10),
+    tokenSecret: env.TOKEN_SECRET || '',
+    orderPepper: pepper,
+    webhookToken: env.MAYAR_WEBHOOK_TOKEN || '',
+    webhookSecret: env.MAYAR_WEBHOOK_SECRET || '',
+    apiKey: env.MAYAR_API_KEY || '',
+    apiBase: env.MAYAR_API_BASE || 'https://api.mayar.id/hl/v2',
+    statusLunas: daftar(env.MAYAR_STATUS_LUNAS || 'paid').map((s) => s.toLowerCase()),
+    produk: akses.bacaKonfigProduk(env),
+    reviewerHashes: new Set(daftar(env.REVIEWER_CODES).map((k) => akses.hashOrder(pepper || 'dev', 'rev:' + k))),
+    reviewerHari: Number(env.REVIEWER_HARI || 30),
+    tokenTtlMs: Number(env.TOKEN_TTL_HARI || 7) * HARI,
+    premiumFile: env.PREMIUM_CONTENT_FILE || '',
+    staticDir: env.STATIC_DIR || '',
+    allowOrigin: env.ALLOW_ORIGIN || '*',
   };
-}
-
-// Apakah catatan masih aktif (status aktif & belum kedaluwarsa)?
-function masihAktif(rec) {
-  if (!rec || !rec.aktif) return false;
-  if (rec.expiresAt && Date.parse(rec.expiresAt) < Date.now()) return false;
-  return true;
+  return cfg;
 }
 
 /* ─────────────────────────── HTTP helpers ─────────────────────────── */
-function kirimJSON(res, status, obj) {
-  const body = JSON.stringify(obj);
+function kirimJSON(res, status, obj, cfg) {
+  const body = status === 204 ? '' : JSON.stringify(obj);
   res.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
-    'Access-Control-Allow-Origin': CFG.allowOrigin,
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Origin': (cfg && cfg.allowOrigin) || '*',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
     'Cache-Control': 'no-store',
+    'Vary': 'Origin',
   });
   res.end(body);
 }
@@ -204,131 +108,274 @@ function bacaRawBody(req, maxBytes = 1_000_000) {
   });
 }
 
-/* ─────────────────────────── Static (opsional) ─────────────────────────── */
+function ipDari(req) {
+  const xf = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+  return xf || (req.socket && req.socket.remoteAddress) || '-';
+}
+
+// Pembatas laju sederhana di memori (cukup untuk satu instance).
+function buatPembatas() {
+  const peta = new Map();
+  return function izinkan(kunci, batas, jendelaMs, now) {
+    const e = peta.get(kunci);
+    if (!e || now - e.mulai > jendelaMs) { peta.set(kunci, { mulai: now, n: 1 }); return true; }
+    e.n += 1;
+    if (peta.size > 5000) peta.clear();
+    return e.n <= batas;
+  };
+}
+
 const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript',
   '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.svg': 'image/svg+xml',
   '.png': 'image/png', '.ico': 'image/x-icon' };
 
-function layaniStatic(req, res, pathname) {
-  if (!CFG.staticDir) return false;
+function layaniStatic(cfg, req, res, pathname) {
+  if (!cfg.staticDir) return false;
   let rel = decodeURIComponent(pathname);
   if (rel === '/' || rel === '') rel = '/index.html';
-  const full = path.join(CFG.staticDir, rel);
-  // Cegah path traversal
-  if (!full.startsWith(path.resolve(CFG.staticDir))) { kirimJSON(res, 403, { error: 'Terlarang' }); return true; }
+  const full = path.join(cfg.staticDir, rel);
+  if (!full.startsWith(path.resolve(cfg.staticDir))) { kirimJSON(res, 403, { error: 'Terlarang' }, cfg); return true; }
   fs.readFile(full, (err, data) => {
-    if (err) { kirimJSON(res, 404, { error: 'Tidak ditemukan' }); return; }
+    if (err) { kirimJSON(res, 404, { error: 'Tidak ditemukan' }, cfg); return; }
     res.writeHead(200, { 'Content-Type': MIME[path.extname(full)] || 'application/octet-stream' });
     res.end(data);
   });
   return true;
 }
 
-/* ─────────────────────────── Router ─────────────────────────── */
-const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const { pathname } = url;
+/* ─────────────────────────── Aplikasi ─────────────────────────── */
+function buatAplikasi(opsi) {
+  const cfg = opsi.cfg;
+  const store = opsi.store;
+  const fetchImpl = opsi.fetch || globalThis.fetch;
+  const now = opsi.now || (() => Date.now());
+  const log = opsi.log || ((...a) => console.log(...a));
+  const verifyPlay = opsi.verifyPlay || ((t, s) => require('./play-verify').verifyPlaySubscription(t, s));
+  const premium = opsi.premium || muatPremium(cfg.premiumFile);
+  const tanya = opsi.tanya || require('./nahwu-tanya');
+  const izinkan = buatPembatas();
+  const pepper = cfg.orderPepper || 'dev';
+  const kirim = (res, s, o) => kirimJSON(res, s, o, cfg);
+  const pendek = (oh) => String(oh).slice(0, 10);
 
-  if (req.method === 'OPTIONS') return kirimJSON(res, 204, {});
-
-  // Health
-  if (req.method === 'GET' && pathname === '/api/health') {
-    return kirimJSON(res, 200, { ok: true, service: 'quran-lens', tanya: tanya.aktif(), time: new Date().toISOString() });
+  function terbitkan(res, rec) {
+    const exp = rec.expiresAt ? Date.parse(rec.expiresAt) : null;
+    const { token, payload } = buatToken(cfg.tokenSecret, { s: rec.s, oh: rec.oh, paket: rec.paket, exp }, { now: now(), ttlMs: cfg.tokenTtlMs });
+    return kirim(res, 200, { active: true, paket: rec.paket, expiresAt: rec.expiresAt || null, token, tokenExp: payload.te });
   }
 
-  // Webhook Mayar
-  if (req.method === 'POST' && (pathname === '/api/mayar/webhook' || pathname === '/api/webhook')) {
-    let raw;
-    try { raw = await bacaRawBody(req); }
-    catch (e) { return kirimJSON(res, 413, { error: e.message }); }
-
-    // Mode debug: cetak header & body agar nama field/header bisa dipastikan dari transaksi tes.
-    if (CFG.webhookDebug) {
-      console.log('[webhook][DEBUG] headers:', JSON.stringify(req.headers));
-      console.log('[webhook][DEBUG] body:', raw);
+  async function cariRekaman(order) {
+    const oh = akses.hashOrder(pepper, order);
+    let rec = await store.get('ent:' + oh);
+    if (!rec) {
+      const al = await store.get('alias:' + oh);
+      if (al && al.oh) rec = await store.get('ent:' + al.oh);
     }
-
-    const cek = verifyMayar(raw, req.headers);
-    if (!cek.ok && !CFG.webhookDebug) {
-      console.warn('[webhook] ditolak:', cek.reason);
-      return kirimJSON(res, 401, { error: 'Tanda tangan tidak valid', detail: cek.reason });
-    }
-    if (cek.ok) console.log('[webhook] tanda tangan valid via', cek.via);
-
-    let evt;
-    try { evt = JSON.parse(raw); }
-    catch { return kirimJSON(res, 400, { error: 'Body bukan JSON valid' }); }
-
-    // Event "testing" dari tombol uji Mayar: cukup balas 200, jangan disimpan.
-    if (evt && evt.event === 'testing') {
-      console.log('[webhook] event testing diterima — koneksi OK.');
-      return kirimJSON(res, 200, { ok: true, note: 'Event testing diterima — koneksi webhook OK.' });
-    }
-
-    const rec = normalizeEvent(evt);
-    if (!rec) return kirimJSON(res, 200, { ok: true, note: 'Tidak ada order pada payload.' });
-
-    Store.upsert(rec);
-    console.log(`[webhook] order ${rec.order} -> ${rec.status} (${rec.paket})`);
-    return kirimJSON(res, 200, { ok: true, order: rec.order, status: rec.status });
+    return rec;
   }
 
-  // Verifikasi pembelian Google Play (edisi Play Store / TWA)
-  if (req.method === 'POST' && pathname === '/api/play/verify') {
-    let raw;
-    try { raw = await bacaRawBody(req); } catch (e) { return kirimJSON(res, 413, { error: e.message }); }
-    let b;
-    try { b = JSON.parse(raw); } catch { return kirimJSON(res, 400, { active: false, error: 'Body bukan JSON' }); }
-    if (!b.token || !b.sku) return kirimJSON(res, 400, { active: false, error: 'token & sku wajib' });
+  // Aktivasi dari transaksi Mayar; selalu diverifikasi ulang ke API Mayar.
+  async function aktivasiMayar(txId, petunjuk = {}) {
+    const oh = akses.hashOrder(pepper, txId);
+    const ada = await store.get('ent:' + oh);
+    if (ada) return { rec: ada, duplikat: true };
+    const t = await mayar.ambilTransaksi(txId, cfg, fetchImpl);
+    if (!t.ditemukan) return { gagal: t.alasan };
+    const d = t.data;
+    if (akses.normalOrder(d.id) !== akses.normalOrder(txId)) return { gagal: 'id-tidak-cocok' };
+    const status = String(d.status || '').toLowerCase();
+    if (!cfg.statusLunas.includes(status)) return { gagal: 'belum-lunas', status };
+    const productId = (d.paymentLink && d.paymentLink.id) || petunjuk.productId || null;
+    if (petunjuk.productId && d.paymentLink && d.paymentLink.id &&
+        String(petunjuk.productId).toLowerCase() !== String(d.paymentLink.id).toLowerCase()) {
+      return { gagal: 'produk-tidak-cocok' };
+    }
+    const plan = akses.tentukanPaket(cfg.produk, productId, d.amount, log);
+    if (!plan) { log(`[aktivasi] ditolak: produk ${productId} tidak terdaftar di MAYAR_PRODUK`); return { gagal: 'produk-tidak-dikenal' }; }
+    const n = now();
+    let mulai = Number(d.updatedAt) || n;
+    if (mulai > n || mulai < n - 400 * HARI) mulai = n;
+    const rec = {
+      v: 1, oh, s: 'mayar', paket: plan.paket, bulan: plan.bulan, productId,
+      aktifSejak: new Date(mulai).toISOString(), expiresAt: akses.hitungExpiry(mulai, plan.bulan), via: plan.via,
+    };
+    const tersimpan = await store.put('ent:' + oh, rec, { nx: true });
+    if (!tersimpan) return { rec: await store.get('ent:' + oh), duplikat: true };
+    if (d.invoiceCode) await store.put('alias:' + akses.hashOrder(pepper, d.invoiceCode), { oh }, { nx: true });
+    log(`[aktivasi] ${pendek(oh)} → ${rec.paket} (via ${plan.via}, s/d ${rec.expiresAt || 'seumur hidup'})`);
+    return { rec, baru: true };
+  }
+
+  // Masih berhak? (dipakai refresh & konten)
+  async function masihBerhak(p) {
+    if (p.s === 'reviewer') return cfg.reviewerHashes.has(p.oh);
+    const rec = await store.get('ent:' + p.oh);
+    return akses.masihAktif(rec, now());
+  }
+
+  function tokenDari(req) {
+    const h = String(req.headers.authorization || '');
+    return h.toLowerCase().startsWith('bearer ') ? h.slice(7).trim() : '';
+  }
+
+  async function bacaJSON(req, max) {
+    const raw = await bacaRawBody(req, max);
+    try { return JSON.parse(raw || '{}'); } catch (e) { return null; }
+  }
+
+  return async function handler(req, res) {
+    const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+    const { pathname } = url;
+    const ip = ipDari(req);
     try {
-      const r = await verifyPlaySubscription(b.token, b.sku);
-      if (!r.active) return kirimJSON(res, 200, { active: false, error: r.error });
-      const rec = {
-        order: 'PLAY:' + String(b.token).slice(0, 16),
-        paket: r.paket, email: '', status: 'active', aktif: true,
-        expiresAt: r.expiresAt, source: 'play',
-      };
-      Store.upsert(rec);
-      console.log(`[play] langganan aktif: ${rec.paket} (exp ${r.expiresAt})`);
-      const payload = { order: rec.order, paket: r.paket, expiresAt: r.expiresAt };
-      return kirimJSON(res, 200, { active: true, ...payload, token: buatToken(payload) });
+      if (req.method === 'OPTIONS') return kirim(res, 204, {});
+
+      if (req.method === 'GET' && pathname === '/api/health') {
+        return kirim(res, 200, {
+          ok: true, service: 'quran-lens', tanya: tanya.aktif(), storage: store.jenis,
+          premium: premium.jumlah > 0, time: new Date(now()).toISOString(),
+        });
+      }
+
+      if (req.method === 'POST' && (pathname === '/api/mayar/webhook' || pathname === '/api/webhook')) {
+        if (!izinkan('wh:' + ip, 120, 60000, now())) return kirim(res, 429, { error: 'terlalu banyak' });
+        let raw;
+        try { raw = await bacaRawBody(req); } catch (e) { return kirim(res, 413, { error: e.message }); }
+        const cek = mayar.autentikasiWebhook({ tokenUrl: url.searchParams.get('token'), headers: req.headers, raw }, cfg);
+        if (!cek.ok) { log('[webhook] ditolak:', cek.alasan); return kirim(res, cek.kode, { error: 'Tidak diizinkan' }); }
+        let evt;
+        try { evt = JSON.parse(raw); } catch (e) { return kirim(res, 400, { error: 'Body bukan JSON valid' }); }
+        if (evt && evt.event === 'testing') return kirim(res, 200, { ok: true, note: 'testing' });
+        if (!evt || evt.event !== 'payment.received') return kirim(res, 200, { ok: true, note: 'event diabaikan' });
+        const txId = mayar.idTransaksiDariWebhook(evt);
+        if (!txId) return kirim(res, 200, { ok: true, note: 'tanpa id transaksi' });
+        try {
+          const h = await aktivasiMayar(txId, { productId: evt.data && evt.data.productId });
+          if (h.gagal) { log('[webhook] tidak diaktifkan:', h.gagal); return kirim(res, 200, { ok: true, status: 'tidak-diaktifkan', alasan: h.gagal }); }
+          return kirim(res, 200, { ok: true, status: h.duplikat ? 'sudah-aktif' : 'aktif' });
+        } catch (e) {
+          log('[webhook] gagal sementara:', e.message);
+          return kirim(res, e.kode === 503 ? 503 : 502, { error: 'Gagal sementara, coba lagi' });
+        }
+      }
+
+      if ((req.method === 'POST' || req.method === 'GET') && pathname === '/api/verify') {
+        if (!izinkan('vf:' + ip, 20, 10 * 60000, now())) return kirim(res, 429, { active: false, error: 'terlalu-banyak-percobaan' });
+        let order = url.searchParams.get('order') || '';
+        if (req.method === 'POST') { const b = await bacaJSON(req, 10000); order = (b && b.order) || order; }
+        order = String(order || '').trim();
+        if (order.length < 4 || order.length > 200) return kirim(res, 400, { active: false, error: 'order-tidak-valid' });
+        let rec = await cariRekaman(order);
+        if (!rec && mayar.UUID_RE.test(order)) {
+          try {
+            const h = await aktivasiMayar(order);
+            if (h.gagal) return kirim(res, 200, { active: false, alasan: h.gagal });
+            rec = h.rec;
+          } catch (e) {
+            log('[verify] Mayar tidak terjangkau:', e.message);
+            return kirim(res, 503, { active: false, error: 'coba-lagi' });
+          }
+        }
+        if (!rec) return kirim(res, 200, { active: false, alasan: 'tidak-ditemukan' });
+        if (!akses.masihAktif(rec, now())) return kirim(res, 200, { active: false, alasan: 'kedaluwarsa', expiresAt: rec.expiresAt || null });
+        return terbitkan(res, rec);
+      }
+
+      if (req.method === 'POST' && pathname === '/api/refresh') {
+        if (!izinkan('rf:' + ip, 60, 10 * 60000, now())) return kirim(res, 429, { active: false, error: 'terlalu-banyak' });
+        const b = await bacaJSON(req, 5000);
+        const cek = periksaToken(cfg.tokenSecret, b && b.token, { now: now(), graceMs: 30 * HARI });
+        if (!cek.ok) return kirim(res, cek.alasan === 'hak-kedaluwarsa' ? 403 : 401, { active: false, alasan: cek.alasan });
+        const p = cek.payload;
+        if (!(await masihBerhak(p))) return kirim(res, 403, { active: false, alasan: 'dicabut-atau-kedaluwarsa' });
+        if (p.s === 'reviewer') return terbitkan(res, { s: 'reviewer', oh: p.oh, paket: p.paket, expiresAt: p.exp ? new Date(p.exp).toISOString() : null });
+        return terbitkan(res, await store.get('ent:' + p.oh));
+      }
+
+      if (req.method === 'POST' && pathname === '/api/reviewer') {
+        if (!izinkan('rv:' + ip, 10, 10 * 60000, now())) return kirim(res, 429, { active: false, error: 'terlalu-banyak' });
+        const b = await bacaJSON(req, 2000);
+        const kode = String((b && b.kode) || '').trim();
+        const oh = akses.hashOrder(pepper, 'rev:' + kode);
+        if (!kode || !cfg.reviewerHashes.has(oh)) return kirim(res, 401, { active: false });
+        const exp = new Date(now() + cfg.reviewerHari * HARI).toISOString();
+        return terbitkan(res, { s: 'reviewer', oh, paket: 'Peninjau', expiresAt: exp });
+      }
+
+      const m = pathname.match(/^\/api\/premium\/episode\/([a-z0-9-]{1,80})$/);
+      if (req.method === 'GET' && m) {
+        const cek = periksaToken(cfg.tokenSecret, tokenDari(req), { now: now() });
+        if (!cek.ok) return kirim(res, 401, { error: 'token-tidak-valid', alasan: cek.alasan });
+        let berhak;
+        try { berhak = await masihBerhak(cek.payload); } catch (e) {
+          log('[premium] storage error, pakai token bertanda tangan:', e.message);
+          berhak = true; // token berumur pendek & bertanda tangan
+        }
+        if (!berhak) return kirim(res, 403, { error: 'akses-dicabut-atau-kedaluwarsa' });
+        const isi = premium.episode[m[1]];
+        if (!isi) return kirim(res, 404, { error: 'episode-tidak-ditemukan' });
+        return kirim(res, 200, { id: m[1], versi: premium.versi, data: isi });
+      }
+
+      if (req.method === 'POST' && pathname === '/api/play/verify') {
+        if (!izinkan('pl:' + ip, 30, 10 * 60000, now())) return kirim(res, 429, { active: false, error: 'terlalu-banyak' });
+        const b = await bacaJSON(req, 10000);
+        if (!b || !b.token || !b.sku) return kirim(res, 400, { active: false, error: 'token & sku wajib' });
+        let r;
+        try { r = await verifyPlay(String(b.token), String(b.sku)); } catch (e) {
+          log('[play] verifikasi gagal:', e.message);
+          return kirim(res, 502, { active: false, error: 'coba-lagi' });
+        }
+        if (!r || !r.active) return kirim(res, 200, { active: false, error: r && r.error });
+        const oh = akses.hashOrder(pepper, 'PLAY:' + b.token);
+        const lama = await store.get('ent:' + oh);
+        const rec = {
+          v: 1, oh, s: 'play', paket: r.paket, bulan: null, productId: String(b.sku),
+          aktifSejak: (lama && lama.aktifSejak) || new Date(now()).toISOString(), expiresAt: r.expiresAt || null, via: 'play',
+        };
+        await store.put('ent:' + oh, rec);
+        return terbitkan(res, rec);
+      }
+
+      if (req.method === 'POST' && pathname === '/api/nahwu/tanya') {
+        let raw;
+        try { raw = await bacaRawBody(req, tanya.MAX_BODY); } catch (e) { return kirim(res, 413, { code: 'too_large' }); }
+        return tanya.handle(req, res, raw, { allowOrigin: cfg.allowOrigin, kirimJSON: (r, s, o) => kirimJSON(r, s, o, cfg) });
+      }
+
+      if (req.method === 'GET' && layaniStatic(cfg, req, res, pathname)) return;
+      return kirim(res, 404, { error: 'Rute tidak ditemukan' });
     } catch (e) {
-      console.warn('[play] verifikasi gagal:', e.message);
-      return kirimJSON(res, 502, { active: false, error: e.message });
+      log('[server] galat:', e.message);
+      if (!res.headersSent) return kirim(res, 500, { error: 'galat-server' });
     }
+  };
+}
+
+function mulai() {
+  const cfg = bacaKonfig();
+  const produksi = process.env.NODE_ENV === 'production' || !!process.env.RENDER;
+  const kurang = [];
+  if (!cfg.tokenSecret) kurang.push('TOKEN_SECRET');
+  if (!cfg.orderPepper) kurang.push('ORDER_PEPPER');
+  if (kurang.length && produksi) {
+    console.error('❌ Env wajib belum di-set: ' + kurang.join(', ') + '. Server tidak dijalankan.');
+    process.exit(1);
   }
+  if (!cfg.tokenSecret) cfg.tokenSecret = crypto.randomBytes(32).toString('hex');
+  const store = buatStore(process.env);
+  const premium = muatPremium(cfg.premiumFile);
+  const app = buatAplikasi({ cfg, store, premium });
+  http.createServer(app).listen(cfg.port, () => {
+    console.log(`The Quran Lens server di http://localhost:${cfg.port} (storage: ${store.jenis}, konten premium: ${premium.jumlah} episode)`);
+    if (produksi && store.jenis === 'file' && !process.env.DATA_FILE) console.warn('⚠️  STORAGE=file tanpa disk persisten: hak akses HILANG saat restart. Pakai STORAGE=upstash.');
+    if (!cfg.webhookToken && !cfg.webhookSecret) console.warn('⚠️  MAYAR_WEBHOOK_TOKEN belum di-set — webhook menolak semua request.');
+    if (!cfg.apiKey) console.warn('⚠️  MAYAR_API_KEY belum di-set — aktivasi Mayar tidak bisa diverifikasi.');
+    if (!Object.keys(cfg.produk).length) console.warn('⚠️  MAYAR_PRODUK kosong — semua transaksi Mayar akan ditolak.');
+    if (!premium.jumlah) console.warn('⚠️  Konten premium tidak ditemukan (PREMIUM_CONTENT_FILE).');
+  });
+}
 
-  // Tanya ustadz AI (halaman Belajar Nahwu)
-  if (req.method === 'POST' && pathname === '/api/nahwu/tanya') {
-    let raw;
-    try { raw = await bacaRawBody(req, tanya.MAX_BODY); } catch (e) { return kirimJSON(res, 413, { code: 'too_large' }); }
-    return tanya.handle(req, res, raw, { allowOrigin: CFG.allowOrigin, kirimJSON });
-  }
+if (require.main === module) mulai();
 
-  // Verifikasi status langganan (dipanggil aplikasi)
-  if (req.method === 'GET' && pathname === '/api/verify') {
-    const order = (url.searchParams.get('order') || '').trim();
-    if (!order) return kirimJSON(res, 400, { active: false, error: 'Parameter order wajib' });
-
-    const rec = Store.get(order);
-    if (!masihAktif(rec)) {
-      return kirimJSON(res, 200, { active: false });
-    }
-    const payload = { order: rec.order, paket: rec.paket, expiresAt: rec.expiresAt };
-    return kirimJSON(res, 200, { active: true, ...payload, token: buatToken(payload) });
-  }
-
-  // Static fallback (bila diaktifkan)
-  if (req.method === 'GET' && layaniStatic(req, res, pathname)) return;
-
-  return kirimJSON(res, 404, { error: 'Rute tidak ditemukan' });
-});
-
-server.listen(CFG.port, () => {
-  console.log(`The Quran Lens server berjalan di http://localhost:${CFG.port}`);
-  if (!CFG.mayarSecret) console.warn('⚠️  MAYAR_WEBHOOK_SECRET belum di-set — webhook akan menolak semua request.');
-  if (CFG.tokenSecret === 'ganti-rahasia-token-ini') console.warn('⚠️  TOKEN_SECRET masih default — ganti untuk produksi.');
-  if (CFG.webhookDebug) console.warn('⚠️  MAYAR_WEBHOOK_DEBUG aktif — verifikasi tanda tangan DILEWATI. Matikan setelah transaksi tes!');
-});
-
-module.exports = { server, normalizeEvent, verifyMayar, masihAktif, Store };
+module.exports = { buatAplikasi, bacaKonfig };
