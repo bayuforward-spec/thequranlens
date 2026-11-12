@@ -30,7 +30,7 @@ async function migrasi(lama, store, pepper, { tulis = false, now = Date.now() } 
     const rec = {
       v: 1, oh, s: 'migrasi', paket, bulan, productId: null,
       aktifSejak: new Date(mulai).toISOString(),
-      // Tanpa expiresAt lama → hitung dari paket (bukan jadi seumur hidup).
+      // Tanpa expiresAt lama → hitung dari durasi paket baku (angka bulan positif).
       expiresAt: o.expiresAt || akses.hitungExpiry(mulai, bulan), via: 'migrasi',
     };
     if (tulis && await store.put('ent:' + oh, rec, { nx: true })) hasil.ditulis += 1;

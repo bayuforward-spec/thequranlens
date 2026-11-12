@@ -1,6 +1,6 @@
 # Rencana deploy & transaksi uji: aktivasi Premium (Mayar)
 
-Status: **draf di branch `perbaikan-aktivasi-premium`**. Belum di-push atau di-deploy, dan belum ada transaksi.
+Status: **draf di branch `perbaikan-aktivasi-premium`**. Keputusan paket & privasi (12 Nov 2026) sudah diterapkan di branch ini. Belum di-push atau di-deploy, dan belum ada transaksi.
 Tanda: **[V]** = sudah dicek di dokumentasi atau dengan uji lokal, **[A]** = asumsi yang harus dibuktikan lewat transaksi uji.
 
 ## 0. Ringkasnya
@@ -19,10 +19,10 @@ Tanda: **[V]** = sudah dicek di dokumentasi atau dengan uji lokal, **[A]** = asu
 | `TOKEN_SECRET` | sudah ada (generateValue) | ✔ |
 | `ORDER_PEPPER` | string acak ≥ 32 karakter. **Jangan pernah diganti** setelah ada data | ✔ |
 | `MAYAR_WEBHOOK_TOKEN` | string acak ≥ 32 karakter (mis. `openssl rand -hex 24`) | ✔ |
-| `MAYAR_API_KEY` | API key Mayar (menu API Key/Integrasi di dashboard Mayar [A: nama menu]) | ✔ |
+| `MAYAR_API_KEY` | API key Mayar. Dicek sendiri di menu Integrasi dashboard Mayar. Bila perlu key baru, isi lewat formulir aman / langsung di Render — **jangan diketik di chat** | ✔ |
 | `MAYAR_PRODUK` | JSON productId → paket (contoh di bawah) | ✔ |
 | `STORAGE` | `upstash` | ✔ |
-| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | dari konsol Upstash → database → REST API | ✔ |
+| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | dari konsol Upstash → database → REST API. Langkah singkat: [PANDUAN-UPSTASH-BAYU.md](PANDUAN-UPSTASH-BAYU.md). Isi di Render / formulir aman, **jangan diketik di chat** | ✔ |
 | `ALLOW_ORIGIN` | `https://thequranlensindonesia.com` | ✔ |
 | `REVIEWER_CODES` | kode peninjau baru, dipisah koma (kode lama di app.js sudah tidak berlaku) | opsional |
 | `TOKEN_TTL_HARI` | `7` (default) | opsional |
@@ -34,12 +34,14 @@ Tanda: **[V]** = sudah dicek di dokumentasi atau dengan uji lokal, **[A]** = asu
 `/etc/secrets/premium-content.json`. Batas total Secret Files 1 MB [V render.com/docs/configure-environment-variables].
 File ini dibuat dengan `tools/pisah-konten-premium.js` dari salinan lengkap di luar repo.
 
-`MAYAR_PRODUK`. Isi ID produk dari Mayar. ID produk = `paymentLink.id` di detail transaksi [A]:
+`MAYAR_PRODUK`. Isi ID produk dari Mayar setelah ketiga produk dibuat (satu produk per durasi). ID produk = `paymentLink.id` di detail transaksi [A]. Belum ada productId — jangan diketik di chat; isi langsung di Render. Paket 12 bulan dipetakan ke nama baku **Tahunan**. Tidak ada paket seumur hidup.
 ```json
-{"<id-bulanan>":{"paket":"Bulanan"},"<id-3bulan>":{"paket":"3 Bulan"},"<id-tahunan>":{"paket":"Tahunan"},"<id-seumur-hidup>":{"paket":"Seumur Hidup","bulan":null}}
+{"<id-bulanan>":{"paket":"Bulanan"},"<id-3bulan>":{"paket":"3 Bulan"},"<id-12bulan>":{"paket":"Tahunan"}}
 ```
-Bila tetap memakai **satu** link membership `the-quran-lens` untuk dua paket, pakai cadangan nominal
-(dicatat di log): `{"<id-the-quran-lens>":{"nominal":[{"min":399000,"paket":"Tahunan"},{"min":49000,"paket":"Bulanan"}]}}`.
+Harga di etalase (bukan di logika server): Bulanan tetap seperti sekarang (Rp49.000), 3 bulan Rp135.000, 12 bulan/Tahunan Rp399.000. Link checkout per paket diisi di `assets/js/payment.js` → `CONFIG.checkout` setelah URL Mayar ada.
+
+Bila sementara tetap memakai **satu** link membership untuk beberapa paket, cadangan nominal (dicatat di log):
+`{"<id-the-quran-lens>":{"nominal":[{"min":399000,"paket":"Tahunan"},{"min":135000,"paket":"3 Bulan"},{"min":49000,"paket":"Bulanan"}]}}`.
 
 ## 2. Pengaturan di Mayar (dilakukan Bayu)
 - **Webhook URL:** `https://quran-lens-api.onrender.com/api/mayar/webhook?token=<MAYAR_WEBHOOK_TOKEN>`
@@ -54,9 +56,9 @@ Bila tetap memakai **satu** link membership `the-quran-lens` untuk dua paket, pa
 ## 3. Transaksi uji (satu kali, oleh Bayu)
 1. Jalankan `GET https://quran-lens-api.onrender.com/api/health` → `storage:"upstash"`, `premium:true`.
    Tunggu ±1 menit bila server sedang tidur.
-2. Pilih produk **termurah** (Bulanan) dengan **kupon diskon** sampai nominal minimum yang bisa dibayar.
-   Atau buat produk uji tersembunyi (mis. Rp10.000) lalu daftarkan sementara di `MAYAR_PRODUK` sebagai `Bulanan`.
+2. Satu transaksi uji: paket **Bulanan** atau **3 Bulan**, memakai **kupon diskon** sampai nominal minimum yang bisa dibayar — **bukan Rp0**.
    Apakah transaksi Rp0 (kupon 100%) memicu `payment.received` berstatus `paid` belum diketahui [A], jadi hindari.
+   Alternatif: buat produk uji tersembunyi (mis. Rp10.000) lalu daftarkan sementara di `MAYAR_PRODUK` sebagai `Bulanan` atau `3 Bulan`.
 3. Bayar dari HP/laptop biasa. Setelah lunas, ikuti redirect (atau buka situs, lalu Langganan,
    lalu "Sudah bayar?" dan tempel Order ID).
 
@@ -75,12 +77,13 @@ Bila tetap memakai **satu** link membership `the-quran-lens` untuk dua paket, pa
 - **Idempoten:** kirim ulang webhook dari riwayat Mayar (bila ada tombol resend) → log tidak membuat rekaman baru.
 
 ## 4. Urutan rilis
-1. Siapkan Upstash (akun gratis, 1 database), env & Secret File di Render. Mengubah env akan me-restart
-   server **lama**. Ini aman karena server lama mengabaikan env baru.
+Push, merge, perubahan env Render, pendaftaran webhook Mayar, dan transaksi uji **hanya setelah perintah langsung di chat Tim Aplikasi**. Persiapan di branch ini:
+
+1. Bayu membuat akun Upstash sendiri (paket gratis) mengikuti [PANDUAN-UPSTASH-BAYU.md](PANDUAN-UPSTASH-BAYU.md), lalu mengisi `UPSTASH_REDIS_REST_URL` dan `UPSTASH_REDIS_REST_TOKEN` di Render (atau lewat formulir aman — bukan chat). Siapkan juga env lain di tabel bagian 1 dan Secret File `premium-content.json`. Mengubah env akan me-restart server **lama**. Ini aman karena server lama mengabaikan env baru.
 2. Push branch, review PR, lalu merge ke `main`. Render (autoDeploy) dan GitHub Pages ikut terbit dari `main`.
    Server baru **menolak start** tanpa `TOKEN_SECRET`/`ORDER_PEPPER`. Bila deploy gagal, Render tetap menjalankan
    versi lama [A: perilaku zero-downtime Render].
-3. Cek `/api/health`, lalu daftarkan Webhook URL & Redirect URL di Mayar, lalu transaksi uji (bagian 3).
+3. Cek `/api/health` (`storage:"upstash"`, `premium:true`), lalu daftarkan Webhook URL & Redirect URL di Mayar, lalu satu transaksi uji Bulanan atau 3 Bulan dengan kupon, bukan Rp0 (bagian 3).
 4. Bila ada pembeli lama dengan `server/data/subs.json`: `node server/migrasi-subs.js subs.json` (uji kering),
    lalu `--tulis`. Di Render free file itu kemungkinan sudah hilang (filesystem efemeral [V render.com/docs/free]).
    Pembeli lama yang Premium-nya dulu aktif secara lokal akan dicek ulang otomatis lewat Order ID tersimpan.
@@ -93,6 +96,8 @@ Bila tetap memakai **satu** link membership `the-quran-lens` untuk dua paket, pa
 - Data Upstash tidak perlu dihapus. Hapus Webhook URL di Mayar bila backend dikembalikan ke versi lama.
 
 ## 6. Kalimat untuk Kebijakan Privasi
+Kalimat ini **sudah disetujui** (12 Nov 2026) dan sudah diterapkan di `privacy.html` (bagian Pembayaran & langganan):
+
 > Untuk mengaktifkan Premium, kami hanya menyimpan versi tersandi (*hash*) dari Order ID Mayar beserta
 > jenis paket, ID produk, waktu aktivasi, dan tanggal berakhir di penyedia basis data Upstash. Kami tidak
 > menyimpan email, nama, atau nomor HP Anda. Data itu tetap berada di Mayar sebagai pemroses pembayaran.

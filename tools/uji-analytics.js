@@ -220,6 +220,8 @@ console.log('\n[first-touch & last-touch]');
   cek(mu.searchParams.get('utm_medium') === 'bio' && mu.searchParams.get('utm_campaign') === 'al_ikhlas', 'URL Mayar medium & campaign');
   cek(mu.searchParams.get('plan') === 'yearly', 'URL Mayar plan=yearly');
   cek(A.decorateMayar('https://bayu-maulana.myr.id/m/the-quran-lens', 'Bulanan').includes('plan=monthly'), 'plan bulanan = monthly');
+  cek(A.planFor('3 Bulan') === 'quarterly' && A.decorateMayar('https://bayu-maulana.myr.id/m/the-quran-lens', '3 Bulan').includes('plan=quarterly'), 'plan 3 bulan = quarterly');
+  cek(A.planFor('12 Bulan') === 'yearly', 'plan 12 bulan = yearly (paket tahunan)');
   cek(A.decorateMayar('bukan-url', 'Bulanan') === 'bukan-url', 'URL rusak tidak diubah');
 }
 

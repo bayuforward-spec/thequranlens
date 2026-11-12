@@ -9,16 +9,21 @@ const { migrasi } = require('../migrasi-subs');
 test('tambahBulan menjepit akhir bulan & lintas tahun', () => {
   assert.equal(new Date(akses.tambahBulan(Date.parse('2026-01-31T00:00:00Z'), 1)).toISOString(), '2026-02-28T00:00:00.000Z');
   assert.equal(new Date(akses.tambahBulan(Date.parse('2026-11-30T10:00:00Z'), 3)).toISOString(), '2027-02-28T10:00:00.000Z');
-  assert.equal(akses.hitungExpiry(Date.now(), null), null);
+  assert.equal(akses.hitungExpiry(Date.parse('2026-11-12T02:59:00.000Z'), 12), '2027-11-12T02:59:00.000Z');
+  assert.throws(() => akses.hitungExpiry(Date.now(), null));
+  assert.throws(() => akses.hitungExpiry(Date.now(), 0));
 });
 
 test('konfigurasi produk: durasi baku, bulan eksplisit, nominal, JSON rusak', () => {
-  const k = akses.bacaKonfigProduk({ MAYAR_PRODUK: JSON.stringify({ A: { paket: 'Tahunan' }, b: { paket: 'Promo', bulan: 6 }, c: { nominal: [{ min: 10, paket: 'Bulanan' }] } }) });
+  const k = akses.bacaKonfigProduk({ MAYAR_PRODUK: JSON.stringify({ A: { paket: 'Tahunan' }, D: { paket: '12 Bulan' }, E: { paket: '3 Bulan' }, b: { paket: 'Promo', bulan: 6 }, c: { nominal: [{ min: 10, paket: 'Bulanan' }] } }) });
   assert.deepEqual(k.a, { paket: 'Tahunan', bulan: 12 });
+  assert.deepEqual(k.d, { paket: '12 Bulan', bulan: 12 });
+  assert.deepEqual(k.e, { paket: '3 Bulan', bulan: 3 });
   assert.deepEqual(k.b, { paket: 'Promo', bulan: 6 });
   assert.equal(akses.tentukanPaket(k, 'tidak-ada', 1000), null);
   assert.throws(() => akses.bacaKonfigProduk({ MAYAR_PRODUK: '{' }));
   assert.throws(() => akses.bacaKonfigProduk({ MAYAR_PRODUK: JSON.stringify({ x: { paket: 'Aneh' } }) }));
+  assert.throws(() => akses.bacaKonfigProduk({ MAYAR_PRODUK: JSON.stringify({ x: { paket: 'Seumur Hidup', bulan: null } }) }));
 });
 
 test('token: kedaluwarsa hak vs token, grace', () => {

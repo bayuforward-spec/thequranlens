@@ -136,7 +136,8 @@
           <div class="field">
             <select id="m-paket">
               <option value="Bulanan">Bulanan</option>
-              <option value="Tahunan">Tahunan</option>
+              <option value="3 Bulan">3 Bulan</option>
+              <option value="Tahunan">Tahunan (12 bulan)</option>
             </select>
             <input id="m-order" placeholder="Order ID dari Mayar" />
           </div>
@@ -157,8 +158,12 @@
         <div><div class="p-name">Bulanan</div><div class="p-note">Batal kapan saja</div></div>
         <div class="p-price">Rp 49rb</div>
       </div>
+      <div class="plan" onclick="App.beli('3 Bulan')">
+        <div><div class="p-name">3 Bulan</div><div class="p-note">≈ Rp 45.000 / bulan</div></div>
+        <div class="p-price">Rp 135rb</div>
+      </div>
       <div class="plan best" onclick="App.beli('Tahunan')">
-        <div><div class="p-name">Tahunan <span class="p-badge">HEMAT 32%</span></div><div class="p-note">≈ Rp 33.250 / bulan</div></div>
+        <div><div class="p-name">Tahunan <span class="p-badge">HEMAT 32%</span></div><div class="p-note">12 bulan · ≈ Rp 33.250 / bulan</div></div>
         <div class="p-price">Rp 399rb</div>
       </div>
 
@@ -167,7 +172,8 @@
         <div class="field">
           <select id="m-paket-2">
             <option value="Bulanan">Bulanan</option>
-            <option value="Tahunan">Tahunan</option>
+            <option value="3 Bulan">3 Bulan</option>
+            <option value="Tahunan">Tahunan (12 bulan)</option>
           </select>
           <input id="m-order-2" placeholder="Order ID dari Mayar" />
         </div>

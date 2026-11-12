@@ -28,8 +28,10 @@ const App = {
   PAKET: [
     { nama: 'Bulanan', harga: 'Rp 49.000', per: '/bulan',
       fitur: ['Akses semua episode', 'Episode baru tiap minggu', 'Batal kapan saja'] },
-    { nama: 'Tahunan', harga: 'Rp 399.000', per: '/tahun', best: true, hemat: 'HEMAT ~32%',
-      fitur: ['Semua benefit bulanan', 'Akses awal episode baru', 'Dukung pengembangan konten'] },
+    { nama: '3 Bulan', harga: 'Rp 135.000', per: '/3 bulan',
+      fitur: ['Semua benefit bulanan', '≈ Rp 45.000 / bulan', 'Bayar sekali untuk 3 bulan'] },
+    { nama: 'Tahunan', harga: 'Rp 399.000', per: '/12 bulan', best: true, hemat: 'HEMAT ~32%',
+      fitur: ['Semua benefit bulanan', '12 bulan · ≈ Rp 33.250 / bulan', 'Dukung pengembangan konten'] },
   ],
 
   FAQ: [

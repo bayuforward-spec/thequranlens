@@ -84,13 +84,13 @@ test('transaksi belum lunas / produk lain / produk tidak cocok / id palsu → ti
   const palsu = B.txId(); // tidak ada di Mayar
   assert.equal((await s.webhook(B.evtLunas(belum, B.PROD_BULAN))).data.alasan, 'belum-lunas');
   assert.equal((await s.webhook(B.evtLunas(lain, B.PROD_LAIN))).data.alasan, 'produk-tidak-dikenal');
-  assert.equal((await s.webhook(B.evtLunas(beda, B.PROD_LIFE))).data.alasan, 'produk-tidak-cocok');
+  assert.equal((await s.webhook(B.evtLunas(beda, B.PROD_12))).data.alasan, 'produk-tidak-cocok');
   assert.equal((await s.webhook(B.evtLunas(palsu, B.PROD_BULAN))).data.alasan, 'tidak-ditemukan');
   for (const id of [belum, lain, palsu]) {
     assert.equal((await s.req('POST', '/api/verify', { body: { order: id } })).data.active, false);
   }
   // Webhook dengan productId janggal ditolak, tetapi data API Mayar tetap sumber kebenaran:
-  // transaksi itu memang lunas untuk produk Bulanan → verify memberi paket Bulanan, bukan Seumur Hidup.
+  // transaksi itu memang lunas untuk produk Bulanan → verify memberi paket Bulanan, bukan Tahunan.
   assert.equal((await s.req('POST', '/api/verify', { body: { order: beda } })).data.paket, 'Bulanan');
   // event selain payment.received diabaikan; 'testing' dibalas 200
   assert.equal((await s.webhook({ event: 'testing' })).status, 200);
@@ -99,9 +99,9 @@ test('transaksi belum lunas / produk lain / produk tidak cocok / id palsu → ti
 
 test('verifikasi ulang bila webhook gagal: /api/verify mengaktifkan langsung dari API Mayar', async (t) => {
   const s = await B.siapkan(); t.after(s.tutup);
-  const id = B.txId(); s.transaksi[id] = B.trxMayar(id, B.PROD_LIFE, { amount: 999000 });
+  const id = B.txId(); s.transaksi[id] = B.trxMayar(id, B.PROD_12, { amount: 399000 });
   const v = await s.req('POST', '/api/verify', { body: { order: id } });
-  assert.equal(v.data.active, true); assert.equal(v.data.paket, 'Seumur Hidup'); assert.equal(v.data.expiresAt, null);
+  assert.equal(v.data.active, true); assert.equal(v.data.paket, 'Tahunan'); assert.equal(v.data.expiresAt, '2027-11-12T02:59:00.000Z');
   // Mayar tidak terjangkau → 503 coba lagi
   const id2 = B.txId(); s.transaksi[id2] = 'gagal-jaringan';
   assert.equal((await s.req('POST', '/api/verify', { body: { order: id2 } })).status, 503);

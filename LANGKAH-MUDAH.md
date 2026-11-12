@@ -55,7 +55,7 @@ Ini sekaligus **menguji** apakah banyak yang minat — sebelum repot pasang pemb
 Bagian ini sedikit lebih teknis. **Jangan terima uang sungguhan sebelum ini beres.**
 Kalau sudah sampai sini, **bilang ke aku "lanjut tahap bayar"**, nanti aku pandu
 pelan-pelan: pasang Scalev + server pengaman. Garis besarnya:
-1. Bikin 3 produk di **Scalev** (Bulanan, Tahunan, Seumur Hidup).
+1. Bikin 3 produk (Bulanan, 3 Bulan, Tahunan/12 bulan). Tidak ada paket seumur hidup.
 2. Pasang "server pengaman" (di Render — gratis) supaya tidak bisa dicurangi.
 3. Sambungkan semuanya.
 

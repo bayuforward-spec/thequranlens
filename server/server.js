@@ -202,7 +202,7 @@ function buatAplikasi(opsi) {
     const tersimpan = await store.put('ent:' + oh, rec, { nx: true });
     if (!tersimpan) return { rec: await store.get('ent:' + oh), duplikat: true };
     if (d.invoiceCode) await store.put('alias:' + akses.hashOrder(pepper, d.invoiceCode), { oh }, { nx: true });
-    log(`[aktivasi] ${pendek(oh)} → ${rec.paket} (via ${plan.via}, s/d ${rec.expiresAt || 'seumur hidup'})`);
+    log(`[aktivasi] ${pendek(oh)} → ${rec.paket} (via ${plan.via}, s/d ${rec.expiresAt})`);
     return { rec, baru: true };
   }
 

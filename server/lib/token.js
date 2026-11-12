@@ -1,7 +1,7 @@
 /*
  * token.js — Token sesi bertanda tangan (HMAC-SHA256), format "<payload>.<sig>"
  * (base64url). Payload: { v, s (sumber), oh (hash order), paket, exp (akhir hak
- * akses, ms | null = seumur hidup), iat, te (token kedaluwarsa, ms) }.
+ * akses, ms; null = belum ditentukan, misalnya dari Play), iat, te (token kedaluwarsa, ms) }.
  * Token sengaja berumur pendek (TOKEN_TTL_HARI, default 7) agar pencabutan
  * berlaku; klien memperbaruinya lewat /api/refresh.
  */

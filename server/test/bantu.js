@@ -11,7 +11,6 @@ const { FileStore } = require('../lib/storage');
 const PROD_BULAN = 'aaaaaaaa-1111-4111-8111-000000000001';
 const PROD_3 = 'aaaaaaaa-1111-4111-8111-000000000003';
 const PROD_12 = 'aaaaaaaa-1111-4111-8111-000000000012';
-const PROD_LIFE = 'aaaaaaaa-1111-4111-8111-0000000000ff';
 const PROD_GABUNG = 'aaaaaaaa-1111-4111-8111-0000000000aa';
 const PROD_LAIN = 'bbbbbbbb-2222-4222-8222-000000000000'; // e-book lain, tidak terdaftar
 
@@ -38,8 +37,7 @@ async function siapkan(opsi = {}) {
       [PROD_BULAN]: { paket: 'Bulanan' },
       [PROD_3]: { paket: '3 Bulan' },
       [PROD_12]: { paket: 'Tahunan' },
-      [PROD_LIFE]: { paket: 'Seumur Hidup', bulan: null },
-      [PROD_GABUNG]: { nominal: [{ min: 399000, paket: 'Tahunan' }, { min: 49000, paket: 'Bulanan' }] },
+      [PROD_GABUNG]: { nominal: [{ min: 399000, paket: 'Tahunan' }, { min: 135000, paket: '3 Bulan' }, { min: 49000, paket: 'Bulanan' }] },
     }),
     REVIEWER_CODES: 'kode-ustadz-1',
     ...(opsi.env || {}),
@@ -89,4 +87,4 @@ function trxMayar(id, productId, { status = 'paid', amount = 49000, updatedAt, i
   return { id, status, amount, invoiceCode: invoiceCode || 'INV-' + id.slice(0, 6), updatedAt: updatedAt || Date.parse('2026-11-12T02:59:00Z'), paymentLink: { id: productId }, customer: { email: 'pembeli@contoh.id' } };
 }
 
-module.exports = { siapkan, evtLunas, trxMayar, txId, PROD_BULAN, PROD_3, PROD_12, PROD_LIFE, PROD_GABUNG, PROD_LAIN };
+module.exports = { siapkan, evtLunas, trxMayar, txId, PROD_BULAN, PROD_3, PROD_12, PROD_GABUNG, PROD_LAIN };

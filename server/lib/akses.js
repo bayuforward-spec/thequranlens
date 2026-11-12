@@ -2,20 +2,22 @@
  * akses.js — Model hak akses Premium.
  *
  * Catatan tersimpan (kunci "ent:<hashOrder>"):
- *   { v:1, oh, s:'mayar'|'play'|'migrasi', paket, bulan (null = seumur hidup),
- *     productId, aktifSejak (ISO), expiresAt (ISO | null), via }
+ *   { v:1, oh, s:'mayar'|'play'|'migrasi', paket, bulan (angka positif;
+ *     rekaman Play boleh null karena expiry diambil dari Google),
+ *     productId, aktifSejak (ISO), expiresAt (ISO), via }
  * Alias kode invoice (kunci "alias:<hash>") → { oh }.
  * TIDAK menyimpan email, nama, atau nomor HP (UU PDP: minimisasi data).
  */
 'use strict';
 const crypto = require('crypto');
 
-// Paket baku. Nama bebas, tetapi durasi dalam BULAN (null = seumur hidup).
+// Paket baku. Durasi selalu dalam BULAN (angka positif). "12 Bulan" = alias Tahunan.
+// Paket seumur hidup sudah tidak dipakai.
 const PAKET_BAKU = {
   'Bulanan': 1,
   '3 Bulan': 3,
   'Tahunan': 12,
-  'Seumur Hidup': null,
+  '12 Bulan': 12,
 };
 
 function normalOrder(order) {
@@ -38,8 +40,11 @@ function tambahBulan(ms, n) {
 }
 
 function hitungExpiry(mulaiMs, bulan) {
-  if (bulan === null || bulan === undefined) return null;
-  return new Date(tambahBulan(mulaiMs, Number(bulan))).toISOString();
+  const n = Number(bulan);
+  if (!Number.isFinite(n) || n <= 0) {
+    throw new Error('Durasi paket harus berupa angka bulan yang positif');
+  }
+  return new Date(tambahBulan(mulaiMs, n)).toISOString();
 }
 
 function masihAktif(rec, now = Date.now()) {
@@ -51,10 +56,11 @@ function masihAktif(rec, now = Date.now()) {
 /*
  * Konfigurasi produk Mayar (env MAYAR_PRODUK JSON, atau file MAYAR_PRODUK_FILE):
  * {
- *   "<productId>": { "paket": "3 Bulan", "bulan": 3 },
- *   "<productId>": { "paket": "Seumur Hidup", "bulan": null },
- *   "<productId>": { "nominal": [ { "min": 399000, "paket": "Tahunan", "bulan": 12 },
- *                                 { "min": 49000,  "paket": "Bulanan", "bulan": 1 } ] }
+ *   "<productId>": { "paket": "3 Bulan" },
+ *   "<productId>": { "paket": "Tahunan" },           // 12 bulan
+ *   "<productId>": { "nominal": [ { "min": 399000, "paket": "Tahunan" },
+ *                                 { "min": 135000, "paket": "3 Bulan" },
+ *                                 { "min": 49000,  "paket": "Bulanan" } ] }
  * }
  * "nominal" = CADANGAN untuk satu produk yang menjual beberapa paket; selalu dicatat di log.
  * Produk yang tidak terdaftar DITOLAK (mis. e-book lain di akun Mayar yang sama).
@@ -85,7 +91,13 @@ function bacaKonfigProduk(env = process.env, fs = require('fs')) {
 }
 
 function durasi(v) {
-  if (Object.prototype.hasOwnProperty.call(v, 'bulan')) return v.bulan === null ? null : Number(v.bulan);
+  if (Object.prototype.hasOwnProperty.call(v, 'bulan')) {
+    const n = Number(v.bulan);
+    if (v.bulan === null || v.bulan === undefined || !Number.isFinite(n) || n <= 0) {
+      throw new Error(`Durasi paket "${v.paket}" harus berupa angka bulan yang positif`);
+    }
+    return n;
+  }
   if (Object.prototype.hasOwnProperty.call(PAKET_BAKU, v.paket)) return PAKET_BAKU[v.paket];
   throw new Error(`Durasi paket "${v.paket}" tidak diketahui; isi "bulan"`);
 }

@@ -2,8 +2,9 @@
  * payment.js — Integrasi pembayaran Mayar (https://mayar.id)
  *
  * Cara pakai (untuk pemilik aplikasi):
- * 1. Buat produk di Mayar (cukup satu link untuk kedua paket; pembeli memilih
- *    Bulanan/Tahunan di halaman Mayar). Salin link-nya ke CONFIG.checkout.
+ * 1. Buat satu produk Mayar per paket (Bulanan, 3 Bulan, Tahunan/12 bulan).
+ *    Salin link checkout masing-masing ke CONFIG.checkout. productId-nya
+ *    didaftarkan di env server MAYAR_PRODUK (bukan di file ini).
  * 2. Deploy server/ (lihat server/README) lalu isi CONFIG.apiBase dengan URL-nya,
  *    mis. 'https://quranlens.onrender.com'. Webhook Mayar mencatat order yang LUNAS.
  * 3. Pembeli bayar di Mayar → webhook (bertoken) mencatat transaksi setelah
@@ -15,16 +16,22 @@
  * keduanya hanya di server sebagai environment variable.
  */
 const Payment = {
-  // Satu link checkout Mayar untuk kedua paket
+  // Link checkout per paket. Isi URL Mayar masing-masing setelah produk dibuat.
+  // Placeholder CHECKOUT-* membuat tombol menampilkan "pembayaran belum tersedia".
   MAYAR_LINK: 'https://bayu-maulana.myr.id/m/the-quran-lens',
   CONFIG: {
     checkout: {
       'Bulanan': 'https://bayu-maulana.myr.id/m/the-quran-lens',
+      '3 Bulan': 'CHECKOUT-3-BULAN',
       'Tahunan': 'https://bayu-maulana.myr.id/m/the-quran-lens',
     },
     slug: {
       'bulanan': 'Bulanan',
+      '3-bulan': '3 Bulan',
+      '3bulan': '3 Bulan',
       'tahunan': 'Tahunan',
+      '12-bulan': 'Tahunan',
+      '12bulan': 'Tahunan',
     },
     // URL backend verifikasi (server/). KOSONGKAN untuk mode demo sisi-klien.
     // Setelah server di-deploy: 'https://quranlens.onrender.com' -> memanggil /api/verify

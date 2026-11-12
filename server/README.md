@@ -44,12 +44,15 @@ Langkah deploy & transaksi uji: **[../RENCANA-TRANSAKSI-UJI.md](../RENCANA-TRANS
 {
   "<id-produk-bulanan>": { "paket": "Bulanan" },
   "<id-produk-3-bulan>": { "paket": "3 Bulan" },
-  "<id-produk-tahunan>": { "paket": "Tahunan" },
-  "<id-produk-seumur-hidup>": { "paket": "Seumur Hidup", "bulan": null },
-  "<id-produk-gabungan>": { "nominal": [ { "min": 399000, "paket": "Tahunan" }, { "min": 49000, "paket": "Bulanan" } ] }
+  "<id-produk-12-bulan>": { "paket": "Tahunan" }
 }
 ```
-`nominal` hanya **cadangan** untuk satu produk yang menjual beberapa paket. Setiap pemakaiannya dicatat di log (`CADANGAN nominal`).
+productId diisi setelah produk Mayar dibuat (jangan diketik di chat). Paket 12 bulan dipetakan ke nama baku **Tahunan**. Tidak ada paket seumur hidup.
+
+Cadangan `nominal` hanya bila satu produk Mayar masih dipakai untuk beberapa paket (setiap pemakaian dicatat di log):
+```json
+{ "<id-produk-gabungan>": { "nominal": [ { "min": 399000, "paket": "Tahunan" }, { "min": 135000, "paket": "3 Bulan" }, { "min": 49000, "paket": "Bulanan" } ] } }
+```
 
 ## Konten Premium
 Sumber konten lengkap disimpan **di luar repo publik**. Pisahkan dengan:
