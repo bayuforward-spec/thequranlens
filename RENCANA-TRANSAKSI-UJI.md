@@ -1,6 +1,6 @@
 # Rencana deploy & transaksi uji: aktivasi Premium (Mayar)
 
-Status: **draf di branch `perbaikan-aktivasi-premium`**. Keputusan paket & privasi (12 Nov 2026) sudah diterapkan di branch ini. Belum di-push atau di-deploy, dan belum ada transaksi.
+Status: **draf di branch `isi-checkout-mayar-3-12-bulan`** (dari `origin/main` facba35). Keputusan paket & privasi (12 Nov 2026) sudah diterapkan. ProductId dan link checkout 3 Bulan & 12 Bulan (Tahunan) diisi 17 Nov 2026. Belum di-push atau di-deploy, dan belum ada transaksi.
 Tanda: **[V]** = sudah dicek di dokumentasi atau dengan uji lokal, **[A]** = asumsi yang harus dibuktikan lewat transaksi uji.
 
 ## 0. Ringkasnya
@@ -34,24 +34,33 @@ Tanda: **[V]** = sudah dicek di dokumentasi atau dengan uji lokal, **[A]** = asu
 `/etc/secrets/premium-content.json`. Batas total Secret Files 1 MB [V render.com/docs/configure-environment-variables].
 File ini dibuat dengan `tools/pisah-konten-premium.js` dari salinan lengkap di luar repo.
 
-`MAYAR_PRODUK`. Isi ID produk dari Mayar setelah ketiga produk dibuat (satu produk per durasi). ID produk = `paymentLink.id` di detail transaksi [A]. Belum ada productId — jangan diketik di chat; isi langsung di Render. Paket 12 bulan dipetakan ke nama baku **Tahunan**. Tidak ada paket seumur hidup.
-```json
-{"<id-bulanan>":{"paket":"Bulanan"},"<id-3bulan>":{"paket":"3 Bulan"},"<id-12bulan>":{"paket":"Tahunan"}}
-```
-Harga di etalase (bukan di logika server): Bulanan tetap seperti sekarang (Rp49.000), 3 bulan Rp135.000, 12 bulan/Tahunan Rp399.000. Link checkout per paket diisi di `assets/js/payment.js` → `CONFIG.checkout` setelah URL Mayar ada.
+`MAYAR_PRODUK`. JSON productId → paket. ID produk = `paymentLink.id` di detail transaksi, sama dengan productId di dashboard Mayar [V docs.mayar.id untuk tipe `payment_link`; masih [A] untuk membership]. Paket 12 bulan dipetakan ke nama baku **Tahunan**. Tidak ada paket seumur hidup.
 
-Bila sementara tetap memakai **satu** link membership untuk beberapa paket, cadangan nominal (dicatat di log):
-`{"<id-the-quran-lens>":{"nominal":[{"min":399000,"paket":"Tahunan"},{"min":135000,"paket":"3 Bulan"},{"min":49000,"paket":"Bulanan"}]}}`.
+Nilai siap-tempel untuk 3 Bulan & Tahunan (produk **Link Pembayaran**, sekali bayar, dibuat 17 Nov 2026). productId paket **Bulanan** (membership lama `the-quran-lens`) belum diketahui — tanpa itu, pembayaran Bulanan akan ditolak `produk-tidak-dikenal`. Setelah ID-nya ada, tambahkan `"<id-bulanan>":{"paket":"Bulanan"}` ke JSON ini. Isi di Render / formulir aman:
+```json
+{"3d2d8478-2886-48ee-951a-633c5ddc97a8":{"paket":"3 Bulan"},"b82d5bb6-9acf-4d29-9701-94b16d787f30":{"paket":"Tahunan"}}
+```
+Harga di etalase (bukan di logika server): Bulanan Rp49.000, 3 bulan Rp135.000, 12 bulan/Tahunan Rp399.000.
+
+Link checkout sudah diisi di `assets/js/payment.js` → `CONFIG.checkout`:
+- Bulanan (membership lama, tidak diubah): https://bayu-maulana.myr.id/m/the-quran-lens
+- 3 Bulan: https://bayu-maulana.myr.id/pl/quran-lens-premium-3-bulan (productId `3d2d8478-2886-48ee-951a-633c5ddc97a8`)
+- Tahunan (12 bulan): https://bayu-maulana.myr.id/pl/quran-lens-premium-12-bulan (productId `b82d5bb6-9acf-4d29-9701-94b16d787f30`)
+
+Kecocokan tipe Link Pembayaran dengan verifikasi ulang server [V docs.mayar.id/api-reference-v2/transaction/detail & webhook/history, 17 Nov 2026]: detail transaksi memakai `data.status` = `paid` dan `data.paymentLink.id` (contoh resmi `type` = `payment_link`); webhook `payment.received` membawa `data.transactionId` (= `data.id` di contoh) dan `data.productId` = paymentLinkId. Status webhook (`SUCCESS`) tidak dipakai server — yang diwajibkan adalah status API `paid`. Tidak ada perubahan kode server. Event `membership.*` tetap diabaikan; 3 Bulan & Tahunan adalah sekali bayar, jadi andalan tetap `payment.received`.
+
+Cadangan nominal (satu produk untuk beberapa paket) tidak dipakai lagi untuk 3 Bulan dan Tahunan. Itu hanya relevan bila suatu productId masih menjual lebih dari satu paket.
 
 ## 2. Pengaturan di Mayar (dilakukan Bayu)
 - **Webhook URL:** `https://quran-lens-api.onrender.com/api/mayar/webhook?token=<MAYAR_WEBHOOK_TOKEN>`
   Isi di menu Webhook pada dashboard Mayar [A: nama menu]. Event uji `testing` harus dibalas 200 (sudah ditangani server).
   URL lama tanpa `?token=` akan ditolak 401 setelah deploy, jadi ganti URL segera setelah deploy.
-- **Redirect URL** produk/tier (fitur Redirect URL ada di membership tier & produk digital [V docs.mayar.id]):
+- **Redirect URL** produk/tier (fitur Redirect URL ada di membership tier & produk digital [V docs.mayar.id]; apakah Link Pembayaran punya field yang sama masih [A]):
   `https://thequranlensindonesia.com/?aktivasi=1`
-  Apakah Mayar menambahkan ID transaksi ke URL redirect **tidak terdokumentasi [A]**. Bila tidak ada,
+  Pasang di **kedua** Link Pembayaran baru (3 Bulan & 12 Bulan) dan di membership Bulanan. Apakah Mayar menambahkan ID transaksi ke URL redirect **tidak terdokumentasi [A]**. Bila tidak ada,
   app otomatis membuka form "Aktivasi dengan Order ID". Pembeli menempel ID transaksi atau kode invoice
   dari email Mayar.
+- **Track → URL Param** juga perlu didaftarkan di kedua Link Pembayaran baru (bukan hanya membership `the-quran-lens`): `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `plan`. Tanpa itu, checkout tetap terbuka, tetapi Mayar tidak menyimpan asal trafik.
 
 ## 3. Transaksi uji (satu kali, oleh Bayu)
 1. Jalankan `GET https://quran-lens-api.onrender.com/api/health` → `storage:"upstash"`, `premium:true`.

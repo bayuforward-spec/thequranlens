@@ -22,8 +22,8 @@ const Payment = {
   CONFIG: {
     checkout: {
       'Bulanan': 'https://bayu-maulana.myr.id/m/the-quran-lens',
-      '3 Bulan': 'CHECKOUT-3-BULAN',
-      'Tahunan': 'https://bayu-maulana.myr.id/m/the-quran-lens',
+      '3 Bulan': 'https://bayu-maulana.myr.id/pl/quran-lens-premium-3-bulan',
+      'Tahunan': 'https://bayu-maulana.myr.id/pl/quran-lens-premium-12-bulan',
     },
     slug: {
       'bulanan': 'Bulanan',

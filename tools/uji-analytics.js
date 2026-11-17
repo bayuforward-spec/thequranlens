@@ -120,6 +120,17 @@ syntax.forEach((rel) => {
   }
 });
 
+{
+  const pay = fs.readFileSync(path.join(root, 'assets/js/payment.js'), 'utf8');
+  const blok = pay.match(/checkout:\s*\{([\s\S]*?)\},/);
+  cek(!!blok, 'payment.js punya CONFIG.checkout');
+  const isi = blok ? blok[1] : '';
+  cek(!/['"]CHECKOUT-/.test(isi), 'CONFIG.checkout tanpa placeholder CHECKOUT-');
+  cek(/['"]Bulanan['"]\s*:\s*['"]https:\/\/bayu-maulana\.myr\.id\/m\/the-quran-lens['"]/.test(isi), 'checkout Bulanan tetap membership lama');
+  cek(/['"]3 Bulan['"]\s*:\s*['"]https:\/\/bayu-maulana\.myr\.id\/pl\/quran-lens-premium-3-bulan['"]/.test(isi), 'checkout 3 Bulan = Link Pembayaran');
+  cek(/['"]Tahunan['"]\s*:\s*['"]https:\/\/bayu-maulana\.myr\.id\/pl\/quran-lens-premium-12-bulan['"]/.test(isi), 'checkout Tahunan = Link Pembayaran 12 bulan');
+}
+
 console.log('\n[tanpa ID]');
 {
   const analyticsSrc = fs.readFileSync(path.join(root, 'assets/js/analytics.js'), 'utf8');

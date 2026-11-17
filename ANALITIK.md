@@ -44,7 +44,7 @@ Deploy dari branch **tidak** membaca variable ini.
 
 Yang masih perlu di dashboard (bukan di kode):
 
-1. Produk Mayar **the-quran-lens** → **Track** → **URL Param**, daftarkan lalu simpan:
+1. Di setiap produk Mayar yang dipakai checkout (membership **the-quran-lens**, plus Link Pembayaran **quran-lens-premium-3-bulan** dan **quran-lens-premium-12-bulan**) → **Track** → **URL Param**, daftarkan lalu simpan:
    `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `plan`.
    Tanpa daftar itu, checkout tetap terbuka, tetapi Mayar tidak menyimpan asal trafik di transaksi.
 2. Di GA4 → Admin → **Events**, tandai sebagai **key event**: `premium_checkout_click`, `lanjutkan_membaca`, `save_episode`, `episode_read`, `tanya_ustadz_used`. (`page_view` sudah otomatis.)
@@ -114,7 +114,7 @@ https://thequranlensindonesia.com/?utm_source=tiktok&utm_medium=story&utm_campai
 https://thequranlensindonesia.com/?utm_source=community&utm_medium=kartu&utm_campaign=comeback_okt26
 ```
 
-Saat pengunjung menekan paket, parameter last-touch (plus `plan=monthly` atau `plan=yearly`) ditambahkan ke URL Mayar `https://bayu-maulana.myr.id/m/the-quran-lens`. Mayar tidak punya kolom referensi terpisah; URL Param di atas adalah caranya.
+Saat pengunjung menekan paket, parameter last-touch (plus `plan=monthly`, `plan=quarterly`, atau `plan=yearly`) ditambahkan ke URL checkout Mayar paket itu (Bulanan: `https://bayu-maulana.myr.id/m/the-quran-lens`; 3 Bulan: `https://bayu-maulana.myr.id/pl/quran-lens-premium-3-bulan`; Tahunan: `https://bayu-maulana.myr.id/pl/quran-lens-premium-12-bulan`). Mayar tidak punya kolom referensi terpisah; URL Param di atas adalah caranya.
 
 ---
 
