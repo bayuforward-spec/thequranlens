@@ -309,7 +309,10 @@ const Analytics = {
   },
 
   planFor(paket) {
-    return /tahun/i.test(String(paket || '')) ? 'yearly' : 'monthly';
+    const s = String(paket || '');
+    if (/tahun|12\s*bulan/i.test(s)) return 'yearly';
+    if (/3\s*bulan/i.test(s)) return 'quarterly';
+    return 'monthly';
   },
 
   /* Salin UTM last-touch ke URL checkout Mayar. Mayar menyimpan param yang

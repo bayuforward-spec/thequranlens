@@ -73,7 +73,7 @@ Dua bagian yang di-deploy terpisah:
    - **Webhook URL** → `https://quran-lens-api.onrender.com/api/scalev/webhook`
    - **Redirect setelah bayar sukses** →
      `https://quran-lens.netlify.app/index.html?aktivasi={PAKET}&order={ORDER_ID}`
-     (`{PAKET}` = `bulanan` | `tahunan` | `seumur-hidup`)
+     (`{PAKET}` = `bulanan` | `3-bulan` | `tahunan`)
    - Salin **webhook secret** Scalev ke env `SCALEV_WEBHOOK_SECRET` di Render.
 
 4. **Sesuaikan field Scalev** (WAJIB): cocokkan nama field payload & header tanda

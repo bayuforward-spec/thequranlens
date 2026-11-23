@@ -130,6 +130,7 @@ body {
 /* ===== Pricing ===== */
 .price-grid { display: grid; gap: 16px; grid-template-columns: 1fr; max-width: 720px; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 620px) { .price-grid { grid-template-columns: 1fr 1fr; } .price-tagline { grid-column: 1 / -1; } }
+@media (min-width: 900px) { .price-grid { grid-template-columns: 1fr 1fr 1fr; } }
 .price-card { position: relative; text-align: center; border: 1px solid var(--line); border-radius: 16px; padding: 30px 20px; background: var(--card-bg); }
 .price-card.hl { border-color: var(--card-line); box-shadow: 0 0 50px rgba(242, 208, 96, .14); }
 .pc-ribbon { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); font-family: var(--label); font-size: .56rem; letter-spacing: .12em; background: var(--gold); color: #2a1f05; padding: 4px 12px; border-radius: 999px; }

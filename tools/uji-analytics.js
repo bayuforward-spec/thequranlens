@@ -120,6 +120,17 @@ syntax.forEach((rel) => {
   }
 });
 
+{
+  const pay = fs.readFileSync(path.join(root, 'assets/js/payment.js'), 'utf8');
+  const blok = pay.match(/checkout:\s*\{([\s\S]*?)\},/);
+  cek(!!blok, 'payment.js punya CONFIG.checkout');
+  const isi = blok ? blok[1] : '';
+  cek(!/['"]CHECKOUT-/.test(isi), 'CONFIG.checkout tanpa placeholder CHECKOUT-');
+  cek(/['"]Bulanan['"]\s*:\s*['"]https:\/\/bayu-maulana\.myr\.id\/m\/the-quran-lens['"]/.test(isi), 'checkout Bulanan tetap membership lama');
+  cek(/['"]3 Bulan['"]\s*:\s*['"]https:\/\/bayu-maulana\.myr\.id\/pl\/quran-lens-premium-3-bulan['"]/.test(isi), 'checkout 3 Bulan = Link Pembayaran');
+  cek(/['"]Tahunan['"]\s*:\s*['"]https:\/\/bayu-maulana\.myr\.id\/pl\/quran-lens-premium-12-bulan['"]/.test(isi), 'checkout Tahunan = Link Pembayaran 12 bulan');
+}
+
 console.log('\n[tanpa ID]');
 {
   const analyticsSrc = fs.readFileSync(path.join(root, 'assets/js/analytics.js'), 'utf8');
@@ -220,6 +231,8 @@ console.log('\n[first-touch & last-touch]');
   cek(mu.searchParams.get('utm_medium') === 'bio' && mu.searchParams.get('utm_campaign') === 'al_ikhlas', 'URL Mayar medium & campaign');
   cek(mu.searchParams.get('plan') === 'yearly', 'URL Mayar plan=yearly');
   cek(A.decorateMayar('https://bayu-maulana.myr.id/m/the-quran-lens', 'Bulanan').includes('plan=monthly'), 'plan bulanan = monthly');
+  cek(A.planFor('3 Bulan') === 'quarterly' && A.decorateMayar('https://bayu-maulana.myr.id/m/the-quran-lens', '3 Bulan').includes('plan=quarterly'), 'plan 3 bulan = quarterly');
+  cek(A.planFor('12 Bulan') === 'yearly', 'plan 12 bulan = yearly (paket tahunan)');
   cek(A.decorateMayar('bukan-url', 'Bulanan') === 'bukan-url', 'URL rusak tidak diubah');
 }
 

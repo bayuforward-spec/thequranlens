@@ -32,9 +32,9 @@ Setiap ayat mengikuti **satu skema baku** — inilah produk inti & pembedanya:
 ## 💰 Model Monetisasi (Scalev)
 | Paket | Harga | Catatan |
 |------|-------|---------|
-| **Bulanan** | Rp 39.000/bln | Batal kapan saja (produk utama) |
-| **Tahunan** | Rp 299.000/thn | Hemat ~36% (≈ Rp 24.900/bln) |
-| **Seumur Hidup** | Rp 749.000 | Bayar sekali |
+| **Bulanan** | Rp 49.000/bln | Batal kapan saja (produk utama) |
+| **3 Bulan** | Rp 135.000 | ≈ Rp 45.000/bln |
+| **Tahunan** | Rp 399.000 / 12 bulan | Hemat ~32% (≈ Rp 33.250/bln) |
 
 > Lihat **[STRATEGI.md](STRATEGI.md)** untuk positioning, funnel marketing,
 > rencana retensi, dan catatan penting soal kredibilitas syar'i.
@@ -78,13 +78,13 @@ STRATEGI.md               # Strategi bisnis & konten
 ```
 
 ## 💳 Pembayaran via Scalev
-1. Buat 3 produk/checkout di dashboard **[Scalev](https://scalev.id)** (Bulanan, Tahunan, Seumur Hidup).
+1. Buat 3 produk/checkout (Bulanan, 3 Bulan, Tahunan/12 bulan). Tidak ada paket seumur hidup.
 2. Salin URL checkout ke `assets/js/payment.js` → `Payment.CONFIG.checkout`.
 3. Set **redirect setelah pembayaran berhasil** ke:
    ```
    https://DOMAIN-ANDA/index.html?aktivasi={PAKET}&order={ORDER_ID}
    ```
-   `{PAKET}` = `bulanan` | `tahunan` | `seumur-hidup`. Pembeli yang kembali
+   `{PAKET}` = `bulanan` | `3-bulan` | `tahunan` (12 bulan). Pembeli yang kembali
    membawa parameter ini **otomatis** mendapat akses Premium.
 4. Cadangan: pembeli memasukkan **Order ID** manual lewat menu di modal upgrade.
 

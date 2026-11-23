@@ -1,2 +1,6 @@
 server/node_modules/
 _site/
+# Data hak akses & konten premium: JANGAN pernah di-commit (repo publik)
+server/data/
+*.premium.json
+premium-content.json

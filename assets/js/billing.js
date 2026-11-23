@@ -8,8 +8,9 @@
  * Yang HARUS kamu sesuaikan setelah membuat produk langganan di Play Console:
  *   - SKU di bawah = Product ID langganan yang kamu buat di Play Console.
  *
- * CATATAN KEAMANAN (produksi): purchase token WAJIB diverifikasi di server via
- * Google Play Developer API sebelum benar-benar mengaktifkan Premium. Lihat TODO.
+ * KEAMANAN: purchase token selalu diverifikasi server (/api/play/verify →
+ * Google Play Developer API). Server menerbitkan token sesi yang sama dengan
+ * edisi web (premium.js), dipakai untuk mengambil konten Premium.
  */
 const PlayBilling = {
   BILLING_METHOD: 'https://play.google.com/billing',
@@ -44,23 +45,17 @@ const PlayBilling = {
     await resp.complete('success');
     if (!token) return false;
 
-    // Verifikasi ke server (aman): Premium hanya aktif bila Google mengonfirmasi.
-    const apiBase = (window.Payment && Payment.CONFIG && Payment.CONFIG.apiBase) || '';
-    if (apiBase) {
-      try {
-        const r = await fetch(apiBase + '/api/play/verify', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token, sku }),
-        });
-        const j = await r.json();
-        if (j && j.active) { Store.setPro(paket, 'PLAY'); return true; }
-        return false;
-      } catch (e) { return false; }
-    }
-    // Tanpa server (khusus uji internal): acknowledge lokal & aktifkan langsung.
-    try { if (this.service.acknowledge) await this.service.acknowledge(token, 'onetime'); } catch (e) {}
-    Store.setPro(paket, 'PLAY:' + token.slice(0, 12));
-    return true;
+    return this.verifikasiServer(token, sku, paket);
+  },
+
+  // Verifikasi purchase token ke server → token sesi Premium. Tanpa server = tidak aktif.
+  async verifikasiServer(token, sku, paket) {
+    if (!window.Premium || !Premium.aktif()) return false;
+    try {
+      const { data } = await Premium.api('/api/play/verify', { method: 'POST', body: { token, sku } });
+      if (data && data.active && data.token) { Premium.simpan({ ...data, paket: data.paket || paket }, 'PLAY'); return true; }
+    } catch (e) {}
+    return false;
   },
 
   // Pulihkan langganan aktif (mis. setelah re-install) dari entitlement Play.
@@ -70,7 +65,8 @@ const PlayBilling = {
       const purchases = await this.service.listPurchases();
       for (const p of purchases) {
         const paket = Object.keys(this.SKU).find(k => this.SKU[k] === p.itemId);
-        if (paket) { Store.setPro(paket, 'PLAY:restore'); return paket; }
+        // Entitlement lokal tidak dipercaya begitu saja: purchase token diverifikasi server.
+        if (paket && p.purchaseToken && await this.verifikasiServer(p.purchaseToken, p.itemId, paket)) return paket;
       }
     } catch (e) {}
     return false;

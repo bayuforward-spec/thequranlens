@@ -72,12 +72,11 @@ Reels/TikTok "keajaiban 1 kata"  →  Profil/bio  →  Web The Quran Lens (ayat 
 ## 6. Pricing & langganan (Scalev)
 | Paket | Harga | Peran |
 |------|-------|------|
-| Bulanan | Rp 39.000 | Produk utama, hambatan masuk rendah |
-| Tahunan | Rp 299.000 | Pendorong arus kas + retensi (ARPU naik) |
-| Seumur Hidup | Rp 749.000 | Suntikan kas awal dari pendukung loyal |
+| Bulanan | Rp 49.000 | Produk utama, hambatan masuk rendah |
+| 3 Bulan | Rp 135.000 | Paket menengah (sekali bayar) |
+| Tahunan (12 bulan) | Rp 399.000 | Pendorong arus kas + retensi (ARPU naik) |
 
-Catatan: angka ini hipotesis awal — **uji** dengan A/B sederhana. Banyak app
-Islami Indonesia di kisaran Rp 20–50rb/bln. Mulai dari sini, naikkan bila value terbukti.
+Tidak ada paket seumur hidup. Harga 3 bulan dan 12 bulan disetujui 12 Nov 2026.
 
 ---
 

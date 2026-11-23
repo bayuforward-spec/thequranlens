@@ -1,5 +1,8 @@
 # Panduan Deploy Server Mayar — Langkah demi Langkah
 
+> ⚠️ **Usang sebagian.** Mode `MAYAR_WEBHOOK_DEBUG` sudah dihapus dan webhook kini memakai
+> `?token=` + verifikasi ulang ke API Mayar. Ikuti **[RENCANA-TRANSAKSI-UJI.md](RENCANA-TRANSAKSI-UJI.md)**.
+
 Tujuan: memasang "server" agar pembayaran Mayar **otomatis membuka akses** & terverifikasi.
 Ikuti urut. Tidak perlu jago koding — cukup klik & salin-tempel.
 
